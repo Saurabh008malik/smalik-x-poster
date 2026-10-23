@@ -58,5 +58,5 @@ jobs:
         run: |
           git config user.name "smalik-poster-bot"
           git config user.email "actions@users.noreply.github.com"
-          for d in queue posted failed; do [ -e "$d" ] && git add -A "$d"; done
+          for d in queue posted failed; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Poster: update queue" && git push)
