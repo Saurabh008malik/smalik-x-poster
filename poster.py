@@ -131,6 +131,13 @@ def retry_comment():
         c = requests.post(f"{GRAPH}/{post_id}/comments", timeout=30, data={"message": msg, "access_token": token})
         print("Comment:", c.status_code, c.text[:300])
         if not c.ok:
+            dbg = requests.get(f"{GRAPH}/debug_token", timeout=30,
+                               params={"input_token": token, "access_token": token}).json()
+            scopes = (dbg.get("data") or {}).get("scopes")
+            ttype = (dbg.get("data") or {}).get("type")
+            (ROOT / "status").mkdir(exist_ok=True)
+            (ROOT / "status" / "last_error.txt").write_text(
+                f"comment {c.status_code}: {c.text[:500]}\ntoken type: {ttype}\nscopes: {scopes}\n")
             sys.exit(1)
         data["facebook_url"] = f"https://www.facebook.com/{post_id}"
         data["first_comment_id"] = c.json().get("id")
