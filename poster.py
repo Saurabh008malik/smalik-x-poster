@@ -20,7 +20,7 @@ import sys
 import requests
 from requests_oauthlib import OAuth1
 
-DELAY_MINUTES = 45
+DELAY_MINUTES = 0
 MAX_POSTS_PER_DAY = 3
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
