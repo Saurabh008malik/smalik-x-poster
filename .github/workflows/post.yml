@@ -56,7 +56,7 @@ jobs:
           python poster.py ${{ (inputs.mode == 'check' || inputs.mode == 'comment') && inputs.mode || '' }}
 
       - name: Save queue changes
-        if: always() && steps.q.outputs.run == 'yes' && inputs.mode != 'check'
+        if: always() && steps.q.outputs.run == 'yes'
         run: |
           git config user.name "smalik-poster-bot"
           git config user.email "actions@users.noreply.github.com"

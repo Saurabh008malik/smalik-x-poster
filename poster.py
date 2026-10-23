@@ -59,10 +59,19 @@ def post_x(text, image):
 
 
 # ---------------- Facebook ----------------
-def post_facebook(fb, base_dir):
+def page_token():
+    """Return a Page token. If the saved secret is a User token, swap it for the Page's own token."""
     page_id, token = os.environ.get("FB_PAGE_ID"), os.environ.get("FB_PAGE_TOKEN")
     if not page_id or not token:
         raise RuntimeError("FB_PAGE_ID / FB_PAGE_TOKEN secrets are missing")
+    r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "access_token", "access_token": token}, timeout=30)
+    if r.ok and r.json().get("access_token"):
+        return page_id, r.json()["access_token"]
+    return page_id, token
+
+
+def post_facebook(fb, base_dir):
+    page_id, token = page_token()
     image = base_dir / fb["image"]
     with image.open("rb") as f:
         r = requests.post(f"{GRAPH}/{page_id}/photos", timeout=90,
@@ -105,10 +114,17 @@ def check_keys():
     r = requests.get("https://api.x.com/2/users/me", auth=x_auth(), timeout=30)
     print("X:", r.status_code, ("✅ @" + r.json()["data"]["username"]) if r.ok else ("❌ " + r.text))
     ok &= r.ok
-    page_id, token = os.environ.get("FB_PAGE_ID"), os.environ.get("FB_PAGE_TOKEN")
-    if page_id and token:
+    if os.environ.get("FB_PAGE_ID") and os.environ.get("FB_PAGE_TOKEN"):
+        page_id, token = page_token()
         r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name", "access_token": token}, timeout=30)
         print("Facebook:", r.status_code, ("✅ " + r.json().get("name", "")) if r.ok else ("❌ " + r.text))
+        raw = os.environ["FB_PAGE_TOKEN"]
+        d = requests.get(f"{GRAPH}/debug_token", params={"input_token": raw, "access_token": raw}, timeout=30).json().get("data", {})
+        (ROOT / "status").mkdir(exist_ok=True)
+        (ROOT / "status" / "fb_token.txt").write_text(
+            f"saved token type: {d.get('type')}\nexpires_at: {d.get('expires_at')}\n"
+            f"data_access_expires_at: {d.get('data_access_expires_at')}\nscopes: {d.get('scopes')}\n"
+            f"page call ok: {r.ok}\n")
         ok &= r.ok
     else:
         print("Facebook: ❌ FB_PAGE_ID / FB_PAGE_TOKEN secrets missing")
@@ -119,7 +135,7 @@ def check_keys():
 
 def retry_comment():
     """Retry the Facebook first comment on the newest posted item where it was skipped."""
-    token = os.environ.get("FB_PAGE_TOKEN")
+    _, token = page_token()
     items = sorted(POSTED.glob("*.json"), key=lambda f: json.loads(f.read_text()).get("posted_at", ""))
     for f in reversed(items):
         data = json.loads(f.read_text())
