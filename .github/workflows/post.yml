@@ -12,7 +12,7 @@ on:
         description: "post = post due items, check = only test the X + Facebook keys"
         default: "post"
         type: choice
-        options: [post, check]
+        options: [post, check, comment]
 
 permissions:
   contents: write
@@ -31,7 +31,7 @@ jobs:
       - name: Anything queued?
         id: q
         run: |
-          if [ "${{ inputs.mode }}" = "check" ] || ls queue/*.json >/dev/null 2>&1; then
+          if [ "${{ inputs.mode }}" = "check" ] || [ "${{ inputs.mode }}" = "comment" ] || ls queue/*.json >/dev/null 2>&1; then
             echo "run=yes" >> "$GITHUB_OUTPUT"
           else
             echo "Queue empty."; echo "run=no" >> "$GITHUB_OUTPUT"
@@ -53,7 +53,7 @@ jobs:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         run: |
           pip install -q requests requests-oauthlib
-          python poster.py ${{ inputs.mode == 'check' && 'check' || '' }}
+          python poster.py ${{ (inputs.mode == 'check' || inputs.mode == 'comment') && inputs.mode || '' }}
 
       - name: Save queue changes
         if: always() && steps.q.outputs.run == 'yes' && inputs.mode != 'check'

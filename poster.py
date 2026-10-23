@@ -117,9 +117,34 @@ def check_keys():
         sys.exit(1)
 
 
+def retry_comment():
+    """Retry the Facebook first comment on the newest posted item where it was skipped."""
+    token = os.environ.get("FB_PAGE_TOKEN")
+    items = sorted(POSTED.glob("*.json"), key=lambda f: json.loads(f.read_text()).get("posted_at", ""))
+    for f in reversed(items):
+        data = json.loads(f.read_text())
+        url = data.get("facebook_url", "")
+        if "first comment skipped" not in url:
+            continue
+        post_id = url.split("facebook.com/")[1].split(" ")[0]
+        msg = (data.get("facebook") or {}).get("first_comment")
+        c = requests.post(f"{GRAPH}/{post_id}/comments", timeout=30, data={"message": msg, "access_token": token})
+        print("Comment:", c.status_code, c.text[:300])
+        if not c.ok:
+            sys.exit(1)
+        data["facebook_url"] = f"https://www.facebook.com/{post_id}"
+        data["first_comment_id"] = c.json().get("id")
+        f.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+        print("✅ First comment added")
+        return
+    print("No post waiting for a first comment.")
+
+
 def main():
     if len(sys.argv) > 1 and sys.argv[1] == "check":
         return check_keys()
+    if len(sys.argv) > 1 and sys.argv[1] == "comment":
+        return retry_comment()
 
     now = dt.datetime.now(dt.timezone.utc)
     due = []
