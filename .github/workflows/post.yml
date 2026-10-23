@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "post = post due tweets, check = only test the keys"
+        description: "post = post due items, check = only test the X + Facebook keys"
         default: "post"
         type: choice
         options: [post, check]
@@ -49,6 +49,8 @@ jobs:
           X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         run: |
           pip install -q requests requests-oauthlib
           python poster.py ${{ inputs.mode == 'check' && 'check' || '' }}

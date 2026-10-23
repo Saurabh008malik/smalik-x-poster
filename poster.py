@@ -1,13 +1,20 @@
-"""Smalik Cricket Poster — posts queued tweets (text + image) to X for @Smalik_wc.
+"""Smalik Cricket Poster — posts queued items to X (@Smalik_wc) and the Cricket Ki Baat Facebook Page.
 
-Queue format: queue/<name>.json  ->  {"text": "...", "image": "<name>.png", "created_at": "ISO-8601 with timezone"}
-              queue/<name>.png   ->  the tweet card image (optional)
+Queue format: queue/<name>.json
+{
+  "text": "tweet text",                     # X post
+  "image": "<name>.png",                    # X card (16:9)
+  "created_at": "ISO-8601 with timezone",
+  "platforms": ["x", "facebook"],           # optional, default ["x"]
+  "facebook": {                             # needed when "facebook" is in platforms
+    "caption": "Hinglish caption",
+    "first_comment": "optional first comment",
+    "image": "<name>-fb.jpg"                # portrait card (4:5)
+  }
+}
 
-Rules:
-- A queued tweet is posted only after DELAY_MINUTES have passed since created_at (safety window).
-- Delete its files from queue/ before then to cancel it.
-- One tweet per run, max MAX_POSTS_PER_DAY per IST day.
-- Posted items move to posted/, failed ones to failed/ (never retried automatically).
+Rules: posts after DELAY_MINUTES (0 = right away); one item per run; max MAX_POSTS_PER_DAY items per IST day.
+Each platform is attempted independently. Item -> posted/ if at least one platform worked, else failed/.
 """
 import base64
 import datetime as dt
@@ -21,49 +28,92 @@ import requests
 from requests_oauthlib import OAuth1
 
 DELAY_MINUTES = 0
-MAX_POSTS_PER_DAY = 3
+MAX_POSTS_PER_DAY = 4
+GRAPH = "https://graph.facebook.com/v26.0"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
 ROOT = pathlib.Path(__file__).parent
 QUEUE, POSTED, FAILED = ROOT / "queue", ROOT / "posted", ROOT / "failed"
 
 
-def auth():
-    return OAuth1(
-        os.environ["X_CONSUMER_KEY"], os.environ["X_CONSUMER_SECRET"],
-        os.environ["X_ACCESS_TOKEN"], os.environ["X_ACCESS_TOKEN_SECRET"],
-    )
+# ---------------- X ----------------
+def x_auth():
+    return OAuth1(os.environ["X_CONSUMER_KEY"], os.environ["X_CONSUMER_SECRET"],
+                  os.environ["X_ACCESS_TOKEN"], os.environ["X_ACCESS_TOKEN_SECRET"])
 
 
-def move(item, image, dest, extra=None):
+def post_x(text, image):
+    payload = {"text": text}
+    if image and image.exists():
+        up = requests.post("https://api.x.com/2/media/upload", auth=x_auth(), timeout=60,
+                           json={"media": base64.b64encode(image.read_bytes()).decode(),
+                                 "media_category": "tweet_image"})
+        if not up.ok:
+            raise RuntimeError(f"X image upload failed {up.status_code}: {up.text}")
+        payload["media"] = {"media_ids": [up.json()["data"]["id"]]}
+    r = requests.post("https://api.x.com/2/tweets", auth=x_auth(), json=payload, timeout=30)
+    if not r.ok:
+        raise RuntimeError(f"X post failed {r.status_code}: {r.text}")
+    tid = r.json()["data"]["id"]
+    return f"https://x.com/Smalik_wc/status/{tid}"
+
+
+# ---------------- Facebook ----------------
+def post_facebook(fb, base_dir):
+    page_id, token = os.environ.get("FB_PAGE_ID"), os.environ.get("FB_PAGE_TOKEN")
+    if not page_id or not token:
+        raise RuntimeError("FB_PAGE_ID / FB_PAGE_TOKEN secrets are missing")
+    image = base_dir / fb["image"]
+    with image.open("rb") as f:
+        r = requests.post(f"{GRAPH}/{page_id}/photos", timeout=90,
+                          data={"message": fb["caption"], "access_token": token},
+                          files={"source": (image.name, f, "image/jpeg")})
+    if not r.ok:
+        raise RuntimeError(f"Facebook post failed {r.status_code}: {r.text}")
+    res = r.json()
+    post_id = res.get("post_id") or res.get("id")
+    note = ""
+    if fb.get("first_comment"):
+        c = requests.post(f"{GRAPH}/{post_id}/comments", timeout=30,
+                          data={"message": fb["first_comment"], "access_token": token})
+        note = "" if c.ok else f" (first comment skipped: {c.status_code})"
+    return f"https://www.facebook.com/{post_id}{note}"
+
+
+# ---------------- helpers ----------------
+def move(item, files, dest, extra):
     dest.mkdir(exist_ok=True)
     data = json.loads(item.read_text())
-    if extra:
-        data.update(extra)
+    data.update(extra)
     (dest / item.name).write_text(json.dumps(data, ensure_ascii=False, indent=2))
     item.unlink()
-    if image and image.exists():
-        shutil.move(str(image), dest / image.name)
+    for f in files:
+        if f and f.exists():
+            shutil.move(str(f), dest / f.name)
 
 
 def posted_today():
     today = dt.datetime.now(IST).date().isoformat()
     if not POSTED.exists():
         return 0
-    n = 0
-    for f in POSTED.glob("*.json"):
-        if json.loads(f.read_text()).get("posted_at", "").startswith(today):
-            n += 1
-    return n
+    return sum(1 for f in POSTED.glob("*.json")
+               if json.loads(f.read_text()).get("posted_at", "").startswith(today))
 
 
 def check_keys():
-    r = requests.get("https://api.x.com/2/users/me", auth=auth(), timeout=30)
-    print("Status:", r.status_code)
-    if r.ok:
-        print("✅ Keys work! Connected to @" + r.json()["data"]["username"])
+    ok = True
+    r = requests.get("https://api.x.com/2/users/me", auth=x_auth(), timeout=30)
+    print("X:", r.status_code, ("✅ @" + r.json()["data"]["username"]) if r.ok else ("❌ " + r.text))
+    ok &= r.ok
+    page_id, token = os.environ.get("FB_PAGE_ID"), os.environ.get("FB_PAGE_TOKEN")
+    if page_id and token:
+        r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name", "access_token": token}, timeout=30)
+        print("Facebook:", r.status_code, ("✅ " + r.json().get("name", "")) if r.ok else ("❌ " + r.text))
+        ok &= r.ok
     else:
-        print("❌", r.text)
+        print("Facebook: ❌ FB_PAGE_ID / FB_PAGE_TOKEN secrets missing")
+        ok = False
+    if not ok:
         sys.exit(1)
 
 
@@ -75,9 +125,8 @@ def main():
     due = []
     for item in sorted(QUEUE.glob("*.json")):
         data = json.loads(item.read_text())
-        created = dt.datetime.fromisoformat(data["created_at"])
-        if (now - created).total_seconds() / 60 >= DELAY_MINUTES:
-            due.append((created, item, data))
+        if (now - dt.datetime.fromisoformat(data["created_at"])).total_seconds() / 60 >= DELAY_MINUTES:
+            due.append((data["created_at"], item, data))
     if not due:
         print("Nothing due.")
         return
@@ -87,31 +136,33 @@ def main():
 
     due.sort(key=lambda x: x[0])
     _, item, data = due[0]
-    image = QUEUE / data["image"] if data.get("image") else None
-    print("Posting", item.name)
+    platforms = data.get("platforms", ["x"])
+    x_image = QUEUE / data["image"] if data.get("image") else None
+    fb = data.get("facebook") or {}
+    fb_image = QUEUE / fb["image"] if fb.get("image") else None
+    print("Posting", item.name, "to", platforms)
 
-    try:
-        payload = {"text": data["text"]}
-        if image and image.exists():
-            up = requests.post(
-                "https://api.x.com/2/media/upload", auth=auth(), timeout=60,
-                json={"media": base64.b64encode(image.read_bytes()).decode(),
-                      "media_category": "tweet_image"},
-            )
-            if not up.ok:
-                raise RuntimeError(f"Image upload failed {up.status_code}: {up.text}")
-            payload["media"] = {"media_ids": [up.json()["data"]["id"]]}
+    results, errors = {}, {}
+    if "x" in platforms:
+        try:
+            results["x_url"] = post_x(data["text"], x_image)
+            print("✅ X:", results["x_url"])
+        except Exception as e:
+            errors["x_error"] = str(e); print("❌ X:", e)
+    if "facebook" in platforms:
+        try:
+            results["facebook_url"] = post_facebook(fb, QUEUE)
+            print("✅ Facebook:", results["facebook_url"])
+        except Exception as e:
+            errors["facebook_error"] = str(e); print("❌ Facebook:", e)
 
-        r = requests.post("https://api.x.com/2/tweets", auth=auth(), json=payload, timeout=30)
-        if not r.ok:
-            raise RuntimeError(f"Post failed {r.status_code}: {r.text}")
-        tweet_id = r.json()["data"]["id"]
-        move(item, image, POSTED, {"posted_at": dt.datetime.now(IST).isoformat(), "tweet_id": tweet_id,
-                                   "url": f"https://x.com/Smalik_wc/status/{tweet_id}"})
-        print(f"✅ Posted: https://x.com/Smalik_wc/status/{tweet_id}")
-    except Exception as e:  # keep failed items out of the queue so they are never retried by accident
-        move(item, image, FAILED, {"failed_at": dt.datetime.now(IST).isoformat(), "error": str(e)})
-        print("❌", e)
+    stamp = dt.datetime.now(IST).isoformat()
+    files = [x_image, fb_image]
+    if results:
+        move(item, files, POSTED, {"posted_at": stamp, **results, **errors})
+    else:
+        move(item, files, FAILED, {"failed_at": stamp, **errors})
+    if errors:
         sys.exit(1)
 
 
