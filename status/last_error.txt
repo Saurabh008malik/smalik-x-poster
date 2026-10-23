@@ -1,0 +1,3 @@
+comment 403: {"error":{"message":"(#200) You do not have sufficient permissions to perform this action","type":"OAuthException","code":200,"fbtrace_id":"AjbXSv6osbVgjaN5NaQ9BNW"}}
+token type: USER
+scopes: ['pages_show_list', 'business_management', 'pages_read_engagement', 'pages_manage_posts', 'public_profile']
