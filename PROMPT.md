@@ -8,6 +8,9 @@ The slot (`morning` or `evening`) and today's date (IST) are given at the end of
 
 ## 1. Avoid repeats
 Read the newest ~6 files in `posted/` (the `.json` ones). Do NOT pick a story that was already covered.
+- "Already covered" means the same match result OR the same key performance (e.g. a player's innings already tweeted). A preview of the next game that just repeats last game's stats counts as a repeat — skip it.
+- A follow-up on the same series is fine only if the headline fact is NEW (a new result, new record, squad change, injury).
+- When in doubt, choose a different story (other teams, women's cricket, domestic, wheelchair cricket).
 
 ## 2. Research (fresh, never from memory)
 Use WebSearch (several queries for today's date) and WebFetch. Sweep: ESPNcricinfo, Cricbuzz, ICC, BCCI and other boards, Wisden, CricTracker, Sportstar, Times of India / Hindustan Times / Indian Express sports, NDTV Sports, BBC Sport cricket, what cricket fans are talking about, plus wheelchair / para cricket news (India wheelchair team, DCCI, IWPL).
