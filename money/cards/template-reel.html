@@ -28,16 +28,21 @@
   <div class="kicker" id="kicker"></div>
   <div class="main" id="m"><h1 id="h"></h1><div class="sub" id="sub"></div><div class="src" id="src"></div></div>
   <div class="brand" id="brand">
-    <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="none" stroke="var(--accent)" stroke-width="8"/><path d="M34 62 L52 80 L88 40" fill="none" stroke="#F5F7FB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Paycheck Truths
+    <svg id="bsvg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="none" stroke="var(--accent)" stroke-width="8"/><path d="M34 62 L52 80 L88 40" fill="none" stroke="#F5F7FB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span id="bn">Paycheck Truths</span>
   </div>
   <div class="bar"><i id="prog"></i></div>
 </div>
 <script>
   const D = window.DATA;
-  const THEMES = { green: ['#19D08A', '25,208,138'], gold: ['#FFC23D', '255,194,61'], red: ['#FF5A5F', '255,90,95'], blue: ['#4C8DFF', '76,141,255'] };
+  const THEMES = { green: ['#19D08A', '25,208,138'], gold: ['#FFC23D', '255,194,61'], red: ['#FF5A5F', '255,90,95'], blue: ['#4C8DFF', '76,141,255'], saffron: ['#FF9933', '255,153,51'] };
   const t = THEMES[D.theme] || THEMES.green;
   const card = document.getElementById('card'); card.style.setProperty('--accent', t[0]);
+  if (D.brand === 'ckb') {
+    document.getElementById('bn').textContent = 'Cricket Ki Baat';
+    const sv = document.getElementById('bsvg'); sv.setAttribute('viewBox', '0 0 200 200');
+    sv.innerHTML = '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB25E"/><stop offset="1" stop-color="#FF8A1F"/></linearGradient></defs><path d="M38 22 h124 a28 28 0 0 1 28 28 v84 a28 28 0 0 1 -28 28 h-74 l-34 28 v-28 h-16 a28 28 0 0 1 -28 -28 v-84 a28 28 0 0 1 28 -28 z" fill="url(#g)"/><circle cx="100" cy="92" r="50" fill="#0F1A33"/><path d="M94 43 V141 M106 43 V141" stroke="#F5F7FB" stroke-width="5" stroke-linecap="round"/>';
+  }
   document.getElementById('kicker').textContent = D.kicker || 'Money truth';
   const tmp = document.createElement('div'); tmp.innerHTML = D.headline;
   const words = [];

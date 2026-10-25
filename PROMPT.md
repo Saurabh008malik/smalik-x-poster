@@ -52,4 +52,16 @@ Write `queue/DATE-SLOT.json` (UTF-8, keep the bold letters and emoji as-is):
  "facebook":{"caption":"<caption>","first_comment":"<first comment>","image":"DATE-SLOT-fb.jpg"},
  "sources":["<url>","<url>"]}
 ```
+## 6. Reel (ONLY when SLOT = evening)
+Also make ONE short animated Reel for the Facebook Page (not for X). Same brand design and same music as everything else.
+- Pick the most exciting fact/moment of the day (can be the same story as the post but a different angle, e.g. a stat reveal). Never invent facts.
+- Write `/tmp/reel.json`: `{"brand":"ckb","theme":"saffron","music":"uplift","kicker":"Record alert","headline":"ERASMUS <em>156*</em> OFF 125","sub":"Namibia 321/6, Ireland all out 290","source":"Data: ESPNcricinfo"}` — headline max ~40 characters (caps, key number in `<em>`), sub max ~60 characters, `source` optional.
+- Render: `python3 money/reel.py /tmp/reel.json queue/DATE-SLOT-reel.mp4` (about 40 seconds). Optionally view a frame with `ffmpeg -ss 5 -i queue/DATE-SLOT-reel.mp4 -frames:v 1 /tmp/f.png` and Read it.
+- Write `queue/DATE-SLOT-reel.json`:
+```json
+{"text":"","created_at":"<now, UTC ISO-8601 with +00:00, 1 minute AFTER the main post's created_at>",
+ "platforms":["facebook"],
+ "facebook":{"caption":"<Hinglish caption, bold Unicode hook, 👉 bullets, fan question, #CricketKiBaat>","first_comment":"<Hinglish one-liner>","video":"DATE-SLOT-reel.mp4"},
+ "sources":["<url>"]}
+```
 Do NOT run poster.py, git, or post anything yourself — the workflow does that after you finish.

@@ -70,8 +70,35 @@ def page_token():
     return page_id, token
 
 
+def post_fb_reel(fb, base_dir, page_id, token):
+    import time
+    video = base_dir / fb["video"]
+    r = requests.post(f"{GRAPH}/{page_id}/video_reels", timeout=60, data={"upload_phase": "start", "access_token": token})
+    if not r.ok:
+        raise RuntimeError(f"Reel start failed {r.status_code}: {r.text}")
+    vid, upload_url = r.json()["video_id"], r.json()["upload_url"]
+    blob = video.read_bytes()
+    u = requests.post(upload_url, timeout=300, data=blob,
+                      headers={"Authorization": f"OAuth {token}", "offset": "0", "file_size": str(len(blob))})
+    if not u.ok:
+        raise RuntimeError(f"Reel upload failed {u.status_code}: {u.text}")
+    f = requests.post(f"{GRAPH}/{page_id}/video_reels", timeout=60,
+                      data={"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
+                            "description": fb["caption"], "access_token": token})
+    if not f.ok:
+        raise RuntimeError(f"Reel publish failed {f.status_code}: {f.text}")
+    note = ""
+    if fb.get("first_comment"):
+        time.sleep(20)
+        c = requests.post(f"{GRAPH}/{vid}/comments", timeout=30, data={"message": fb["first_comment"], "access_token": token})
+        note = "" if c.ok else f" (first comment skipped: {c.status_code})"
+    return f"https://www.facebook.com/reel/{vid}{note}"
+
+
 def post_facebook(fb, base_dir):
     page_id, token = page_token()
+    if fb.get("video"):
+        return post_fb_reel(fb, base_dir, page_id, token)
     image = base_dir / fb["image"]
     with image.open("rb") as f:
         r = requests.post(f"{GRAPH}/{page_id}/photos", timeout=90,
@@ -184,11 +211,20 @@ def main():
         return
 
     due.sort(key=lambda x: x[0])
-    _, item, data = due[0]
+    slots_left = MAX_POSTS_PER_DAY - posted_today()
+    any_error = False
+    for _, item, data in due[:max(1, slots_left)]:
+        any_error |= post_item(item, data)
+    if any_error:
+        sys.exit(1)
+
+
+def post_item(item, data):
     platforms = data.get("platforms", ["x"])
     x_image = QUEUE / data["image"] if data.get("image") else None
     fb = data.get("facebook") or {}
     fb_image = QUEUE / fb["image"] if fb.get("image") else None
+    fb_video = QUEUE / fb["video"] if fb.get("video") else None
     print("Posting", item.name, "to", platforms)
 
     results, errors = {}, {}
@@ -206,13 +242,12 @@ def main():
             errors["facebook_error"] = str(e); print("❌ Facebook:", e)
 
     stamp = dt.datetime.now(IST).isoformat()
-    files = [x_image, fb_image]
+    files = [x_image, fb_image, fb_video]
     if results:
         move(item, files, POSTED, {"posted_at": stamp, **results, **errors})
     else:
         move(item, files, FAILED, {"failed_at": stamp, **errors})
-    if errors:
-        sys.exit(1)
+    return bool(errors)
 
 
 if __name__ == "__main__":
