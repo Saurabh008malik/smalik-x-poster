@@ -1,0 +1,5 @@
+page call: 200 {"id":"1325179577355986","name":"Paycheck Truths"}
+type: PAGE
+expires_at: 0
+data_access_expires_at: 1800718029
+scopes: ['pages_show_list', 'business_management', 'pages_read_engagement', 'pages_read_user_content', 'pages_manage_posts', 'pages_manage_engagement', 'public_profile']
