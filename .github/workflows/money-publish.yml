@@ -1,0 +1,42 @@
+name: Money page - publish due posts
+
+on:
+  schedule:
+    - cron: "5 11-23,0-2 * * *"   # hourly at :05 across the US daytime/evening window (UTC)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "post = publish due posts, check = test the Page token"
+        default: "post"
+        type: choice
+        options: [post, check]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poster
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Publish
+        env:
+          MONEY_FB_PAGE_ID: ${{ secrets.MONEY_FB_PAGE_ID }}
+          MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+        run: |
+          if [ "${{ inputs.mode }}" = "check" ]; then python money/poster.py check; else python money/poster.py; fi
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
+          for d in money/queue money/posted money/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
+          git diff --cached --quiet || (git commit -m "Money page: publish run" && git pull --rebase -q && git push)

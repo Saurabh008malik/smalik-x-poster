@@ -1,0 +1,84 @@
+name: Money page - make today's 8 posts (Claude)
+
+on:
+  schedule:
+    - cron: "30 0 * * *"   # 6:00 AM IST = 8:30 PM New York (posts are for the next US day)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true = make the posts but keep them in money/drafts (don't queue for publishing)"
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: poster
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      HAVE_PAGE: ${{ secrets.MONEY_FB_PAGE_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide what to do
+        id: s
+        run: |
+          DRY="${{ inputs.dry_run }}"; [ "${{ github.event_name }}" = "schedule" ] && DRY=false
+          TARGET=$(TZ=America/New_York date -d '+12 hours' +%F)
+          echo "dry=$DRY" >> "$GITHUB_OUTPUT"; echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          SKIP=no
+          if [ "$DRY" = "false" ] && [ "$HAVE_PAGE" != "true" ]; then SKIP=yes; echo "Money page not connected yet - skipping."; fi
+          if ls money/posted/$TARGET-* money/queue/$TARGET-* >/dev/null 2>&1 && [ "$DRY" = "false" ]; then SKIP=yes; echo "Already made for $TARGET."; fi
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        if: steps.s.outputs.skip == 'no'
+        with:
+          python-version: "3.12"
+
+      - name: Install tools and fonts
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-inter fonts-noto-color-emoji >/dev/null
+          pip install -q requests playwright
+          python -m playwright install --with-deps chromium >/dev/null
+
+      - name: Claude researches, writes and builds the 8 posts
+        if: steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read money/PROMPT.md in the repository root and follow it exactly.
+            TARGET_DATE = ${{ steps.s.outputs.target }}
+          claude_args: |
+            --max-turns 70
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Check the posts were made
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          N=$(ls money/queue/${{ steps.s.outputs.target }}-*.json | wc -l); echo "posts: $N"; test "$N" -ge 6
+
+      - name: Dry run - keep as drafts
+        if: steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'true'
+        run: |
+          mkdir -p money/drafts
+          mv money/queue/${{ steps.s.outputs.target }}-* money/drafts/
+
+      - name: Save
+        if: always() && steps.s.outputs.skip == 'no'
+        run: |
+          git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A money/queue money/drafts || true
+          git diff --cached --quiet || (git commit -m "Money page: posts for ${{ steps.s.outputs.target }}" && git pull --rebase -q && git push)
