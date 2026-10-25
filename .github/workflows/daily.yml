@@ -1,0 +1,108 @@
+name: Daily cricket post (Claude + post)
+
+on:
+  schedule:
+    - cron: "11 3 * * *"    # 8:41 AM IST  -> morning
+    - cron: "11 14 * * *"   # 7:41 PM IST  -> evening
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "morning or evening"
+        default: "evening"
+        type: choice
+        options: [morning, evening]
+      dry_run:
+        description: "true = make the post but don't publish (saved to drafts/)"
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: poster
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out slot and date
+        id: s
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            H=$(date -u +%H); if [ "$H" -lt 10 ]; then SLOT=morning; else SLOT=evening; fi
+            DRY=false
+          else
+            SLOT="${{ inputs.slot }}"; DRY="${{ inputs.dry_run }}"
+          fi
+          DATE=$(TZ=Asia/Kolkata date +%Y-%m-%d)
+          echo "slot=$SLOT" >> "$GITHUB_OUTPUT"; echo "date=$DATE" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"
+          if [ -f "posted/$DATE-$SLOT.json" ] && [ "$DRY" = "false" ]; then echo "skip=yes" >> "$GITHUB_OUTPUT"; else echo "skip=no" >> "$GITHUB_OUTPUT"; fi
+          echo "Slot=$SLOT Date=$DATE Dry=$DRY"
+
+      - uses: actions/setup-python@v5
+        if: steps.s.outputs.skip == 'no'
+        with:
+          python-version: "3.12"
+
+      - name: Install tools and fonts
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-inter fonts-noto-color-emoji >/dev/null
+          pip install -q requests requests-oauthlib playwright
+          python -m playwright install --with-deps chromium >/dev/null
+
+      - name: Claude researches, writes and makes the cards
+        if: steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read PROMPT.md in the repository root and follow it exactly.
+            SLOT = ${{ steps.s.outputs.slot }}
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            Use DATE-SLOT = ${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }} for all file names.
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Check the post was made
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          F="queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}"
+          ls -la queue
+          test -f "$F.json" && test -f "$F.png" && test -f "$F-fb.jpg"
+          python -c "import json;d=json.load(open('$F.json'));assert d['text'] and d['facebook']['caption'];print(d['text'])"
+
+      - name: Dry run - keep as draft
+        if: steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'true'
+        run: |
+          mkdir -p drafts
+          mv queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}* drafts/
+
+      - name: Publish to X + Facebook
+        if: steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'false'
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: python poster.py
+
+      - name: Save results
+        if: always() && steps.s.outputs.skip == 'no'
+        run: |
+          git config user.name "smalik-poster-bot"
+          git config user.email "actions@users.noreply.github.com"
+          for d in queue posted failed drafts status; do [ -e "$d" ] && git add -A "$d" || true; done
+          git diff --cached --quiet || (git commit -m "Daily post ${{ steps.s.outputs.date }} ${{ steps.s.outputs.slot }}" && git pull --rebase -q && git push)
