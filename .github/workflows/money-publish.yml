@@ -9,7 +9,11 @@ on:
         description: "post = publish due posts, check = test the Page token"
         default: "post"
         type: choice
-        options: [post, check]
+        options: [post, check, delete]
+      target:
+        description: "for mode=delete: the Facebook post/video id to delete"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -32,8 +36,11 @@ jobs:
         env:
           MONEY_FB_PAGE_ID: ${{ secrets.MONEY_FB_PAGE_ID }}
           MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+          TARGET: ${{ inputs.target }}
         run: |
-          if [ "${{ inputs.mode }}" = "check" ]; then python money/poster.py check; else python money/poster.py; fi
+          if [ "${{ inputs.mode }}" = "check" ]; then python money/poster.py check
+          elif [ "${{ inputs.mode }}" = "delete" ]; then python money/poster.py delete "$TARGET"
+          else python money/poster.py; fi
       - name: Save
         if: always()
         run: |

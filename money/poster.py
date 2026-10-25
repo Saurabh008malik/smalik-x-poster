@@ -92,12 +92,21 @@ def check():
     sys.exit(0 if r.ok else 1)
 
 
+def delete(target):
+    page_id, token = page_token()
+    r = requests.delete(f"{GRAPH}/{target}", params={"access_token": token}, timeout=30)
+    print("Delete:", r.status_code, r.text[:300])
+    sys.exit(0 if r.ok else 1)
+
+
 def main():
     if not os.environ.get("MONEY_FB_PAGE_ID") or not os.environ.get("MONEY_FB_PAGE_TOKEN"):
         print("Money page secrets not set yet - nothing to do.")
         return
     if len(sys.argv) > 1 and sys.argv[1] == "check":
         return check()
+    if len(sys.argv) > 2 and sys.argv[1] == "delete":
+        return delete(sys.argv[2])
     now = dt.datetime.now(dt.timezone.utc)
     due = []
     for f in sorted(QUEUE.glob("*.json")):

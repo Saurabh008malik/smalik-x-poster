@@ -12,6 +12,8 @@ from playwright.sync_api import sync_playwright
 
 HERE = pathlib.Path(__file__).parent
 FPS = 24
+MUSIC = HERE / "music"
+BY_THEME = {"green": "calm", "gold": "uplift", "red": "focus", "blue": "focus"}
 
 
 def render(card, out):
@@ -27,10 +29,14 @@ def render(card, out):
             page.evaluate(f"setT({f / FPS})")
             page.screenshot(path=f"{tmp}/f{f:04d}.jpg", type="jpeg", quality=88)
         b.close()
+        track = MUSIC / f"{card.get('music') or BY_THEME.get(card.get('theme'), 'calm')}.mp3"
+        if not track.exists():
+            track = MUSIC / "calm.mp3"
+        fade = f"afade=t=in:d=0.4,afade=t=out:st={max(0.0, dur - 1.6):.2f}:d=1.6,volume=0.9"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", f"{tmp}/f%04d.jpg",
-                        "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-shortest",
+                        "-i", str(track), "-t", f"{dur:.2f}", "-af", fade,
                         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-r", str(FPS),
-                        "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", str(out)], check=True)
+                        "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart", str(out)], check=True)
     print(f"reel ok: {out} ({dur:.1f}s)")
 
 
