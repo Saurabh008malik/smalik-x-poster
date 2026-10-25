@@ -1,16 +1,21 @@
 # Paycheck Truths — daily batch (instructions for Claude, runs inside GitHub Actions)
 
-You write ONE DAY of posts (8 posts) for the Facebook Page **Paycheck Truths** — real money talk for everyday Americans (English, US audience; UK readers welcome). The Page is run by Saurabh Malik, who is not American, so every fact must be verified and the voice must feel like a relatable US person talking about paychecks, rent, prices, debt and wealth habits.
+You write ONE DAY of posts (8 posts + 1 Reel = 9 items) for the Facebook Page **Paycheck Truths** — real money talk for everyday Americans (English, US audience; UK readers welcome). The Page is run by Saurabh Malik, who is not American, so every fact must be verified and the voice must feel like a relatable US person talking about paychecks, rent, prices, debt and wealth habits.
 
 TARGET_DATE (US Eastern) is given at the end of this prompt. The workflow publishes the posts at 8 slots through that US day.
 
 ## 1. Avoid repeats
 List the newest files in `money/posted/` and `money/queue/` (.json). Never reuse a topic or angle already used in the last ~3 days.
 
-## 2. Research (fresh, never from memory)
-Use WebSearch + WebFetch for today's US money news and what people are talking about: rent and housing costs, mortgage rates, grocery/gas/insurance prices, inflation (CPI), wages and layoffs, credit scores, student loans, taxes, Social Security, credit-card debt, tariffs' effect on prices, side hustles, "cost of living" stories, Reddit r/personalfinance and r/Frugal threads, viral money posts on X. Verify every number against a reliable source (BLS, Fed, Census, AP, Reuters, CNBC, NerdWallet, Bankrate…). If you can't verify a number, don't use it.
+## 2. Research (fresh, never from memory — and NEVER limit yourself to a few sites)
+Go as wide as you can. Run many WebSearch queries and WebFetch pages from as many different sources as possible, then pick what is genuinely trending and what Americans are arguing about or worried about TODAY.
+- News & data: AP, Reuters, CNBC, Bloomberg, WSJ, NYT, Washington Post, USA Today, Yahoo Finance, MarketWatch, Fox Business, CBS/NBC/ABC News, NPR, Axios, Business Insider, Fortune, Forbes, CNN Business, local US news; official data from BLS, Fed, Census, Treasury, CFPB, SSA, IRS, FHFA, Freddie Mac, Zillow, Redfin, GasBuddy/AAA.
+- Consumer-money sites: NerdWallet, Bankrate, Investopedia, Kiplinger, The Balance, LendingTree, Credit Karma, Experian, MoneyUnder30, Clark Howard, Dave Ramsey, The Penny Hoarder.
+- What people are talking about: X/Twitter trends and viral money posts, Reddit (r/personalfinance, r/povertyfinance, r/Frugal, r/financialindependence, r/RealEstate, r/jobs, r/antiwork, r/news, r/economy), Google Trends / trending searches, Facebook and Instagram viral money posts, YouTube and TikTok finance trends, newsletters and podcasts, comment sections of big news stories.
+- Topics: rent and housing, mortgage rates, groceries, gas, insurance, healthcare bills, inflation/CPI, wages, layoffs, side hustles, credit scores, debt, student loans, taxes, Social Security, retirement basics, tariffs and prices, scams, subscription costs, cost-of-living stories, money psychology.
+Pick the biggest, most talked-about stories — not the first result. Verify every number against at least one reliable source (ideally the original data). If you can't verify a number, don't use it. Original wording only.
 
-## 3. The 8 posts (in this order)
+## 3. The 9 items (in this order)
 1. **News card** — a verified US money story from the last ~48h, explained simply. Card `source` = "Source: <outlet>".
 2. **Relatable money frustration** card (Josh-Rincon style: "Can someone explain why…", "Unpopular opinion: …").
 3. **Wealth mindset / motivation** card (Entrepreneurship-Facts style, short punchy truth).
@@ -19,6 +24,7 @@ Use WebSearch + WebFetch for today's US money news and what people are talking a
 6. **Text-only post** — a relatable question or confession with no image (set `"card": null`).
 7. **News card #2** — a different verified story.
 8. **Relatable frustration or "100 vs 1000 dollars" style comparison** card.
+9. **REEL** — a short animated text video (same design, 9:16). Set `"reel": true` and give it a `card` like the others. It must have a strong hook and a REVEAL: the headline appears word by word, then the `sub` line appears at the end (e.g. a myth-buster: headline "Checking your own credit score does <em>NOT</em> lower it." + sub "It's a soft inquiry. No impact on your score."). Headline max ~55 characters, sub max ~60 characters. Pick the topic with the strongest hook of the day. Caption: 2–3 short lines + question. The Reel is published around noon New York time.
 
 ## 4. Rules
 - ORIGINAL wording. Never copy another page's or person's post; no screenshots of tweets. Use ideas, not their text.
@@ -28,7 +34,7 @@ Use WebSearch + WebFetch for today's US money news and what people are talking a
 - Never mention "Pradeep Raj".
 
 ## 5. Write `/tmp/posts.json`
-A JSON list of 8 objects:
+A JSON list of 9 objects:
 ```json
 {"caption":"<Facebook post text: a hook line, 2–4 short lines, then an engagement question>",
  "first_comment":"<one line that drives replies, e.g. 'Be honest: what is your biggest monthly bill right now? 👇'>",

@@ -27,7 +27,36 @@ def page_token():
     return page_id, token
 
 
+def post_reel(item, page_id, token):
+    video = QUEUE / item["video"]
+    r = requests.post(f"{GRAPH}/{page_id}/video_reels", timeout=60,
+                      data={"upload_phase": "start", "access_token": token})
+    if not r.ok:
+        raise RuntimeError(f"Reel start failed {r.status_code}: {r.text}")
+    vid, upload_url = r.json()["video_id"], r.json()["upload_url"]
+    data = video.read_bytes()
+    u = requests.post(upload_url, timeout=300, data=data,
+                      headers={"Authorization": f"OAuth {token}", "offset": "0", "file_size": str(len(data))})
+    if not u.ok:
+        raise RuntimeError(f"Reel upload failed {u.status_code}: {u.text}")
+    f = requests.post(f"{GRAPH}/{page_id}/video_reels", timeout=60,
+                      data={"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
+                            "description": item["caption"], "access_token": token})
+    if not f.ok:
+        raise RuntimeError(f"Reel publish failed {f.status_code}: {f.text}")
+    note = ""
+    if item.get("first_comment"):
+        import time
+        time.sleep(20)
+        c = requests.post(f"{GRAPH}/{vid}/comments", timeout=30,
+                          data={"message": item["first_comment"], "access_token": token})
+        note = "" if c.ok else f" (first comment skipped: {c.status_code})"
+    return f"https://www.facebook.com/reel/{vid}{note}"
+
+
 def post_one(item, page_id, token):
+    if item.get("video"):
+        return post_reel(item, page_id, token)
     if item.get("image"):
         img = QUEUE / item["image"]
         with img.open("rb") as f:
@@ -96,8 +125,9 @@ def main():
         data.update(extra, done_at=dt.datetime.now(dt.timezone.utc).isoformat())
         (dest / f.name).write_text(json.dumps(data, ensure_ascii=False, indent=2))
         f.unlink()
-        if data.get("image") and (QUEUE / data["image"]).exists():
-            shutil.move(str(QUEUE / data["image"]), dest / data["image"])
+        for key in ("image", "video"):
+            if data.get(key) and (QUEUE / data[key]).exists():
+                shutil.move(str(QUEUE / data[key]), dest / data[key])
     if failed:
         sys.exit(1)
 

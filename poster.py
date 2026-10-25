@@ -137,6 +137,7 @@ def retry_comment():
     """Retry the Facebook first comment on the newest posted item where it was skipped."""
     _, token = page_token()
     items = sorted(POSTED.glob("*.json"), key=lambda f: json.loads(f.read_text()).get("posted_at", ""))
+    done = 0
     for f in reversed(items):
         data = json.loads(f.read_text())
         url = data.get("facebook_url", "")
@@ -158,9 +159,9 @@ def retry_comment():
         data["facebook_url"] = f"https://www.facebook.com/{post_id}"
         data["first_comment_id"] = c.json().get("id")
         f.write_text(json.dumps(data, ensure_ascii=False, indent=2))
-        print("✅ First comment added")
-        return
-    print("No post waiting for a first comment.")
+        print("✅ First comment added:", post_id)
+        done += 1
+    print(f"Done - {done} comment(s) added.")
 
 
 def main():
