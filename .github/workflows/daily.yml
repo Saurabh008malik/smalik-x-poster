@@ -3,7 +3,11 @@ name: Daily cricket post (Claude + post)
 on:
   schedule:
     - cron: "11 3 * * *"    # 8:41 AM IST  -> morning
+    - cron: "41 4 * * *"    # backup retry (skipped automatically if already posted)
+    - cron: "11 6 * * *"    # backup retry
     - cron: "11 14 * * *"   # 7:41 PM IST  -> evening
+    - cron: "41 15 * * *"   # backup retry
+    - cron: "11 17 * * *"   # backup retry
   workflow_dispatch:
     inputs:
       slot:
