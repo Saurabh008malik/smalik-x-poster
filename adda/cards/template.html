@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /*FONTS*/
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; }
+  body { font-family: "Mukta", "Inter", "Noto Color Emoji", sans-serif; overflow: hidden; }
+  .card { position: relative; width: 1080px; height: 1350px; padding: 80px 76px 60px; display: flex; flex-direction: column;
+    background: var(--bg); color: var(--ink); overflow: hidden; }
+  .rays { position: absolute; right: -520px; top: -520px; width: 1400px; height: 1400px; border-radius: 50%;
+    background: repeating-conic-gradient(var(--ray) 0 7deg, transparent 7deg 14deg); opacity: .9; pointer-events: none; }
+  .blob { position: absolute; left: -220px; bottom: -260px; width: 620px; height: 620px; border-radius: 50%; background: var(--blob); pointer-events: none; }
+  .top { position: relative; display: flex; align-items: center; justify-content: space-between; }
+  .kicker { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--kick-ink); background: var(--kick-bg); padding: 14px 28px; border-radius: 999px; }
+  .num { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 26px; color: var(--muted); }
+  .main { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 26px 0; }
+  h1 { font-family: "Bricolage", sans-serif; font-weight: 800; line-height: 1.02; letter-spacing: -.03em; font-size: 140px; }
+  h1 em { font-style: normal; color: #fff; background: #E23D47; padding: 0 .16em; border-radius: .14em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .dark h1 em { color: #17130F; background: #FFD43B; }
+  .sub { margin-top: 30px; font-size: 40px; font-weight: 500; line-height: 1.28; color: var(--sub); }
+  ul { list-style: none; margin-top: 34px; display: flex; flex-direction: column; gap: 16px; }
+  li { display: flex; align-items: flex-start; gap: 20px; font-size: 38px; font-weight: 700; line-height: 1.22;
+    background: var(--chip); border: 4px solid var(--ink); border-radius: 22px; padding: 16px 24px; box-shadow: 7px 8px 0 var(--ink); }
+  li b { flex: none; font-family: "Bricolage", sans-serif; font-weight: 800; width: 52px; height: 52px; border-radius: 50%;
+    background: var(--ink); color: var(--bg-solid); display: grid; place-items: center; font-size: 30px; margin-top: -2px; }
+  .foot { position: relative; display: flex; justify-content: space-between; align-items: center; border-top: 3px solid var(--line); padding-top: 26px; }
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .brand img { width: 84px; height: 84px; border-radius: 50%; border: 4px solid var(--ink); object-fit: cover; }
+  .brand div { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05; }
+  .brand small { display: block; font-family: "Mukta", sans-serif; font-weight: 500; font-size: 24px; color: var(--muted); }
+  .cta { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 26px; background: var(--ink); color: var(--bg-solid); padding: 14px 24px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="rays"></div><div class="blob"></div>
+  <div class="top"><div class="kicker" id="kicker"></div><div class="num" id="num"></div></div>
+  <div class="main" id="m"><h1 id="h"></h1><div class="sub" id="sub"></div><ul id="pts"></ul></div>
+  <div class="foot">
+    <div class="brand"><img src="HOST_SRC" alt=""><div>Creator Adda<small>@real_creator_adda</small></div></div>
+    <div class="cta" id="cta">Save karo 🔖</div>
+  </div>
+</div>
+<script>
+  const D = window.DATA;
+  const THEMES = {
+    yellow: { bg: '#FFD43B', solid: '#FFD43B', ink: '#17130F', sub: '#3B2F12', muted: '#5C4A12', ray: 'rgba(255,255,255,.22)', blob: 'rgba(245,184,0,.55)', kb: '#17130F', ki: '#FFD43B', chip: '#FFFFFF', line: 'rgba(23,19,15,.18)' },
+    dark:   { bg: '#17130F', solid: '#17130F', ink: '#FFFDF7', sub: '#D9D2C6', muted: '#A79E90', ray: 'rgba(255,212,59,.06)', blob: 'rgba(255,212,59,.10)', kb: '#FFD43B', ki: '#17130F', chip: '#2A241D', line: 'rgba(255,255,255,.14)' },
+    white:  { bg: '#FFFDF7', solid: '#FFFDF7', ink: '#17130F', sub: '#3B342D', muted: '#6E655A', ray: 'rgba(255,212,59,.22)', blob: 'rgba(255,212,59,.35)', kb: '#E23D47', ki: '#FFFFFF', chip: '#FFF6D1', line: 'rgba(23,19,15,.14)' }
+  };
+  const name = THEMES[D.theme] ? D.theme : 'yellow';
+  const t = THEMES[name];
+  const card = document.getElementById('card');
+  if (name === 'dark') card.classList.add('dark');
+  const set = (k, v) => card.style.setProperty(k, v);
+  set('--bg', t.bg); set('--bg-solid', t.solid); set('--ink', t.ink); set('--sub', t.sub); set('--muted', t.muted);
+  set('--ray', t.ray); set('--blob', t.blob); set('--kick-bg', t.kb); set('--kick-ink', t.ki); set('--chip', t.chip); set('--line', t.line);
+  document.getElementById('kicker').textContent = D.kicker || 'YouTube tip';
+  document.getElementById('num').textContent = D.label || '';
+  if (D.cta) document.getElementById('cta').textContent = D.cta;
+  const h = document.getElementById('h'); h.innerHTML = D.headline;
+  const sub = document.getElementById('sub'); if (D.sub) sub.textContent = D.sub; else sub.remove();
+  const ul = document.getElementById('pts');
+  if (D.points && D.points.length) ul.innerHTML = D.points.slice(0, 5).map((p, i) => `<li><b>${i + 1}</b><span>${p}</span></li>`).join(''); else ul.remove();
+  const m = document.getElementById('m');
+  let size = D.points && D.points.length ? 104 : 140;
+  while ((m.scrollHeight > m.clientHeight + 1 || h.scrollWidth > h.clientWidth + 1) && size > 40) {
+    size -= 4; h.style.fontSize = size + 'px';
+    if (ul.isConnected && size < 76) ul.querySelectorAll('li').forEach(li => li.style.fontSize = Math.max(28, size * 0.42) + 'px');
+  }
+  window.__fit = size;
+  window.__min = D.points && D.points.length ? 64 : 80;
+</script>
+</body>
+</html>

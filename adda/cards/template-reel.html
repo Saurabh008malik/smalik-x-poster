@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /*FONTS*/
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; }
+  body { font-family: "Mukta", "Inter", "Noto Color Emoji", sans-serif; overflow: hidden; background: #FFD43B; color: #17130F; }
+  .card { position: relative; width: 1080px; height: 1920px; padding: 230px 84px 0; display: flex; flex-direction: column; background: #FFD43B; overflow: hidden; }
+  .rays { position: absolute; left: 50%; top: 40%; width: 3200px; height: 3200px; margin: -1600px; border-radius: 50%;
+    background: repeating-conic-gradient(rgba(255,255,255,.20) 0 7deg, transparent 7deg 14deg); }
+  .blob { position: absolute; left: -260px; bottom: -200px; width: 760px; height: 760px; border-radius: 50%; background: rgba(245,184,0,.55); }
+  .kicker { position: relative; align-self: flex-start; font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: .1em; text-transform: uppercase;
+    color: #FFD43B; background: #17130F; padding: 18px 34px; border-radius: 999px; opacity: 0; }
+  .main { position: relative; height: 1020px; margin-top: 40px; display: flex; flex-direction: column; justify-content: center; }
+  h1 { font-family: "Bricolage", sans-serif; font-weight: 800; line-height: 1.04; letter-spacing: -.03em; font-size: 150px; }
+  h1 .w { display: inline-block; margin-right: .22em; opacity: 0; }
+  h1 .w.em { color: #fff; background: #E23D47; padding: 0 .14em; border-radius: .12em; }
+  .sub { margin-top: 40px; font-size: 50px; font-weight: 700; line-height: 1.25; color: #3B2F12; opacity: 0; }
+  ul { list-style: none; margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
+  li { display: flex; align-items: flex-start; gap: 22px; font-size: 46px; font-weight: 700; line-height: 1.2; background: #fff;
+    border: 5px solid #17130F; border-radius: 26px; padding: 20px 28px; box-shadow: 8px 9px 0 #17130F; opacity: 0; }
+  li b { flex: none; font-family: "Bricolage", sans-serif; font-weight: 800; width: 62px; height: 62px; border-radius: 50%; background: #17130F; color: #FFD43B; display: grid; place-items: center; font-size: 36px; }
+  .host { position: absolute; left: 84px; right: 84px; top: 1440px; display: flex; align-items: center; gap: 24px; opacity: 0; }
+  .host img { width: 132px; height: 132px; border-radius: 50%; border: 6px solid #17130F; object-fit: cover; }
+  .host div { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 44px; line-height: 1.05; }
+  .host small { display: block; font-family: "Mukta", sans-serif; font-weight: 500; font-size: 32px; color: #5C4A12; }
+  .bar { position: absolute; left: 84px; right: 84px; top: 1620px; height: 10px; border-radius: 10px; background: rgba(23,19,15,.15); }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 10px; background: #17130F; }
+  .end { position: absolute; inset: 0; background: #17130F; color: #FFFDF7; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 90px; opacity: 0; }
+  .end img { width: 300px; height: 300px; border-radius: 50%; border: 10px solid #FFD43B; object-fit: cover; }
+  .end h2 { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 96px; line-height: 1.02; margin-top: 50px; letter-spacing: -.02em; }
+  .end h2 span { color: #FFD43B; }
+  .end p { font-size: 46px; font-weight: 500; color: #D9D2C6; margin-top: 30px; }
+  .end .promo { margin-top: 56px; font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 40px; white-space: nowrap; background: #FFD43B; color: #17130F; padding: 24px 40px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="rays" id="rays"></div><div class="blob"></div>
+  <div class="kicker" id="kicker"></div>
+  <div class="main" id="m"><h1 id="h"></h1><div class="sub" id="sub"></div><ul id="pts"></ul></div>
+  <div class="host" id="host"><img src="HOST_SRC" alt=""><div>Creator Adda<small>@real_creator_adda</small></div></div>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="end" id="end">
+    <img src="HOST_SRC" alt="">
+    <h2>Aisi tips <span>daily</span> chahiye?</h2>
+    <p>Follow karo @real_creator_adda 🔔</p>
+    <div class="promo" id="promo">Poori YouTube Kit ₹99 · link bio mein</div>
+  </div>
+</div>
+<script>
+  const D = window.DATA;
+  document.getElementById('kicker').textContent = D.kicker || 'YouTube tip';
+  const tmp = document.createElement('div'); tmp.innerHTML = D.headline;
+  const words = [];
+  tmp.childNodes.forEach(n => { const em = n.nodeName === 'EM'; n.textContent.split(/\s+/).filter(Boolean).forEach(w => words.push({ w, em })); });
+  const h = document.getElementById('h');
+  h.innerHTML = words.map(x => `<span class="w${x.em ? ' em' : ''}">${x.w}</span>`).join('');
+  const sub = document.getElementById('sub'); if (D.sub) sub.textContent = D.sub; else sub.remove();
+  const ul = document.getElementById('pts');
+  const pts = (D.points || []).slice(0, 4);
+  if (pts.length) ul.innerHTML = pts.map((p, i) => `<li><b>${i + 1}</b><span>${p}</span></li>`).join(''); else ul.remove();
+  if (!D.promo) document.getElementById('promo').remove();
+  const m = document.getElementById('m');
+  let size = pts.length ? 120 : 150;
+  while ((m.scrollHeight > m.clientHeight + 1 || h.scrollWidth > h.clientWidth + 1) && size > 40) { size -= 4; h.style.fontSize = size + 'px'; }
+  window.__fit = size;
+  const WS = 0.7, WD = 0.3;
+  const afterHead = WS + words.length * WD + 0.5;
+  const PD = 1.6;
+  const subAt = afterHead;
+  const ptsAt = afterHead + (D.sub ? 1.4 : 0);
+  const contentEnd = ptsAt + pts.length * PD + 2.6;
+  const endAt = Math.max(contentEnd, 7);
+  window.__duration = endAt + 3.4;
+  const clamp = x => Math.max(0, Math.min(1, x));
+  const ease = x => 1 - Math.pow(1 - x, 3);
+  const wEls = [...h.querySelectorAll('.w')];
+  const liEls = [...ul.querySelectorAll('li')];
+  window.setT = function (s) {
+    const k = document.getElementById('kicker'); const pk = ease(clamp(s / 0.5)); k.style.opacity = pk; k.style.transform = `translateY(${(1 - pk) * 24}px)`;
+    wEls.forEach((el, i) => { const p = ease(clamp((s - (WS + i * WD)) / 0.3)); el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 50}px) scale(${0.92 + 0.08 * p})`; });
+    const ps = ease(clamp((s - subAt) / 0.5)); sub.style.opacity = ps; sub.style.transform = `translateY(${(1 - ps) * 26}px)`;
+    liEls.forEach((el, i) => { const p = ease(clamp((s - (ptsAt + i * PD)) / 0.4)); el.style.opacity = p; el.style.transform = `translateX(${(1 - p) * -60}px)`; });
+    const ph = ease(clamp((s - 0.3) / 0.6)); const host = document.getElementById('host'); host.style.opacity = ph; host.style.transform = `translateY(${(1 - ph) * 40}px)`;
+    document.getElementById('prog').style.width = (clamp(s / endAt) * 100) + '%';
+    document.getElementById('rays').style.transform = `rotate(${s * 4}deg)`;
+    const pe = ease(clamp((s - endAt) / 0.5)); const end = document.getElementById('end'); end.style.opacity = pe; end.style.transform = `scale(${1.04 - 0.04 * pe})`;
+  };
+  window.setT(0);
+</script>
+</body>
+</html>

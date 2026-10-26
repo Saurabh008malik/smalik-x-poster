@@ -42,9 +42,18 @@ jobs:
           elif [ "${{ inputs.mode }}" = "delete" ]; then python money/poster.py delete "$TARGET"
           elif [ "${{ inputs.mode }}" = "instagram" ]; then python money/poster.py instagram $TARGET
           else python money/poster.py; fi
+      - name: Publish Creator Adda (reel + evening post)
+        if: always() && (inputs.mode == '' || inputs.mode == 'post')
+        continue-on-error: true
+        env:
+          ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
+          ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
+          MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: python adda/poster.py
       - name: Save
         if: always()
         run: |
           git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
-          for d in money/queue money/posted money/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
+          for d in money/queue money/posted money/failed adda/queue adda/posted adda/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Money page: publish run" && git pull --rebase -q && git push)

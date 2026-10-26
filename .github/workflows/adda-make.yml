@@ -1,0 +1,110 @@
+name: Creator Adda - make today's posts + reel (Claude)
+
+on:
+  schedule:
+    - cron: "5 7 * * *"     # 12:35 PM IST  (makes the day's 3 items, publishes item 1 right away)
+    - cron: "35 8 * * *"    # backup retry (skipped automatically if already made)
+    - cron: "5 10 * * *"    # backup retry
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "make = create today's items, check = test the Facebook token for Creator Adda, publish = post anything due now"
+        default: "make"
+        type: choice
+        options: [make, check, publish]
+      dry_run:
+        description: "for mode=make: true = keep the items in adda/drafts (don't queue for publishing)"
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: poster
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
+      ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
+      MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide what to do
+        id: s
+        run: |
+          MODE="${{ inputs.mode }}"; DRY="${{ inputs.dry_run }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then MODE=make; DRY=false; fi
+          DATE=$(TZ=Asia/Kolkata date +%F)
+          DOM=$(TZ=Asia/Kolkata date +%-d)
+          if [ $((DOM % 3)) -eq 0 ]; then PROMO=yes; else PROMO=no; fi
+          SKIP=no
+          if [ "$MODE" = "make" ] && [ "$DRY" = "false" ] && ls adda/posted/$DATE-* adda/queue/$DATE-* >/dev/null 2>&1; then SKIP=yes; echo "Already made for $DATE."; fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"; echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "promo=$PROMO" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+          echo "Mode=$MODE Dry=$DRY Date=$DATE Promo=$PROMO Skip=$SKIP"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check token
+        if: steps.s.outputs.mode == 'check'
+        run: |
+          pip install -q requests
+          python adda/poster.py check
+
+      - name: Install tools
+        if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-inter fonts-noto-color-emoji ffmpeg >/dev/null
+          pip install -q requests playwright
+          python -m playwright install --with-deps chromium >/dev/null
+
+      - name: Claude researches, writes and builds the day's items
+        if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read adda/PROMPT.md in the repository root and follow it exactly.
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            PROMO_DAY = ${{ steps.s.outputs.promo }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Check the items were made
+        if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
+        run: |
+          N=$(ls adda/queue/${{ steps.s.outputs.date }}-*.json | wc -l); echo "items: $N"; test "$N" -ge 3
+          ls adda/queue/${{ steps.s.outputs.date }}-*.mp4
+
+      - name: Dry run - keep as drafts
+        if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'true'
+        run: |
+          mkdir -p adda/drafts
+          mv adda/queue/${{ steps.s.outputs.date }}-* adda/drafts/
+
+      - name: Publish anything due now
+        if: (steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'false') || steps.s.outputs.mode == 'publish'
+        run: |
+          pip install -q requests
+          python adda/poster.py
+
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "creator-adda-bot"; git config user.email "actions@users.noreply.github.com"
+          for d in adda/queue adda/drafts adda/posted adda/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
+          git diff --cached --quiet || (git commit -m "Creator Adda: ${{ steps.s.outputs.mode }} ${{ steps.s.outputs.date }}" && git pull --rebase -q && git push)
