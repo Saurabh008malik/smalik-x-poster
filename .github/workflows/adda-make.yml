@@ -23,7 +23,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: poster
+  group: adda
   cancel-in-progress: false
 
 jobs:
@@ -107,5 +107,12 @@ jobs:
         if: always()
         run: |
           git config user.name "creator-adda-bot"; git config user.email "actions@users.noreply.github.com"
-          for d in adda/queue adda/drafts adda/posted adda/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
+          if [ "${{ steps.s.outputs.mode }}" = "make" ] && [ "${{ steps.s.outputs.dry }}" = "true" ]; then
+            # dry run: never leave anything in the publishing queue (also when the run was cancelled half-way)
+            mkdir -p adda/drafts; mv adda/queue/${{ steps.s.outputs.date }}-* adda/drafts/ 2>/dev/null || true
+            DIRS="adda/queue adda/drafts status"
+          else
+            DIRS="adda/queue adda/drafts adda/posted adda/failed status"
+          fi
+          for d in $DIRS; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Creator Adda: ${{ steps.s.outputs.mode }} ${{ steps.s.outputs.date }}" && git pull --rebase -q && git push)
