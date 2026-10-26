@@ -18,6 +18,7 @@ DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 3
 NOW = dt.datetime.now(dt.timezone.utc)
 SINCE = NOW - dt.timedelta(days=DAYS)
 LATE_MIN = 30
+DEFAULT_IDS = {"ADDA_FB_PAGE_ID": "61594820314272"}
 out = []
 
 
@@ -27,7 +28,7 @@ def p(line=""):
 
 
 def page(id_env, tok_env):
-    pid, tok = os.environ.get(id_env), os.environ.get(tok_env)
+    pid, tok = os.environ.get(id_env) or DEFAULT_IDS.get(id_env), os.environ.get(tok_env)
     if not pid or not tok:
         return None, None
     r = requests.get(f"{GRAPH}/{pid}", params={"fields": "access_token", "access_token": tok}, timeout=30)
@@ -169,5 +170,7 @@ if __name__ == "__main__":
     x_section()
     p()
     section("Paycheck Truths (Facebook + Instagram)", ROOT / "money", "MONEY_FB_PAGE_ID", "MONEY_FB_PAGE_TOKEN", money_when)
+    p()
+    section("Creator Adda (Facebook + Instagram)", ROOT / "adda", "ADDA_FB_PAGE_ID", "ADDA_FB_PAGE_TOKEN", money_when)
     (ROOT / "status").mkdir(exist_ok=True)
     (ROOT / "status" / "report.md").write_text("\n".join(out) + "\n")

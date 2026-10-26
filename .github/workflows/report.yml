@@ -35,6 +35,8 @@ jobs:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           MONEY_FB_PAGE_ID: ${{ secrets.MONEY_FB_PAGE_ID }}
           MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+          ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
+          ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
           DAYS: ${{ inputs.days }}
         run: python report.py "$DAYS"
       - name: Save report
