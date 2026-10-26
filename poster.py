@@ -143,15 +143,16 @@ def check_keys():
     ok &= r.ok
     if os.environ.get("FB_PAGE_ID") and os.environ.get("FB_PAGE_TOKEN"):
         page_id, token = page_token()
-        r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name", "access_token": token}, timeout=30)
+        r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name,instagram_business_account{id,username}", "access_token": token}, timeout=30)
         print("Facebook:", r.status_code, ("✅ " + r.json().get("name", "")) if r.ok else ("❌ " + r.text))
+        print("Instagram:", r.json().get("instagram_business_account") if r.ok else None)
         raw = os.environ["FB_PAGE_TOKEN"]
         d = requests.get(f"{GRAPH}/debug_token", params={"input_token": raw, "access_token": raw}, timeout=30).json().get("data", {})
         (ROOT / "status").mkdir(exist_ok=True)
         (ROOT / "status" / "fb_token.txt").write_text(
             f"saved token type: {d.get('type')}\nexpires_at: {d.get('expires_at')}\n"
             f"data_access_expires_at: {d.get('data_access_expires_at')}\nscopes: {d.get('scopes')}\n"
-            f"page call ok: {r.ok}\n")
+            f"page call ok: {r.ok}\ninstagram: {r.json().get('instagram_business_account') if r.ok else None}\n")
         ok &= r.ok
     else:
         print("Facebook: ❌ FB_PAGE_ID / FB_PAGE_TOKEN secrets missing")

@@ -80,14 +80,14 @@ def post_one(item, page_id, token):
 
 def check():
     page_id, token = page_token()
-    r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name", "access_token": token}, timeout=30)
+    r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name,instagram_business_account{id,username}", "access_token": token}, timeout=30)
     print("Page:", r.status_code, r.text[:200])
     raw = os.environ["MONEY_FB_PAGE_TOKEN"]
     d = requests.get(f"{GRAPH}/debug_token", params={"input_token": raw, "access_token": raw}, timeout=30).json().get("data", {})
     status = ROOT.parent / "status"
     status.mkdir(exist_ok=True)
     (status / "money_token.txt").write_text(
-        f"page call: {r.status_code} {r.text[:200]}\ntype: {d.get('type')}\nexpires_at: {d.get('expires_at')}\n"
+        f"page call: {r.status_code} {r.text[:300]}\ntype: {d.get('type')}\nexpires_at: {d.get('expires_at')}\n"
         f"data_access_expires_at: {d.get('data_access_expires_at')}\nscopes: {d.get('scopes')}\n")
     sys.exit(0 if r.ok else 1)
 
