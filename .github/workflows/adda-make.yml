@@ -66,7 +66,8 @@ jobs:
         if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-inter fonts-noto-color-emoji ffmpeg >/dev/null
+          sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
+          which ffmpeg
           pip install -q requests playwright
           python -m playwright install --with-deps chromium >/dev/null
 
