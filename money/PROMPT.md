@@ -38,12 +38,15 @@ A JSON list of 9 objects:
 ```json
 {"caption":"<Facebook post text: a hook line, 2–4 short lines, then an engagement question>",
  "first_comment":"<one line that drives replies, e.g. 'Be honest: what is your biggest monthly bill right now? 👇'>",
+ "instagram_first_comment":"<a different one-liner for Instagram; mention @paychecktruths>",
  "card":{"kicker":"RENT REALITY","headline":"Rent is up 30%. Your raise <em>wasn't.</em>","sub":"optional one line","theme":"green|gold|red|blue","source":"optional, e.g. Source: BLS"},
  "sources":["<url>","<url>"]}
 ```
 - `headline`: max ~70 characters, punchy, wrap the key words in `<em></em>`. `kicker`: 1–3 words (NEWS, REALITY CHECK, MONEY HABIT, TRUE OR FALSE?…).
 - `theme`: red for frustration, green for habits/wealth, gold for motivation, blue for news — vary them.
 - Caption style: conversational, short lines, emotional but honest, ends with a question. Text-only post: 2–5 lines, ends with a question.
+
+Card posts and the reel are also published to Instagram (@paychecktruths) automatically; text-only posts stay Facebook-only.
 
 ## 6. Build
 Run: `python3 money/build.py /tmp/posts.json TARGET_DATE money/queue`

@@ -27,6 +27,8 @@ import sys
 import requests
 from requests_oauthlib import OAuth1
 
+import igpost
+
 DELAY_MINUTES = 0
 MAX_POSTS_PER_DAY = 4
 GRAPH = "https://graph.facebook.com/v26.0"
@@ -197,6 +199,8 @@ def main():
         return check_keys()
     if len(sys.argv) > 1 and sys.argv[1] == "comment":
         return retry_comment()
+    if len(sys.argv) > 2 and sys.argv[1] == "instagram":
+        return backfill_instagram(sys.argv[2:])
 
     now = dt.datetime.now(dt.timezone.utc)
     due = []
@@ -220,6 +224,33 @@ def main():
         sys.exit(1)
 
 
+def post_instagram(data, base_dir):
+    fb = data.get("facebook") or {}
+    ig = data.get("instagram") or {}
+    page_id, token = page_token()
+    caption = ig.get("caption") or fb["caption"]
+    comment = ig.get("first_comment") or fb.get("first_comment")
+    if fb.get("video"):
+        return igpost.post_ig_reel(page_id, token, base_dir / fb["video"], caption, comment)
+    return igpost.post_ig_image(page_id, token, base_dir / fb["image"], caption, comment)
+
+
+def backfill_instagram(names):
+    """python poster.py instagram <posted-json-name>...  -> publish already-posted items to Instagram."""
+    for name in names:
+        f = POSTED / name
+        data = json.loads(f.read_text())
+        if data.get("instagram_url"):
+            print("Already on Instagram:", name); continue
+        try:
+            data["instagram_url"] = post_instagram(data, POSTED)
+            data.pop("instagram_error", None)
+            print("✅", name, data["instagram_url"])
+        except Exception as e:
+            data["instagram_error"] = str(e); print("❌", name, e)
+        f.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+
+
 def post_item(item, data):
     platforms = data.get("platforms", ["x"])
     x_image = QUEUE / data["image"] if data.get("image") else None
@@ -241,6 +272,13 @@ def post_item(item, data):
             print("✅ Facebook:", results["facebook_url"])
         except Exception as e:
             errors["facebook_error"] = str(e); print("❌ Facebook:", e)
+
+    if "facebook" in platforms and (fb_image or fb_video) and data.get("instagram", {}).get("skip") is not True:
+        try:
+            results["instagram_url"] = post_instagram(data, QUEUE)
+            print("✅ Instagram:", results["instagram_url"])
+        except Exception as e:  # Instagram problems never block X/Facebook
+            errors["instagram_error"] = str(e); print("❌ Instagram:", e)
 
     stamp = dt.datetime.now(IST).isoformat()
     files = [x_image, fb_image, fb_video]

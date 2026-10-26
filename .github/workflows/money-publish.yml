@@ -9,9 +9,9 @@ on:
         description: "post = publish due posts, check = test the Page token"
         default: "post"
         type: choice
-        options: [post, check, delete]
+        options: [post, check, delete, instagram]
       target:
-        description: "for mode=delete: the Facebook post/video id to delete"
+        description: "for mode=delete: the Facebook post/video id to delete; for mode=instagram: space-separated money/posted/*.json names"
         default: ""
         type: string
 
@@ -40,6 +40,7 @@ jobs:
         run: |
           if [ "${{ inputs.mode }}" = "check" ]; then python money/poster.py check
           elif [ "${{ inputs.mode }}" = "delete" ]; then python money/poster.py delete "$TARGET"
+          elif [ "${{ inputs.mode }}" = "instagram" ]; then python money/poster.py instagram $TARGET
           else python money/poster.py; fi
       - name: Save
         if: always()

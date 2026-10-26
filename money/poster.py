@@ -13,6 +13,9 @@ import sys
 
 import requests
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import igpost  # noqa: E402
+
 GRAPH = "https://graph.facebook.com/v26.0"
 ROOT = pathlib.Path(__file__).parent
 QUEUE, POSTED, FAILED = ROOT / "queue", ROOT / "posted", ROOT / "failed"
@@ -78,6 +81,36 @@ def post_one(item, page_id, token):
     return f"https://www.facebook.com/{post_id}{note}"
 
 
+def post_instagram(item, base_dir, page_id, token):
+    ig = item.get("instagram") or {}
+    caption = ig.get("caption") or item["caption"]
+    comment = ig.get("first_comment") or item.get("first_comment")
+    if item.get("video"):
+        return igpost.post_ig_reel(page_id, token, base_dir / item["video"], caption, comment)
+    return igpost.post_ig_image(page_id, token, base_dir / item["image"], caption, comment)
+
+
+def backfill_instagram(names):
+    page_id, token = page_token()
+    for name in names:
+        f = POSTED / name
+        data = json.loads(f.read_text())
+        if data.get("instagram_url"):
+            print("Already on Instagram:", name)
+            continue
+        if not (data.get("image") or data.get("video")):
+            print("Text-only, skipped:", name)
+            continue
+        try:
+            data["instagram_url"] = post_instagram(data, POSTED, page_id, token)
+            data.pop("instagram_error", None)
+            print("OK", name, data["instagram_url"])
+        except Exception as e:  # noqa: BLE001
+            data["instagram_error"] = str(e)
+            print("FAIL", name, e)
+        f.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+
+
 def check():
     page_id, token = page_token()
     r = requests.get(f"{GRAPH}/{page_id}", params={"fields": "id,name,instagram_business_account{id,username}", "access_token": token}, timeout=30)
@@ -105,6 +138,8 @@ def main():
         return
     if len(sys.argv) > 1 and sys.argv[1] == "check":
         return check()
+    if len(sys.argv) > 2 and sys.argv[1] == "instagram":
+        return backfill_instagram(sys.argv[2:])
     if len(sys.argv) > 2 and sys.argv[1] == "delete":
         return delete(sys.argv[2])
     now = dt.datetime.now(dt.timezone.utc)
@@ -125,6 +160,13 @@ def main():
             extra["facebook_url"] = post_one(data, page_id, token)
             dest = POSTED
             print("OK", f.name, extra["facebook_url"])
+            if (data.get("image") or data.get("video")) and (data.get("instagram") or {}).get("skip") is not True:
+                try:
+                    extra["instagram_url"] = post_instagram(data, QUEUE, page_id, token)
+                    print("OK Instagram", extra["instagram_url"])
+                except Exception as e:  # noqa: BLE001  (never blocks Facebook)
+                    extra["instagram_error"] = str(e)
+                    print("FAIL Instagram", e)
         except Exception as e:  # noqa: BLE001
             extra["error"] = str(e)
             dest = FAILED

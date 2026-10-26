@@ -50,6 +50,7 @@ Write `queue/DATE-SLOT.json` (UTF-8, keep the bold letters and emoji as-is):
 {"text":"<tweet>","image":"DATE-SLOT.png","created_at":"<now, UTC ISO-8601 with +00:00>",
  "platforms":["x","facebook"],
  "facebook":{"caption":"<caption>","first_comment":"<first comment>","image":"DATE-SLOT-fb.jpg"},
+ "instagram":{"first_comment":"<different Hinglish one-liner that mentions @realcricketkibaat>"},
  "sources":["<url>","<url>"]}
 ```
 ## 6. Reel (ONLY when SLOT = evening)
@@ -62,6 +63,7 @@ Also make ONE short animated Reel for the Facebook Page (not for X). Same brand 
 {"text":"","created_at":"<now, UTC ISO-8601 with +00:00, 1 minute AFTER the main post's created_at>",
  "platforms":["facebook"],
  "facebook":{"caption":"<Hinglish caption, bold Unicode hook, 👉 bullets, fan question, #CricketKiBaat>","first_comment":"<Hinglish one-liner>","video":"DATE-SLOT-reel.mp4"},
+ "instagram":{"first_comment":"<different Hinglish one-liner that mentions @realcricketkibaat>"},
  "sources":["<url>"]}
 ```
-Do NOT run poster.py, git, or post anything yourself — the workflow does that after you finish.
+The same card/reel and caption are also published to Instagram (@realcricketkibaat) automatically. Do NOT run poster.py, git, or post anything yourself — the workflow does that after you finish.

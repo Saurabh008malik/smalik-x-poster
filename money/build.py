@@ -34,6 +34,8 @@ def main(posts_file, date, outdir):
             name = f"{date}-{i + 1:02d}"
             item = {"caption": post["caption"], "first_comment": post.get("first_comment", ""),
                     "sources": post.get("sources", [])}
+            if post.get("instagram_first_comment"):
+                item["instagram"] = {"first_comment": post["instagram_first_comment"]}
             if post.get("reel") and post.get("card"):
                 reel_mod.render(post["card"], out / f"{name}.mp4")
                 item["video"] = f"{name}.mp4"

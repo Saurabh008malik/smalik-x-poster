@@ -7,7 +7,11 @@ on:
         description: "post = post due items, check = only test the X + Facebook keys"
         default: "post"
         type: choice
-        options: [post, check, comment]
+        options: [post, check, comment, instagram]
+      names:
+        description: "for mode=instagram: space-separated posted/*.json names to publish to Instagram"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -26,7 +30,7 @@ jobs:
       - name: Anything queued?
         id: q
         run: |
-          if [ "${{ inputs.mode }}" = "check" ] || [ "${{ inputs.mode }}" = "comment" ] || ls queue/*.json >/dev/null 2>&1; then
+          if [ "${{ inputs.mode }}" = "check" ] || [ "${{ inputs.mode }}" = "comment" ] || [ "${{ inputs.mode }}" = "instagram" ] || ls queue/*.json >/dev/null 2>&1; then
             echo "run=yes" >> "$GITHUB_OUTPUT"
           else
             echo "Queue empty."; echo "run=no" >> "$GITHUB_OUTPUT"
@@ -46,9 +50,11 @@ jobs:
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          NAMES: ${{ inputs.names }}
         run: |
           pip install -q requests requests-oauthlib
-          python poster.py ${{ (inputs.mode == 'check' || inputs.mode == 'comment') && inputs.mode || '' }}
+          if [ "${{ inputs.mode }}" = "instagram" ]; then python poster.py instagram $NAMES
+          else python poster.py ${{ (inputs.mode == 'check' || inputs.mode == 'comment') && inputs.mode || '' }}; fi
 
       - name: Save queue changes
         if: always() && steps.q.outputs.run == 'yes'
