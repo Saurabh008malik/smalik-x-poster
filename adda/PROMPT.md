@@ -23,6 +23,8 @@ Verify every fact or number against the original or a reliable source. If you ca
 - Hinglish in Roman script (simple Hindi + common English words), warm, encouraging, like a helpful didi/dost. Short lines. No heavy jargon; explain terms simply.
 - ORIGINAL wording. Don't copy anyone's post. No links in captions. No politics, no religion, no attacks on creators or brands.
 - No guarantees ("viral pakka", "1 lakh subscribers in 30 din"). No fake numbers.
+- Write words in full — no short forms like "sub", "vid", "pls" in headlines or captions.
+- Never promise personal replies or services ("hum aapko idea denge", "DM karo, channel review karenge"). Ask questions instead.
 - Never mention "Pradeep Raj".
 - **Promotion (soft, not every day):** Creator Adda sells a ₹99 "YouTube Creator Starter Kit" (300 video ideas, 500 hook lines, 33 ready scripts, 14 Canva templates, 30-day plan; Hinglish PDF). Only when PROMO_DAY = yes (given at the end):
   - set `"promo": true` on the Reel's `card` (adds an end line "Poori YouTube Kit ₹99 · link bio mein"),
@@ -39,14 +41,14 @@ Verify every fact or number against the original or a reliable source. If you ca
 A JSON list of exactly 3 objects in the order above:
 ```json
 {"caption":"…","first_comment":"…","instagram_first_comment":"…",
- "card":{"kicker":"YouTube tip","label":"Tip #12","headline":"Thumbnail ke <em>4 rules</em>",
+ "card":{"kicker":"YouTube tip","label":"","headline":"Thumbnail ke <em>4 rules</em>",
          "sub":"optional one line","points":["Face bada rakho","3 shabd se zyada nahi","…"],
          "theme":"yellow|dark|white","cta":"Save karo 🔖","music":"uplift|focus|calm","promo":false},
  "reel":false,
  "sources":["<url>","<url>"]}
 ```
 - `headline`: punchy, wrap 1–2 key words in `<em></em>` (shown as a red highlight). Card headline max ~40 characters when there are `points`, ~55 without.
-- `kicker`: 1–3 words (YouTube tip, Myth vs Fact, YouTube update, Galti mat karo, Video ideas, Sawaal). `label` optional (e.g. "Tip #12").
+- `kicker`: 1–3 words (YouTube tip, Myth vs Fact, YouTube update, Galti mat karo, Video ideas, Sawaal). Leave `label` empty (no numbering).
 - `points`: 3–5 short items (max ~34 characters each) for list cards; omit otherwise.
 - `theme`: vary across the day (yellow is the brand default; dark for myth/fact or news; white occasionally). `cta`: "Save karo 🔖", "Follow karo 🔔" or "Share karo 📤".
 - Reel `card`: kicker, headline, sub and/or points, `music` (uplift for energetic, focus for news, calm for gentle), `promo` per PROMO_DAY.
