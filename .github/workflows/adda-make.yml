@@ -67,8 +67,9 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
-          which ffmpeg
-          pip install -q requests playwright
+          pip install -q requests playwright imageio-ffmpeg
+          which ffmpeg || sudo ln -sf "$(python -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg
+          ffmpeg -version | head -1
           python -m playwright install --with-deps chromium >/dev/null
 
       - name: Claude researches, writes and builds the day's items
