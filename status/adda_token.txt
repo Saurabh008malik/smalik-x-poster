@@ -1,3 +1,7 @@
-page id: 61594820314272
-token source: NONE
-details: ADDA_FB_PAGE_TOKEN: not set | MONEY_FB_PAGE_TOKEN: 400 {"error":{"message":"Unsupported get request. Object with ID '61594820314272' does not exist, cannot be loaded due to missing permissions, or does not support t | FB_PAGE_TOKEN: 400 {"error":{"message":"Unsupported get request. Object with ID '61594820314272' does not exist, cannot be loaded due to missing permissions, or does not support t
+page id: 1324407434087819
+token source: ADDA_FB_PAGE_TOKEN
+page call: 200 {"id":"1324407434087819","name":"Creator Adda","instagram_business_account":{"id":"17841417110268627","username":"real_creator_adda"}}
+type: PAGE
+expires_at: 0
+data_access_expires_at: 1800889925
+scopes: ['pages_show_list', 'business_management', 'instagram_basic', 'instagram_manage_comments', 'instagram_content_publish', 'instagram_manage_messages', 'pages_read_engagement', 'pages_read_user_content', 'pages_manage_posts', 'pages_manage_engagement', 'public_profile']
