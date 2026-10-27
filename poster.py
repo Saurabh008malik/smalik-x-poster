@@ -30,7 +30,7 @@ from requests_oauthlib import OAuth1
 import igpost
 
 DELAY_MINUTES = 0
-MAX_POSTS_PER_DAY = 4
+MAX_POSTS_PER_DAY = 6
 GRAPH = "https://graph.facebook.com/v26.0"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
