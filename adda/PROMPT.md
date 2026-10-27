@@ -30,6 +30,7 @@ Verify every fact or number against the original or a reliable source. If you ca
   - set `"promo": true` on the Reel's `card` (adds an end line "Poori YouTube Kit ₹99 · link bio mein"),
   - the Reel's Facebook `first_comment` mentions the kit with the link `https://creator-adda-free.netlify.app/` (this is the only place a link is allowed),
   - the Reel's `instagram_first_comment` says the link is in bio (Instagram comments can't have clickable links).
+  Never call the kit "free" (it costs ₹99); no "Free mein…" wording anywhere near the price.
   On other days do NOT mention the kit, price or link anywhere — pure value.
 
 ## 5. Captions and comments
