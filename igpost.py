@@ -72,6 +72,20 @@ def post_ig_image(page_id, token, image_path, caption, first_comment=None):
 
 
 def post_ig_reel(page_id, token, video_path, caption, first_comment=None):
+    """Instagram sometimes rejects a reel upload with a one-off processing error: try up to 3 times."""
+    last = None
+    for attempt in range(3):
+        try:
+            return _post_ig_reel_once(page_id, token, video_path, caption, first_comment)
+        except RuntimeError as e:
+            last = e
+            if "upload failed" not in str(e) and "processing failed" not in str(e).lower():
+                raise
+            time.sleep(30)
+    raise last
+
+
+def _post_ig_reel_once(page_id, token, video_path, caption, first_comment=None):
     ig_id = ig_account(page_id, token)
     c = _check(requests.post(f"{GRAPH}/{ig_id}/media", timeout=60,
                              data={"media_type": "REELS", "upload_type": "resumable", "caption": caption,

@@ -11,7 +11,11 @@ on:
         description: "make = create today's items, check = test the Facebook token for Creator Adda, publish = post anything due now"
         default: "make"
         type: choice
-        options: [make, check, publish]
+        options: [make, check, publish, instagram]
+      names:
+        description: "for mode=instagram: space-separated adda/posted/*.json names to (re)publish to Instagram"
+        default: ""
+        type: string
       dry_run:
         description: "for mode=make: true = keep the items in adda/drafts (don't queue for publishing)"
         default: "true"
@@ -61,6 +65,14 @@ jobs:
         run: |
           pip install -q requests
           python adda/poster.py check
+
+      - name: Instagram (re)publish
+        if: steps.s.outputs.mode == 'instagram'
+        env:
+          NAMES: ${{ inputs.names }}
+        run: |
+          pip install -q requests
+          python adda/poster.py instagram $NAMES
 
       - name: Install tools
         if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
