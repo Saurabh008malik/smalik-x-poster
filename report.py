@@ -152,7 +152,7 @@ def x_section():
 def cricket_when(f, d):
     day = f.stem[:10]
     slot = f.stem[11:]
-    hm = {"morning": "08:41", "evening": "19:41", "reel": "19:42"}.get(slot.split("-")[0])
+    hm = {"morning": "08:41", "evening": "19:41", "reel": "19:42", "late": "19:41"}.get(slot.split("-")[0])
     if not hm:
         return None
     return dt.datetime.fromisoformat(f"{day}T{hm}:00+05:30")

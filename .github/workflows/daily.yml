@@ -40,14 +40,18 @@ jobs:
         id: s
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            H=$(date -u +%H); if [ "$H" -lt 10 ]; then SLOT=morning; else SLOT=evening; fi
+            # GitHub's own timer often fires hours late: only act inside the right IST window, else skip.
+            HM=$((10#$(TZ=Asia/Kolkata date +%H%M)))
+            if [ "$HM" -ge 830 ] && [ "$HM" -lt 1330 ]; then SLOT=morning
+            elif [ "$HM" -ge 1930 ]; then SLOT=evening
+            else SLOT=none; fi
             DRY=false
           else
             SLOT="${{ inputs.slot }}"; DRY="${{ inputs.dry_run }}"
           fi
           DATE=$(TZ=Asia/Kolkata date +%Y-%m-%d)
           echo "slot=$SLOT" >> "$GITHUB_OUTPUT"; echo "date=$DATE" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"
-          if [ -f "posted/$DATE-$SLOT.json" ] && [ "$DRY" = "false" ]; then echo "skip=yes" >> "$GITHUB_OUTPUT"; else echo "skip=no" >> "$GITHUB_OUTPUT"; fi
+          if [ "$SLOT" = "none" ] || { [ -f "posted/$DATE-$SLOT.json" ] && [ "$DRY" = "false" ]; }; then echo "skip=yes" >> "$GITHUB_OUTPUT"; else echo "skip=no" >> "$GITHUB_OUTPUT"; fi
           echo "Slot=$SLOT Date=$DATE Dry=$DRY"
 
       - uses: actions/setup-python@v5

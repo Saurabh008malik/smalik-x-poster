@@ -206,7 +206,7 @@ def main():
     due = []
     for item in sorted(QUEUE.glob("*.json")):
         data = json.loads(item.read_text())
-        if (now - dt.datetime.fromisoformat(data["created_at"])).total_seconds() / 60 >= DELAY_MINUTES:
+        if (now - dt.datetime.fromisoformat(data["created_at"])).total_seconds() / 60 >= DELAY_MINUTES - 15:  # items stamped a few minutes ahead still count
             due.append((data["created_at"], item, data))
     if not due:
         print("Nothing due.")
