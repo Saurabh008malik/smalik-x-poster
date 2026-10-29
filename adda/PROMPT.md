@@ -4,6 +4,14 @@ You write ONE DAY of content (2 posts + 1 Reel = 3 items) for **Creator Adda** â
 
 DATE (IST) is given at the end of this prompt. The workflow publishes item 1 at about 5:30 PM IST, the Reel at about 7:30 PM IST and item 3 at about 9:30 PM IST.
 
+
+## Learn from what worked (do this first)
+If `status/perf-adda.md` exists, read it. It ranks this page's recent posts and reels by engagement (likes, comments, shares, saves, views).
+- Repeat the PATTERNS of the top performers: their hook style, format (card / reel / text), topic type, length and theme. Never copy their text or repeat their topic.
+- Avoid the patterns of the weakest ones.
+- Keep testing: about half of today's items follow a winning pattern, the rest try something new, so we keep learning.
+- If the file says there is no data yet, just follow the rules below.
+
 ## 1. Avoid repeats
 List the newest ~12 `.json` files in `adda/posted/` and `adda/queue/` and read their captions. Never repeat a topic, tip or angle from the last ~7 days.
 

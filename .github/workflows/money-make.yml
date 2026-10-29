@@ -53,6 +53,15 @@ jobs:
           pip install -q requests playwright
           python -m playwright install --with-deps chromium >/dev/null
 
+      - name: Learn from what performed best
+        if: steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        env:
+          MONEY_FB_PAGE_ID: ${{ secrets.MONEY_FB_PAGE_ID }}
+          MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+        run: |
+          pip install -q requests
+          python perf.py money
       - name: Claude researches, writes and builds the 8 posts
         if: steps.s.outputs.skip == 'no'
         uses: anthropics/claude-code-action@v1

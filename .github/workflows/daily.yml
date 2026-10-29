@@ -67,6 +67,15 @@ jobs:
           pip install -q requests requests-oauthlib playwright
           python -m playwright install --with-deps chromium >/dev/null
 
+      - name: Learn from what performed best
+        if: steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          pip install -q requests
+          python perf.py cricket
       - name: Claude researches, writes and makes the cards
         if: steps.s.outputs.skip == 'no'
         uses: anthropics/claude-code-action@v1

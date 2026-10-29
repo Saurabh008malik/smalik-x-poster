@@ -4,6 +4,14 @@ You write ONE DAY of posts (8 posts + 1 Reel = 9 items) for the Facebook Page **
 
 TARGET_DATE (US Eastern) is given at the end of this prompt. The workflow publishes the posts at 8 slots through that US day.
 
+
+## Learn from what worked (do this first)
+If `status/perf-money.md` exists, read it. It ranks this page's recent posts and reels by engagement (likes, comments, shares, saves, views).
+- Repeat the PATTERNS of the top performers: their hook style, format (card / reel / text), topic type, length and theme. Never copy their text or repeat their topic.
+- Avoid the patterns of the weakest ones.
+- Keep testing: about half of today's items follow a winning pattern, the rest try something new, so we keep learning.
+- If the file says there is no data yet, just follow the rules below.
+
 ## 1. Avoid repeats
 List the newest files in `money/posted/` and `money/queue/` (.json). Never reuse a topic or angle already used in the last ~3 days.
 

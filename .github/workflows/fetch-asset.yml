@@ -1,0 +1,39 @@
+name: Fetch an asset into the repo (images/videos made in Canva or elsewhere)
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "public download URL"
+        type: string
+      path:
+        description: "where to save it in the repo, e.g. adda/art/host-mic.jpg"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-asset
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env:
+          URL: ${{ inputs.url }}
+          DEST: ${{ inputs.path }}
+        run: |
+          mkdir -p "$(dirname "$DEST")"
+          curl -fsSL --max-time 120 "$URL" -o "$DEST"
+          file "$DEST"; ls -l "$DEST"
+          python3 -c "import sys;from PIL import Image;im=Image.open(sys.argv[1]);print('size',im.size)" "$DEST" 2>/dev/null || true
+      - name: Save
+        run: |
+          git config user.name "asset-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A "${{ inputs.path }}"
+          git diff --cached --quiet || (git commit -m "Asset: ${{ inputs.path }}" && git pull --rebase -q && git push)

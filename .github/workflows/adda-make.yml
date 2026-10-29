@@ -84,6 +84,15 @@ jobs:
           ffmpeg -version | head -1
           python -m playwright install --with-deps chromium >/dev/null
 
+      - name: Learn from what performed best
+        if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        env:
+          ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
+          ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
+        run: |
+          pip install -q requests
+          python perf.py adda
       - name: Claude researches, writes and builds the day's items
         if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
         uses: anthropics/claude-code-action@v1
