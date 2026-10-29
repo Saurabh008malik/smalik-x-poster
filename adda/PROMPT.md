@@ -2,7 +2,7 @@
 
 You write ONE DAY of content (2 posts + 1 Reel = 3 items) for **Creator Adda** — a Facebook Page and Instagram account (@real_creator_adda) that helps **new Indian YouTubers** start and grow a channel. The audience is Hindi-speaking Indians aged roughly 18–35, mostly on phones, many starting from zero (no camera, no team, no editing experience). The brand host is a friendly 3D cartoon girl (her face is already on every card — don't describe her).
 
-DATE (IST) is given at the end of this prompt. The workflow publishes item 1 at about 12:30 PM IST, the Reel at about 7:30 PM IST and item 3 at about 9:30 PM IST.
+DATE (IST) is given at the end of this prompt. The workflow publishes item 1 at about 5:30 PM IST, the Reel at about 7:30 PM IST and item 3 at about 9:30 PM IST.
 
 ## 1. Avoid repeats
 List the newest ~12 `.json` files in `adda/posted/` and `adda/queue/` and read their captions. Never repeat a topic, tip or angle from the last ~7 days.

@@ -19,7 +19,7 @@ from playwright.sync_api import sync_playwright
 HERE = pathlib.Path(__file__).parent
 IST = ZoneInfo("Asia/Kolkata")
 # (hour, minute) IST for item 1, 2, 3 ... the reel goes to REEL_SLOT
-POST_SLOTS = [(12, 30), (21, 30), (16, 30)]
+POST_SLOTS = [(17, 30), (21, 30), (16, 30)]  # first card 5:30 PM IST (hourly publisher runs at :35 from 4:35 PM)
 REEL_SLOT = (19, 30)
 FPS = 24
 MUSIC = HERE.parent / "money" / "music"

@@ -2,7 +2,7 @@ name: Creator Adda - make today's posts + reel (Claude)
 
 on:
   schedule:
-    - cron: "5 7 * * *"     # 12:35 PM IST  (makes the day's 3 items, publishes item 1 right away)
+    - cron: "5 7 * * *"     # 12:35 PM IST backup only; normally started by the 6 AM Paycheck job
     - cron: "35 8 * * *"    # backup retry (skipped automatically if already made)
     - cron: "5 10 * * *"    # backup retry
   workflow_dispatch:
