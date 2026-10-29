@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: report
@@ -38,6 +39,8 @@ jobs:
           ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
           ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
           DAYS: ${{ inputs.days }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: python report.py "$DAYS"
       - name: Save report
         if: always()
