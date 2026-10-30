@@ -61,7 +61,9 @@ Write `queue/DATE-SLOT.json` (UTF-8, keep the bold letters and emoji as-is):
  "instagram":{"first_comment":"<different Hinglish one-liner that mentions @realcricketkibaat>"},
  "sources":["<url>","<url>"]}
 ```
-## 6. Reel (ONLY when SLOT = evening)
+## 6. Reel (ONLY when SLOT = evening) — REQUIRED every evening
+The reel is not optional: budget your research so you always reach this step. Keep research to what the post needs.
+
 Also make ONE short animated Reel for the Facebook Page (not for X). Same brand design and same music as everything else.
 - Pick the most exciting fact/moment of the day (can be the same story as the post but a different angle, e.g. a stat reveal). Never invent facts.
 - Write `/tmp/reel.json`: `{"brand":"ckb","theme":"saffron","music":"uplift","kicker":"Record alert","headline":"ERASMUS <em>156*</em> OFF 125","sub":"Namibia 321/6, Ireland all out 290","source":"Data: ESPNcricinfo"}` — headline max ~40 characters (caps, key number in `<em>`), sub max ~60 characters, `source` optional.

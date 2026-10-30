@@ -108,6 +108,11 @@ def main(name):
                 if v is not None:
                     tot[k] = tot.get(k, 0) + v
                     have_views |= k == "views"
+            # our own first comments are counted by Facebook/Instagram - take them out
+            fbu, igu = d.get("facebook_url") or "", d.get("instagram_url") or ""
+            own = (1 if fbu and "comment skipped" not in fbu and ((d.get("facebook") or {}).get("first_comment") or d.get("first_comment")) else 0)
+            own += (1 if igu and "comment skipped" not in igu else 0)
+            tot["comments"] = max(0, tot["comments"] - own)
             kind, hook, theme = describe(d)
             score = tot["likes"] + 3 * tot["comments"] + 2 * tot["shares"] + 2 * tot["saves"] + tot["views"] / 100
             rows.append((score, f.stem, kind, hook, theme, tot))
