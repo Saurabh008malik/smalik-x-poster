@@ -28,6 +28,12 @@
   .host small { display: block; font-family: "Mukta", sans-serif; font-weight: 500; font-size: 32px; color: #5C4A12; }
   .bar { position: absolute; left: 84px; right: 84px; top: 1620px; height: 10px; border-radius: 10px; background: rgba(23,19,15,.15); }
   .bar i { display: block; height: 100%; width: 0; border-radius: 10px; background: #17130F; }
+  .art { position: absolute; inset: 0; overflow: hidden; background: #F6E7C8; }
+  .art img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; transform-origin: 50% 100%; }
+  .veil { position: absolute; inset: 0; background: #FFD43B; opacity: 0; }
+  .scene .kicker { box-shadow: 0 8px 0 rgba(0,0,0,.12); }
+  .scene .main { justify-content: flex-start; }
+  .scene h1 { background: #FFFDF7; border: 6px solid #17130F; border-radius: 34px; padding: 22px 30px 26px; box-shadow: 10px 11px 0 #17130F; }
   .end { position: absolute; inset: 0; background: #17130F; color: #FFFDF7; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 90px; opacity: 0; }
   .end img { width: 300px; height: 300px; border-radius: 50%; border: 10px solid #FFD43B; object-fit: cover; }
   .end h2 { font-family: "Bricolage", sans-serif; font-weight: 800; font-size: 96px; line-height: 1.02; margin-top: 50px; letter-spacing: -.02em; }
@@ -39,6 +45,7 @@
 <body>
 <div class="card" id="card">
   <div class="rays" id="rays"></div><div class="blob"></div>
+  <div class="art" id="art"><img src="ART_SRC" alt=""></div><div class="veil" id="veil"></div>
   <div class="kicker" id="kicker"></div>
   <div class="main" id="m"><h1 id="h"></h1><div class="sub" id="sub"></div><ul id="pts"></ul></div>
   <div class="host" id="host"><img src="HOST_SRC" alt=""><div>Creator Adda<small>@real_creator_adda</small></div></div>
@@ -52,6 +59,16 @@
 </div>
 <script>
   const D = window.DATA;
+  const HAS_ART = !!D.__art;
+  if (HAS_ART) {
+    const im = document.querySelector('#art img');
+    const paint = () => { try { const c = document.createElement('canvas'); c.width = c.height = 1; const x = c.getContext('2d');
+      x.drawImage(im, 540, 4, 1, 1, 0, 0, 1, 1); const [r, g, b] = x.getImageData(0, 0, 1, 1).data;
+      document.getElementById('art').style.background = `rgb(${r},${g},${b})`; } catch (e) {} };
+    if (im.complete) paint(); else im.onload = paint;
+  }
+  if (HAS_ART) { document.getElementById('card').classList.add('scene'); document.getElementById('rays').remove(); document.querySelector('.blob').remove(); }
+  else { document.getElementById('art').remove(); document.getElementById('veil').remove(); }
   document.getElementById('kicker').textContent = D.kicker || 'YouTube tip';
   const tmp = document.createElement('div'); tmp.innerHTML = D.headline;
   const words = [];
@@ -65,7 +82,10 @@
   if (!D.promo) document.getElementById('promo').remove();
   const m = document.getElementById('m');
   let size = pts.length ? 120 : 150;
-  while ((m.scrollHeight > m.clientHeight + 1 || h.scrollWidth > h.clientWidth + 1) && size > 40) { size -= 4; h.style.fontSize = size + 'px'; }
+  if (HAS_ART) size = Math.min(size, 128);
+  h.style.fontSize = size + 'px';
+  // with artwork the headline must stay in the empty top area above the host (about 440px tall)
+  while ((m.scrollHeight > m.clientHeight + 1 || h.scrollWidth > h.clientWidth + 1 || (HAS_ART && h.scrollHeight > 440)) && size > 40) { size -= 4; h.style.fontSize = size + 'px'; }
   window.__fit = size;
   const WS = 0.7, WD = 0.3;
   const afterHead = WS + words.length * WD + 0.5;
@@ -84,9 +104,15 @@
     wEls.forEach((el, i) => { const p = ease(clamp((s - (WS + i * WD)) / 0.3)); el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 50}px) scale(${0.92 + 0.08 * p})`; });
     const ps = ease(clamp((s - subAt) / 0.5)); sub.style.opacity = ps; sub.style.transform = `translateY(${(1 - ps) * 26}px)`;
     liEls.forEach((el, i) => { const p = ease(clamp((s - (ptsAt + i * PD)) / 0.4)); el.style.opacity = p; el.style.transform = `translateX(${(1 - p) * -60}px)`; });
-    const ph = ease(clamp((s - 0.3) / 0.6)); const host = document.getElementById('host'); host.style.opacity = ph; host.style.transform = `translateY(${(1 - ph) * 40}px)`;
+    const ph = HAS_ART ? ease(clamp((s - subAt) / 0.6)) : ease(clamp((s - 0.3) / 0.6)); const host = document.getElementById('host'); host.style.opacity = ph; host.style.transform = `translateY(${(1 - ph) * 40}px)`;
     document.getElementById('prog').style.width = (clamp(s / endAt) * 100) + '%';
-    document.getElementById('rays').style.transform = `rotate(${s * 4}deg)`;
+    if (HAS_ART) {
+      document.querySelector('#art img').style.transform = `translateY(150px) scale(${1 + 0.06 * clamp(s / endAt)})`;
+      const hasMore = !!(D.sub || pts.length);
+      document.getElementById('veil').style.opacity = hasMore ? 0.93 * ease(clamp((s - subAt + 0.2) / 0.6)) : 0;
+    } else {
+      document.getElementById('rays').style.transform = `rotate(${s * 4}deg)`;
+    }
     const pe = ease(clamp((s - endAt) / 0.5)); const end = document.getElementById('end'); end.style.opacity = pe; end.style.transform = `scale(${1.04 - 0.04 * pe})`;
   };
   window.setT(0);

@@ -61,6 +61,7 @@ A JSON list of exactly 3 objects in the order above:
 - `points`: 3–5 short items (max ~34 characters each) for list cards; omit otherwise.
 - `theme`: vary across the day (yellow is the brand default; dark for myth/fact or news; white occasionally). `cta`: "Save karo 🔖", "Follow karo 🔔" or "Share karo 📤".
 - Reel `card`: kicker, headline, sub and/or points, `music` (uplift for energetic, focus for news, calm for gentle), `promo` per PROMO_DAY.
+- Reel `card` also gets `"scene"`: the Canva-made artwork of the host that opens the Reel (full screen, headline on top). Pick the one that fits the topic: `mic` (audio, recording, speaking), `edit` (editing, CapCut, laptop work), `thumbnail` (thumbnails, titles, YouTube features), `myth` (Myth vs Fact, mistakes, "galti mat karo"), `celebrate` (growth, milestones, monetisation, success), `think` (ideas, planning, niche, questions). Don't use the same scene two days in a row.
 
 ## 7. Build
 Run: `python3 adda/build.py /tmp/adda.json DATE adda/queue`

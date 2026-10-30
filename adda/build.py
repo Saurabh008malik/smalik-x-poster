@@ -38,6 +38,11 @@ def page_html(template, data):
     host = "data:image/jpeg;base64," + base64.b64encode((HERE / "brand" / "host.jpg").read_bytes()).decode()
     html = (HERE / "cards" / template).read_text()
     html = html.replace("/*FONTS*/", _fonts_css()).replace("HOST_SRC", host)
+    data = dict(data)
+    art = HERE / "art" / f"host-{data.get('scene')}.jpg" if data.get("scene") else None
+    if art and art.exists():
+        html = html.replace("ART_SRC", "data:image/jpeg;base64," + base64.b64encode(art.read_bytes()).decode())
+        data["__art"] = True
     return html.replace("<script>", "<script>window.DATA = " + json.dumps(data, ensure_ascii=False) + ";", 1)
 
 
