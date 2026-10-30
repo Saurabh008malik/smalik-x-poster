@@ -100,3 +100,14 @@ jobs:
         run: |
           gh api -X POST repos/${{ github.repository }}/actions/workflows/adda-make.yml/dispatches \
             -f ref=main -f 'inputs[mode]=make' -f 'inputs[dry_run]=false' || echo "Could not start Creator Adda"
+
+      - name: Start Warm Mug Radio's mix on Tuesdays and Saturdays (same reliable 6 AM trigger)
+        if: always() && steps.s.outputs.dry == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DOW=$(TZ=Asia/Kolkata date +%u)   # 2 = Tue, 6 = Sat
+          if [ "$DOW" = "2" ] || [ "$DOW" = "6" ]; then
+            gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-publish.yml/dispatches \
+              -f ref=main -f 'inputs[mode]=post' -f 'inputs[min_minutes]=12' || echo "Could not start Warm Mug Radio"
+          fi

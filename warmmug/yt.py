@@ -1,0 +1,183 @@
+"""Warm Mug Radio - YouTube login (one time) and upload.
+
+  python warmmug/yt.py auth-start     -> asks Google for a sign-in code (shown in the run summary)
+  python warmmug/yt.py auth-wait      -> waits until Saurabh approves on google.com/device, saves the
+                                         login encrypted in warmmug/secret/yt_token.enc
+  python warmmug/yt.py whoami         -> prints which YouTube channel the saved login posts to
+  python warmmug/yt.py upload         -> uploads warmmug/out/video.mp4 with meta.json + thumbnail
+
+Needs: warmmug/oauth_client.json (Google OAuth client, type "TVs and Limited Input devices")
+       env WM_KEY (the key used to lock/unlock the saved login; the workflow passes a repo secret)
+"""
+import json
+import os
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+import requests
+
+HERE = Path(__file__).resolve().parent
+TOKEN_FILE = HERE / "secret" / "yt_token.enc"
+STATE = HERE / "work" / "device.json"
+SCOPE = "https://www.googleapis.com/auth/youtube"
+API = "https://www.googleapis.com/youtube/v3"
+
+
+def client():
+    if os.environ.get("YT_CLIENT_ID"):
+        return os.environ["YT_CLIENT_ID"], os.environ["YT_CLIENT_SECRET"]
+    c = json.loads((HERE / "oauth_client.json").read_text())
+    c = c.get("installed") or c.get("web") or c
+    return c["client_id"], c["client_secret"]
+
+
+def summary(text):
+    print(text)
+    p = os.environ.get("GITHUB_STEP_SUMMARY")
+    if p:
+        with open(p, "a") as f:
+            f.write(text + "\n")
+
+
+def lock(plain):
+    key = os.environ["WM_KEY"]
+    TOKEN_FILE.parent.mkdir(exist_ok=True)
+    subprocess.run(["openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-salt", "-a", "-pass", "env:WM_KEY",
+                    "-out", str(TOKEN_FILE)], input=plain.encode(), check=True, env={**os.environ, "WM_KEY": key})
+
+
+def unlock():
+    if os.environ.get("YT_REFRESH_TOKEN"):
+        return os.environ["YT_REFRESH_TOKEN"]
+    r = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-a", "-pass", "env:WM_KEY",
+                        "-in", str(TOKEN_FILE)], capture_output=True, check=True)
+    return r.stdout.decode().strip()
+
+
+def access_token():
+    cid, sec = client()
+    r = requests.post("https://oauth2.googleapis.com/token", data={
+        "client_id": cid, "client_secret": sec, "refresh_token": unlock(), "grant_type": "refresh_token"}, timeout=30)
+    if r.status_code != 200:
+        raise SystemExit(f"YouTube login failed ({r.status_code}): {r.text[:300]}\n"
+                         "If it says invalid_grant, run the 'Warm Mug Radio - connect YouTube' workflow again.")
+    return r.json()["access_token"]
+
+
+def auth_start():
+    cid, _ = client()
+    r = requests.post("https://oauth2.googleapis.com/device/code", data={"client_id": cid, "scope": SCOPE}, timeout=30)
+    r.raise_for_status()
+    d = r.json()
+    STATE.parent.mkdir(exist_ok=True)
+    STATE.write_text(json.dumps(d))
+    summary(f"## Connect Warm Mug Radio to YouTube\n\n"
+            f"1. On your phone open **{d['verification_url']}**\n"
+            f"2. Type this code: **{d['user_code']}**\n"
+            f"3. Sign in, and when asked which account/channel, pick **Warm Mug Radio** (not your cricket channel).\n"
+            f"4. Tap Allow. This run finishes by itself within a minute after that.\n\n"
+            f"The code works for {d['expires_in']//60} minutes.")
+
+
+def auth_wait():
+    cid, sec = client()
+    d = json.loads(STATE.read_text())
+    deadline, wait = time.time() + d["expires_in"], d.get("interval", 5)
+    while time.time() < deadline:
+        time.sleep(wait)
+        r = requests.post("https://oauth2.googleapis.com/token", data={
+            "client_id": cid, "client_secret": sec, "device_code": d["device_code"],
+            "grant_type": "urn:ietf:params:oauth:grant-type:device_code"}, timeout=30)
+        j = r.json()
+        if r.status_code == 200:
+            if not j.get("refresh_token"):
+                raise SystemExit("Google did not return a long-term login. Remove access at myaccount.google.com/permissions and retry.")
+            lock(j["refresh_token"])
+            ch = requests.get(f"{API}/channels", params={"part": "snippet", "mine": "true"},
+                              headers={"Authorization": f"Bearer {j['access_token']}"}, timeout=30).json()
+            name = (ch.get("items") or [{}])[0].get("snippet", {}).get("title", "unknown")
+            summary(f"\n✅ Connected. Videos will be posted to the channel: **{name}**")
+            return
+        if j.get("error") == "slow_down":
+            wait += 5
+        elif j.get("error") != "authorization_pending":
+            raise SystemExit(f"Sign-in failed: {j}")
+    raise SystemExit("The code expired before it was approved. Run the workflow again.")
+
+
+def whoami():
+    tok = access_token()
+    ch = requests.get(f"{API}/channels", params={"part": "snippet", "mine": "true"},
+                      headers={"Authorization": f"Bearer {tok}"}, timeout=30).json()
+    name = (ch.get("items") or [{}])[0].get("snippet", {}).get("title", "unknown")
+    summary(f"Posting to YouTube channel: **{name}**")
+    return name
+
+
+def upload():
+    out = HERE / "out"
+    meta = json.loads((out / "meta.json").read_text())
+    video = out / "video.mp4"
+    tok = access_token()
+    h = {"Authorization": f"Bearer {tok}"}
+    body = {
+        "snippet": {"title": meta["title"], "description": meta["description"], "tags": meta["tags"],
+                    "categoryId": "10", "defaultLanguage": "en"},
+        "status": {"privacyStatus": os.environ.get("WM_PRIVACY", "public"), "selfDeclaredMadeForKids": False,
+                   "containsSyntheticMedia": True, "embeddable": True},
+    }
+    size = video.stat().st_size
+    r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos",
+                      params={"uploadType": "resumable", "part": "snippet,status"},
+                      headers={**h, "Content-Type": "application/json; charset=UTF-8",
+                               "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)},
+                      data=json.dumps(body), timeout=60)
+    if r.status_code != 200:
+        raise SystemExit(f"Upload could not start ({r.status_code}): {r.text[:500]}")
+    url = r.headers["Location"]
+
+    chunk, pos, vid = 16 * 1024 * 1024, 0, None
+    with open(video, "rb") as f:
+        while pos < size:
+            f.seek(pos)
+            data = f.read(chunk)
+            end = pos + len(data) - 1
+            rr = None
+            for attempt in range(5):
+                try:
+                    rr = requests.put(url, data=data, timeout=300, headers={
+                        **h, "Content-Length": str(len(data)), "Content-Range": f"bytes {pos}-{end}/{size}"})
+                except requests.RequestException as e:
+                    print("retry after error:", e); time.sleep(5 * (attempt + 1)); continue
+                if rr.status_code in (500, 502, 503, 504):
+                    time.sleep(5 * (attempt + 1)); continue
+                break
+            if rr is None:
+                raise SystemExit("Upload failed: network kept dropping. The next run will try again.")
+            if rr.status_code in (200, 201):
+                vid = rr.json()["id"]; pos = size
+            elif rr.status_code == 308:
+                rng = rr.headers.get("Range")
+                pos = int(rng.split("-")[1]) + 1 if rng else pos
+                print(f"uploaded {pos/size:.0%}")
+            else:
+                raise SystemExit(f"Upload failed ({rr.status_code}): {rr.text[:500]}")
+
+    thumb_ok = True
+    with open(out / "thumbnail.jpg", "rb") as f:
+        t = requests.post("https://www.googleapis.com/upload/youtube/v3/thumbnails/set", params={"videoId": vid},
+                          headers={**h, "Content-Type": "image/jpeg"}, data=f.read(), timeout=60)
+    if t.status_code != 200:
+        thumb_ok = False
+        print("Thumbnail not set:", t.status_code, t.text[:300])
+
+    link = f"https://youtu.be/{vid}"
+    (out / "result.json").write_text(json.dumps({"video_id": vid, "url": link, "thumbnail_set": thumb_ok}))
+    summary(f"✅ Posted: **{meta['title']}** ({meta['minutes']} min) → {link}"
+            + ("" if thumb_ok else "\n\n⚠️ Custom thumbnail not set - verify the channel with your phone number at youtube.com/verify"))
+
+
+if __name__ == "__main__":
+    {"auth-start": auth_start, "auth-wait": auth_wait, "whoami": whoami, "upload": upload}[sys.argv[1]]()

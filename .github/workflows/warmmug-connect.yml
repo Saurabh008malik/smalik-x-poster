@@ -1,0 +1,36 @@
+name: Warm Mug Radio - connect YouTube (one time)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: warmmug
+  cancel-in-progress: false
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+
+      - name: Get a sign-in code (open this run's Summary to see it)
+        run: python warmmug/yt.py auth-start
+
+      - name: Wait for you to approve on google.com/device
+        env:
+          WM_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: python warmmug/yt.py auth-wait
+
+      - name: Save the (encrypted) login
+        run: |
+          git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
+          git add warmmug/secret/yt_token.enc
+          git diff --cached --quiet || (git commit -m "Warm Mug Radio: YouTube connected" && git pull --rebase -q && git push)
