@@ -3,6 +3,9 @@ name: Warm Mug Radio - post a Short
 on:
   schedule:
     - cron: "52 0 * * 0,1,3,5"   # backup only: Sun, Mon, Wed, Fri 6:22 AM IST (main trigger is the 6 AM money job)
+  push:
+    branches: [main]
+    paths: ["warmmug/post-short.txt"]   # Claude can start a post by changing this file
   workflow_dispatch:
     inputs:
       mode:
@@ -76,7 +79,9 @@ jobs:
         env:
           WM_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           WARMMUG_HOOK: ${{ secrets.WARMMUG_HOOK }}
-        run: python warmmug/yt.py upload out_short
+        run: |
+          set -o pipefail
+          { python warmmug/yt.py whoami && python warmmug/yt.py upload out_short; } 2>&1 | tee warmmug/last_upload.log
 
       - name: Record what was posted
         if: steps.b.outputs.built == 'yes' && steps.s.outputs.mode == 'post'
@@ -93,3 +98,17 @@ jobs:
           git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
           git add warmmug/shorts.json
           git commit -m "Warm Mug Radio: posted Short ${{ steps.s.outputs.today }}" && git pull --rebase -q && git push
+
+      - name: Write status for Claude
+        if: always() && github.event_name == 'push'
+        run: |
+          {
+            echo "# Warm Mug Radio - last Short run"
+            echo "time: $(TZ=Asia/Kolkata date '+%F %H:%M') IST"
+            echo "decide: ${{ steps.s.outcome }} / skip=${{ steps.s.outputs.skip }}"
+            echo "build: ${{ steps.b.outcome }} / built=${{ steps.b.outputs.built }}"
+            echo ""; echo "## upload log"; cat warmmug/last_upload.log 2>/dev/null || echo "(no upload)"
+          } > warmmug/status.md
+          git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
+          git add warmmug/status.md
+          git commit -m "Warm Mug Radio: status" && git pull --rebase -q && git push || true
