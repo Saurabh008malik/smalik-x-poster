@@ -1,0 +1,23 @@
+# What performed best on this page (last 14 days, updated 2026-10-30)
+
+Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
+Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
+
+## Top performers — repeat these patterns (hook style, topic, format)
+
+- [reel] score 7.0 | 𝗝𝗔𝗡𝗦𝗘𝗡 𝗞𝗔 𝗧𝗘𝗦𝗧 𝗠𝗜𝗟𝗘𝗦𝗧𝗢𝗡𝗘! 🔥 | likes 1, comments 2, shares 0, saves 0, views - | 2026-10-28-evening-reel
+- [card] score 7.0 | 𝗜𝗻𝗱𝗶𝗮 𝗪𝗼𝗺𝗲𝗻 𝗻𝗲 𝘀𝗲𝗿𝗶𝗲𝘀 𝗷𝗲𝗲𝘁 𝗹𝗶! 🇮🇳🔥 | likes 1, comments 2, shares 0, saves 0, views - | 2026-10-26-morning
+- [reel] score 7.0 | 𝗡𝗔𝗠𝗜𝗕𝗜𝗔 𝗞𝗔 𝗘𝗥𝗔𝗦𝗠𝗨𝗦 𝗦𝗛𝗢𝗪! 🇳🇦🔥 | likes 1, comments 2, shares 0, saves 0, views - | 2026-10-25-reel
+- [card] score 7.0 | 𝗪𝗘𝗟𝗟𝗜𝗡𝗚𝗧𝗢𝗡 𝗠𝗘𝗜𝗡 𝗕𝗔𝗔𝗗𝗦𝗛𝗔𝗛 𝗕𝗔𝗡𝗡𝗘𝗚𝗔 𝗜𝗡𝗗𝗜𝗔? 🇮🇳 | likes 1, comments 2, shares 0, saves 0, views - | 2026-10-25-evening
+- [card] score 6.0 | 𝗜𝗻𝗱𝗶𝗮 𝗪𝗼𝗺𝗲𝗻 𝗻𝗲 𝗸𝗶𝘆𝗮 𝟯-𝟬 𝗸𝗮 𝘀𝘄𝗲𝗲𝗽! 🇮🇳🔥 | likes 0, comments 2, shares 0, saves 0, views - | 2026-10-29-morning
+
+## Weakest — avoid repeating these patterns
+
+- [card] score 3.0 | 𝗜𝗻𝗱𝗶𝗮 𝗪𝗼𝗺𝗲𝗻 𝗸𝗮 𝗱𝗮𝗺𝗱𝗮𝗿 𝘀𝘁𝗮𝗿𝘁! 🇮🇳🔥 | 2026-10-23-ckb-first
+- [card] score 3.0 | 𝗜𝗻𝗱𝗶𝗮 𝗻𝗲 𝘀𝗲𝗿𝗶𝗲𝘀 𝗺𝗲𝗶𝗻 𝟮-𝟬 𝗸𝗶 𝗯𝗮𝗮𝗱𝗵𝗮𝘁 𝗹𝗲 𝗹𝗶! 🇮🇳🔥 | 2026-10-24-evening
+- [card] score 3.0 | 𝗔𝗮𝗷 𝗵𝗮𝗶 𝗺𝗮𝘁𝗰𝗵 𝗱𝗮𝘆! 🇮🇳🔥 | 2026-10-24-morning
+
+## Average score by format
+
+- reel: 6.4 over 5 posts
+- card: 5.3 over 14 posts
