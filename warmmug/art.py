@@ -207,5 +207,34 @@ def render(title, out_dir, seed=None):
     return theme
 
 
+def render_short(hook, theme, out_dir, seed=1):
+    """Vertical 1080x1920 frame for a YouTube Short: hook text on top, the cozy window + mug in the middle."""
+    from playwright.sync_api import sync_playwright
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    svg = scene_svg(theme, seed)
+    wall = THEMES[theme]["wall"]
+    # show the window + mug part of the scene (x 790..1870) scaled to fill the width
+    scale = 1080 / 1080
+    inner = (
+        f'<div style="position:absolute;inset:0;background:linear-gradient(180deg,#120a05 0%,{wall} 45%,#120a05 100%)"></div>'
+        f'<div style="position:absolute;left:{-790*scale}px;top:520px;transform:scale({scale});transform-origin:0 0">{svg}</div>'
+        f'<div style="position:absolute;left:0;right:0;top:470px;height:90px;background:linear-gradient(180deg,#120a05,rgba(0,0,0,0))"></div>'
+        f'<div style="position:absolute;left:0;right:0;top:1500px;height:120px;background:linear-gradient(0deg,#120a05,rgba(0,0,0,0))"></div>'
+        f'<div class="brand" style="left:0;right:0;top:150px;text-align:center;font-size:30px">☕ Warm Mug Radio</div>'
+        f'<div class="title" style="left:80px;right:80px;top:230px;text-align:center;font-size:72px">{hook}</div>'
+        f'<div class="brand" style="left:0;right:0;top:1660px;text-align:center;font-size:30px;letter-spacing:.06em;'
+        f'text-transform:none;opacity:.9">Full cozy mixes on the channel 🎧</div>'
+    )
+    with sync_playwright() as p:
+        b = p.chromium.launch()
+        pg = b.new_page(viewport={"width": 1080, "height": 1920})
+        pg.set_content(html_page(inner, 1080, 1920), wait_until="networkidle", timeout=30000)
+        pg.wait_for_timeout(600)
+        pg.screenshot(path=str(out / "short.png"))
+        b.close()
+    return out / "short.png"
+
+
 if __name__ == "__main__":
     print(render(sys.argv[1], sys.argv[2]))

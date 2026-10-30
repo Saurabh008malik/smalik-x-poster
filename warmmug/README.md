@@ -1,7 +1,11 @@
 # ☕ Warm Mug Radio (music channel)
 
-Separate from the cricket and money pages. Builds cozy jazz-hop / lofi mixes and posts them to the
-Warm Mug Radio YouTube channel on **Tuesday and Saturday ~6 AM IST** (evening in the US).
+Separate from the cricket and money pages. **Free plan** (no paid music tools):
+- **Shorts** (40 s, vertical) on **Mon, Wed, Fri, Sun ~6 AM IST** - `shorts.py`, `warmmug-shorts.yml`
+- **Full mix** checked on **Tue & Sat ~6 AM IST** - posts only when 12+ min of new music is waiting
+  (about once a month on the free plan) - `build.py`, `warmmug-publish.yml`
+- **New music**: a monthly Claude task makes ~6 tracks with vidIQ's free credits and adds them to `inbox.json`.
+  Each track gives one mix slot and up to 3 Shorts.
 
 ## How it works
 1. Claude adds finished tracks to `inbox.json` (name + download link). Only royalty-free / commercially

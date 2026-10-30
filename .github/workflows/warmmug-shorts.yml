@@ -1,0 +1,92 @@
+name: Warm Mug Radio - post a Short
+
+on:
+  schedule:
+    - cron: "52 0 * * 0,1,3,5"   # backup only: Sun, Mon, Wed, Fri 6:22 AM IST (main trigger is the 6 AM money job)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "post = publish on YouTube; preview = build only (download from this run's Artifacts)"
+        default: "preview"
+        type: choice
+        options: ["preview", "post"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: warmmug
+  cancel-in-progress: false
+
+jobs:
+  short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide
+        id: s
+        run: |
+          MODE="${{ inputs.mode }}"; [ -z "$MODE" ] && MODE=post
+          TODAY=$(TZ=Asia/Kolkata date +%F)
+          SKIP=no
+          if [ "$MODE" = "post" ] && grep -q "\"date\": \"$TODAY\"" warmmug/shorts.json 2>/dev/null; then
+            SKIP=yes; echo "Short already posted today ($TODAY)."; fi
+          if [ "$MODE" = "post" ] && [ ! -f warmmug/secret/yt_token.enc ]; then
+            SKIP=yes; echo "YouTube not connected yet - run 'Warm Mug Radio - connect YouTube' first." | tee -a "$GITHUB_STEP_SUMMARY"; fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "today=$TODAY" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        if: steps.s.outputs.skip == 'no'
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji >/dev/null
+          pip install -q requests pillow playwright
+          python -m playwright install --with-deps chromium >/dev/null
+
+      - name: Build the Short
+        id: b
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          set +e
+          python warmmug/shorts.py; code=$?
+          if [ $code -eq 3 ]; then echo "built=no" >> "$GITHUB_OUTPUT"; cat warmmug/out_short/skip.txt >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          [ $code -eq 0 ] && echo "built=yes" >> "$GITHUB_OUTPUT"
+          exit $code
+
+      - name: Preview files
+        if: steps.b.outputs.built == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: warm-mug-short
+          path: |
+            warmmug/out_short/video.mp4
+            warmmug/out_short/meta.json
+          retention-days: 7
+
+      - name: Post to YouTube
+        if: steps.b.outputs.built == 'yes' && steps.s.outputs.mode == 'post'
+        env:
+          WM_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: python warmmug/yt.py upload out_short
+
+      - name: Record what was posted
+        if: steps.b.outputs.built == 'yes' && steps.s.outputs.mode == 'post'
+        run: |
+          python - <<'EOF'
+          import json, pathlib
+          d = pathlib.Path("warmmug")
+          meta = json.loads((d / "out_short/meta.json").read_text()); res = json.loads((d / "out_short/result.json").read_text())
+          p = d / "shorts.json"; log = json.loads(p.read_text()) if p.exists() else []
+          log.append({"date": "${{ steps.s.outputs.today }}", "title": meta["title"], "url": res["url"],
+                      "track": meta["track"], "track_url": meta["track_url"], "start": meta["start"]})
+          p.write_text(json.dumps(log, indent=2, ensure_ascii=False))
+          EOF
+          git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
+          git add warmmug/shorts.json
+          git commit -m "Warm Mug Radio: posted Short ${{ steps.s.outputs.today }}" && git pull --rebase -q && git push

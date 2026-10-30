@@ -4,7 +4,7 @@
   python warmmug/yt.py auth-wait      -> waits until Saurabh approves on google.com/device, saves the
                                          login encrypted in warmmug/secret/yt_token.enc
   python warmmug/yt.py whoami         -> prints which YouTube channel the saved login posts to
-  python warmmug/yt.py upload         -> uploads warmmug/out/video.mp4 with meta.json + thumbnail
+  python warmmug/yt.py upload [dir]   -> uploads warmmug/<dir>/video.mp4 with meta.json (+ thumbnail.jpg if there)
 
 Needs: warmmug/oauth_client.json (Google OAuth client, type "TVs and Limited Input devices")
        env WM_KEY (the key used to lock/unlock the saved login; the workflow passes a repo secret)
@@ -116,8 +116,8 @@ def whoami():
     return name
 
 
-def upload():
-    out = HERE / "out"
+def upload(folder="out"):
+    out = HERE / folder
     meta = json.loads((out / "meta.json").read_text())
     video = out / "video.mp4"
     tok = access_token()
@@ -166,12 +166,13 @@ def upload():
                 raise SystemExit(f"Upload failed ({rr.status_code}): {rr.text[:500]}")
 
     thumb_ok = True
-    with open(out / "thumbnail.jpg", "rb") as f:
-        t = requests.post("https://www.googleapis.com/upload/youtube/v3/thumbnails/set", params={"videoId": vid},
-                          headers={**h, "Content-Type": "image/jpeg"}, data=f.read(), timeout=60)
-    if t.status_code != 200:
-        thumb_ok = False
-        print("Thumbnail not set:", t.status_code, t.text[:300])
+    if (out / "thumbnail.jpg").exists():  # Shorts have no custom thumbnail
+        with open(out / "thumbnail.jpg", "rb") as f:
+            t = requests.post("https://www.googleapis.com/upload/youtube/v3/thumbnails/set", params={"videoId": vid},
+                              headers={**h, "Content-Type": "image/jpeg"}, data=f.read(), timeout=60)
+        if t.status_code != 200:
+            thumb_ok = False
+            print("Thumbnail not set:", t.status_code, t.text[:300])
 
     link = f"https://youtu.be/{vid}"
     (out / "result.json").write_text(json.dumps({"video_id": vid, "url": link, "thumbnail_set": thumb_ok}))
@@ -180,4 +181,5 @@ def upload():
 
 
 if __name__ == "__main__":
-    {"auth-start": auth_start, "auth-wait": auth_wait, "whoami": whoami, "upload": upload}[sys.argv[1]]()
+    cmd = {"auth-start": auth_start, "auth-wait": auth_wait, "whoami": whoami, "upload": upload}[sys.argv[1]]
+    cmd(*sys.argv[2:])

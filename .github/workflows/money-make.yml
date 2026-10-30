@@ -106,8 +106,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          DOW=$(TZ=Asia/Kolkata date +%u)   # 2 = Tue, 6 = Sat
-          if [ "$DOW" = "2" ] || [ "$DOW" = "6" ]; then
+          DOW=$(TZ=Asia/Kolkata date +%u)   # 1 Mon ... 7 Sun
+          if [ "$DOW" = "2" ] || [ "$DOW" = "6" ]; then   # Tue, Sat: full mix (skips itself if not enough new music)
             gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-publish.yml/dispatches \
-              -f ref=main -f 'inputs[mode]=post' -f 'inputs[min_minutes]=12' || echo "Could not start Warm Mug Radio"
+              -f ref=main -f 'inputs[mode]=post' -f 'inputs[min_minutes]=12' || echo "Could not start Warm Mug Radio mix"
+          fi
+          if [ "$DOW" = "1" ] || [ "$DOW" = "3" ] || [ "$DOW" = "5" ] || [ "$DOW" = "7" ]; then   # Mon, Wed, Fri, Sun: Short
+            gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-shorts.yml/dispatches \
+              -f ref=main -f 'inputs[mode]=post' || echo "Could not start Warm Mug Radio Short"
           fi
