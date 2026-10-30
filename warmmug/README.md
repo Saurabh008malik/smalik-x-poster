@@ -16,7 +16,14 @@ Separate from the cricket and money pages. **Free plan** (no paid music tools):
 3. Posted mixes are logged in `published.json`; their tracks are never reused.
 4. If less than 12 min of new music is waiting, nothing is posted that day.
 
-## One-time setup (phone is fine)
+## One-time setup (phone is fine) - Apps Script route (no Google Cloud, no card)
+1. script.google.com → New project → paste `appsscript.gs` → Services (+) → YouTube Data API v3 → Add.
+2. Run `testConnection` once → allow access → pick the **Warm Mug Radio** channel.
+3. Deploy → New deployment → Web app → Execute as **Me**, access **Anyone** → copy the web app URL.
+4. GitHub secret `WARMMUG_HOOK` = `<web app URL>?k=<KEY from appsscript.gs>`.
+The script refuses to post to any channel whose name isn't Warm Mug Radio.
+
+## Alternative setup - own Google Cloud OAuth client
 1. Google Cloud: project → enable **YouTube Data API v3** → OAuth consent screen (External, then **Publish app**)
    → Credentials → OAuth client ID → type **TVs and Limited Input devices**. Put the client ID and secret in
    `oauth_client.json` as `{"client_id": "...", "client_secret": "..."}`.

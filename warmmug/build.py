@@ -121,7 +121,7 @@ def main():
     filt.append(f"[{prev}]afade=t=in:d=2,afade=t=out:st={end:.2f}:d=5,loudnorm=I=-14:TP=-1.5:LRA=11[out]")
     mix = WORK / "mix.m4a"
     sh(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", ";".join(filt), "-map", "[out]",
-        "-c:a", "aac", "-b:a", "192k", "-ar", "44100", str(mix)])
+        "-c:a", "aac", "-b:a", "128k", "-ar", "44100", str(mix)])
 
     # 2) art
     title = next_title(published)

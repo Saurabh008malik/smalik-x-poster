@@ -27,14 +27,16 @@ jobs:
 
       - name: Decide
         id: s
+        env:
+          HAVE_HOOK: ${{ secrets.WARMMUG_HOOK != '' }}
         run: |
           MODE="${{ inputs.mode }}"; [ -z "$MODE" ] && MODE=post
           TODAY=$(TZ=Asia/Kolkata date +%F)
           SKIP=no
           if [ "$MODE" = "post" ] && grep -q "\"date\": \"$TODAY\"" warmmug/shorts.json 2>/dev/null; then
             SKIP=yes; echo "Short already posted today ($TODAY)."; fi
-          if [ "$MODE" = "post" ] && [ ! -f warmmug/secret/yt_token.enc ]; then
-            SKIP=yes; echo "YouTube not connected yet - run 'Warm Mug Radio - connect YouTube' first." | tee -a "$GITHUB_STEP_SUMMARY"; fi
+          if [ "$MODE" = "post" ] && [ ! -f warmmug/secret/yt_token.enc ] && [ "$HAVE_HOOK" != "true" ]; then
+            SKIP=yes; echo "YouTube not connected yet - add the WARMMUG_HOOK secret (Apps Script web app link) first." | tee -a "$GITHUB_STEP_SUMMARY"; fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "today=$TODAY" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-python@v5
@@ -73,6 +75,7 @@ jobs:
         if: steps.b.outputs.built == 'yes' && steps.s.outputs.mode == 'post'
         env:
           WM_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          WARMMUG_HOOK: ${{ secrets.WARMMUG_HOOK }}
         run: python warmmug/yt.py upload out_short
 
       - name: Record what was posted

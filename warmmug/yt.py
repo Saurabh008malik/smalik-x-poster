@@ -107,7 +107,25 @@ def auth_wait():
     raise SystemExit("The code expired before it was approved. Run the workflow again.")
 
 
+def hook_call(payload):
+    """Send a request to Saurabh's Apps Script web app (secret WARMMUG_HOOK = web app URL with ?k=KEY)."""
+    r = requests.post(os.environ["WARMMUG_HOOK"], data=json.dumps(payload),
+                      headers={"Content-Type": "application/json"}, timeout=360, allow_redirects=True)
+    try:
+        j = r.json()
+    except ValueError:
+        raise SystemExit(f"Apps Script did not answer properly ({r.status_code}). Check the web app is deployed "
+                         f"with access 'Anyone'. Reply: {r.text[:300]}")
+    if not j.get("ok"):
+        raise SystemExit(f"Apps Script says: {j.get('error')}")
+    return j
+
+
 def whoami():
+    if os.environ.get("WARMMUG_HOOK"):
+        name = hook_call({"action": "whoami"})["channel"]
+        summary(f"Posting to YouTube channel: **{name}** (via Apps Script)")
+        return name
     tok = access_token()
     ch = requests.get(f"{API}/channels", params={"part": "snippet", "mine": "true"},
                       headers={"Authorization": f"Bearer {tok}"}, timeout=30).json()
@@ -120,6 +138,21 @@ def upload(folder="out"):
     out = HERE / folder
     meta = json.loads((out / "meta.json").read_text())
     video = out / "video.mp4"
+    if os.environ.get("WARMMUG_HOOK"):
+        import base64
+        if video.stat().st_size > 38 * 1024 * 1024:
+            raise SystemExit("Video is too big for the Apps Script route (over 38 MB). Use a shorter mix.")
+        thumb = out / "thumbnail.jpg"
+        j = hook_call({"action": "upload", "title": meta["title"], "description": meta["description"],
+                       "tags": meta["tags"], "privacy": os.environ.get("WM_PRIVACY", "public"),
+                       "video": base64.b64encode(video.read_bytes()).decode(),
+                       "thumbnail": base64.b64encode(thumb.read_bytes()).decode() if thumb.exists() else ""})
+        (out / "result.json").write_text(json.dumps({"video_id": j["id"], "url": j["url"],
+                                                     "thumbnail_set": j.get("thumbnail") in ("set", "none")}))
+        summary(f"✅ Posted to {j['channel']}: **{meta['title']}** ({meta['minutes']} min) → {j['url']}"
+                + ("" if j.get("thumbnail") in ("set", "none") else
+                   "\n\n⚠️ Custom thumbnail not set - verify the channel with your phone number at youtube.com/verify"))
+        return
     tok = access_token()
     h = {"Authorization": f"Bearer {tok}"}
     body = {
