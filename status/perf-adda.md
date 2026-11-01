@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-10-31)
+# What performed best on this page (last 14 days, updated 2026-11-01)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
+- [card] score 0.0 | 𝗣𝗵𝗼𝗻𝗲 𝘀𝗲 𝗮𝗮𝘄𝗮𝗮𝘇 𝗰𝗹𝗲𝗮𝗿 𝗿𝗮𝗸𝗵𝗻𝗲 𝗸𝗲 𝟰 𝘁𝗮𝗿𝗲𝗲𝗾𝗲 🎤 | 2026-10-31-01
 - [card] score 1.0 | 𝗟𝗶𝘃𝗲 𝗰𝗵𝗮𝗹𝘂 𝗸𝗮𝗿𝗻𝗲 𝘀𝗲 𝗽𝗲𝗵𝗹𝗲 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲 𝗸𝗮𝗿𝗼 🎥 | 2026-10-29-03
-- [card] score 2.0 | 𝗔𝗮𝗽𝗸𝗮 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗸𝗶𝘀 𝗻𝗶𝗰𝗵𝗲 𝗺𝗲𝗶𝗻 𝗵𝗮𝗶? 👇 | 2026-10-27-03
-- [card] score 2.0 | 𝗧𝗶𝘁𝗹𝗲 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗯𝗮𝗮𝘁𝗲𝗻 𝘆𝗮𝗮𝗱 𝗿𝗮𝗸𝗵𝗼 ✍️ | 2026-10-28-01
+- [reel] score 1.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝗱𝘂𝘀𝗿𝗲 𝗸𝗮 𝗰𝗹𝗶𝗽 𝗱𝗮𝗮𝗹𝗸𝗲 𝗦𝗵𝗼𝗿𝘁𝘀 𝗰𝗵𝗮𝗹𝗲𝗻𝗴𝗲? ❌ | 2026-10-31-02
 
 ## Average score by format
 
-- reel: 3.0 over 4 posts
-- card: 2.2 over 8 posts
+- reel: 2.6 over 5 posts
+- card: 1.9 over 10 posts
