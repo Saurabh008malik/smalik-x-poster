@@ -14,10 +14,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Weakest — avoid repeating these patterns
 
 - [card] score 0.0 | 𝗣𝗵𝗼𝗻𝗲 𝘀𝗲 𝗮𝗮𝘄𝗮𝗮𝘇 𝗰𝗹𝗲𝗮𝗿 𝗿𝗮𝗸𝗵𝗻𝗲 𝗸𝗲 𝟰 𝘁𝗮𝗿𝗲𝗲𝗾𝗲 🎤 | 2026-10-31-01
-- [card] score 1.0 | 𝗟𝗶𝘃𝗲 𝗰𝗵𝗮𝗹𝘂 𝗸𝗮𝗿𝗻𝗲 𝘀𝗲 𝗽𝗲𝗵𝗹𝗲 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲 𝗸𝗮𝗿𝗼 🎥 | 2026-10-29-03
-- [reel] score 1.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝗱𝘂𝘀𝗿𝗲 𝗸𝗮 𝗰𝗹𝗶𝗽 𝗱𝗮𝗮𝗹𝗸𝗲 𝗦𝗵𝗼𝗿𝘁𝘀 𝗰𝗵𝗮𝗹𝗲𝗻𝗴𝗲? ❌ | 2026-10-31-02
+- [card] score 0.0 | 𝗩𝗶𝗱𝗲𝗼 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗰𝗵𝗲𝗲𝘇𝗲𝗻 𝘇𝗮𝗮𝗿𝗼𝗼𝗿 𝗹𝗶𝗸𝗵𝗼 📝 | 2026-11-01-01
+- [reel] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗮𝗯 𝘃𝗶𝗱𝗲𝗼 𝗸𝗲 𝟯 𝗰𝘂𝘁 𝘁𝗲𝘀𝘁 𝗸𝗮𝗿𝗲𝗴𝗮 🎬 | 2026-11-01-02
 
 ## Average score by format
 
-- reel: 2.6 over 5 posts
-- card: 1.9 over 10 posts
+- reel: 2.2 over 6 posts
+- card: 1.6 over 12 posts
