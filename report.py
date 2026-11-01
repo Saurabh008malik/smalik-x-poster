@@ -222,7 +222,7 @@ def minutes_section():
     while True:
         r = requests.get(f"https://api.github.com/repos/{repo}/actions/runs", timeout=30,
                          headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"},
-                         params={"per_page": 100, "page": page_n, "created": f">={start:%Y-%m-%d}"})
+                         params={"per_page": 100, "page": page_n, "created": f">={min(start, NOW - dt.timedelta(days=3)):%Y-%m-%d}"})
         if not r.ok:
             p(f"- {BAD} Could not read runs: {r.status_code}")
             return
@@ -233,7 +233,8 @@ def minutes_section():
             a = dt.datetime.fromisoformat(run["run_started_at"].replace("Z", "+00:00"))
             b = dt.datetime.fromisoformat(run["updated_at"].replace("Z", "+00:00"))
             m = max(1, math.ceil((b - a).total_seconds() / 60))
-            used += m
+            if a >= start:
+                used += m
             if a >= NOW - dt.timedelta(days=3):
                 last3 += m
         if len(runs) < 100:
