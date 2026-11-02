@@ -1,0 +1,49 @@
+name: Voice-over (free Microsoft neural voice)
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "script to speak"
+        type: string
+      voice:
+        description: "e.g. hi-IN-SwaraNeural (female) or hi-IN-MadhurNeural (male)"
+        default: "hi-IN-SwaraNeural"
+        type: string
+      rate:
+        description: "speaking speed, e.g. +8%"
+        default: "+6%"
+        type: string
+      path:
+        description: "where to save the mp3 in the repo"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-asset
+  cancel-in-progress: false
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Speak
+        env:
+          TEXT: ${{ inputs.text }}
+          VOICE: ${{ inputs.voice }}
+          RATE: ${{ inputs.rate }}
+          DEST: ${{ inputs.path }}
+        run: |
+          pip install -q edge-tts
+          mkdir -p "$(dirname "$DEST")"
+          edge-tts --voice "$VOICE" --rate="$RATE" --text "$TEXT" --write-media "$DEST" --write-subtitles "${DEST%.mp3}.vtt"
+          ls -l "$(dirname "$DEST")"
+      - name: Save
+        run: |
+          git config user.name "voice-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A "$(dirname "${{ inputs.path }}")"
+          git diff --cached --quiet || (git commit -m "Voice-over: ${{ inputs.path }}" && git pull --rebase -q && git push)
