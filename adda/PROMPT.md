@@ -9,8 +9,12 @@ DATE (IST) is given at the end of this prompt. The workflow publishes item 1 at 
 If `status/perf-adda.md` exists, read it. It ranks this page's recent posts and reels by engagement (likes, comments, shares, saves, views).
 - Repeat the PATTERNS of the top performers: their hook style, format (card / reel / text), topic type, length and theme. Never copy their text or repeat their topic.
 - Avoid the patterns of the weakest ones.
-- Keep testing: about half of today's items follow a winning pattern, the rest try something new, so we keep learning.
-- If the file says there is no data yet, just follow the rules below.
+- If the file says there is no data yet, skip it.
+
+Then read `status/trends-adda.md`. It lists formats and hooks that are getting the MOST views right now on other pages in our niche (Instagram Reels / TikTok outliers).
+- RULE: about two thirds of today's items (and ALWAYS the reel) must use one of these winning patterns — from perf (our own top performers) or from the trends file. Name the pattern you used in the item's "sources" list as `pattern: <name>`.
+- The remaining items may test something new, so we keep learning.
+- Copy the PATTERN only (hook type, structure, format, length). Never copy another creator's words, and every fact must come from your fresh research.
 
 ## 1. Avoid repeats
 List the newest ~12 `.json` files in `adda/posted/` and `adda/queue/` and read their captions. Never repeat a topic, tip or angle from the last ~7 days.

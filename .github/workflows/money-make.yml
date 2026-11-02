@@ -90,7 +90,7 @@ jobs:
         if: always() && steps.s.outputs.skip == 'no'
         run: |
           git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
-          git add -A money/queue money/drafts || true
+          git add -A money/queue money/drafts status/perf-money.md || true
           git diff --cached --quiet || (git commit -m "Money page: posts for ${{ steps.s.outputs.target }}" && git pull --rebase -q && git push)
 
       - name: Start Creator Adda's daily make (reliable trigger via this 6 AM job)
