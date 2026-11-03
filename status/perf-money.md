@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [reel] score 1.0 | Myth-buster. 🧠 | likes 1, comments 0, shares 0, saves 0, views - | 2026-10-28-09
 - [reel] score 0.0 | Quick money fact. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-09
+- [card] score 0.0 | $5 a day vs $150 a month. 🤯 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-08
 - [card] score 0.0 | People are saving less. 📉 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-07
 - [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-06
-- [card] score 0.0 | TRUE or FALSE? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.1 over 10 posts
-- card: 0.0 over 56 posts
+- card: 0.0 over 57 posts
 - text: 0.0 over 8 posts
