@@ -91,6 +91,29 @@ jobs:
             --max-turns 90
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
 
+      - name: First attempt made the post?
+        id: first
+        if: steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        run: |
+          F="queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}"
+          test -f "$F.json" && test -f "$F.png" && test -f "$F-fb.jpg"
+
+      - name: Claude second attempt (first one stopped early)
+        if: steps.s.outputs.skip == 'no' && steps.first.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read PROMPT.md in the repository root and follow it exactly.
+            SLOT = ${{ steps.s.outputs.slot }}
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            Use DATE-SLOT = ${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }} for all file names.
+          claude_args: |
+            --max-turns 90
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
       - name: Check the post was made
         if: steps.s.outputs.skip == 'no'
         run: |
