@@ -20,4 +20,4 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.3 over 9 posts
-- card: 0.1 over 22 posts
+- card: 0.1 over 23 posts
