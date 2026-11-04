@@ -61,9 +61,9 @@ BANNER = """<!doctype html><html><head><meta charset="utf-8">""" + FONTS + """
       <h1>Warm Mug <em>Radio</em></h1>
       <p>Cozy jazz hop &amp; lofi to study, work and slow down.</p>
       <div class="row">
-        <span class="chip">New mix weekly</span>
-        <span class="chip ghost">Shorts 4&times; a week</span>
-        <span class="chip ghost">Instrumental &middot; no ads mid-mix</span>
+        <span class="chip">A new mix every 5 days</span>
+        <span class="chip ghost">2 Shorts a day</span>
+        <span class="chip ghost">Instrumental lofi &middot; AI-made</span>
       </div>
     </div>
   </div>
