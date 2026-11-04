@@ -3,6 +3,7 @@
 Each track gives up to 3 different excerpts, so 6 new tracks a month = about 18 Shorts.
 Output in warmmug/out_short/: video.mp4 + meta.json. Exit 3 = nothing new to cut.
 """
+import datetime as dt
 import json
 import subprocess
 import sys
@@ -13,6 +14,14 @@ import requests
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out_short"
 WORK = HERE / "work"
+# first comment posted by the channel on every Short - one is picked by the day of the year
+SHORT_COMMENTS = [
+    '☕ Full version of "{name}" is on the channel - long mixes every week.',
+    "☕ Want the hour-long version? It's on the channel. Headphones on 🎧",
+    '☕ This is a clip from "{name}". The full cozy mix is on the channel.',
+    "☕ Full mixes live on the channel - perfect for studying or winding down.",
+]
+
 LEN = 40          # seconds per Short
 SLOTS = [25, 75, 125]  # excerpt start points inside each track
 
@@ -100,6 +109,7 @@ def main():
         "tags": ["lofi", "lofi shorts", "jazz hop", "study music", "chill beats", "cozy music", "warm mug radio"],
         "minutes": round(LEN / 60, 1),
         "track_url": t["url"], "track": t["name"], "start": pick[1], "hook": hook,
+        "comment": SHORT_COMMENTS[int(dt.date.today().strftime("%j")) % len(SHORT_COMMENTS)].format(name=t["name"]),
     }
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
     print(f"Built Short: {meta['title']} ({t['name']} from {start}s)")

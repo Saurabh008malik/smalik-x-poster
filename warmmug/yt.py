@@ -145,11 +145,14 @@ def upload(folder="out"):
         thumb = out / "thumbnail.jpg"
         j = hook_call({"action": "upload", "title": meta["title"], "description": meta["description"],
                        "tags": meta["tags"], "privacy": os.environ.get("WM_PRIVACY", "public"),
+                       "comment": meta.get("comment", ""),
                        "video": base64.b64encode(video.read_bytes()).decode(),
                        "thumbnail": base64.b64encode(thumb.read_bytes()).decode() if thumb.exists() else ""})
         (out / "result.json").write_text(json.dumps({"video_id": j["id"], "url": j["url"],
-                                                     "thumbnail_set": j.get("thumbnail") in ("set", "none")}))
+                                                     "thumbnail_set": j.get("thumbnail") in ("set", "none"),
+                                                     "first_comment": j.get("comment", "none")}))
         summary(f"✅ Posted to {j['channel']}: **{meta['title']}** ({meta['minutes']} min) → {j['url']}"
+                + f"\n\nFirst comment: {j.get('comment', 'none')}"
                 + ("" if j.get("thumbnail") in ("set", "none") else
                    "\n\n⚠️ Custom thumbnail not set - verify the channel with your phone number at youtube.com/verify"))
         return
@@ -207,9 +210,19 @@ def upload(folder="out"):
             thumb_ok = False
             print("Thumbnail not set:", t.status_code, t.text[:300])
 
+    comment_state = "none"
+    if meta.get("comment"):
+        c = requests.post(f"{API}/commentThreads", params={"part": "snippet"},
+                          headers={**h, "Content-Type": "application/json"},
+                          data=json.dumps({"snippet": {"videoId": vid, "topLevelComment": {
+                              "snippet": {"textOriginal": meta["comment"]}}}}), timeout=60)
+        comment_state = "posted" if c.status_code in (200, 201) else f"failed: {c.status_code} {c.text[:150]}"
+
     link = f"https://youtu.be/{vid}"
-    (out / "result.json").write_text(json.dumps({"video_id": vid, "url": link, "thumbnail_set": thumb_ok}))
+    (out / "result.json").write_text(json.dumps({"video_id": vid, "url": link, "thumbnail_set": thumb_ok,
+                                                 "first_comment": comment_state}))
     summary(f"✅ Posted: **{meta['title']}** ({meta['minutes']} min) → {link}"
+            + f"\n\nFirst comment: {comment_state}"
             + ("" if thumb_ok else "\n\n⚠️ Custom thumbnail not set - verify the channel with your phone number at youtube.com/verify"))
 
 

@@ -28,7 +28,18 @@ function doPost(e) {
         thumb = 'set';
       } catch (err) { thumb = 'failed: ' + err.message; }
     }
-    return out({ok: true, id: res.id, url: 'https://youtu.be/' + res.id, thumbnail: thumb, channel: name});
+    // first comment from the channel itself (YouTube's API cannot pin it - pin by hand if you want)
+    let comment = 'none';
+    if (req.comment) {
+      try {
+        YouTube.CommentThreads.insert({
+          snippet: {videoId: res.id, topLevelComment: {snippet: {textOriginal: req.comment}}}
+        }, 'snippet');
+        comment = 'posted';
+      } catch (err) { comment = 'failed: ' + err.message; }
+    }
+    return out({ok: true, id: res.id, url: 'https://youtu.be/' + res.id, thumbnail: thumb,
+                comment: comment, channel: name});
   } catch (err) {
     return out({ok: false, error: String(err)});
   }

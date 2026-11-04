@@ -6,6 +6,7 @@ Exit code 0 = built, 3 = not enough new music yet (nothing to post).
 Usage: python warmmug/build.py [--target-min 60] [--min-min 12]
 """
 import argparse
+import datetime as dt
 import json
 import subprocess
 import sys
@@ -34,6 +35,22 @@ Music created with AI tools and curated by hand for Warm Mug Radio.
 
 #lofi #jazzhop #studymusic #chillbeats #lofivibes
 """
+
+# first comment posted by the channel on every mix - one is picked by the day of the year
+FIRST_COMMENTS = [
+    "☕ {mins} minutes, no ads in the middle - just press play and let it run.\n"
+    "Chapters are in the description if you want to jump to a track.\n"
+    "What are you working on today? 👇",
+    "☕ Pour something warm and let this run while you work.\n"
+    'Track one is "{first}" - tell me which one you liked best 👇\n'
+    "New mixes and short clips every week.",
+    "☕ {mins} minutes of cozy jazz hop to keep you company.\n"
+    "Studying, working, or just slowing down? Say hi in the replies 👇\n"
+    "Full tracklist with timestamps is in the description.",
+    "☕ Save this one for your next late session.\n"
+    'Opening track: "{first}". Chapters in the description.\n'
+    "Where are you listening from? 👇",
+]
 
 BASE_TAGS = ["lofi", "lofi music", "lofi vibes", "jazz hop", "chill beats", "study music",
              "relaxing music", "lofi hip hop", "cozy music", "cafe music", "focus music", "warm mug radio"]
@@ -152,6 +169,8 @@ def main():
         "minutes": round(total / 60, 1),
         "track_urls": [c["url"] for c in chosen],
         "tracks": [c["name"] for c in chosen],
+        "comment": FIRST_COMMENTS[int(dt.date.today().strftime("%j")) % len(FIRST_COMMENTS)].format(
+            first=chosen[0]["name"], mins=round(total / 60)),
     }
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
     print(f"Built '{title}' - {meta['minutes']} min, {len(chosen)} tracks, theme {theme}")
