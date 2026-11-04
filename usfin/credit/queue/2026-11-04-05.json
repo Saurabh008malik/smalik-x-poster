@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\n\"Carrying a small balance on your card helps your score.\"\n\nThink before you scroll.\n\nTrue or False?",
+  "first_comment": "Answer below, then we'll reveal it 👇 (Hint: interest is the only thing a balance reliably buys you.)",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: myth sort"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Comment first — @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Carrying a balance <em>boosts</em> your score.",
+    "sub": "Comment True or False 👇",
+    "theme": "gold"
+  },
+  "image": "2026-11-04-05.jpg",
+  "publish_at": "2026-11-04T20:00:00+00:00"
+}

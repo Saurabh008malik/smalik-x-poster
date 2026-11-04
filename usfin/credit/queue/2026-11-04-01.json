@@ -1,0 +1,20 @@
+{
+  "caption": "Americans now owe $1.263 trillion on credit cards. 💳\n\nThe New York Fed's latest report says about 7% of card balances moved into serious delinquency (90+ days) in Q2 2026.\n\nIn plain English: a lot of people are stretched thin, and it's not always about overspending.\n\nAre your card balances higher or lower than a year ago?",
+  "first_comment": "Be honest: is your card balance going up or down this year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20260811",
+    "pattern: big number / math nobody says out loud"
+  ],
+  "instagram": {
+    "first_comment": "Up, down or flat? Tell us below — follow @creditscoretruths for daily credit truths 💳"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Card debt hit <em>$1.263 trillion</em> in Q2 2026.",
+    "sub": "About 7% of balances slid into serious delinquency.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-04-01.jpg",
+  "publish_at": "2026-11-04T12:00:00+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "caption": "Student loan delinquencies are hitting credit scores hard. 📉\n\nFICO's latest analysis found borrowers with a recent student-loan delinquency saw scores fall by 38 points on average over the year (about 3.2 million consumers with a payment due).\n\nNew York Fed data also shows student-loan serious delinquency flows are being distorted as defaulted loans get re-reported.\n\nIf this is you, contact your servicer early and check your reports.\n\nHas a student loan affected your score?",
+  "first_comment": "Did student loans change your score? 👇",
+  "sources": [
+    "https://themoneyoverview.com/average-credit-score-714-student-loan-delinquents-lost-38-points-on-average/",
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20260811",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Share your story — @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Student-loan delinquency cost some borrowers <em>38 points</em>.",
+    "sub": "Average drop, per FICO's latest analysis.",
+    "theme": "blue",
+    "source": "Source: FICO"
+  },
+  "image": "2026-11-04-07.jpg",
+  "publish_at": "2026-11-05T00:00:00+00:00"
+}

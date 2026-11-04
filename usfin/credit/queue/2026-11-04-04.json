@@ -1,0 +1,19 @@
+{
+  "caption": "Nobody tells you this: you can check your credit reports for free. ✅\n\nAnnualCreditReport.com is the official site, and the three bureaus offer free reports weekly.\n\nLook for accounts you don't recognize and wrong balances. Dispute errors with the bureau in writing.\n\nWhen did you last check yours?",
+  "first_comment": "Have you ever found an error on your report? 👇",
+  "sources": [
+    "https://www.annualcreditreport.com",
+    "pattern: nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Found a mistake once? Tell us — @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Check your credit report. <em>Free.</em> Every week.",
+    "sub": "Look for accounts and balances you don't recognize.",
+    "theme": "green"
+  },
+  "image": "2026-11-04-04.jpg",
+  "publish_at": "2026-11-04T18:00:00+00:00"
+}

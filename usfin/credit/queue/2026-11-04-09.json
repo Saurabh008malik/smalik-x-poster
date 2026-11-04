@@ -1,0 +1,19 @@
+{
+  "caption": "Quick myth-buster. ✅\n\nChecking your own credit score does NOT lower it.\n\nIt's a soft inquiry.\n\nWhat other credit myth did you believe for years?",
+  "first_comment": "Which credit myth fooled you the longest? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: myth-buster reveal"
+  ],
+  "instagram": {
+    "first_comment": "Tell us your biggest credit myth — @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Checking your own score does <em>NOT</em> lower it.",
+    "sub": "It's a soft inquiry. No impact on your score.",
+    "theme": "green"
+  },
+  "video": "2026-11-04-09.mp4",
+  "publish_at": "2026-11-04T17:00:00+00:00"
+}
