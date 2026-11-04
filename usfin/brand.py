@@ -37,7 +37,7 @@ body{font-family:"Inter","Noto Color Emoji",sans-serif;background:#070B14;color:
 .cover{width:1640px;height:624px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(900px 600px at 85% 0%,rgba(%RGB%,.28),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(76,141,255,.14),transparent 60%),linear-gradient(160deg,#0E1830,#070B14)}
 .cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px}
-.inner{position:relative;display:flex;align-items:center;gap:44px}
+.inner{position:relative;display:flex;align-items:center;gap:44px;top:-120px}
 .inner svg{width:190px;height:190px}
 .t1{font-size:108px;font-weight:900;letter-spacing:-.04em;line-height:1}
 .t1 em{font-style:normal;color:%ACC%}
