@@ -1,0 +1,29 @@
+{
+  "credit": {
+    "name": "Credit Score Truths",
+    "handle": "@creditscoretruths",
+    "env": "CREDIT",
+    "cta": "Follow for daily credit truths",
+    "niche": "credit scores, credit reports, credit cards, debt, loans, interest rates, collections, disputes, identity-theft/credit freezes, buy-now-pay-later, building and repairing credit for everyday Americans",
+    "topics": "FICO and VantageScore changes, what really moves a score, utilization myths, hard vs soft inquiries, credit-card interest and fees, medical-debt reporting rules, collections and disputes, student-loan reporting, BNPL and credit, auto/personal-loan rates, credit-card scams, credit-freeze how-tos, CFPB rules and news (Experian, Equifax, TransUnion, myFICO, CFPB, Fed G.19 consumer credit data, NY Fed household debt report)",
+    "kickers": "CREDIT MYTH, SCORE TRUTH, NEWS, DEBT REALITY, TRUE OR FALSE?, CARD TRAP, CREDIT HABIT"
+  },
+  "closing": {
+    "name": "Closing Costs",
+    "handle": "@closingcosts",
+    "env": "CLOSING",
+    "cta": "Follow for daily home-buying truths",
+    "niche": "buying, selling and financing a home in the US: mortgage rates, closing costs, down payments, PMI, inspections, appraisals, hidden fees, rent vs buy, first-time buyer programs, property taxes, home insurance costs, refinancing, real-estate commissions",
+    "topics": "Freddie Mac PMMS mortgage rates, existing/new home sales (NAR, Census), Case-Shiller and FHFA prices, Zillow/Redfin market data, closing-cost line items (lender fees, title, escrow, prepaid taxes), NAR commission settlement effects, first-time buyer assistance, FHA/VA/conventional basics, homeowners-insurance and property-tax increases, mortgage-scam and wire-fraud warnings, rent vs buy math",
+    "kickers": "CLOSING COST, MORTGAGE NEWS, HOME BUYER TRUTH, HIDDEN FEE, TRUE OR FALSE?, RENT VS BUY, HOUSING REALITY"
+  },
+  "fineprint": {
+    "name": "Fine Print Facts",
+    "handle": "@fineprintfacts",
+    "env": "FINEPRINT",
+    "cta": "Follow so you never miss the fine print",
+    "niche": "the fine print in everyday American money and consumer life: insurance policies (auto, health, home, renters), subscriptions and auto-renewals, warranties, fees, contracts, terms of service, rebates, gift cards, airline and hotel fees, bank fees, 'free trial' traps, what your rights actually are",
+    "topics": "insurance exclusions and deductibles, auto-renewal and cancellation rules (FTC click-to-cancel), junk fees (FTC/CFPB), bank overdraft and account fees, health-insurance surprises (No Surprises Act, out-of-network, EOBs), warranty gotchas, rental-car and airline fees, buy-now-pay-later terms, contract clauses people sign without reading, consumer-rights news from FTC, CFPB, state AGs, Consumer Reports",
+    "kickers": "FINE PRINT, HIDDEN FEE, READ THIS, NEWS, TRUE OR FALSE?, YOUR RIGHTS, SUBSCRIPTION TRAP"
+  }
+}

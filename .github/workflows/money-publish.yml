@@ -51,9 +51,20 @@ jobs:
           MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         run: python adda/poster.py
+      - name: Publish US finance pages (Credit Score Truths, Closing Costs, Fine Print Facts)
+        if: always() && (inputs.mode == '' || inputs.mode == 'post')
+        continue-on-error: true
+        env:
+          CREDIT_FB_PAGE_ID: ${{ secrets.CREDIT_FB_PAGE_ID }}
+          CREDIT_FB_PAGE_TOKEN: ${{ secrets.CREDIT_FB_PAGE_TOKEN }}
+          CLOSING_FB_PAGE_ID: ${{ secrets.CLOSING_FB_PAGE_ID }}
+          CLOSING_FB_PAGE_TOKEN: ${{ secrets.CLOSING_FB_PAGE_TOKEN }}
+          FINEPRINT_FB_PAGE_ID: ${{ secrets.FINEPRINT_FB_PAGE_ID }}
+          FINEPRINT_FB_PAGE_TOKEN: ${{ secrets.FINEPRINT_FB_PAGE_TOKEN }}
+        run: python usfin/poster.py
       - name: Save
         if: always()
         run: |
           git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
-          for d in money/queue money/posted money/failed adda/queue adda/posted adda/failed status; do [ -e "$d" ] && git add -A "$d" || true; done
+          for d in money/queue money/posted money/failed adda/queue adda/posted adda/failed usfin/credit usfin/closing usfin/fineprint status; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Money page: publish run" && git pull --rebase -q && git push)

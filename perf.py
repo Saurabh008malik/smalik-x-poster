@@ -18,6 +18,9 @@ PAGES = {
     "cricket": (ROOT, "FB_PAGE_ID", "FB_PAGE_TOKEN", None),
     "money": (ROOT / "money", "MONEY_FB_PAGE_ID", "MONEY_FB_PAGE_TOKEN", None),
     "adda": (ROOT / "adda", "ADDA_FB_PAGE_ID", "ADDA_FB_PAGE_TOKEN", "61594820314272"),
+    "credit": (ROOT / "usfin" / "credit", "CREDIT_FB_PAGE_ID", "CREDIT_FB_PAGE_TOKEN", None),
+    "closing": (ROOT / "usfin" / "closing", "CLOSING_FB_PAGE_ID", "CLOSING_FB_PAGE_TOKEN", None),
+    "fineprint": (ROOT / "usfin" / "fineprint", "FINEPRINT_FB_PAGE_ID", "FINEPRINT_FB_PAGE_TOKEN", None),
 }
 
 

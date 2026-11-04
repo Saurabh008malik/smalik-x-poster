@@ -101,6 +101,22 @@ jobs:
           gh api -X POST repos/${{ github.repository }}/actions/workflows/adda-make.yml/dispatches \
             -f ref=main -f 'inputs[mode]=make' -f 'inputs[dry_run]=false' || echo "Could not start Creator Adda"
 
+      - name: Start the US finance pages' daily make (Credit Score Truths, Closing Costs, Fine Print Facts)
+        if: always() && steps.s.outputs.dry == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HAVE_CREDIT: ${{ secrets.CREDIT_FB_PAGE_ID != '' }}
+          HAVE_CLOSING: ${{ secrets.CLOSING_FB_PAGE_ID != '' }}
+          HAVE_FINEPRINT: ${{ secrets.FINEPRINT_FB_PAGE_ID != '' }}
+        run: |
+          for P in credit closing fineprint; do
+            V="HAVE_$(echo $P | tr a-z A-Z)"
+            if [ "${!V}" = "true" ]; then
+              gh api -X POST repos/${{ github.repository }}/actions/workflows/usfin-make.yml/dispatches \
+                -f ref=main -f "inputs[page]=$P" -f 'inputs[dry_run]=false' || echo "Could not start $P"
+            fi
+          done
+
       - name: Start Warm Mug Radio's mix on Tuesdays and Saturdays (same reliable 6 AM trigger)
         if: always() && steps.s.outputs.dry == 'false'
         env:
