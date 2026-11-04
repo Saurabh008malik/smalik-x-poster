@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: poster
@@ -62,6 +63,17 @@ jobs:
           FINEPRINT_FB_PAGE_ID: ${{ secrets.FINEPRINT_FB_PAGE_ID }}
           FINEPRINT_FB_PAGE_TOKEN: ${{ secrets.FINEPRINT_FB_PAGE_TOKEN }}
         run: python usfin/poster.py
+      - name: Start Warm Mug Radio Short 2 of the day (from about 6:40 PM IST; the Short job skips itself once 2 are posted)
+        if: always() && (inputs.mode == '' || inputs.mode == 'post')
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          H=$(date -u +%H)
+          if [ "$H" = "13" ] || [ "$H" = "14" ] || [ "$H" = "15" ]; then
+            gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-shorts.yml/dispatches \
+              -f ref=main -f 'inputs[mode]=post' || echo "Could not start Warm Mug Short 2"
+          fi
       - name: Save
         if: always()
         run: |

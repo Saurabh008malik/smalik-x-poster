@@ -89,7 +89,7 @@ def next_title(published):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--target-min", type=float, default=60)
+    ap.add_argument("--target-min", type=float, default=45)
     ap.add_argument("--min-min", type=float, default=12)
     a = ap.parse_args()
 
@@ -137,8 +137,11 @@ def main():
     end = total - 5
     filt.append(f"[{prev}]afade=t=in:d=2,afade=t=out:st={end:.2f}:d=5,loudnorm=I=-14:TP=-1.5:LRA=11[out]")
     mix = WORK / "mix.m4a"
+    # keep the finished video under the 36 MB mark (Apps Script upload limit is 38 MB): 128k for short mixes, down to 96k for ~50 min
+    kbps = max(96, min(128, int(36 * 1024 * 1024 * 8 / total / 1000)))
+    print(f"audio bitrate {kbps}k for {total/60:.1f} min")
     sh(["ffmpeg", "-y", "-v", "error", *ins, "-filter_complex", ";".join(filt), "-map", "[out]",
-        "-c:a", "aac", "-b:a", "128k", "-ar", "44100", str(mix)])
+        "-c:a", "aac", "-b:a", f"{kbps}k", "-ar", "44100", str(mix)])
 
     # 2) art
     title = next_title(published)
