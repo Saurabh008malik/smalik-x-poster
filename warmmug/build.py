@@ -22,7 +22,9 @@ XFADE = 4.0  # seconds of crossfade between tracks
 DESCRIPTION = """{hook}
 
 ☕ Warm Mug Radio - cozy jazz hop and lofi for slow mornings, focused afternoons and quiet nights.
-New playlists every Tuesday and Saturday. Grab a warm drink, press play, and take your time.
+A new themed mix about every five days, plus a short clip every day. Grab a warm drink, press play, and take your time.
+
+{notes}
 
 🎧 Perfect for: studying • working • reading • relaxing • sleeping
 
@@ -31,7 +33,7 @@ Tracklist
 
 🔔 Subscribe so your next calm hour is always ready.
 
-Music created with AI tools and curated by hand for Warm Mug Radio.
+Music created with AI tools (vidIQ AI music generator) and sequenced and edited for Warm Mug Radio. All tracks are instrumental.
 
 #lofi #jazzhop #studymusic #chillbeats #lofivibes
 """
@@ -91,6 +93,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--target-min", type=float, default=45)
     ap.add_argument("--min-min", type=float, default=12)
+    ap.add_argument("--next", action="store_true", help="preview: use the next unpublished planned mix instead of today's")
     a = ap.parse_args()
 
     inbox = load("inbox.json", [])
@@ -98,6 +101,25 @@ def main():
     used = {u for p in published for u in p.get("track_urls", [])}
     waiting = [t for t in inbox if t["url"] not in used]
     print(f"{len(waiting)} new tracks waiting")
+
+    # policy-first: only mixes that are on the 30-day plan get published (one themed mix per planned date)
+    plan = load("plan.json", {"mixes": []})["mixes"]
+    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=5, minutes=30))).strftime("%Y-%m-%d")
+    done_titles = {p["title"] for p in published}
+    entry = None
+    if a.next:
+        entry = next((m for m in plan if m["title"] not in done_titles), None)
+    else:
+        entry = next((m for m in plan if m["date"] == today and m["title"] not in done_titles), None)
+    if plan and not entry:
+        msg = f"No mix is planned for {today} (or it is already posted). Nothing posted."
+        print(msg)
+        OUT.mkdir(exist_ok=True)
+        (OUT / "skip.txt").write_text(msg)
+        sys.exit(3)
+    if entry:
+        waiting = [t for t in waiting if t.get("mix") == entry["mix"]]
+        print(f"Planned mix '{entry['mix']}': {len(waiting)} tracks")
 
     WORK.mkdir(exist_ok=True)
     OUT.mkdir(exist_ok=True)
@@ -117,7 +139,7 @@ def main():
         d = duration(wav)
         chosen.append({**t, "file": str(wav), "dur": d})
         total += d - (XFADE if len(chosen) > 1 else 0)
-        if total >= a.target_min * 60:
+        if not entry and total >= a.target_min * 60:
             break
 
     if total < a.min_min * 60:
@@ -144,10 +166,10 @@ def main():
         "-c:a", "aac", "-b:a", f"{kbps}k", "-ar", "44100", str(mix)])
 
     # 2) art
-    title = next_title(published)
+    title = entry["title"] if entry else next_title(published)
     sys.path.insert(0, str(HERE))
     import art
-    theme = art.render(title, OUT)
+    theme = art.render(title, OUT, theme=entry["theme"] if entry else None)
 
     # 3) video: still background, 2 fps keeps the render small and fast
     video = OUT / "video.mp4"
@@ -166,7 +188,7 @@ def main():
                  "morning": ["morning coffee music", "chillhop"], "ocean": ["ocean sounds", "sleep music"]}[theme]
     meta = {
         "title": title[:100],
-        "description": DESCRIPTION.format(hook=hook, tracklist="\n".join(lines)),
+        "description": DESCRIPTION.format(hook=hook, notes=(entry["notes"] if entry else ""), tracklist="\n".join(lines)),
         "tags": BASE_TAGS + mood_tags,
         "theme": theme,
         "minutes": round(total / 60, 1),

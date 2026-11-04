@@ -2,10 +2,10 @@ name: Warm Mug Radio - build and post a mix
 
 on:
   schedule:
-    - cron: "37 0 * * 2,6"   # backup only: Tue & Sat 6:07 AM IST (main trigger is the 6 AM money job)
+    - cron: "37 0 * * *"   # backup only: daily 6:07 AM IST, builds only if a mix is planned for today (main trigger is the 6 AM money job)
   push:
     branches: [main]
-    paths: ["warmmug/inbox.json", "warmmug/art.py", "warmmug/build.py"]   # new music/code = build a preview
+    paths: ["warmmug/art.py", "warmmug/build.py"]   # new music/code = build a preview
   workflow_dispatch:
     inputs:
       mode:
@@ -63,7 +63,7 @@ jobs:
         if: steps.s.outputs.skip == 'no'
         run: |
           set +e
-          python warmmug/build.py --min-min "${{ inputs.min_minutes || '12' }}"
+          python warmmug/build.py --min-min "${{ inputs.min_minutes || '12' }}" $([ "${{ steps.s.outputs.mode }}" = preview ] && echo --next)
           code=$?
           if [ $code -eq 3 ]; then echo "built=no" >> "$GITHUB_OUTPUT"; cat warmmug/out/skip.txt >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
           [ $code -eq 0 ] && echo "built=yes" >> "$GITHUB_OUTPUT"

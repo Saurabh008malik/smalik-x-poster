@@ -1,0 +1,23 @@
+{
+  "policy": "YouTube guidelines first: one themed mix per planned date, never reuse tracks, AI-music disclosure on, original title and art per mix, written mix notes, no clickbait, no fake claims.",
+  "mixes": [
+    {"date": "2026-11-07", "mix": "rainy-window", "theme": "rain",
+     "title": "Rain Against the Window and a Cup of Tea | Rainy Day Lofi Jazz Hop 🌧️",
+     "notes": "Mix notes: a slow, grey-afternoon set. Soft felt piano, brushed drums and warm bass, about 68 BPM, built for reading, tea and letting the day go quiet. Instrumental only (no rain sound effects in the audio)."},
+    {"date": "2026-11-12", "mix": "late-night-study", "theme": "night",
+     "title": "Desk Lamp On, Phone Off | Late Night Study Lofi 📚",
+     "notes": "Mix notes: a steady, low-distraction set for late study or deep work. Mellow keys, muted guitar and soft drums around 70-84 BPM, no sudden changes, so it stays in the background."},
+    {"date": "2026-11-17", "mix": "autumn-walk", "theme": "autumn",
+     "title": "Leaves Turning, Nothing to Prove | Autumn Lofi Jazz 🍂",
+     "notes": "Mix notes: a warm, easy-walking set. Nylon guitar, Rhodes and light swing drums at a relaxed pace. Good for a slow evening or a long commute."},
+    {"date": "2026-11-22", "mix": "slow-morning", "theme": "morning",
+     "title": "Coffee First, Everything Else Later | Slow Morning Lofi ☕",
+     "notes": "Mix notes: a gentle morning wake-up set. Bright kalimba, soft piano and light percussion that builds slowly, with no sharp sounds."},
+    {"date": "2026-11-27", "mix": "snowed-in", "theme": "winter",
+     "title": "Snowed In, Warm Inside | Winter Lofi Jazz Hop ❄️",
+     "notes": "Mix notes: a cosy winter-night set. Warm pads, vibraphone, soft piano and slow brushed grooves, made for blankets, hot drinks and a long quiet evening."},
+    {"date": "2026-12-02", "mix": "slow-tide", "theme": "ocean",
+     "title": "Slow Tide, Soft Piano | Calm Lofi to Unwind and Sleep 🌙",
+     "notes": "Mix notes: the softest set of the month. Minimal piano, airy pads and heartbeat-slow rhythm at 60-66 BPM, for winding down. Instrumental only (no ocean sound effects in the audio)."}
+  ]
+}

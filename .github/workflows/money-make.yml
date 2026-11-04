@@ -117,15 +117,15 @@ jobs:
             fi
           done
 
-      - name: Start Warm Mug Radio's mix on Tuesdays and Saturdays (same reliable 6 AM trigger)
+      - name: Start Warm Mug Radio's planned mix (only on dates listed in warmmug/plan.json)
         if: always() && steps.s.outputs.dry == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          DOW=$(TZ=Asia/Kolkata date +%u)   # 1 Mon ... 7 Sun
-          if [ "$DOW" = "2" ] || [ "$DOW" = "6" ]; then   # Tue, Sat: full mix (skips itself if not enough new music)
+          TODAY=$(TZ=Asia/Kolkata date +%F)
+          if grep -q "\"date\": \"$TODAY\"" warmmug/plan.json 2>/dev/null; then   # a mix is planned for today
             gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-publish.yml/dispatches \
-              -f ref=main -f 'inputs[mode]=post' -f 'inputs[min_minutes]=12' || echo "Could not start Warm Mug Radio mix"
+              -f ref=main -f 'inputs[mode]=post' -f 'inputs[min_minutes]=20' || echo "Could not start Warm Mug Radio mix"
           fi
           if true; then   # every day: Short 1 of 2 (Short 2 is started by the hourly publish job)
             gh api -X POST repos/${{ github.repository }}/actions/workflows/warmmug-shorts.yml/dispatches \

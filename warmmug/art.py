@@ -174,11 +174,11 @@ def short_title(title):
     return "".join(ch for ch in main if ord(ch) < 0x2190).strip()
 
 
-def render(title, out_dir, seed=None):
+def render(title, out_dir, seed=None, theme=None):
     from playwright.sync_api import sync_playwright
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    theme = pick_theme(title)
+    theme = theme or pick_theme(title)
     seed = seed if seed is not None else abs(hash(title)) % 10000
     svg = scene_svg(theme, seed)
     tag = title.split("|")[1].strip() if "|" in title else "Cozy Jazz Hop Lofi"
