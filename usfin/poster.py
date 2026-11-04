@@ -44,7 +44,9 @@ def check(slug):
     status.mkdir(exist_ok=True)
     (status / f"{slug}_token.txt").write_text(
         f"page call: {r.status_code} {r.text[:300]}\ntype: {d.get('type')}\nexpires_at: {d.get('expires_at')}\n"
-        f"data_access_expires_at: {d.get('data_access_expires_at')}\nscopes: {d.get('scopes')}\n")
+        f"data_access_expires_at: {d.get('data_access_expires_at')}\nscopes: {d.get('scopes')}\n"
+        f"token_profile_id: {d.get('profile_id')}\nconfigured_page_id: {page_id}\n"
+        f"granular_scopes: {[(g.get('scope'), g.get('target_ids')) for g in d.get('granular_scopes', [])]}\n")
     return r.ok
 
 
