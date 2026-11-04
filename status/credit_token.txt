@@ -1,8 +1,8 @@
-page call: 400 {"error":{"message":"Unsupported get request. Object with ID '61595902664926' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException",
+page call: 200 {"id":"1489664594219756","name":"Credit Score Truths","instagram_business_account":{"id":"17841461678535145","username":"creditscoretruths"}}
 type: PAGE
 expires_at: 0
 data_access_expires_at: 1801573270
 scopes: ['pages_show_list', 'business_management', 'instagram_basic', 'instagram_manage_comments', 'instagram_content_publish', 'instagram_manage_messages', 'pages_read_engagement', 'pages_read_user_content', 'pages_manage_posts', 'pages_manage_engagement', 'public_profile']
 token_profile_id: 1489664594219756
-configured_page_id: 61595902664926
+configured_page_id: 1489664594219756
 granular_scopes: [('pages_show_list', ['1489664594219756', '1389950077533072', '1325179577355986', '1324407434087819']), ('business_management', None), ('instagram_basic', None), ('instagram_manage_comments', None), ('instagram_content_publish', None), ('instagram_manage_messages', None), ('pages_read_engagement', ['1489664594219756', '1389950077533072', '1325179577355986', '1324407434087819']), ('pages_read_user_content', ['1489664594219756', '1389950077533072', '1325179577355986', '1324407434087819']), ('pages_manage_posts', ['1489664594219756', '1389950077533072', '1325179577355986', '1324407434087819']), ('pages_manage_engagement', ['1489664594219756', '1389950077533072', '1325179577355986', '1324407434087819'])]
