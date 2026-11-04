@@ -33,3 +33,10 @@ The script refuses to post to any channel whose name isn't Warm Mug Radio.
 
 The saved login (`secret/yt_token.enc`) is encrypted with the `CLAUDE_CODE_OAUTH_TOKEN` secret.
 If that secret is ever renewed, run the connect workflow again.
+
+## 30-day plan (policy first)
+
+`plan.json` lists the themed mixes and their dates (IST). The 6 AM money job only starts a mix build on a date listed there,
+and `build.py` only uses the tracks tagged with that mix in `inbox.json` (`"mix": "<name>"`). Rules that never change:
+YouTube guidelines first (no mass-produced or repetitive uploads), AI-music disclosure on, one original title/art/notes per mix,
+no track reused across mixes, no claims the audio does not back up. Add a new date to `plan.json` only with new tracks and a new theme.
