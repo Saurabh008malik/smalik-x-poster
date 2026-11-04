@@ -1,0 +1,33 @@
+name: US finance pages - check Page tokens
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Check tokens
+        env:
+          CREDIT_FB_PAGE_ID: ${{ secrets.CREDIT_FB_PAGE_ID }}
+          CREDIT_FB_PAGE_TOKEN: ${{ secrets.CREDIT_FB_PAGE_TOKEN }}
+          CLOSING_FB_PAGE_ID: ${{ secrets.CLOSING_FB_PAGE_ID }}
+          CLOSING_FB_PAGE_TOKEN: ${{ secrets.CLOSING_FB_PAGE_TOKEN }}
+          FINEPRINT_FB_PAGE_ID: ${{ secrets.FINEPRINT_FB_PAGE_ID }}
+          FINEPRINT_FB_PAGE_TOKEN: ${{ secrets.FINEPRINT_FB_PAGE_TOKEN }}
+        run: python usfin/poster.py check
+      - name: Save
+        if: always()
+        run: |
+          git config user.name "usfin-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A status || true
+          git diff --cached --quiet || (git commit -m "usfin token check" && git pull --rebase -q && git push)
