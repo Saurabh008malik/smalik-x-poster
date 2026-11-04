@@ -1,15 +1,15 @@
-# What performed best on this page (last 14 days, updated 2026-11-03)
+# What performed best on this page (last 14 days, updated 2026-11-04)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 1.0 | Myth-buster. 🧠 | likes 1, comments 0, shares 0, saves 0, views - | 2026-10-28-09
-- [reel] score 0.0 | Quick money fact. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-09
-- [card] score 0.0 | $5 a day vs $150 a month. 🤯 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-08
-- [card] score 0.0 | People are saving less. 📉 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-07
-- [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-02-06
+- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-03-09
+- [card] score 0.0 | Health insurance shopping season is here. 🏥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-03-07
+- [text] score 0.0 | Confession time. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-03-06
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-03-05
+- [card] score 0.0 | Signs you're doing better than you think. 💚 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-03-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.1 over 10 posts
-- card: 0.0 over 57 posts
-- text: 0.0 over 8 posts
+- reel: 0.0 over 11 posts
+- card: 0.0 over 63 posts
+- text: 0.0 over 9 posts
