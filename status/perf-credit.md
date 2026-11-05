@@ -6,10 +6,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Quick myth-buster. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-09
+- [card] score 0.0 | Pay now vs pay later. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-08
 - [card] score 0.0 | Student loan delinquencies are hitting credit scores hard. 📉 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-07
 - [text] score 0.0 | Confession time: what's the one credit-card thing you wish someone had told you at 18? 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-05
-- [card] score 0.0 | Nobody tells you this: you can check your credit reports for free. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-04-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.0 over 1 posts
-- card: 0.0 over 6 posts
+- card: 0.0 over 7 posts
 - text: 0.0 over 1 posts
