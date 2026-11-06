@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [card] score 1.0 | Gas is finally easing. Still not cheap. ⛽ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-01
+- [reel] score 0.0 | Same tank. More money. ⛽ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-09
+- [card] score 0.0 | Quiet money wins. 💡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-03
+- [card] score 0.0 | Can someone explain this? 😅 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-02
 - [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-09
-- [card] score 0.0 | $50 vs $500. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-08
-- [card] score 0.0 | Prices and interest rates are in the news again. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-07
-- [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.0 over 13 posts
-- card: 0.0 over 78 posts
+- card: 0.0 over 81 posts
+- reel: 0.0 over 14 posts
 - text: 0.0 over 11 posts
