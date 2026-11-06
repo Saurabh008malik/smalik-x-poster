@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\n\"Closing a credit card erases its history from your credit report right away.\"\n\nThink first, then comment. Answer in the comments.",
+  "first_comment": "True or False? Drop your answer 👇 (Answer: False. Closed accounts in good standing can stay on your report for years.)",
+  "sources": [
+    "https://www.experian.com/blogs/ask-experian/",
+    "pattern: true or false"
+  ],
+  "instagram": {
+    "first_comment": "True or False? Comment your answer 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Closing a card <em>erases</em> its history right away.",
+    "sub": "True or False? Comment below.",
+    "theme": "blue"
+  },
+  "image": "2026-11-06-05.jpg",
+  "publish_at": "2026-11-06T20:00:00+00:00"
+}

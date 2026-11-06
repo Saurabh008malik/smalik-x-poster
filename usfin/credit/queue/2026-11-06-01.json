@@ -1,0 +1,20 @@
+{
+  "caption": "The average new credit card offer now sits around 22.46% APR. 💳\n\nWalletHub's November report puts existing accounts at about 21.19%.\n\nOn a $5,000 balance, that's roughly $90 a month in interest if you only carry it.\n\nDoes your card's APR surprise you when you look at it?",
+  "first_comment": "Do you know your card's APR without looking? Be honest 👇",
+  "sources": [
+    "https://wallethub.com/edu/cc/average-credit-card-interest-rate/50841",
+    "pattern: big number / dollar amount hook"
+  ],
+  "instagram": {
+    "first_comment": "Quick check: do you know your APR? Tell us below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "New card offers now average <em>22.46% APR</em>.",
+    "sub": "Existing accounts: about 21.19%.",
+    "theme": "blue",
+    "source": "Source: WalletHub"
+  },
+  "image": "2026-11-06-01.jpg",
+  "publish_at": "2026-11-06T12:00:00+00:00"
+}

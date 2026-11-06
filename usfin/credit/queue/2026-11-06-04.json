@@ -1,0 +1,19 @@
+{
+  "caption": "Nobody tells you this: set up autopay for at least the minimum. ✅\n\nA payment 30+ days late can be reported to the credit bureaus, and that can hurt your score for years.\n\nAutopay the minimum as a safety net, then pay the rest yourself.\n\nDo you use autopay?",
+  "first_comment": "Autopay: yes or no? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Autopay yes or no? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Autopay the <em>minimum</em>. Late payments can cost you for years.",
+    "sub": "Then pay more when you can.",
+    "theme": "green"
+  },
+  "image": "2026-11-06-04.jpg",
+  "publish_at": "2026-11-06T18:00:00+00:00"
+}

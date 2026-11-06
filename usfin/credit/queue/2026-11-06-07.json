@@ -1,0 +1,20 @@
+{
+  "caption": "The Fed's latest consumer credit report (August data): revolving credit, mostly credit cards, fell at a 4.2% annual rate. 📉\n\nTotal revolving credit stood at about $1.35 trillion.\n\nMeanwhile non-revolving credit, like auto and student loans, rose 4.1%.\n\nAre you paying down cards or adding to them?",
+  "first_comment": "Paying down cards this year, or not? 👇",
+  "sources": [
+    "https://www.federalreserve.gov/releases/g19/current/",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Paying down or adding? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Revolving credit stands at about <em>$1.35 trillion</em>.",
+    "sub": "It fell at a 4.2% annual rate in August.",
+    "theme": "blue",
+    "source": "Source: Federal Reserve G.19"
+  },
+  "image": "2026-11-06-07.jpg",
+  "publish_at": "2026-11-07T00:00:00+00:00"
+}

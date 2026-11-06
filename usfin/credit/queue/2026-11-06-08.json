@@ -1,0 +1,19 @@
+{
+  "caption": "What a $5,000 card balance really costs. 💸\n\nPay it off this month: $0 interest if you pay the full statement balance.\n\nCarry it at ~21% APR: roughly $88 a month in interest, about $1,060 over a year, before new purchases.\n\nWhich one are you?",
+  "first_comment": "Which side are you on today? 👇",
+  "sources": [
+    "https://wallethub.com/edu/cc/average-credit-card-interest-rate/50841",
+    "pattern: the math nobody says out loud"
+  ],
+  "instagram": {
+    "first_comment": "Pay now or carry it? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "DEBT REALITY",
+    "headline": "$5,000 balance: <em>$0</em> interest vs about <em>$88</em> a month.",
+    "sub": "At roughly 21% APR. Check your own rate.",
+    "theme": "red"
+  },
+  "image": "2026-11-06-08.jpg",
+  "publish_at": "2026-11-07T02:00:00+00:00"
+}

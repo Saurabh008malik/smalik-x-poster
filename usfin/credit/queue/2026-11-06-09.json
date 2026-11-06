@@ -1,0 +1,19 @@
+{
+  "caption": "Quick myth-buster. ✅\n\nYour credit limit is NOT your budget.\n\nA high limit is room to borrow, not money you have.\n\nWhat other credit myth should we bust?",
+  "first_comment": "Which credit myth drives you crazy? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/",
+    "pattern: myth-buster reveal"
+  ],
+  "instagram": {
+    "first_comment": "Drop a myth for us to bust 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Your credit limit is <em>NOT</em> your budget.",
+    "sub": "Spend what you can pay off this month.",
+    "theme": "green"
+  },
+  "video": "2026-11-06-09.mp4",
+  "publish_at": "2026-11-06T17:00:00+00:00"
+}

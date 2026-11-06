@@ -1,0 +1,18 @@
+{
+  "caption": "Your score is built by habits, not luck. 🟡\n\nPay on time. Keep balances low. Don't open cards you don't need.\n\nBoring wins here.\n\nWhich habit is hardest for you?",
+  "first_comment": "Which of those three is your hardest habit? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+    "pattern: reassurance / habits"
+  ],
+  "instagram": {
+    "first_comment": "Pick your hardest habit 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Good credit is <em>boring</em> habits, repeated.",
+    "theme": "gold"
+  },
+  "image": "2026-11-06-03.jpg",
+  "publish_at": "2026-11-06T16:00:00+00:00"
+}
