@@ -1,0 +1,20 @@
+{
+  "caption": "Car loans are now the second-biggest pile of consumer debt after mortgages. 🚗\n\nThe New York Fed says Americans owed $1.713 trillion in auto loans in Q2 2026, up $28 billion in just one quarter.\n\nA monthly payment is easy to say yes to. The total cost is harder to see.\n\nDo you know your loan's APR?",
+  "first_comment": "Do you know your auto loan APR off the top of your head? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20260811",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Know your car loan APR? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Auto loans hit <em>$1.713 trillion</em>.",
+    "sub": "Up $28 billion in one quarter.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-07-07.jpg",
+  "publish_at": "2026-11-08T00:00:00+00:00"
+}

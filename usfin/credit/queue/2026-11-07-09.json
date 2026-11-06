@@ -1,0 +1,20 @@
+{
+  "caption": "Say this to a debt collector. 📞\n\n\"Please send me written validation of this debt.\"\n\nFor most collectors you can request it within 30 days of their first notice. Stay calm, keep records. Check your own situation.\n\nHave you ever dealt with a collector?",
+  "first_comment": "Ever dealt with a debt collector call? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/consumer-tools/debt-collection/",
+    "pattern: say this"
+  ],
+  "instagram": {
+    "first_comment": "Debt collector story? Share below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Ask a collector for <em>written proof</em>.",
+    "sub": "You can request debt validation.",
+    "theme": "green",
+    "source": "Source: CFPB"
+  },
+  "video": "2026-11-07-09.mp4",
+  "publish_at": "2026-11-07T17:00:00+00:00"
+}

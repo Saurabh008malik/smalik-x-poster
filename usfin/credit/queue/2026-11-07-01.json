@@ -1,0 +1,20 @@
+{
+  "caption": "About 7 in every 100 dollars of credit card debt is sliding into serious delinquency. 📊\n\nThe New York Fed says 6.97% of card balances moved into 90+ days late in Q2 2026, about flat from last year's 6.93%.\n\nSo it's not getting dramatically worse. It's just stuck high.\n\nDo you feel like card debt is getting easier or harder to stay on top of?",
+  "first_comment": "Be honest: is your card balance higher or lower than a year ago? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20260811",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Higher, lower, or the same as last year? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>6.97%</em> of card balances hit 90+ days late.",
+    "sub": "Basically flat vs. last year (6.93%).",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-07-01.jpg",
+  "publish_at": "2026-11-07T12:00:00+00:00"
+}

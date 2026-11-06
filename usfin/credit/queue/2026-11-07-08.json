@@ -1,0 +1,20 @@
+{
+  "caption": "Same $1,000 purchase, two ways to pay. 💸\n\nPay in full: $0 interest.\nCarry it on a ~22% APR card, paying only minimums: it can take well over a year, costing a few hundred dollars extra.\n\nExact amounts depend on your card. Check your own terms.\n\nWhich one are you aiming for?",
+  "first_comment": "Pay in full or carry it? Be honest 👇",
+  "sources": [
+    "https://www.bankrate.com/credit-cards/advice/current-interest-rates/",
+    "pattern: then vs now / comparison"
+  ],
+  "instagram": {
+    "first_comment": "Pay in full vs carry it. Which one? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CARD TRAP",
+    "headline": "$1,000 paid now vs. on a <em>22% APR</em> card.",
+    "sub": "Paid in full: $0 interest. Minimums only: months of it.",
+    "theme": "red",
+    "source": ""
+  },
+  "image": "2026-11-07-08.jpg",
+  "publish_at": "2026-11-08T02:00:00+00:00"
+}
