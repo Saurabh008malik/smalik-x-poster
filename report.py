@@ -19,7 +19,7 @@ DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 3
 NOW = dt.datetime.now(dt.timezone.utc)
 SINCE = NOW - dt.timedelta(days=DAYS)
 LATE_MIN = 30
-FREE_MINUTES = 2000
+FREE_MINUTES = 2000  # only applies to private repos; this repo is PUBLIC so Actions minutes are free and unlimited
 DEFAULT_IDS = {"ADDA_FB_PAGE_ID": "61594820314272"}
 IG_START = dt.datetime(2026, 10, 26, 7, 10, tzinfo=dt.timezone.utc)  # Instagram posting switched on
 OK, BAD, WAIT, NA = "✅", "❌", "⏳", "—"
@@ -211,7 +211,7 @@ def x_section():
 
 # ---------- GitHub minutes ----------
 def minutes_section():
-    p("## GitHub minutes (free plan: 2,000 a month, private repo)")
+    p("## GitHub minutes (public repo: unlimited, free)")
     tok, repo = os.environ.get("GH_TOKEN"), os.environ.get("GH_REPO")
     if not tok or not repo:
         p(f"- {BAD} Could not read (no GitHub token in this run)")
@@ -240,19 +240,11 @@ def minutes_section():
         if len(runs) < 100:
             break
         page_n += 1
-    left = max(0, FREE_MINUTES - used)
     per_day = last3 / 3 if last3 else 0
-    days_to_reset = (nxt - NOW).total_seconds() / 86400
-    need = per_day * days_to_reset
-    if per_day and need > left:
-        runout = NOW + dt.timedelta(days=left / per_day)
-        verdict = f"{BAD} runs out about **{runout.astimezone(IST):%d %b}**, before the reset on {nxt:%d %b}"
-    else:
-        verdict = f"{OK} enough until the reset on {nxt:%d %b} (needs about {need:.0f} more)"
-    p(f"| Used this month | Left | Pace (last 3 days) | Outlook |")
-    p(f"|---|---|---|---|")
-    p(f"| {used:,} min | {left:,} min | {per_day:.0f} min/day (about {per_day * 30:,.0f} a month) | {verdict} |")
-    p("Estimated from this repo's run times; other private repos with Actions share the same 2,000.")
+    p("| Used this month | Pace (last 3 days) | Limit | |")
+    p("|---|---|---|---|")
+    p(f"| {used:,} min | {per_day:.0f} min/day | none (public repo) | {OK} no limit, nothing can run out |")
+    p("Estimated from this repo's run times. If the repo is ever made private, the free plan is 2,000 minutes a month.")
 
 
 # ---------- tokens ----------
@@ -261,7 +253,8 @@ def tokens_section():
     p("| Key | Expires | Days left | |")
     p("|---|---|---|---|")
     for label, env in (("Cricket Ki Baat Page token", "FB_PAGE_TOKEN"), ("Paycheck Truths Page token", "MONEY_FB_PAGE_TOKEN"),
-                       ("Creator Adda Page token", "ADDA_FB_PAGE_TOKEN")):
+                       ("Creator Adda Page token", "ADDA_FB_PAGE_TOKEN"),
+                       ("Credit Score Truths Page token", "CREDIT_FB_PAGE_TOKEN")):
         raw = os.environ.get(env)
         if not raw:
             p(f"| {label} | not set | — | {BAD} |")
@@ -308,9 +301,11 @@ def cricket_expected():
         yield f"{d}-evening-reel", dt.datetime.fromisoformat(f"{d}T19:41:00+05:30")
 
 
-def batch_expected(first_hm):
+def batch_expected(first_hm, start=None, skip=()):
     def gen():
         for d in days_in_window():
+            if (start and str(d) < start) or str(d) in skip:
+                continue
             yield f"{d}", dt.datetime.fromisoformat(f"{d}T{first_hm}:00+05:30")
     return gen
 
@@ -326,6 +321,12 @@ if __name__ == "__main__":
     section("Paycheck Truths (Facebook + Instagram)", ROOT / "money", "MONEY_FB_PAGE_ID", "MONEY_FB_PAGE_TOKEN", money_when, "page", batch_expected("16:30"))
     p()
     section("Creator Adda (Facebook + Instagram)", ROOT / "adda", "ADDA_FB_PAGE_ID", "ADDA_FB_PAGE_TOKEN", money_when, "page", batch_expected("17:30"))
+    p()
+    # Credit Score Truths: started 4 Nov; 5 Nov was missed (daily job was blocked, fixed 6 Nov) and is deliberately not backfilled
+    section("Credit Score Truths (Facebook + Instagram)", ROOT / "usfin" / "credit", "CREDIT_FB_PAGE_ID", "CREDIT_FB_PAGE_TOKEN", money_when, "page",
+            batch_expected("17:30", start="2026-11-04", skip=("2026-11-05",)))
+    if SINCE.astimezone(IST).date() <= dt.date(2026, 11, 5):
+        p("_Note: 05 Nov (US day) was skipped on purpose - the daily job was blocked until 06 Nov and Saurabh chose not to backfill._")
     p()
     minutes_section()
     p()

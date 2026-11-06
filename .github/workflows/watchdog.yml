@@ -1,0 +1,68 @@
+name: Watchdog - make sure every page has today's posts
+
+# Safety net. The 6 AM IST job normally starts every page's daily "make". If any page still has no
+# posts for its next day (job never started, or Claude failed), this restarts that page's make.
+# It does nothing when everything is fine. Runs hourly from 7:20 AM to 4:20 PM IST.
+on:
+  schedule:
+    - cron: "50 1-10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      HAVE_CREDIT: ${{ secrets.CREDIT_FB_PAGE_ID != '' }}
+      HAVE_CLOSING: ${{ secrets.CLOSING_FB_PAGE_ID != '' }}
+      HAVE_FINEPRINT: ${{ secrets.FINEPRINT_FB_PAGE_ID != '' }}
+      HAVE_MONEY: ${{ secrets.MONEY_FB_PAGE_ID != '' }}
+      HAVE_ADDA: ${{ secrets.ADDA_FB_PAGE_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restart any page that has no posts for its next day
+        run: |
+          US_TARGET=$(TZ=America/New_York date -d '+12 hours' +%F)
+          IST_TODAY=$(TZ=Asia/Kolkata date +%F)
+          TODAY_UTC=$(date -u +%F)
+
+          # $1 workflow file, $2 max tries today
+          busy_or_capped () {
+            RUNS=$(gh api "repos/$REPO/actions/workflows/$1/runs?created=%3E%3D$TODAY_UTC&per_page=50" --jq '.workflow_runs')
+            ACTIVE=$(echo "$RUNS" | jq '[.[]|select(.status!="completed")]|length')
+            TRIES=$(echo "$RUNS" | jq 'length')
+            [ "$ACTIVE" -gt 0 ] && { echo "$1 is already running."; return 0; }
+            [ "$TRIES" -ge "$2" ] && { echo "$1 already tried $TRIES times today - stopping."; return 0; }
+            return 1
+          }
+          have_posts () { ls $1/posted/$2-* $1/queue/$2-* >/dev/null 2>&1; }
+
+          # Paycheck Truths
+          if [ "$HAVE_MONEY" = "true" ] && ! have_posts money "$US_TARGET"; then
+            echo "Paycheck Truths has no posts for $US_TARGET."
+            busy_or_capped money-make.yml 4 || gh api -X POST "repos/$REPO/actions/workflows/money-make.yml/dispatches" -f ref=main -f 'inputs[dry_run]=false'
+          fi
+          # Creator Adda (named by IST date)
+          if [ "$HAVE_ADDA" = "true" ] && ! have_posts adda "$IST_TODAY"; then
+            echo "Creator Adda has no posts for $IST_TODAY."
+            busy_or_capped adda-make.yml 8 || gh api -X POST "repos/$REPO/actions/workflows/adda-make.yml/dispatches" -f ref=main -f 'inputs[mode]=make' -f 'inputs[dry_run]=false'
+          fi
+          # US finance pages (only pages that are connected)
+          for P in credit closing fineprint; do
+            V="HAVE_$(echo $P | tr a-z A-Z)"
+            if [ "${!V}" = "true" ] && ! have_posts usfin/$P "$US_TARGET"; then
+              echo "$P has no posts for $US_TARGET."
+              busy_or_capped usfin-make.yml 8 || gh api -X POST "repos/$REPO/actions/workflows/usfin-make.yml/dispatches" -f ref=main -f "inputs[page]=$P" -f 'inputs[dry_run]=false'
+            fi
+          done
+          echo "Watchdog finished."

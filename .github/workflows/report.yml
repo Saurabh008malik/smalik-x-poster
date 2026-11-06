@@ -38,6 +38,8 @@ jobs:
           MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
           ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
           ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
+          CREDIT_FB_PAGE_ID: ${{ secrets.CREDIT_FB_PAGE_ID }}
+          CREDIT_FB_PAGE_TOKEN: ${{ secrets.CREDIT_FB_PAGE_TOKEN }}
           DAYS: ${{ inputs.days }}
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
