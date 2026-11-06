@@ -6,10 +6,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-09
+- [card] score 0.0 | $50 vs $500. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-08
 - [card] score 0.0 | Prices and interest rates are in the news again. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-07
 - [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-05
-- [card] score 0.0 | A simple way to split your paycheck. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.0 over 13 posts
-- card: 0.0 over 77 posts
+- card: 0.0 over 78 posts
 - text: 0.0 over 11 posts
