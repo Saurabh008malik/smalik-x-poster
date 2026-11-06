@@ -78,6 +78,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "github-actions"  # started by the 6 AM Paycheck job
           prompt: |
             Read usfin/PROMPT.md in the repository root and follow it exactly.
             PAGE_SLUG = ${{ inputs.page }}
