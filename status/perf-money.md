@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-06)
+# What performed best on this page (last 14 days, updated 2026-11-07)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [card] score 1.0 | Gas is finally easing. Still not cheap. ⛽ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-01
 - [reel] score 0.0 | Same tank. More money. ⛽ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-09
-- [card] score 0.0 | Quiet money wins. 💡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-03
-- [card] score 0.0 | Can someone explain this? 😅 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-02
-- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-05-09
+- [card] score 0.0 | Mortgage rates are still way above last year. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-07
+- [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-06
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- card: 0.0 over 81 posts
+- card: 0.0 over 84 posts
 - reel: 0.0 over 14 posts
-- text: 0.0 over 11 posts
+- text: 0.0 over 12 posts
