@@ -1,0 +1,16 @@
+{
+  "caption": "Jobs report is out. 💼\n\nBLS says employers added 165,000 jobs in October and unemployment is 4.1%.\n\nAverage hourly pay is $38.00, up 3.1% over the past year.\n\nDoes your paycheck feel like it kept up with that?",
+  "first_comment": "Did you get a raise this year? Be honest 👇",
+  "sources": [
+    "https://www.bls.gov/news.release/empsit.nr0.htm",
+    "pattern: Math nobody says out loud"
+  ],
+  "instagram": {
+    "first_comment": "Raise this year, yes or no? Tell @paychecktruths 👇"
+  },
+  "image": "2026-11-07-01.jpg",
+  "publish_at": "2026-11-07T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122107700715522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"Action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"fbtrace_id\":\"ACRTQYGCi7Yh4CpNiibUiw5\"}}",
+  "done_at": "2026-11-07T12:06:01.738198+00:00"
+}
