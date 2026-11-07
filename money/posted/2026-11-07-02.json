@@ -1,0 +1,16 @@
+{
+  "caption": "Can someone explain this? 😅\n\nHealth insurance goes up 13%. Your raise goes up 3%.\n\nSomehow the math is supposed to work out.\n\nWhat bill jumped the most for you this year?",
+  "first_comment": "Which bill went up the most this year? 👇",
+  "sources": [
+    "https://www.kff.org",
+    "pattern: Josh-Rincon style frustration"
+  ],
+  "instagram": {
+    "first_comment": "Name the bill that jumped most. @paychecktruths is listening 👇"
+  },
+  "image": "2026-11-07-02.jpg",
+  "publish_at": "2026-11-07T14:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122107733793522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"Action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"fbtrace_id\":\"AJj5NeCRU0wjf2hwll3fbqD\"}}",
+  "done_at": "2026-11-07T14:05:58.245282+00:00"
+}
