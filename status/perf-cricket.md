@@ -14,8 +14,8 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Weakest — avoid repeating these patterns
 
 - [card] score 0.0 | 𝗜𝗻𝗱𝗶𝗮 𝗻𝗲 𝘀𝗲𝗿𝗶𝗲𝘀 𝗺𝗲𝗶𝗻 𝟮-𝟬 𝗸𝗶 𝗯𝗮𝗮𝗱𝗵𝗮𝘁 𝗹𝗲 𝗹𝗶! 🇮🇳🔥 | 2026-10-24-evening
-- [card] score 0.0 | 𝗔𝗮𝗷 𝗵𝗮𝗶 𝗺𝗮𝘁𝗰𝗵 𝗱𝗮𝘆! 🇮🇳🔥 | 2026-10-24-morning
 - [card] score 0.0 | 𝗡𝗮𝗺𝗶𝗯𝗶𝗮 𝗻𝗲 𝗜𝗿𝗲𝗹𝗮𝗻𝗱 𝗸𝗼 𝗵𝗮𝗿𝗮𝘆𝗮! 🇳🇦🔥 | 2026-10-25-morning
+- [card] score 0.0 | 𝗦𝗘𝗥𝗜𝗘𝗦 𝗦𝗘𝗔𝗟 𝗞𝗔𝗥𝗘𝗡𝗚𝗘? 🇮🇳 | 2026-10-26-evening
 
 ## Average score by format
 
