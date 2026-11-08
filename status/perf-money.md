@@ -13,12 +13,12 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Can someone explain why a 'quick grocery run' is never quick or cheap anymore? 😅 | 2026-10-25-02
 - [reel] score 0.0 | MYTH BUSTED 🚨 | 2026-10-25-reel
 - [reel] score 0.0 | MYTH BUSTED 🚨 | 2026-10-25-reel2
+- [card] score 0.0 | Prices are rising faster than paychecks again. 📉 | 2026-10-26-01
 
 ## Average score by format
 
-- card: 0.0 over 92 posts
+- card: 0.0 over 91 posts
 - reel: 0.0 over 15 posts
 - text: 0.0 over 13 posts
