@@ -136,6 +136,7 @@ jobs:
 
       - name: Claude third attempt
         id: a3
+        continue-on-error: true
         if: steps.s.outputs.skip == 'no' && steps.second.outcome == 'failure'
         uses: anthropics/claude-code-action@v1
         with:
@@ -149,6 +150,15 @@ jobs:
           claude_args: |
             --max-turns 90
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Claude could not make the post - use a reserve post instead
+        if: steps.s.outputs.skip == 'no' && steps.s.outputs.dry == 'false'
+        run: |
+          F="queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}"
+          if ! { test -f "$F.json" && test -f "$F.png" && test -f "$F-fb.jpg"; }; then
+            echo "::warning::Claude was unavailable after 3 attempts - publishing a reserve post so the slot is not missed"
+            python3 reserve/fallback.py "${{ steps.s.outputs.date }}" "${{ steps.s.outputs.slot }}"
+          fi
 
       - name: Check the post was made
         if: steps.s.outputs.skip == 'no'
@@ -181,5 +191,5 @@ jobs:
         run: |
           git config user.name "smalik-poster-bot"
           git config user.email "actions@users.noreply.github.com"
-          for d in queue posted failed drafts status; do [ -e "$d" ] && git add -A "$d" || true; done
+          for d in queue posted failed drafts status reserve/used.json; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Daily post ${{ steps.s.outputs.date }} ${{ steps.s.outputs.slot }}" && git pull --rebase -q && git push)
