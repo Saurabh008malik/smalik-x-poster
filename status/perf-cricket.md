@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗡𝗮𝗺𝗶𝗯𝗶𝗮 𝗻𝗲 𝗜𝗿𝗲𝗹𝗮𝗻𝗱 𝗸𝗼 𝗵𝗮𝗿𝗮𝘆𝗮! 🇳🇦🔥 | 2026-10-25-morning
 - [card] score 0.0 | 𝗦𝗘𝗥𝗜𝗘𝗦 𝗦𝗘𝗔𝗟 𝗞𝗔𝗥𝗘𝗡𝗚𝗘? 🇮🇳 | 2026-10-26-evening
 - [reel] score 0.0 | 𝗜𝗡𝗗𝗜𝗔 𝟮-𝟬 𝗨𝗣! 🇮🇳 | 2026-10-26-evening-reel
+- [card] score 0.0 | 𝗖𝗮𝗽𝗲 𝗧𝗼𝘄𝗻 𝗺𝗲𝗶𝗻 𝗦𝗔 𝘃 𝗔𝗨𝗦 𝗸𝗮 𝗳𝗶𝗻𝗮𝗹 𝗳𝗮𝘀𝗵𝗹𝗮! 🇿🇦🇦🇺🔥 | 2026-10-26-late
 
 ## Average score by format
 
 - reel: 0.4 over 13 posts
-- card: 0.1 over 28 posts
+- card: 0.1 over 27 posts
