@@ -33,7 +33,7 @@ concurrency:
 jobs:
   make:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     env:
       ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
       ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
@@ -94,7 +94,50 @@ jobs:
           pip install -q requests
           python perf.py adda
       - name: Claude researches, writes and builds the day's items
+        id: a1
+        continue-on-error: true
         if: steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "github-actions"  # started by the 6 AM Paycheck job
+          prompt: |
+            Read adda/PROMPT.md in the repository root and follow it exactly.
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            PROMO_DAY = ${{ steps.s.outputs.promo }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Claude was unavailable - waiting 10 minutes before trying again
+        if: (steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no') && steps.a1.outcome == 'failure'
+        run: sleep 600
+
+      - name: Claude researches, writes and builds the day's items (attempt 2)
+        id: a2
+        continue-on-error: true
+        if: (steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no') && steps.a1.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "github-actions"  # started by the 6 AM Paycheck job
+          prompt: |
+            Read adda/PROMPT.md in the repository root and follow it exactly.
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            PROMO_DAY = ${{ steps.s.outputs.promo }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Claude was unavailable - waiting 20 minutes before the last try
+        if: (steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no') && steps.a2.outcome == 'failure'
+        run: sleep 1200
+
+      - name: Claude researches, writes and builds the day's items (attempt 3)
+        id: a3
+        if: (steps.s.outputs.mode == 'make' && steps.s.outputs.skip == 'no') && steps.a2.outcome == 'failure'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

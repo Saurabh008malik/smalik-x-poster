@@ -2,10 +2,11 @@ name: Watchdog - make sure every page has today's posts
 
 # Safety net. The 6 AM IST job normally starts every page's daily "make". If any page still has no
 # posts for its next day (job never started, or Claude failed), this restarts that page's make.
-# It does nothing when everything is fine. Runs hourly from 7:20 AM to 4:20 PM IST.
+# Also restarts the cricket / X morning and evening posts if they never went out.
+# It does nothing when everything is fine. Runs hourly from 7:20 AM to 11:20 PM IST.
 on:
   schedule:
-    - cron: "50 1-10 * * *"
+    - cron: "50 1-17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -50,19 +51,37 @@ jobs:
           # Paycheck Truths
           if [ "$HAVE_MONEY" = "true" ] && ! have_posts money "$US_TARGET"; then
             echo "Paycheck Truths has no posts for $US_TARGET."
-            busy_or_capped money-make.yml 4 || gh api -X POST "repos/$REPO/actions/workflows/money-make.yml/dispatches" -f ref=main -f 'inputs[dry_run]=false'
+            busy_or_capped money-make.yml 8 || gh api -X POST "repos/$REPO/actions/workflows/money-make.yml/dispatches" -f ref=main -f 'inputs[dry_run]=false'
           fi
           # Creator Adda (named by IST date)
           if [ "$HAVE_ADDA" = "true" ] && ! have_posts adda "$IST_TODAY"; then
             echo "Creator Adda has no posts for $IST_TODAY."
-            busy_or_capped adda-make.yml 8 || gh api -X POST "repos/$REPO/actions/workflows/adda-make.yml/dispatches" -f ref=main -f 'inputs[mode]=make' -f 'inputs[dry_run]=false'
+            busy_or_capped adda-make.yml 12 || gh api -X POST "repos/$REPO/actions/workflows/adda-make.yml/dispatches" -f ref=main -f 'inputs[mode]=make' -f 'inputs[dry_run]=false'
           fi
           # US finance pages (only pages that are connected)
           for P in credit closing fineprint; do
             V="HAVE_$(echo $P | tr a-z A-Z)"
             if [ "${!V}" = "true" ] && ! have_posts usfin/$P "$US_TARGET"; then
               echo "$P has no posts for $US_TARGET."
-              busy_or_capped usfin-make.yml 8 || gh api -X POST "repos/$REPO/actions/workflows/usfin-make.yml/dispatches" -f ref=main -f "inputs[page]=$P" -f 'inputs[dry_run]=false'
+              busy_or_capped usfin-make.yml 12 || gh api -X POST "repos/$REPO/actions/workflows/usfin-make.yml/dispatches" -f ref=main -f "inputs[page]=$P" -f 'inputs[dry_run]=false'
+            fi
+          done
+
+          # Cricket / X: morning post due from 9:15 AM IST, evening post due from 8:15 PM IST
+          HM=$((10#$(TZ=Asia/Kolkata date +%H%M)))
+          cricket_busy_or_capped () {
+            RUNS=$(gh api "repos/$REPO/actions/workflows/daily.yml/runs?created=%3E%3D$TODAY_UTC&per_page=100" --jq '[.[]|select(.event=="workflow_dispatch")]')
+            ACTIVE=$(echo "$RUNS" | jq '[.[]|select(.status!="completed")]|length')
+            TRIES=$(echo "$RUNS" | jq 'length')
+            [ "$ACTIVE" -gt 0 ] && { echo "daily.yml is already running."; return 0; }
+            [ "$TRIES" -ge 10 ] && { echo "daily.yml already tried $TRIES times today - stopping."; return 0; }
+            return 1
+          }
+          for SLOT in morning evening; do
+            if [ "$SLOT" = "morning" ]; then DUE=$([ "$HM" -ge 915 ] && echo yes || echo no); else DUE=$([ "$HM" -ge 2015 ] && echo yes || echo no); fi
+            if [ "$DUE" = "yes" ] && [ ! -f "posted/$IST_TODAY-$SLOT.json" ]; then
+              echo "Cricket / X $SLOT post for $IST_TODAY has not gone out."
+              cricket_busy_or_capped || gh api -X POST "repos/$REPO/actions/workflows/daily.yml/dispatches" -f ref=main -f "inputs[slot]=$SLOT" -f 'inputs[dry_run]=false'
             fi
           done
           echo "Watchdog finished."

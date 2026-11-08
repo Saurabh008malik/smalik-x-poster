@@ -23,7 +23,7 @@ concurrency:
 jobs:
   make:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     env:
       HAVE_PAGE: ${{ secrets.MONEY_FB_PAGE_ID != '' }}
     steps:
@@ -63,7 +63,48 @@ jobs:
           pip install -q requests
           python perf.py money
       - name: Claude researches, writes and builds the 8 posts
+        id: a1
+        continue-on-error: true
         if: steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "github-actions"  # lets the watchdog restart it
+          prompt: |
+            Read money/PROMPT.md in the repository root and follow it exactly.
+            TARGET_DATE = ${{ steps.s.outputs.target }}
+          claude_args: |
+            --max-turns 70
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Claude was unavailable - waiting 10 minutes before trying again
+        if: (steps.s.outputs.skip == 'no') && steps.a1.outcome == 'failure'
+        run: sleep 600
+
+      - name: Claude researches, writes and builds the 8 posts (attempt 2)
+        id: a2
+        continue-on-error: true
+        if: (steps.s.outputs.skip == 'no') && steps.a1.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "github-actions"  # lets the watchdog restart it
+          prompt: |
+            Read money/PROMPT.md in the repository root and follow it exactly.
+            TARGET_DATE = ${{ steps.s.outputs.target }}
+          claude_args: |
+            --max-turns 70
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Claude was unavailable - waiting 20 minutes before the last try
+        if: (steps.s.outputs.skip == 'no') && steps.a2.outcome == 'failure'
+        run: sleep 1200
+
+      - name: Claude researches, writes and builds the 8 posts (attempt 3)
+        id: a3
+        if: (steps.s.outputs.skip == 'no') && steps.a2.outcome == 'failure'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

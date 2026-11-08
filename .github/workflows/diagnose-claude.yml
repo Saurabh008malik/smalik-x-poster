@@ -2,9 +2,6 @@ name: Diagnose Claude login (shows the real error)
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/diagnose-claude.yml"
 
 permissions:
   contents: read

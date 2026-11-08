@@ -32,7 +32,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -77,6 +77,8 @@ jobs:
           pip install -q requests
           python perf.py cricket
       - name: Claude researches, writes and makes the cards
+        id: a1
+        continue-on-error: true
         if: steps.s.outputs.skip == 'no'
         uses: anthropics/claude-code-action@v1
         with:
@@ -99,8 +101,42 @@ jobs:
           F="queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}"
           test -f "$F.json" && test -f "$F.png" && test -f "$F-fb.jpg"
 
-      - name: Claude second attempt (first one stopped early)
+      - name: Claude was unavailable - waiting 10 minutes before trying again
         if: steps.s.outputs.skip == 'no' && steps.first.outcome == 'failure'
+        run: sleep 600
+
+      - name: Claude second attempt (first one stopped early)
+        id: a2
+        continue-on-error: true
+        if: steps.s.outputs.skip == 'no' && steps.first.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read PROMPT.md in the repository root and follow it exactly.
+            SLOT = ${{ steps.s.outputs.slot }}
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            Use DATE-SLOT = ${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }} for all file names.
+          claude_args: |
+            --max-turns 90
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Second attempt made the post?
+        id: second
+        if: steps.s.outputs.skip == 'no' && steps.first.outcome == 'failure'
+        continue-on-error: true
+        run: |
+          F="queue/${{ steps.s.outputs.date }}-${{ steps.s.outputs.slot }}"
+          test -f "$F.json" && test -f "$F.png" && test -f "$F-fb.jpg"
+
+      - name: Claude was unavailable - waiting 20 minutes before the last try
+        if: steps.s.outputs.skip == 'no' && steps.second.outcome == 'failure'
+        run: sleep 1200
+
+      - name: Claude third attempt
+        id: a3
+        if: steps.s.outputs.skip == 'no' && steps.second.outcome == 'failure'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
