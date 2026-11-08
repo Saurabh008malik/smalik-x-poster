@@ -10,5 +10,8 @@
     "first_comment": "Premium going up? Tell @paychecktruths below 👇"
   },
   "image": "2026-11-07-07.jpg",
-  "publish_at": "2026-11-08T00:00:00+00:00"
+  "publish_at": "2026-11-08T00:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122107864953522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"Action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"fbtrace_id\":\"A77OoJJwCaaVw6Fg1gBPtnA\"}}",
+  "done_at": "2026-11-08T00:06:07.432808+00:00"
 }
