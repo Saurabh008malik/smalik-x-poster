@@ -1,15 +1,15 @@
-# What performed best on this page (last 14 days, updated 2026-11-07)
+# What performed best on this page (last 14 days, updated 2026-11-08)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [reel] score 1.0 | Quick myth-buster. ✅ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-09
 - [card] score 1.0 | Can someone explain why a card with a $500 limit can still charge 25%+ interest… and you're told to "just pay  | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-02
 - [card] score 1.0 | The average new credit card offer now sits around 22.46% APR. 💳 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-01
 - [card] score 1.0 | Pay now vs pay later. 💸 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-04-08
-- [reel] score 0.0 | Quick myth-buster. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-09
-- [card] score 0.0 | What a $5,000 card balance really costs. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-06-08
+- [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-09
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- card: 0.2 over 14 posts
-- reel: 0.0 over 2 posts
-- text: 0.0 over 2 posts
+- reel: 0.3 over 3 posts
+- card: 0.1 over 20 posts
+- text: 0.0 over 3 posts
