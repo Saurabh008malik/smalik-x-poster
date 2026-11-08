@@ -1,0 +1,31 @@
+name: Diagnose Claude login (shows the real error)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/diagnose-claude.yml"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask Claude one tiny question (full output on)
+        id: c
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: "Reply with the single word OK. Do not use any tools."
+          claude_args: |
+            --max-turns 1
+      - name: Result
+        run: echo "Claude step outcome = ${{ steps.c.outcome }}"
