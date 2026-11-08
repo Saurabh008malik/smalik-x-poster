@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [card] score 1.0 | Gas is finally easing. Still not cheap. ⛽ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-01
 - [reel] score 0.0 | Do the math. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-09
+- [card] score 0.0 | Payday math. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-08
 - [card] score 0.0 | Health insurance is getting pricier again. 🏥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-07
 - [text] score 0.0 | Confession time. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-07-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- card: 0.0 over 91 posts
+- card: 0.0 over 92 posts
 - reel: 0.0 over 15 posts
 - text: 0.0 over 13 posts
