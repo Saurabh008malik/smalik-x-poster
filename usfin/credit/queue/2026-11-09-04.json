@@ -1,0 +1,20 @@
+{
+  "caption": "Quick habit: look at your credit reports. 🔍\nYou can get them free every week at AnnualCreditReport.com.\nCheck names, addresses, accounts you don't recognize.\nWhen did you last check yours?",
+  "first_comment": "When did you last look at your credit report? 👇",
+  "sources": [
+    "https://wtop.com/news/2026/04/you-can-still-get-free-weekly-credit-reports/",
+    "pattern: signs list"
+  ],
+  "instagram": {
+    "first_comment": "Last time you checked your report? Tell us below. @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Check your credit report for <em>accounts you don't recognize</em>.",
+    "sub": "Unfamiliar account? It can be an early sign of fraud.",
+    "theme": "green",
+    "source": ""
+  },
+  "image": "2026-11-09-04.jpg",
+  "publish_at": "2026-11-09T18:00:00+00:00"
+}

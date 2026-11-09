@@ -1,0 +1,20 @@
+{
+  "caption": "Good news for your wallet: your credit reports are free every week. 📄\nEquifax, Experian and TransUnion each offer them through AnnualCreditReport.com. Reports don't include scores, and each bureau handles its own disputes.\nHave you ever found an error?",
+  "first_comment": "Ever found a mistake on your credit report? What was it? 👇",
+  "sources": [
+    "https://wtop.com/news/2026/04/you-can-still-get-free-weekly-credit-reports/",
+    "pattern: reassurance"
+  ],
+  "instagram": {
+    "first_comment": "Found an error before? Tell us below. @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Free credit reports are still available <em>every week</em>.",
+    "sub": "All three bureaus, at AnnualCreditReport.com.",
+    "theme": "blue",
+    "source": "Source: AnnualCreditReport.com / WTOP"
+  },
+  "image": "2026-11-09-07.jpg",
+  "publish_at": "2026-11-10T00:00:00+00:00"
+}

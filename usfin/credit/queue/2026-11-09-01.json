@@ -1,0 +1,20 @@
+{
+  "caption": "Revolving credit just hit about $1.37 trillion. 💳\nThe Fed's latest report (September data, out Nov 6) puts it at $1,368.5 billion.\nThat's mostly credit cards, and it's a lot of monthly minimums.\nAre you paying your cards down, or just holding steady?",
+  "first_comment": "Be honest: is your card balance going up, down, or flat this year? 👇",
+  "sources": [
+    "https://www.federalreserve.gov/releases/g19/current/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Up, down or flat? Tell us below and follow @creditscoretruths for daily credit truths 💳"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "US revolving credit is now about <em>$1.37 trillion</em>.",
+    "sub": "Fed data for September 2026, released Nov 6.",
+    "theme": "blue",
+    "source": "Source: Federal Reserve G.19"
+  },
+  "image": "2026-11-09-01.jpg",
+  "publish_at": "2026-11-09T12:00:00+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "caption": "Utilization is 30% of your FICO score. 📊\nIt's the second biggest factor after paying on time.\nSo how much of your limit do you usually use?\nTell me below.",
+  "first_comment": "What's your usual card utilization: under 10%, 30%, or higher? 👇",
+  "sources": [
+    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Where's your utilization at? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "SCORE TRUTH",
+    "headline": "Amounts owed is <em>30%</em> of your FICO score.",
+    "sub": "Second biggest factor after paying on time.",
+    "theme": "green",
+    "source": ""
+  },
+  "video": "2026-11-09-09.mp4",
+  "publish_at": "2026-11-09T17:00:00+00:00"
+}
