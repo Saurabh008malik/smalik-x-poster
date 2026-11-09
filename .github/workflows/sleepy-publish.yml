@@ -9,7 +9,7 @@ on:
         description: "publish = post anything due now; whoami = only check which channel is connected"
         default: "publish"
         type: choice
-        options: ["publish", "whoami", "tokentest"]
+        options: ["publish", "whoami", "tokentest", "uploadtest"]
 
 permissions:
   contents: write
@@ -40,7 +40,7 @@ jobs:
           echo "Items due: $N"
 
       - name: Check hook
-        if: steps.d.outputs.due != '0' || inputs.action == 'whoami' || inputs.action == 'tokentest'
+        if: steps.d.outputs.due != '0' || inputs.action == 'whoami' || inputs.action == 'tokentest' || inputs.action == 'uploadtest'
         env:
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
         run: |
@@ -52,15 +52,21 @@ jobs:
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
         run: python sleepy/yt.py ${{ inputs.action }}
 
+      - name: Upload test (5-second clip, deleted after)
+        if: inputs.action == 'uploadtest'
+        env:
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+        run: python sleepy/yt.py uploadtest
+
       - name: Publish
-        if: steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest'
+        if: steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
         env:
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python sleepy/yt.py publish
 
       - name: Save queue
-        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest'
+        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
         run: |
           git config user.name "sleepy-biographer-bot"; git config user.email "actions@users.noreply.github.com"
           git add sleepy/queue.json

@@ -85,6 +85,28 @@ def tokentest():
         raise SystemExit("Token cannot upload - check appsscript.json scopes")
 
 
+def uploadtest():
+    """Uploads a 5-second black clip as UNLISTED, checks if YouTube keeps it unlisted (an unverified API project
+    gets locked to private), then deletes it. Proves the hook can really publish."""
+    j = hook("token")
+    h = {"Authorization": f"Bearer {j['token']}"}
+    clip = HERE / "work" / "test.mp4"
+    clip.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "color=c=black:s=640x360:d=5",
+                    "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "5", "-c:v", "libx264", "-c:a", "aac",
+                    "-shortest", str(clip)], check=True)
+    body = {"snippet": {"title": "Pipeline test (will be deleted)", "description": "test", "categoryId": "27"},
+            "status": {"privacyStatus": "unlisted", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+    vid = upload_video(h, clip, body, clip.stat().st_size)
+    summary(f"Test upload accepted: {vid}")
+    time.sleep(90)
+    r = requests.get(f"{API}/videos", params={"part": "status", "id": vid}, headers=h, timeout=30).json()
+    st = r["items"][0]["status"] if r.get("items") else r
+    summary(f"Status after 90 s: {json.dumps(st)}")
+    d = requests.delete(f"{API}/videos", params={"id": vid}, headers=h, timeout=30)
+    summary(f"Test video deleted: HTTP {d.status_code}")
+
+
 def upload_video(h, path, body, size):
     r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos",
                       params={"uploadType": "resumable", "part": "snippet,status"},
@@ -247,4 +269,4 @@ if __name__ == "__main__":
     if cmd == "due":
         print(sum(1 for it in load() if is_due(it)))
     else:
-        {"whoami": whoami, "publish": publish, "tokentest": tokentest}[cmd]()
+        {"whoami": whoami, "publish": publish, "tokentest": tokentest, "uploadtest": uploadtest}[cmd]()
