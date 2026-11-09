@@ -1,0 +1,13 @@
+{
+  "caption": "True or False? 🤔\n\n\"Your credit score drops every time you check it yourself.\"\n\nThink first, then tell us below. Answer in the first comment.",
+  "first_comment": "False. Checking your own score is a soft inquiry and doesn't hurt it. Did you know that? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: Two-column sort"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Tell @paychecktruths 👇"
+  },
+  "image": "2026-11-10-05.jpg",
+  "publish_at": "2026-11-10T20:00:00+00:00"
+}
