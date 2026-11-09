@@ -14,5 +14,8 @@
     "source": ""
   },
   "image": "2026-11-09-02.jpg",
-  "publish_at": "2026-11-09T14:00:00+00:00"
+  "publish_at": "2026-11-09T14:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1489664594219756_122108022717530088",
+  "instagram_error": "Instagram publish failed 400: {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Cannot publish\",\"error_user_msg\":\"The media is not ready to be published. Please wait a moment.\",\"fbtrace_id\":\"AAJu3HNFdJEwVhaKMmHXrFp\"}}",
+  "done_at": "2026-11-09T14:07:14.884670+00:00"
 }
