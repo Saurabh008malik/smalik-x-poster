@@ -24,6 +24,12 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Remove leftover test branch
+        run: git push -q origin --delete feed-test || true
 
       - name: Anything due?
         id: d

@@ -133,14 +133,53 @@ def add_to_playlist(h, vid, title):
     return "added" if r.status_code in (200, 201) else f"failed {r.status_code}"
 
 
+def fetch_parts(it, work):
+    """Video was handed over as parts (<95 MB each) on a temporary branch: join them back into one file."""
+    repo = os.environ["GITHUB_REPOSITORY"]
+    tmp = work / "_parts"
+    subprocess.run(["rm", "-rf", str(tmp)], check=True)
+    subprocess.run(["git", "clone", "-q", "--depth", "1", "--single-branch", "--branch", it["parts_branch"],
+                    f"https://x-access-token:{os.environ['GH_TOKEN']}@github.com/{repo}.git", str(tmp)], check=True)
+    parts = sorted(tmp.glob(it["video"] + ".part*"))
+    if not parts:
+        raise RuntimeError("no video parts found on branch " + it["parts_branch"])
+    with open(work / it["video"], "wb") as out:
+        for pt in parts:
+            with open(pt, "rb") as f:
+                while True:
+                    b = f.read(8 * 1024 * 1024)
+                    if not b:
+                        break
+                    out.write(b)
+    if it.get("sha256"):
+        import hashlib
+        h = hashlib.sha256()
+        with open(work / it["video"], "rb") as f:
+            for b in iter(lambda: f.read(8 * 1024 * 1024), b""):
+                h.update(b)
+        if h.hexdigest() != it["sha256"]:
+            raise RuntimeError("joined video does not match its checksum - parts damaged, not uploading")
+    if it.get("thumbnail"):
+        (work / it["thumbnail"]).write_bytes((tmp / it["thumbnail"]).read_bytes())
+    subprocess.run(["rm", "-rf", str(tmp)], check=True)
+
+
+def delete_branch(name):
+    if name:
+        subprocess.run(["git", "push", "-q", "origin", "--delete", name], check=False)
+
+
 def publish_one(it, token):
     h = {"Authorization": f"Bearer {token}"}
     work = HERE / "work" / it["id"]
     work.mkdir(parents=True, exist_ok=True)
     files = [it["video"]] + ([it["thumbnail"]] if it.get("thumbnail") else [])
-    for fn in files:
-        subprocess.run(["gh", "release", "download", it["release"], "--repo", os.environ["GITHUB_REPOSITORY"],
-                        "-p", fn, "-D", str(work), "--clobber"], check=True)
+    if it.get("parts_branch"):
+        fetch_parts(it, work)
+    else:
+        for fn in files:
+            subprocess.run(["gh", "release", "download", it["release"], "--repo", os.environ["GITHUB_REPOSITORY"],
+                            "-p", fn, "-D", str(work), "--clobber"], check=True)
     video = work / it["video"]
     size = video.stat().st_size
     title = it["title"]
@@ -152,6 +191,9 @@ def publish_one(it, token):
         "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": True, "embeddable": True},
     }
+    if it.get("schedule_at"):   # upload now as private, YouTube makes it public by itself at that time
+        body["status"]["privacyStatus"] = "private"
+        body["status"]["publishAt"] = it["schedule_at"]
     vid = upload_video(h, video, body, size)
     notes = []
     if it.get("thumbnail"):
@@ -167,6 +209,11 @@ def publish_one(it, token):
         notes.append("first comment " + ("posted" if c.status_code in (200, 201) else f"FAILED {c.status_code}"))
     for fn in files:
         (work / fn).unlink(missing_ok=True)
+    if it.get("parts_branch"):
+        delete_branch(it["parts_branch"])
+        notes.append("parts branch deleted")
+    if it.get("schedule_at"):
+        notes.append("goes public at " + it["schedule_at"])
     return vid, notes
 
 
