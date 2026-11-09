@@ -56,7 +56,9 @@ jobs:
         if: inputs.action == 'uploadtest'
         env:
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
-        run: python sleepy/yt.py uploadtest
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python sleepy/yt.py uploadtest
 
       - name: Publish
         if: steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
