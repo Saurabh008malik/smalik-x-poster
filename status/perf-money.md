@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-08)
+# What performed best on this page (last 14 days, updated 2026-11-09)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -13,12 +13,12 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [reel] score 0.0 | MYTH BUSTED 🚨 | 2026-10-25-reel
-- [reel] score 0.0 | MYTH BUSTED 🚨 | 2026-10-25-reel2
 - [card] score 0.0 | Prices are rising faster than paychecks again. 📉 | 2026-10-26-01
+- [card] score 0.0 | Can someone explain why a tank of gas now feels like a car payment? 😅 | 2026-10-26-02
+- [card] score 0.0 | Nobody gets rich by accident. 💡 | 2026-10-26-03
 
 ## Average score by format
 
 - card: 0.0 over 91 posts
-- reel: 0.0 over 15 posts
+- reel: 0.0 over 13 posts
 - text: 0.0 over 13 posts
