@@ -1,0 +1,61 @@
+name: The Sleepy Biographer - publish due videos and Shorts
+
+on:
+  schedule:
+    - cron: "10,40 * * * *"      # checks the queue twice an hour; does nothing unless an item is due
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "publish = post anything due now; whoami = only check which channel is connected"
+        default: "publish"
+        type: choice
+        options: ["publish", "whoami"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sleepy
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Anything due?
+        id: d
+        run: |
+          pip install -q requests
+          N=$(python sleepy/yt.py due)
+          echo "due=$N" >> "$GITHUB_OUTPUT"
+          echo "Items due: $N"
+
+      - name: Check hook
+        if: steps.d.outputs.due != '0' || inputs.action == 'whoami'
+        env:
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+        run: |
+          if [ -z "$SLEEPY_HOOK" ]; then echo "SLEEPY_HOOK secret is not set yet - finish the Apps Script setup." | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; fi
+
+      - name: Who is connected
+        if: inputs.action == 'whoami'
+        env:
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+        run: python sleepy/yt.py whoami
+
+      - name: Publish
+        if: steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        env:
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python sleepy/yt.py publish
+
+      - name: Save queue
+        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        run: |
+          git config user.name "sleepy-biographer-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sleepy/queue.json
+          git commit -m "Sleepy Biographer: queue update" && git pull --rebase -q && git push || true
