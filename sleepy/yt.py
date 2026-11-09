@@ -72,6 +72,19 @@ def whoami():
     summary(f"Connected to YouTube channel: **{hook('whoami')['channel']}**")
 
 
+def tokentest():
+    j = hook("token")
+    h = {"Authorization": f"Bearer {j['token']}"}
+    info = requests.get("https://oauth2.googleapis.com/tokeninfo", params={"access_token": j["token"]}, timeout=30).json()
+    scopes = [x.rsplit("/", 1)[-1] for x in info.get("scope", "").split()]
+    ch = requests.get(f"{API}/channels", params={"part": "snippet,statistics", "mine": "true"}, headers=h, timeout=30)
+    ok = ch.status_code == 200 and ch.json().get("items")
+    name = ch.json()["items"][0]["snippet"]["title"] if ok else ch.text[:200]
+    summary(f"Token test: scopes={scopes}; channels.list -> {ch.status_code}: {name}")
+    if not ok or "youtube.upload" not in scopes:
+        raise SystemExit("Token cannot upload - check appsscript.json scopes")
+
+
 def upload_video(h, path, body, size):
     r = requests.post("https://www.googleapis.com/upload/youtube/v3/videos",
                       params={"uploadType": "resumable", "part": "snippet,status"},
@@ -187,4 +200,4 @@ if __name__ == "__main__":
     if cmd == "due":
         print(sum(1 for it in load() if is_due(it)))
     else:
-        {"whoami": whoami, "publish": publish}[cmd]()
+        {"whoami": whoami, "publish": publish, "tokentest": tokentest}[cmd]()
