@@ -1,0 +1,21 @@
+{
+  "caption": "Medical debt and your credit report: it's complicated. 🏥\n\nA federal CFPB rule to remove medical debt was vacated by a court in July 2025.\n\nThe big bureaus still say they leave off paid medical collections and medical debts under $500. Some states have their own limits.\n\nCheck your own reports and state rules.\n\nHas medical debt ever shown on yours?",
+  "first_comment": "Has a medical bill ever hit your credit report? 👇",
+  "sources": [
+    "https://www.moneygeek.com/insurance/health/medical-debt-credit-reporting-bans-by-state/",
+    "https://www.moneyunder30.com/medical-debt-credit-report-2026/",
+    "pattern: big number / nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Medical debt on your report? Share below. @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "No federal ban on <em>medical debt</em> reporting. Some limits remain.",
+    "sub": "Paid medical collections and debts under $500 are left off.",
+    "theme": "blue",
+    "source": "Source: CFPB, bureau policies"
+  },
+  "image": "2026-11-10-07.jpg",
+  "publish_at": "2026-11-11T00:00:00+00:00"
+}

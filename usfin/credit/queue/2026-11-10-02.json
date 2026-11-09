@@ -1,0 +1,19 @@
+{
+  "caption": "Can someone explain this? 😤\n\nYou pay your rent on time for years. Every single month.\n\nAnd it often never shows up on your credit report, unless it's reported.\n\nSo what counts as proof you're responsible?\n\nDoes your rent get reported?",
+  "first_comment": "Does your landlord report rent? Yes, no, or no idea? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/05/05/mortgage-lenders-now-have-more-credit-score-options-what-to-know.html",
+    "pattern: paycheck relatability"
+  ],
+  "instagram": {
+    "first_comment": "Rent reported or not? Drop it below. @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "DEBT REALITY",
+    "headline": "Why doesn't <em>on-time rent</em> count unless it's reported?",
+    "sub": "Most renters' payments never reach the bureaus.",
+    "theme": "red"
+  },
+  "image": "2026-11-10-02.jpg",
+  "publish_at": "2026-11-10T14:00:00+00:00"
+}

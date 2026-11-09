@@ -1,0 +1,21 @@
+{
+  "caption": "Mortgage lenders can now choose between scores. 🏠\n\nSince April 2026, Fannie Mae and Freddie Mac loans can use VantageScore 4.0, not just Classic FICO.\n\nNewer models look at about 24 months of habits, not just a snapshot.\n\nRules vary by lender, so ask which score yours uses.\n\nDid you know there was more than one mortgage score?",
+  "first_comment": "Did anyone here ever get told which score their lender pulled? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/05/05/mortgage-lenders-now-have-more-credit-score-options-what-to-know.html",
+    "https://www.fhfa.gov/policy/credit-scores",
+    "pattern: big number / nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Which score did your lender use? Tell us on @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Mortgage lenders can now use <em>VantageScore 4.0</em>.",
+    "sub": "Classic FICO is still allowed. Ask which one your lender uses.",
+    "theme": "blue",
+    "source": "Source: CNBC"
+  },
+  "image": "2026-11-10-01.jpg",
+  "publish_at": "2026-11-10T12:00:00+00:00"
+}

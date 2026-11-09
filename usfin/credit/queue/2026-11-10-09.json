@@ -1,0 +1,19 @@
+{
+  "caption": "Quick myth-buster. ✅\n\nFreezing your credit is free, by federal law.\n\nIt doesn't lower your score.\n\nYou can lift it temporarily when you apply for credit.\n\nHave you ever frozen yours?",
+  "first_comment": "Have you frozen your credit? Yes or no? 👇",
+  "sources": [
+    "https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts",
+    "pattern: reassurance / myth-buster"
+  ],
+  "instagram": {
+    "first_comment": "Frozen or not? Tell us. @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "A credit freeze is <em>free</em> and won't hurt your score.",
+    "sub": "You can lift it when you apply for credit.",
+    "theme": "green"
+  },
+  "video": "2026-11-10-09.mp4",
+  "publish_at": "2026-11-10T17:00:00+00:00"
+}
