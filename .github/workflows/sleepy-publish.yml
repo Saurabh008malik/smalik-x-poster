@@ -9,7 +9,7 @@ on:
         description: "publish = post anything due now; whoami = only check which channel is connected"
         default: "publish"
         type: choice
-        options: ["publish", "whoami", "tokentest", "uploadtest"]
+        options: ["publish", "whoami", "tokentest", "uploadtest", "cleanup"]
 
 permissions:
   contents: write
@@ -30,6 +30,11 @@ jobs:
 
       - name: Remove leftover test branch
         run: git push -q origin --delete feed-test || true
+
+      - name: Cleanup backup branches (only when asked)
+        if: inputs.action == 'cleanup'
+        run: |
+          for b in $(git ls-remote --heads origin 'backup-*' | sed 's#.*refs/heads/##'); do echo "deleting $b"; git push -q origin --delete "$b" || true; done
 
       - name: Anything due?
         id: d
