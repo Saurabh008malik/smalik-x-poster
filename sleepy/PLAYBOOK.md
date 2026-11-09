@@ -44,3 +44,6 @@ Secret: SLEEPY_HOOK (GitHub). If the Apps Script web app is ever redeployed, the
 - GitHub releases, new repos, branch deletion from the sandbox and large file_upload calls are blocked; deleting branches works only inside the Action (GITHUB_TOKEN).
 - Ubuntu runner has no ffmpeg by default (apt-get install it where needed).
 - WebFetch/shell cannot reach Google endpoints; only the Action and Saurabh's Chrome can.
+- BUG caught on video 2: assemble.py cached canvases as /tmp/canvas_NNN.png, so a second video reused the first video's pictures (and its title card). Each video now has its own cache name (/tmp/ld_canvas_ for Leonardo). Always give the cache a per-video prefix, and ALWAYS look at 3 frames of the finished video before delivering.
+- Narration, audio mix and video render all need the processor: run them one after the other. Background jobs are stopped after their time limit (2 h), so start long jobs in pieces.
+- Temporary backups of finished videos can go to a branch backup-<name> (parts of 90 MB) in the repo; delete them later with the sleepy-publish workflow, action "cleanup".
