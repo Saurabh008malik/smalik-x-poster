@@ -1,0 +1,16 @@
+{
+  "caption": "True or False? 🤔\n\n\"Closing an old credit card always helps your credit score.\"\n\nHint: it can actually hurt. Closing a card can shrink your available credit and shorten your account history.\n\nWhat did you think before today?",
+  "first_comment": "True or False? Drop your answer 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: True or False"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Answer for @paychecktruths 👇"
+  },
+  "image": "2026-11-09-05.jpg",
+  "publish_at": "2026-11-09T20:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122108483607522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"Action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"fbtrace_id\":\"AbN_qXgzAfUNG4Dp2w2DGRO\"}}",
+  "done_at": "2026-11-09T20:05:59.987955+00:00"
+}
