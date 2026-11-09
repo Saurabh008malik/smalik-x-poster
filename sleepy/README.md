@@ -5,7 +5,7 @@ It adds one line per video/Short to `queue.json`. This repo then posts it at the
 video + thumbnail + "altered/synthetic content" flag + playlist + first comment.
 
 - Long videos: Tue & Fri, 23:40 UTC (6:40 pm New York, 11:40 pm London)
-- Shorts: Mon, Wed, Thu, Sat, 15:10 UTC (10:10 am New York) - cut from the same stories, never reused
+- Shorts: OFF by default (top sleep-biography channels post almost none). The queue supports them if you ever want a few later; they must be original cuts, never reused
 - Policy: AI voice always disclosed, no mass-produced or repeated uploads, original script each time, public-domain images only,
   first comment is posted by the channel (YouTube's API cannot pin it - pin it by hand in Studio when you like).
 
