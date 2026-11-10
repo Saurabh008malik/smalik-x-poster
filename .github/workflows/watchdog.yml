@@ -2,7 +2,7 @@ name: Watchdog - make sure every page has today's posts
 
 # Safety net. The 6 AM IST job normally starts every page's daily "make". If any page still has no
 # posts for its next day (job never started, or Claude failed), this restarts that page's make.
-# Also restarts the cricket / X morning and evening posts if they never went out.
+# Also restarts the cricket / X morning and evening posts and the X news flashes if they never went out.
 # It does nothing when everything is fine. Runs hourly from 7:20 AM to 11:20 PM IST.
 on:
   schedule:
@@ -84,4 +84,21 @@ jobs:
               cricket_busy_or_capped || gh api -X POST "repos/$REPO/actions/workflows/daily.yml/dispatches" -f ref=main -f "inputs[slot]=$SLOT" -f 'inputs[dry_run]=false'
             fi
           done
+          # X news flashes: any slot more than 15 minutes overdue (and under 2.5 hours) that is still unposted -> restart the flash run.
+          # The run researches FRESH news at that moment, so a late post is never old news.
+          NOWM=$(( 10#$(TZ=Asia/Kolkata date +%H)*60 + 10#$(TZ=Asia/Kolkata date +%M) ))
+          OVERDUE=""
+          for S in 450 540 630 720 810 900 990 1080 1260 1350; do
+            K=$(printf "%02d%02d" $((S/60)) $((S%60)))
+            if [ "$NOWM" -ge $((S+15)) ] && [ "$NOWM" -le $((S+150)) ] && [ ! -f "posted/$IST_TODAY-flash-$K.json" ]; then OVERDUE="$OVERDUE $K"; fi
+          done
+          if [ -n "$OVERDUE" ]; then
+            echo "X flash slot(s) overdue:$OVERDUE"
+            FR=$(gh api "repos/$REPO/actions/workflows/xflash.yml/runs?created=%3E%3D$TODAY_UTC&per_page=100" --jq '.workflow_runs')
+            FACTIVE=$(echo "$FR" | jq '[.[]|select(.status!="completed")]|length')
+            FTRIES=$(echo "$FR" | jq '[.[]|select(.event=="workflow_dispatch")]|length')
+            if [ "$FACTIVE" -gt 0 ]; then echo "xflash.yml is already running."
+            elif [ "$FTRIES" -ge 25 ]; then echo "xflash.yml already restarted $FTRIES times today - stopping."
+            else gh api -X POST "repos/$REPO/actions/workflows/xflash.yml/dispatches" -f ref=main -f 'inputs[dry_run]=false'; fi
+          fi
           echo "Watchdog finished."

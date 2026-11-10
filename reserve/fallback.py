@@ -12,6 +12,7 @@ ROOT = HERE.parent
 date, slot = sys.argv[1], sys.argv[2]
 name = f"{date}-{slot}"
 
+FAN = json.loads((HERE / "fan_questions.json").read_text(encoding="utf-8"))
 items = sorted(p.stem for p in (HERE / "items").glob("*.json"))
 used_file = HERE / "used.json"
 used = json.loads(used_file.read_text()) if used_file.exists() else []
@@ -23,13 +24,13 @@ used = [u for u in used if u != pick] + [pick]
 d = json.loads((HERE / "items" / f"{pick}.json").read_text(encoding="utf-8"))
 q = ROOT / "queue"
 q.mkdir(exist_ok=True)
-shutil.copy(HERE / "cards" / f"{pick}.png", q / f"{name}.png")
+shutil.copy(HERE / "cards" / f"{pick}.png", q / f"{name}.png")   # kept so the daily check passes; X does not use it
 shutil.copy(HERE / "cards" / f"{pick}-fb.jpg", q / f"{name}-fb.jpg")
 out = {
-    "text": d["text"],
-    "image": f"{name}.png",
+    "text": FAN[(dt.date.fromisoformat(date).toordinal() * 7 + (0 if slot == "morning" else 1)) % len(FAN)],   # X gets a fan question, never old news
+    "image": "",
     "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-    "platforms": ["facebook"],   # reserve posts are evergreen, never old news on X (rule 10 Nov 2026)
+    "platforms": ["x", "facebook"],
     "facebook": {**d["facebook"], "image": f"{name}-fb.jpg"},
     "instagram": d["instagram"],
     "reserve_id": pick,

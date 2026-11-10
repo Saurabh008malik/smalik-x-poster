@@ -1,11 +1,15 @@
 name: X news flash (fresh news only)
 
 # Extra tweets for @Smalik_wc so the account posts like the big cricket accounts (about 12 a day with the morning and evening card posts).
-# Each run writes ONE fresh-news tweet and posts it. Rule (10 Nov 2026): if a slot is missed (late timer, Claude unavailable,
-# nothing fresh to say) it is SKIPPED. Nothing old is ever posted late, and there is no reserve/fallback post for X.
+# Each run writes ONE fresh-news tweet and posts it. Rules (10 Nov 2026):
+#  1. NO MISSED SLOTS: the 10 slot timers have backup timers every 30 minutes, the watchdog re-checks every hour, and a run always
+#     fills the earliest unposted slot of the day (up to 2.5 hours late). Each slot is tried up to 3 times; the last try falls back
+#     to a fan-question tweet (not news), so a slot is never empty.
+#  2. NEVER OLD NEWS: the tweet is researched fresh at the moment the run happens, so a late run still posts what is new NOW.
 on:
   schedule:
-    # IST 07:30, 09:00, 10:30, 12:00, 13:30, 15:00, 16:30, 18:00, 21:00, 22:30
+    # Slots (IST): 07:30, 09:00, 10:30, 12:00, 13:30, 15:00, 16:30, 18:00, 21:00, 22:30
+    # Main timers on the slot, then a backup timer every 30 minutes all day (a backup only acts if a slot is still unposted).
     - cron: "0 2 * * *"
     - cron: "30 3 * * *"
     - cron: "0 5 * * *"
@@ -16,10 +20,11 @@ on:
     - cron: "30 12 * * *"
     - cron: "30 15 * * *"
     - cron: "0 17 * * *"
+    - cron: "20,50 2-17 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "true = make the tweet but do not publish (saved to drafts/)"
+        description: "true = test: make a tweet but do not publish (saved to drafts/). false = fill the earliest unposted slot (used by the watchdog)"
         default: "true"
         type: choice
         options: ["true", "false"]
@@ -39,24 +44,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Work out the slot (late timers are skipped, never caught up)
+      - name: Work out the slot (always the earliest unposted slot, never skipped for being late)
         id: s
         run: |
           DATE=$(TZ=Asia/Kolkata date +%Y-%m-%d)
           NOWM=$(( 10#$(TZ=Asia/Kolkata date +%H)*60 + 10#$(TZ=Asia/Kolkata date +%M) ))
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            BEST=-1
-            for S in 450 540 630 720 810 900 990 1080 1260 1350; do [ "$NOWM" -ge "$S" ] && BEST=$S; done
-            LATE=$(( NOWM - BEST ))
-            if [ "$BEST" -lt 0 ] || [ "$LATE" -gt 45 ]; then echo "Timer fired ${LATE} min late - this slot is missed and skipped."; SKIP=yes; else SKIP=no; fi
-            KEY=$(printf "%02d%02d" $((BEST/60)) $((BEST%60)))
-            DRY=false
+          KEY=""; DRY=false; TRY=0
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            KEY=$(printf "%02d%02d" $((NOWM/60)) $((NOWM%60))); DRY=true
           else
-            KEY=$(printf "%02d%02d" $((NOWM/60)) $((NOWM%60))); DRY="${{ inputs.dry_run }}"; SKIP=no
+            for S in 450 540 630 720 810 900 990 1080 1260 1350; do
+              [ "$NOWM" -lt "$S" ] && break
+              [ $(( NOWM - S )) -gt 150 ] && continue
+              K=$(printf "%02d%02d" $((S/60)) $((S%60)))
+              [ -f "posted/$DATE-flash-$K.json" ] && continue
+              [ -f "queue/$DATE-flash-$K.json" ] && continue
+              T=$(cat "failed/$DATE-flash-$K.tries" 2>/dev/null | wc -l)
+              [ "$T" -ge 3 ] && continue
+              KEY=$K; TRY=$((T+1)); break
+            done
           fi
-          if ls posted/$DATE-flash-$KEY.json failed/$DATE-flash-$KEY.json queue/$DATE-flash-$KEY.json >/dev/null 2>&1; then SKIP=yes; fi
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"; echo "key=$KEY" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
-          echo "Date=$DATE Key=$KEY Dry=$DRY Skip=$SKIP"
+          if [ -z "$KEY" ]; then SKIP=yes; echo "Every slot due so far is already posted (or used its 3 tries). Nothing to do."; else
+            SKIP=no; mkdir -p failed; echo "$(date -u +%FT%TZ)" >> "failed/$DATE-flash-$KEY.tries"; fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"; echo "key=$KEY" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"; echo "try=$TRY" >> "$GITHUB_OUTPUT"
+          echo "Date=$DATE Slot=$KEY Try=$TRY Dry=$DRY Skip=$SKIP"
 
       - uses: actions/setup-python@v5
         if: steps.s.outputs.skip == 'no'
@@ -102,7 +114,11 @@ jobs:
         if: steps.s.outputs.skip == 'no'
         run: |
           F="queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json"
-          if [ -f "$F" ] && python -c "import json;d=json.load(open('$F'));assert d['text'].strip()"; then echo "have=yes" >> "$GITHUB_OUTPUT"; else echo "No fresh tweet this slot - skipped (nothing old is posted)."; echo "have=no" >> "$GITHUB_OUTPUT"; fi
+          if [ -f "$F" ] && python -c "import json;d=json.load(open('$F'));assert d['text'].strip()"; then echo "have=yes" >> "$GITHUB_OUTPUT"
+          elif [ "${{ steps.s.outputs.try }}" -ge 3 ] && [ "${{ steps.s.outputs.dry }}" = "false" ]; then
+            echo "Third try and still no verified fresh news: posting a fan-question tweet (not news) so the slot is not empty."
+            python3 reserve/fan_tweet.py "${{ steps.s.outputs.date }}" "${{ steps.s.outputs.key }}" && echo "have=yes" >> "$GITHUB_OUTPUT"
+          else echo "No fresh tweet this try - the backup timer or the watchdog will try this slot again."; echo "have=no" >> "$GITHUB_OUTPUT"; fi
 
       - name: Dry run - keep as draft
         if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'true'
@@ -128,6 +144,8 @@ jobs:
           git config user.name "smalik-poster-bot"
           git config user.email "actions@users.noreply.github.com"
           for d in queue posted failed drafts; do [ -e "$d" ] && git add -A "$d" || true; done
+          # a tweet that failed to reach X goes back for another try (up to 3) instead of being lost
+          for q in queue/*-flash-*.json; do [ -e "$q" ] && git rm -q --cached "$q" 2>/dev/null; [ -e "$q" ] && rm -f "$q"; done
           git diff --cached --quiet && exit 0
           git commit -m "X flash ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
           for i in 1 2 3 4; do git pull --rebase -q && git push && break || sleep 5; done

@@ -58,7 +58,16 @@ def post_x(text, image):
     if not r.ok:
         raise RuntimeError(f"X post failed {r.status_code}: {r.text}")
     tid = r.json()["data"]["id"]
-    return f"https://x.com/Smalik_wc/status/{tid}"
+    import time
+    live = False
+    for _ in range(3):   # re-check: confirm the tweet really exists on X
+        time.sleep(3)
+        g = requests.get(f"https://api.x.com/2/tweets/{tid}", auth=x_auth(), timeout=30)
+        if g.ok and g.json().get("data", {}).get("id") == tid:
+            live = True
+            break
+    print("X re-check:", "confirmed live" if live else "NOT confirmed (will be checked again by the watchdog)")
+    return f"https://x.com/Smalik_wc/status/{tid}" + ("" if live else "?unconfirmed")
 
 
 # ---------------- Facebook ----------------
@@ -292,7 +301,7 @@ def post_item(item, data):
             errors["instagram_error"] = str(e); print("❌ Instagram:", e)
 
     stamp = dt.datetime.now(IST).isoformat()
-    files = [x_image, fb_image, fb_video]
+    files = [x_image, fb_image, fb_video, item.with_suffix(".png")]
     if results:
         move(item, files, POSTED, {"posted_at": stamp, **results, **errors, **notes})
     else:
