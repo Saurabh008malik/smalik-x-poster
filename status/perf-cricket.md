@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-09)
+# What performed best on this page (last 14 days, updated 2026-11-10)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [reel] score 0.0 | 𝗜𝗡𝗗𝗜𝗔 𝟮-𝟬 𝗨𝗣! 🇮🇳 | 2026-10-26-evening-reel
-- [card] score 0.0 | 𝗖𝗮𝗽𝗲 𝗧𝗼𝘄𝗻 𝗺𝗲𝗶𝗻 𝗦𝗔 𝘃 𝗔𝗨𝗦 𝗸𝗮 𝗳𝗶𝗻𝗮𝗹 𝗳𝗮𝘀𝗵𝗹𝗮! 🇿🇦🇦🇺🔥 | 2026-10-26-late
-- [reel] score 0.0 | 𝗦𝗘𝗥𝗜𝗘𝗦 𝗔𝗕 𝗕𝗔𝗥𝗔𝗕𝗔𝗥! 🇿🇦🇦🇺 | 2026-10-26-late-reel
+- [card] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝗞𝗔 𝗧𝗢𝗢𝗙𝗔𝗡! 🇮🇳🔥 | 2026-10-27-evening
+- [reel] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝟭𝟭𝟯 𝗢𝗙𝗙 𝟯𝟴! 🇮🇳 | 2026-10-27-evening-reel
+- [card] score 0.0 | 𝗦𝗛𝗔𝗗𝗔𝗕 𝗞𝗔 𝗠𝗔𝗦𝗦𝗜𝗩𝗘 𝗖𝗛𝗔𝗦𝗘! 🇵🇰🔥 | 2026-10-27-morning
 
 ## Average score by format
 
-- reel: 0.3 over 12 posts
+- reel: 0.4 over 11 posts
 - card: 0.0 over 25 posts
