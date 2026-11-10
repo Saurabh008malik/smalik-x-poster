@@ -1,0 +1,20 @@
+{
+  "caption": "Student loan trouble is easing, at least in this one number. 🎓\nThe New York Fed says the share of student loan balances moving into serious delinquency (90+ days) fell to 7.72% in Q3 2026, down from 14.26% a year earlier.\nAuto loans moved the other way slightly: 3.02% vs 2.99%.\nIf you have student loans, have you checked your servicer's reporting lately?",
+  "first_comment": "Student loan borrowers: how's your repayment going this year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Check your reports and your servicer account. @creditscoretruths 🎓"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Student loan serious delinquency <em>nearly halved</em> in a year.",
+    "sub": "14.26% to 7.72% (flow into 90+ days).",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-11-07.jpg",
+  "publish_at": "2026-11-12T00:00:00+00:00"
+}

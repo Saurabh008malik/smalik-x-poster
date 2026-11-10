@@ -1,0 +1,18 @@
+{
+  "caption": "True or False? 🤔\n\"Paying off a card in full every month means I'll never pay interest.\"\nThink about it before you scroll.\nWhat's your answer, and why?",
+  "first_comment": "Answer below, then check the reply for the reveal. 👇 (Hint: it depends on your grace period.)",
+  "sources": [
+    "pattern: myth question"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Vote below. @creditscoretruths 🤔"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Pay in full, <em>never</em> pay interest. True or false?",
+    "sub": "Think about the grace period.",
+    "theme": "blue"
+  },
+  "image": "2026-11-11-05.jpg",
+  "publish_at": "2026-11-11T20:00:00+00:00"
+}

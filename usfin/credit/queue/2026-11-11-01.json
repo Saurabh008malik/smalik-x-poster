@@ -1,0 +1,20 @@
+{
+  "caption": "US household debt just hit $19.1 trillion. 📊\nThe New York Fed's Q3 report (out today) says credit card balances are $1.285 trillion, up $22 billion from last quarter.\nAbout 5.0% of all debt is in some stage of delinquency, up 0.3 points.\nThe bright spot: the flow of card balances into serious delinquency edged down to 6.87% from 7.05% a year ago.\nWhat's the one balance you're working hardest to bring down?",
+  "first_comment": "Which debt feels heaviest right now: cards, car, student loans or mortgage? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Tell us your debt-payoff goal for this year. Follow @creditscoretruths for daily credit truths 💳"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Household debt just hit <em>$19.1 trillion</em>.",
+    "sub": "Card balances: $1.285T, up $22B in one quarter.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-11-01.jpg",
+  "publish_at": "2026-11-11T12:00:00+00:00"
+}
