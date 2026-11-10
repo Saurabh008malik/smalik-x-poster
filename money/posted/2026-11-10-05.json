@@ -1,0 +1,16 @@
+{
+  "caption": "True or False? 🤔\n\n\"Your credit score drops every time you check it yourself.\"\n\nThink first, then tell us below. Answer in the first comment.",
+  "first_comment": "False. Checking your own score is a soft inquiry and doesn't hurt it. Did you know that? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: Two-column sort"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Tell @paychecktruths 👇"
+  },
+  "image": "2026-11-10-05.jpg",
+  "publish_at": "2026-11-10T20:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122108808849522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"Action is blocked\",\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"fbtrace_id\":\"A7uvmQbVHcM4OqBSvV3VY5Z\"}}",
+  "done_at": "2026-11-10T20:06:08.389620+00:00"
+}
