@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-09)
+# What performed best on this page (last 14 days, updated 2026-11-10)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -20,4 +20,4 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 1.2 over 13 posts
-- card: 0.8 over 26 posts
+- card: 0.9 over 26 posts
