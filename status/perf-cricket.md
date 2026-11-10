@@ -15,9 +15,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [card] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝗞𝗔 𝗧𝗢𝗢𝗙𝗔𝗡! 🇮🇳🔥 | 2026-10-27-evening
 - [reel] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝟭𝟭𝟯 𝗢𝗙𝗙 𝟯𝟴! 🇮🇳 | 2026-10-27-evening-reel
-- [card] score 0.0 | 𝗦𝗛𝗔𝗗𝗔𝗕 𝗞𝗔 𝗠𝗔𝗦𝗦𝗜𝗩𝗘 𝗖𝗛𝗔𝗦𝗘! 🇵🇰🔥 | 2026-10-27-morning
+- [card] score 0.0 | 𝗝𝗔𝗡𝗦𝗘𝗡 𝗞𝗘 𝟭𝟬𝟬 𝗧𝗘𝗦𝗧 𝗪𝗜𝗖𝗞𝗘𝗧𝗦! 🇿🇦 | 2026-10-28-evening
 
 ## Average score by format
 
 - reel: 0.4 over 11 posts
 - card: 0.0 over 25 posts
+- text: 0.0 over 3 posts
