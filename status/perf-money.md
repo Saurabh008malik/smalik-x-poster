@@ -6,19 +6,19 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [card] score 1.0 | Gas is finally easing. Still not cheap. ⛽ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-01
-- [reel] score 0.0 | Biweekly pay trick. 🤯 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-09-09
-- [card] score 0.0 | Payday vs. the week after. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-09-08
-- [card] score 0.0 | Gas is down for two weeks straight. ⛽ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-09-07
-- [text] score 0.0 | Honest question. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-09-06
+- [reel] score 0.0 | Small leak, big total. ☕ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-10-09
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-10-03
+- [card] score 0.0 | Unpopular opinion: 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-10-02
+- [card] score 0.0 | Fewer layoffs than you'd think. 💼 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-10-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Social Security checks are getting a 3.6% raise in 2027. 📬 | 2026-10-27-01
-- [card] score 0.0 | Unpopular opinion: nobody remembers signing up for half their subscriptions. 😅 | 2026-10-27-02
-- [card] score 0.0 | Wealth isn't loud. 💡 | 2026-10-27-03
+- [card] score 0.0 | TRUE or FALSE? 🤔 | 2026-10-27-05
+- [text] score 0.0 | Confession: I check my bank balance before I check my messages in the morning. 🙈 | 2026-10-27-06
+- [card] score 0.0 | Gas is the big reason inflation jumped last month. ⛽ | 2026-10-27-07
 
 ## Average score by format
 
-- card: 0.0 over 91 posts
+- card: 0.0 over 90 posts
 - reel: 0.0 over 13 posts
 - text: 0.0 over 13 posts
