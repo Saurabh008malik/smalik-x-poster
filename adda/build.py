@@ -6,6 +6,7 @@ posts.json = list of 3 items in order: post, reel, post
 Writes OUT_DIR/<date>-NN.json (+ .jpg card or .mp4 reel) with publish_at (UTC) at the IST slots below.
 """
 import base64
+import sys
 import datetime as dt
 import json
 import pathlib
@@ -16,11 +17,14 @@ from zoneinfo import ZoneInfo
 
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import reel2  # noqa: E402
+
 HERE = pathlib.Path(__file__).parent
 IST = ZoneInfo("Asia/Kolkata")
 # (hour, minute) IST for item 1, 2, 3 ... the reel goes to REEL_SLOT
-POST_SLOTS = [(17, 30), (21, 30), (16, 30)]  # first card 5:30 PM IST (hourly publisher runs at :35 from 4:35 PM)
-REEL_SLOT = (19, 30)
+POST_SLOTS = [(17, 30), (21, 30), (16, 30)]  # cards: 5:30 PM, 9:30 PM IST (hourly publisher runs at :35 from 4:35 PM)
+REEL_SLOTS = [(19, 30), (22, 30)]  # reels: 7:30 PM, 10:30 PM IST
 FPS = 24
 MUSIC = HERE.parent / "money" / "music"
 
@@ -84,17 +88,25 @@ def main(posts_file, date, outdir):
     day = dt.date.fromisoformat(date)
     with sync_playwright() as p:
         b = p.chromium.launch()
-        n_post = 0
-        for i, post in enumerate(posts[:4]):
+        n_post = n_reel = 0
+        for i, post in enumerate(posts[:5]):
             name = f"{date}-{i + 1:02d}"
             item = {"caption": post["caption"], "first_comment": post.get("first_comment", ""),
                     "sources": post.get("sources", [])}
             if post.get("instagram_first_comment"):
                 item["instagram"] = {"first_comment": post["instagram_first_comment"]}
-            if post.get("reel"):
+            if post.get("reel2"):
+                spec = dict(post["reel2"])
+                spec["_art"] = (HERE / "art" / f"host-{spec.get('scene')}.jpg").exists()
+                dur = reel2.render(b, spec, lambda d, sc=spec.get("scene"): page_html("template-reel2.html", {**d, "scene": sc}),
+                                   out / f"{name}.mp4")
+                item["video"] = f"{name}.mp4"
+                hh, mm = REEL_SLOTS[n_reel % len(REEL_SLOTS)]; n_reel += 1
+                print(f"{name}: voice reel ok ({dur:.1f}s)")
+            elif post.get("reel"):
                 dur = render_reel(b, post["card"], out / f"{name}.mp4")
                 item["video"] = f"{name}.mp4"
-                hh, mm = REEL_SLOT
+                hh, mm = REEL_SLOTS[n_reel % len(REEL_SLOTS)]; n_reel += 1
                 print(f"{name}: reel ok ({dur:.1f}s)")
             else:
                 size, minimum = render_card(b, post["card"], out / f"{name}.jpg")

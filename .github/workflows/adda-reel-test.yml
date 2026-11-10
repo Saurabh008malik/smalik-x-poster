@@ -1,0 +1,48 @@
+name: Creator Adda - test a voice reel
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "reel2 json file in the repo"
+        default: "adda/samples/reel2-sample.json"
+        type: string
+      voice:
+        description: "Microsoft voice (hi-IN-SwaraNeural female, hi-IN-MadhurNeural male)"
+        default: "hi-IN-SwaraNeural"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: adda
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
+          pip install -q requests playwright imageio-ffmpeg edge-tts numpy
+          which ffmpeg || sudo ln -sf "$(python -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg
+          python -m playwright install --with-deps chromium >/dev/null
+      - name: Render
+        env:
+          ADDA_VOICE: ${{ inputs.voice }}
+        run: |
+          mkdir -p adda/drafts
+          python adda/reel2.py "${{ inputs.spec }}" "adda/drafts/reel2-test-${{ inputs.voice }}.mp4"
+      - name: Save
+        run: |
+          git config user.name "adda-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A adda/drafts
+          git diff --cached --quiet || (git commit -m "Creator Adda: voice reel test" && git pull --rebase -q && git push)
