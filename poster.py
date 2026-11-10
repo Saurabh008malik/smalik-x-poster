@@ -30,7 +30,8 @@ from requests_oauthlib import OAuth1
 import igpost
 
 DELAY_MINUTES = 0
-MAX_POSTS_PER_DAY = 6
+MAX_POSTS_PER_DAY = 20
+X_MAX_AGE_MINUTES = 360   # X never gets old news: anything queued longer than this is skipped, not posted late
 GRAPH = "https://graph.facebook.com/v26.0"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 
@@ -203,8 +204,11 @@ def main():
         return backfill_instagram(sys.argv[2:])
 
     now = dt.datetime.now(dt.timezone.utc)
+    flash_only = len(sys.argv) > 1 and sys.argv[1] == "flash"   # news-flash runs only touch *-flash-* items
     due = []
     for item in sorted(QUEUE.glob("*.json")):
+        if ("-flash-" in item.name) != flash_only:
+            continue
         data = json.loads(item.read_text())
         if (now - dt.datetime.fromisoformat(data["created_at"])).total_seconds() / 60 >= DELAY_MINUTES - 15:  # items stamped a few minutes ahead still count
             due.append((data["created_at"], item, data))
@@ -259,13 +263,20 @@ def post_item(item, data):
     fb_video = QUEUE / fb["video"] if fb.get("video") else None
     print("Posting", item.name, "to", platforms)
 
-    results, errors = {}, {}
+    results, errors, notes = {}, {}, {}
+    age_min = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(data["created_at"])).total_seconds() / 60
+    max_age = data.get("max_age_minutes", X_MAX_AGE_MINUTES)
     if "x" in platforms:
-        try:
-            results["x_url"] = post_x(data["text"], x_image)
-            print("✅ X:", results["x_url"])
-        except Exception as e:
-            errors["x_error"] = str(e); print("❌ X:", e)
+        if age_min > max_age:
+            # Rule (10 Nov 2026): a missed post is left out. Old news is never posted on X.
+            notes["x_skipped"] = f"stale ({int(age_min)} min old, limit {max_age}) - not posted"
+            print("⏭️  X skipped, stale:", item.name)
+        else:
+            try:
+                results["x_url"] = post_x(data["text"], x_image)
+                print("✅ X:", results["x_url"])
+            except Exception as e:
+                errors["x_error"] = str(e); print("❌ X:", e)
     if "facebook" in platforms:
         try:
             results["facebook_url"] = post_facebook(fb, QUEUE)
@@ -283,9 +294,9 @@ def post_item(item, data):
     stamp = dt.datetime.now(IST).isoformat()
     files = [x_image, fb_image, fb_video]
     if results:
-        move(item, files, POSTED, {"posted_at": stamp, **results, **errors})
+        move(item, files, POSTED, {"posted_at": stamp, **results, **errors, **notes})
     else:
-        move(item, files, FAILED, {"failed_at": stamp, **errors})
+        move(item, files, FAILED, {"failed_at": stamp, **errors, **notes})
     return bool(errors)
 
 

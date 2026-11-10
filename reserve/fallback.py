@@ -29,7 +29,7 @@ out = {
     "text": d["text"],
     "image": f"{name}.png",
     "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-    "platforms": ["x", "facebook"],
+    "platforms": ["facebook"],   # reserve posts are evergreen, never old news on X (rule 10 Nov 2026)
     "facebook": {**d["facebook"], "image": f"{name}-fb.jpg"},
     "instagram": d["instagram"],
     "reserve_id": pick,

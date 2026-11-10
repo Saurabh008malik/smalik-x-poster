@@ -1,0 +1,133 @@
+name: X news flash (fresh news only)
+
+# Extra tweets for @Smalik_wc so the account posts like the big cricket accounts (about 12 a day with the morning and evening card posts).
+# Each run writes ONE fresh-news tweet and posts it. Rule (10 Nov 2026): if a slot is missed (late timer, Claude unavailable,
+# nothing fresh to say) it is SKIPPED. Nothing old is ever posted late, and there is no reserve/fallback post for X.
+on:
+  schedule:
+    # IST 07:30, 09:00, 10:30, 12:00, 13:30, 15:00, 16:30, 18:00, 21:00, 22:30
+    - cron: "0 2 * * *"
+    - cron: "30 3 * * *"
+    - cron: "0 5 * * *"
+    - cron: "30 6 * * *"
+    - cron: "0 8 * * *"
+    - cron: "30 9 * * *"
+    - cron: "0 11 * * *"
+    - cron: "30 12 * * *"
+    - cron: "30 15 * * *"
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true = make the tweet but do not publish (saved to drafts/)"
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: xflash
+  cancel-in-progress: false
+
+jobs:
+  flash:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out the slot (late timers are skipped, never caught up)
+        id: s
+        run: |
+          DATE=$(TZ=Asia/Kolkata date +%Y-%m-%d)
+          NOWM=$(( 10#$(TZ=Asia/Kolkata date +%H)*60 + 10#$(TZ=Asia/Kolkata date +%M) ))
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            BEST=-1
+            for S in 450 540 630 720 810 900 990 1080 1260 1350; do [ "$NOWM" -ge "$S" ] && BEST=$S; done
+            LATE=$(( NOWM - BEST ))
+            if [ "$BEST" -lt 0 ] || [ "$LATE" -gt 45 ]; then echo "Timer fired ${LATE} min late - this slot is missed and skipped."; SKIP=yes; else SKIP=no; fi
+            KEY=$(printf "%02d%02d" $((BEST/60)) $((BEST%60)))
+            DRY=false
+          else
+            KEY=$(printf "%02d%02d" $((NOWM/60)) $((NOWM%60))); DRY="${{ inputs.dry_run }}"; SKIP=no
+          fi
+          if ls posted/$DATE-flash-$KEY.json failed/$DATE-flash-$KEY.json queue/$DATE-flash-$KEY.json >/dev/null 2>&1; then SKIP=yes; fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"; echo "key=$KEY" >> "$GITHUB_OUTPUT"; echo "dry=$DRY" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+          echo "Date=$DATE Key=$KEY Dry=$DRY Skip=$SKIP"
+
+      - uses: actions/setup-python@v5
+        if: steps.s.outputs.skip == 'no'
+        with:
+          python-version: "3.12"
+
+      - name: Claude finds fresh news and writes the tweet
+        id: a1
+        continue-on-error: true
+        if: steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read PROMPT-xflash.md in the repository root and follow it exactly.
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            KEY (IST HHMM) = ${{ steps.s.outputs.key }}
+            Write the file queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: One quick retry if Claude stopped early (no waiting, so the news stays fresh)
+        id: a2
+        continue-on-error: true
+        if: steps.s.outputs.skip == 'no' && steps.a1.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Read PROMPT-xflash.md in the repository root and follow it exactly.
+            DATE (IST) = ${{ steps.s.outputs.date }}
+            KEY (IST HHMM) = ${{ steps.s.outputs.key }}
+            Write the file queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Was a tweet written?
+        id: w
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          F="queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json"
+          if [ -f "$F" ] && python -c "import json;d=json.load(open('$F'));assert d['text'].strip()"; then echo "have=yes" >> "$GITHUB_OUTPUT"; else echo "No fresh tweet this slot - skipped (nothing old is posted)."; echo "have=no" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Dry run - keep as draft
+        if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'true'
+        run: |
+          mkdir -p drafts
+          mv queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}* drafts/
+          cat drafts/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
+
+      - name: Publish to X
+        if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'false'
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: |
+          pip install -q requests requests-oauthlib
+          python poster.py flash
+
+      - name: Save results
+        if: always() && steps.s.outputs.skip == 'no'
+        run: |
+          git config user.name "smalik-poster-bot"
+          git config user.email "actions@users.noreply.github.com"
+          for d in queue posted failed drafts; do [ -e "$d" ] && git add -A "$d" || true; done
+          git diff --cached --quiet && exit 0
+          git commit -m "X flash ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
+          for i in 1 2 3 4; do git pull --rebase -q && git push && break || sleep 5; done
