@@ -9,7 +9,6 @@ Input (the item's "reel2" object):
               "kicker": "optional chip", "n": true, "note": "optional small line", "theme": "yellow|white|dark|red"}],
    "end":   {"say": "...", "show": "...", "title": "optional, e.g. Aise tips <span>roz</span> chahiye?"}}
 """
-import asyncio
 import json
 import os
 import pathlib
@@ -48,17 +47,13 @@ def speak(text, out_mp3):
         subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"sine=frequency=220:duration={secs:.2f}",
                         "-af", "volume=0.05", str(out_mp3)], check=True)
         return
-    import edge_tts
-
-    async def go():
-        await edge_tts.Communicate(text, VOICE, rate=RATE).save(str(out_mp3))
-    for attempt in range(3):
-        try:
-            asyncio.run(go())
-            if _dur(out_mp3) > 0.3:
-                return
-        except Exception as e:  # network hiccup
-            print("tts retry", attempt, e)
+    import sys as _sys
+    for attempt in range(3):  # separate process: Playwright already owns this thread's event loop
+        r = subprocess.run([_sys.executable, "-m", "edge_tts", "--voice", VOICE, f"--rate={RATE}", "--text", text,
+                            "--write-media", str(out_mp3)], capture_output=True, text=True)
+        if r.returncode == 0 and _dur(out_mp3) > 0.3:
+            return
+        print("tts retry", attempt, r.stderr[-300:])
     raise RuntimeError("voice-over failed")
 
 
