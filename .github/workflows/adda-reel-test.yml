@@ -40,7 +40,7 @@ jobs:
           ADDA_VOICE: ${{ inputs.voice }}
         run: |
           mkdir -p adda/drafts
-          python adda/reel2.py "${{ inputs.spec }}" "adda/drafts/reel2-test-${{ inputs.voice }}.mp4"
+          python adda/reel2.py "${{ inputs.spec }}" "adda/drafts/reel2-test-${{ inputs.voice }}-${{ github.run_number }}.mp4"
       - name: Save
         run: |
           git config user.name "adda-bot"; git config user.email "actions@users.noreply.github.com"
