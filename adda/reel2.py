@@ -24,7 +24,7 @@ MUSIC = HERE.parent / "money" / "music"
 FPS = 30
 SR = 44100
 VOICE = os.environ.get("ADDA_VOICE", "hi-IN-SwaraNeural")
-RATE = os.environ.get("ADDA_VOICE_RATE", "+8%")
+RATE = os.environ.get("ADDA_VOICE_RATE", "+15%")
 LEAD, GAP, END_HOLD = 0.15, 0.22, 1.3
 THEMES = ["yellow", "white", "dark", "yellow", "white"]
 

@@ -83,10 +83,10 @@ The reel is spoken by a Microsoft Hindi neural voice, with big captions, scene c
 ```
 - `say` = what the voice speaks: Hindi in **Devanagari**, common English words in Latin letters (YouTube, video, thumbnail, views). Full natural sentences with commas and full stops (they make the voice pause). Never write Roman Hindi in `say` (the voice mispronounces it).
 - `show` = the on-screen caption of the SAME words in Roman Hinglish; wrap the 1–3 most important words in `*stars*` (shown in yellow).
-- `hook.say` ≤ 14 words and must create curiosity or a problem in the first 2 seconds (question, "galti", "ruko", a number). `headline` ≤ 28 characters with 1–2 words in `<em>`. `sticker` 1–2 words + emoji (RUKO ✋, GALAT ❌, NEW 🔥, DAY 3 📅) or empty.
+- `hook.say` ≤ 11 words and must create curiosity or a problem in the first 2 seconds (question, "galti", "ruko", a number). `headline` ≤ 28 characters with 1–2 words in `<em>`. `sticker` 1–2 words + emoji (RUKO ✋, GALAT ❌, NEW 🔥, DAY 3 📅) or empty.
 - `steps`: 2–4 items. Each `say` 8–22 words; `title` ≤ 26 characters (1–4 words, the key idea, with `<em>`); `icon` one emoji that shows the idea. For Myth vs Fact use 2 steps with `"n": false`, `"kicker":"MYTH"` + icon ❌, then `"kicker":"FACT"` + icon ✅. Optional `note` (≤ 40 characters) for a small extra line.
 - `end.say`: one short line that asks to follow or comment ("Aap kaunsi galti karte the? Comment karo."). On PROMO_DAY = yes set `"promo": true` on ONE reel only (Reel B) — its end line may add "Poori kit ka link bio mein hai."
-- Total spoken words about 60–95 (reel ≈ 20–32 seconds). Shorter is better than boring.
+- Total spoken words about 55–80 (reel ≈ 20–28 seconds). Shorter is better than boring.
 - Never copy a creator's script. Facts must come from your research.
 
 ## 7. Build

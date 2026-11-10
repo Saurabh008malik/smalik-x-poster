@@ -1,7 +1,35 @@
-{"music":"uplift","promo":false,"scene":"thumbnail",
- "hook":{"say":"आपकी thumbnail ही आपकी video को flop करा रही है? ये तीन गलतियाँ अभी ठीक करो।","show":"Thumbnail hi video *flop* kara rahi hai? Ye *3 galtiyan* abhi theek karo","headline":"Thumbnail = <em>video flop</em>?","sticker":"RUKO ✋"},
- "steps":[
-  {"say":"पहली गलती, चेहरा बहुत छोटा। फ़ोन पर thumbnail छोटी दिखती है, इसलिए चेहरा बड़ा रखो।","show":"Pehli galti: *chehra chhota*. Phone par thumbnail chhoti dikhti hai, chehra *bada* rakho","title":"Chehra <em>bada</em> rakho","icon":"😃"},
-  {"say":"दूसरी, बहुत ज़्यादा text. तीन शब्द काफ़ी हैं।","show":"Doosri: bahut zyada text. *3 shabd* kaafi hain","title":"Sirf <em>3 shabd</em>","icon":"✍️"},
-  {"say":"तीसरी, फीके रंग। पीला, लाल जैसे तेज़ रंग इस्तेमाल करो।","show":"Teesri: *feeke rang*. Peela, laal jaise tez rang use karo","title":"<em>Tez rang</em> use karo","icon":"🎨"}],
- "end":{"say":"ऐसे tips रोज़ चाहिए? Creator Adda को follow करो।","show":"Aise tips roz chahiye? *Follow* karo"}}
+{
+ "music": "uplift",
+ "promo": false,
+ "scene": "thumbnail",
+ "hook": {
+  "say": "Thumbnail की वजह से video flop? ये तीन गलतियाँ ठीक करो।",
+  "show": "Thumbnail ki wajah se video *flop*? Ye *3 galtiyan* theek karo",
+  "headline": "Thumbnail = <em>video flop</em>?",
+  "sticker": "RUKO ✋"
+ },
+ "steps": [
+  {
+   "say": "पहली गलती, चेहरा बहुत छोटा। फ़ोन पर thumbnail छोटी दिखती है, इसलिए चेहरा बड़ा रखो।",
+   "show": "Pehli galti: *chehra chhota*. Phone par thumbnail chhoti dikhti hai, chehra *bada* rakho",
+   "title": "Chehra <em>bada</em> rakho",
+   "icon": "😃"
+  },
+  {
+   "say": "दूसरी, बहुत ज़्यादा text. तीन शब्द काफ़ी हैं।",
+   "show": "Doosri: bahut zyada text. *3 shabd* kaafi hain",
+   "title": "Sirf <em>3 shabd</em>",
+   "icon": "✍️"
+  },
+  {
+   "say": "तीसरी, फीके रंग। पीला, लाल जैसे तेज़ रंग इस्तेमाल करो।",
+   "show": "Teesri: *feeke rang*. Peela, laal jaise tez rang use karo",
+   "title": "<em>Tez rang</em> use karo",
+   "icon": "🎨"
+  }
+ ],
+ "end": {
+  "say": "ऐसे tips रोज़ चाहिए? Creator Adda को follow करो।",
+  "show": "Aise tips roz chahiye? *Follow* karo"
+ }
+}
