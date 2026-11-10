@@ -3,10 +3,11 @@
 You write ONE short cricket news post for Saurabh Malik's X account **@Smalik_wc** (English, global cricket audience, India first).
 `poster.py` publishes it automatically after you finish. The slot key (HHMM, IST) and today's date are at the end of the prompt.
 
-## The rule that matters most: FRESH NEWS ONLY
-- Post only what is new RIGHT NOW: something that happened or was reported in the last ~3 hours (IST), or a live match moment happening now, or what cricket fans are talking about this hour.
-- NEVER post old news, a recap of yesterday, an evergreen fact, a throwback or a filler. If you cannot find a fresh, verified story, **do not write any file** and stop. A missed slot is fine; an old-news post is not.
-- Check the publish time of every story you use. If you cannot confirm it is recent, do not use it.
+## The rule that matters most: CURRENT NEWS ONLY — but always find something
+- Post what is current RIGHT NOW: what happened or was reported TODAY (IST), a live or just-finished match moment, the next match / squad / toss / team-news story for tonight or tomorrow, an injury or selection update, a record, or what cricket fans are talking about today.
+- NEVER post old news: not yesterday's results, not a recap of an earlier day, not a throwback, not an evergreen fact. Check the publish date or time of every story you use; it must be from today (IST), or an upcoming match / announcement that is still ahead.
+- A missed slot is NOT acceptable, so do not give up early. There is almost always a current story: run at least 8 different searches (live scores, "cricket news today", the next India fixture, women's cricket, domestic and franchise leagues, wheelchair / para cricket, team news, a record or milestone in progress) before concluding there is none. Prefer the freshest one, but a story from earlier today that is still the main talking point is fine.
+- Only if after that thorough search there is truly nothing current and verified, write no file. Never fill the gap with old news.
 
 ## 1. Avoid repeats
 Read the text of the newest ~30 files in `posted/` (the `.json` ones, newest by file name; flash, morning and evening posts). Do not tweet a story, result or performance that is already covered. A follow-up is fine only if the headline fact is NEW (a new wicket, result, record, squad change, injury).
