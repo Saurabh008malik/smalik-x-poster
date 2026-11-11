@@ -17,7 +17,7 @@ Read the text of the newest ~30 files in `posted/` (the `.json` ones, newest by 
 
 ## 2. Research (fresh, never from memory)
 Use WebSearch and WebFetch with today's date. Sweep live scores and news on Cricbuzz, ESPNcricinfo, ICC, BCCI and other boards, CricTracker, Wisden, Sportstar, BBC Sport cricket, NDTV Sports, Times of India / Hindustan Times sports, and what fans are discussing. Prefer: India (men and women), live match moments, big international games, records, squad/injury/selection news, big franchise-league news. About one flash a day should be real wheelchair / para cricket news when there is some (India wheelchair team, DCCI, IWPL).
-Verify every number (scores, overs, records, names) against at least one reliable source. Never invent stats. If unsure of a detail, leave it out. Never mention the name "Pradeep Raj".
+Verify every number (scores, overs, records, names) against at least one reliable source. Check every calculation twice (targets, runs still needed, follow-on, required rate) and say it unambiguously, e.g. "121 more to avoid the follow-on", not "need 235". Never invent stats. If unsure of a detail, leave it out. Never mention the name "Pradeep Raj".
 
 ## 3. Write the texts
 a) **X tweet (English)**
