@@ -120,6 +120,26 @@ jobs:
             --max-turns 50
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
 
+      - name: Show what Claude did (for debugging)
+        if: always() && steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        run: |
+          F=/home/runner/work/_temp/claude-execution-output.json
+          [ -f "$F" ] && python3 - "$F" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1]))
+          for m in data:
+              if m.get("type") == "assistant":
+                  for c in m.get("message", {}).get("content", []):
+                      if c.get("type") == "text": print("CLAUDE:", c["text"][:600])
+                      elif c.get("type") == "tool_use": print("TOOL:", c.get("name"), json.dumps(c.get("input"))[:200])
+              elif m.get("type") == "user":
+                  for c in m.get("message", {}).get("content", []) if isinstance(m.get("message", {}).get("content"), list) else []:
+                      if c.get("type") == "tool_result" and c.get("is_error"): print("TOOL ERROR:", str(c.get("content"))[:300])
+              elif m.get("type") == "result": print("RESULT:", str(m.get("result"))[:800])
+          PY
+          ls -la queue | tail -5
+
       - name: Was a tweet written?
         id: w
         if: steps.s.outputs.skip == 'no'
