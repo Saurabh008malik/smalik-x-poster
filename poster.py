@@ -111,6 +111,17 @@ def post_facebook(fb, base_dir):
     page_id, token = page_token()
     if fb.get("video"):
         return post_fb_reel(fb, base_dir, page_id, token)
+    if not fb.get("image"):
+        # no card (render failed or last-resort fan question): text-only Page post so the slot is not empty
+        r = requests.post(f"{GRAPH}/{page_id}/feed", timeout=60, data={"message": fb["caption"], "access_token": token})
+        if not r.ok:
+            raise RuntimeError(f"Facebook text post failed {r.status_code}: {r.text}")
+        post_id = r.json().get("id")
+        note = ""
+        if fb.get("first_comment"):
+            c = requests.post(f"{GRAPH}/{post_id}/comments", timeout=30, data={"message": fb["first_comment"], "access_token": token})
+            note = "" if c.ok else f" (first comment skipped: {c.status_code})"
+        return f"https://www.facebook.com/{post_id}{note}"
     image = base_dir / fb["image"]
     with image.open("rb") as f:
         r = requests.post(f"{GRAPH}/{page_id}/photos", timeout=90,

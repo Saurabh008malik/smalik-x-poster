@@ -12,7 +12,10 @@ day = dt.date.fromisoformat(date).toordinal()
 idx = (day * 7 + int(key[:2])) % len(pool)
 q = HERE.parent / "queue"
 q.mkdir(exist_ok=True)
-out = {"text": pool[idx], "created_at": dt.datetime.now(dt.timezone.utc).isoformat(), "platforms": ["x"],
-       "kind": "flash", "max_age_minutes": 90, "last_resort": True}
+out = {"text": pool[idx], "created_at": dt.datetime.now(dt.timezone.utc).isoformat(), "platforms": ["x", "facebook"],
+       "kind": "flash", "max_age_minutes": 90, "last_resort": True,
+       # Cricket Ki Baat Page gets the same question as a text post (no card, so Instagram is skipped for this one)
+       "facebook": {"caption": pool[idx].split("#")[0].rstrip() + "\n\nAapka jawab comment karo 👇\n\n#CricketKiBaat #Cricket",
+                    "first_comment": "Roz ki cricket baatein ke liye Cricket Ki Baat ko Follow karo 🔔🏏"}}
 (q / f"{date}-flash-{key}.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 print("Fan-question tweet queued for", date, key, "index", idx)

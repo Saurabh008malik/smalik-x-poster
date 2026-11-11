@@ -1,6 +1,6 @@
-name: X news flash (fresh news only)
+name: X + Cricket Ki Baat news flash (fresh news only)
 
-# Extra tweets for @Smalik_wc so the account posts like the big cricket accounts (about 12 a day with the morning and evening card posts).
+# Extra posts for @Smalik_wc AND the Cricket Ki Baat Facebook Page + Instagram (same schedule, rule 11 Nov 2026), so they post like the big cricket accounts (about 12 a day with the morning and evening card posts).
 # Each run writes ONE fresh-news tweet and posts it. Rules (10 Nov 2026):
 #  1. NO MISSED SLOTS: the 10 slot timers have backup timers every 30 minutes, the watchdog re-checks every hour, and a run always
 #     fills the earliest unposted slot of the day (up to 2.5 hours late). Each slot is tried up to 3 times; the last try falls back
@@ -40,7 +40,7 @@ concurrency:
 jobs:
   flash:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
@@ -75,6 +75,15 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install card tools and fonts
+        if: steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-inter fonts-noto-color-emoji >/dev/null
+          pip install -q requests requests-oauthlib playwright
+          python -m playwright install --with-deps chromium >/dev/null
+
       - name: Claude finds fresh news and writes the tweet
         id: a1
         continue-on-error: true
@@ -90,7 +99,7 @@ jobs:
             KEY (IST HHMM) = ${{ steps.s.outputs.key }}
             Write the file queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
           claude_args: |
-            --max-turns 40
+            --max-turns 50
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
 
       - name: One quick retry if Claude stopped early (no waiting, so the news stays fresh)
@@ -108,7 +117,7 @@ jobs:
             KEY (IST HHMM) = ${{ steps.s.outputs.key }}
             Write the file queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
           claude_args: |
-            --max-turns 40
+            --max-turns 50
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
 
       - name: Was a tweet written?
@@ -122,6 +131,24 @@ jobs:
             python3 reserve/fan_tweet.py "${{ steps.s.outputs.date }}" "${{ steps.s.outputs.key }}" && echo "have=yes" >> "$GITHUB_OUTPUT"
           else echo "No fresh tweet this try - the backup timer or the watchdog will try this slot again."; echo "have=no" >> "$GITHUB_OUTPUT"; fi
 
+      - name: Make sure every file the post needs exists (missing card = text post, never a missed slot)
+        if: steps.w.outputs.have == 'yes'
+        run: |
+          python3 - "queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json" <<'PY'
+          import json, pathlib, sys
+          p = pathlib.Path(sys.argv[1]); d = json.loads(p.read_text(encoding="utf-8"))
+          q = p.parent
+          if d.get("image") and not (q / d["image"]).exists():
+              print("X card missing - tweet goes out as text"); d.pop("image")
+          fb = d.get("facebook") or {}
+          if fb.get("image") and not (q / fb["image"]).exists():
+              print("Facebook card missing - Facebook text post, Instagram skipped"); fb.pop("image")
+          if "facebook" in d.get("platforms", []) and not fb.get("caption"):
+              print("No Facebook caption - X only"); d["platforms"] = ["x"]
+          p.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+          print("platforms:", d.get("platforms"), "| x card:", bool(d.get("image")), "| fb card:", bool(fb.get("image")))
+          PY
+
       - name: Dry run - keep as draft
         if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'true'
         run: |
@@ -129,13 +156,15 @@ jobs:
           mv queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}* drafts/
           cat drafts/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json
 
-      - name: Publish to X
+      - name: Publish to X + Cricket Ki Baat (Facebook, Instagram)
         if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'false'
         env:
           X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
           X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         run: |
           pip install -q requests requests-oauthlib
           python poster.py flash
@@ -147,7 +176,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           for d in queue posted failed drafts; do [ -e "$d" ] && git add -A "$d" || true; done
           # a tweet that failed to reach X goes back for another try (up to 3) instead of being lost
-          for q in queue/*-flash-*.json; do [ -e "$q" ] && git rm -q --cached "$q" 2>/dev/null; [ -e "$q" ] && rm -f "$q"; done
+          for q in queue/*-flash-*; do [ -e "$q" ] && git rm -q --cached "$q" 2>/dev/null; [ -e "$q" ] && rm -f "$q"; done
           git diff --cached --quiet && exit 0
           git commit -m "X flash ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
           for i in 1 2 3 4; do git pull --rebase -q && git push && break || sleep 5; done
