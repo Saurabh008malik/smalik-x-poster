@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-10)
+# What performed best on this page (last 14 days, updated 2026-11-11)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -13,12 +13,12 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝗞𝗔 𝗧𝗢𝗢𝗙𝗔𝗡! 🇮🇳🔥 | 2026-10-27-evening
-- [reel] score 0.0 | 𝗔𝗕𝗛𝗜𝗦𝗛𝗘𝗞 𝟭𝟭𝟯 𝗢𝗙𝗙 𝟯𝟴! 🇮🇳 | 2026-10-27-evening-reel
 - [card] score 0.0 | 𝗝𝗔𝗡𝗦𝗘𝗡 𝗞𝗘 𝟭𝟬𝟬 𝗧𝗘𝗦𝗧 𝗪𝗜𝗖𝗞𝗘𝗧𝗦! 🇿🇦 | 2026-10-28-evening
+- [card] score 0.0 | 𝗦𝘁𝗮𝗿𝗰 𝗸𝗮 𝘀𝗶𝘅-𝗳𝗼𝗿! 🇦🇺🔥 | 2026-10-28-morning
+- [card] score 0.0 | 𝗔𝗨𝗦 𝗞𝗢 𝟭𝟬𝟬 𝗞𝗔 𝗟𝗘𝗔𝗗! 🇦🇺 | 2026-10-29-evening
 
 ## Average score by format
 
 - reel: 0.4 over 11 posts
 - card: 0.0 over 25 posts
-- text: 0.0 over 3 posts
+- text: 0.0 over 6 posts
