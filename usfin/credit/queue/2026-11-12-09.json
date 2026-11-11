@@ -1,0 +1,19 @@
+{
+  "caption": "The math nobody says out loud. 🧮\n\n$1,000 left on a card at about 20% APR costs roughly $200 over a year.\n\nPay in full each month and the interest is $0.\n\nWhat's your plan for the holidays?",
+  "first_comment": "Pay in full or carry a balance, be honest 👇",
+  "sources": [
+    "https://www.azfamily.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "pattern: math nobody says"
+  ],
+  "instagram": {
+    "first_comment": "Follow @creditscoretruths for daily credit truths 👇"
+  },
+  "card": {
+    "kicker": "DEBT REALITY",
+    "headline": "$1,000 at 20% APR is about <em>$200</em> a year.",
+    "sub": "Pay in full and the interest is $0.",
+    "theme": "red"
+  },
+  "video": "2026-11-12-09.mp4",
+  "publish_at": "2026-11-12T17:00:00+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "caption": "Credit card rates, a quick snapshot. 💳\n\nBankrate's average credit card APR is 19.71% as of Nov 4, 2026, below the record 20.79% from Aug 2024.\n\nYour own rate can be much higher or lower. Check your statement.\n\nDo you know your APR?",
+  "first_comment": "Do you know your card's APR? 👇",
+  "sources": [
+    "https://www.azfamily.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Go check your APR, then tell @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Average card APR: <em>19.71%</em>.",
+    "sub": "Down from a 20.79% record in Aug 2024.",
+    "theme": "blue",
+    "source": "Source: Bankrate, Nov 4, 2026"
+  },
+  "image": "2026-11-12-07.jpg",
+  "publish_at": "2026-11-13T00:00:00+00:00"
+}

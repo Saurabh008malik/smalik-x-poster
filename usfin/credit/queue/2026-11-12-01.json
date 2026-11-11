@@ -1,0 +1,20 @@
+{
+  "caption": "FHA loans are getting new score options. 🏠\n\nFHA says it will accept VantageScore 4.0 and FICO Score 10T for loans with case numbers assigned on or after Jan 1, 2027.\n\nFHA policy stays as it is until formal updates are published.\n\nWould you want to know which score your lender uses?",
+  "first_comment": "Did you know different lenders can look at different scores? 👇",
+  "sources": [
+    "https://www.nar.realtor/news/washington-report/fha-sets-implementation-date-for-alternative-credit-score-models",
+    "pattern: big number / date hook"
+  ],
+  "instagram": {
+    "first_comment": "Which score do you check most? Tell us at @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "FHA will accept <em>2 new score models</em> from Jan 2027.",
+    "sub": "VantageScore 4.0 and FICO 10T. Current policy holds until then.",
+    "theme": "blue",
+    "source": "Source: HUD / FHA via NAR"
+  },
+  "image": "2026-11-12-01.jpg",
+  "publish_at": "2026-11-12T12:00:00+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "caption": "True or false? 🤔\n\nClosing a card erases its history overnight.\n\nFalse. Closed accounts in good standing generally stay on your report for years. But closing can raise your utilization and shorten your average age over time.\n\nCheck your own situation first.\n\nDid you get this right?",
+  "first_comment": "True or false? Vote below 👇",
+  "sources": [
+    "https://www.experian.com/blogs/ask-experian/",
+    "pattern: myth-buster"
+  ],
+  "instagram": {
+    "first_comment": "Did you guess right? Tell @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Closing a card <em>erases</em> its history overnight.",
+    "sub": "False. It usually stays on your report for years.",
+    "theme": "blue"
+  },
+  "image": "2026-11-12-05.jpg",
+  "publish_at": "2026-11-12T20:00:00+00:00"
+}
