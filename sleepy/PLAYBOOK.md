@@ -6,7 +6,7 @@ Repeat these steps for every video. Update this file when something improves. Ow
 1. YouTube policy first: original script every time, AI voice disclosed, "Altered or synthetic content" = Yes, not made for kids, public-domain images only, no invented quotes, no copyrighted music (the fire bed is synthesized by us).
 2. Saurabh does passwords, OTPs, OAuth "Allow" clicks and pasting secrets himself. Claude pauses and asks.
 3. Short, warm, direct updates. Browser work in his main Chrome. Never use the name Pradeep Raj.
-4. Long videos only (about 2 hours, 2 a week: Tue and Fri). No Shorts for now (vidIQ check, Nov 9 2026: Mind Palace, Bedtime & Historian, Millennial Legacy post 0 Shorts; Shorts are 0.2 to 8% of views at the others).
+4. Long videos only (about 2 hours, 2 a week: Tue and Fri). Shorts: since 12 Nov 2026 Saurabh wants 3 Shorts per day per channel (1 anytime, 2 evening/night) cut from the best moments of the long videos, each pointing to its long video (see ytq/ and the ytq workflow). Earlier vidIQ check (Nov 9): Shorts were only 0.2 to 8% of views at similar channels, so watch the Results log and drop them if they bring no long-video views.
 5. Repeat what works: after each video, read the numbers and copy the winning pattern (see step 12).
 
 ## Pipeline (about 4 to 5 hours of compute per video)
@@ -47,3 +47,11 @@ Secret: SLEEPY_HOOK (GitHub). If the Apps Script web app is ever redeployed, the
 - BUG caught on video 2: assemble.py cached canvases as /tmp/canvas_NNN.png, so a second video reused the first video's pictures (and its title card). Each video now has its own cache name (/tmp/ld_canvas_ for Leonardo). Always give the cache a per-video prefix, and ALWAYS look at 3 frames of the finished video before delivering.
 - Narration, audio mix and video render all need the processor: run them one after the other. Background jobs are stopped after their time limit (2 h), so start long jobs in pieces.
 - Temporary backups of finished videos can go to a branch backup-<name> (parts of 90 MB) in the repo; delete them later with the sleepy-publish workflow, action "cleanup".
+
+
+## ytq (first comments + Shorts, both channels)
+- ytq/ytq.py + .github/workflows/ytq.yml; queues ytq/comments.json and ytq/shorts.json. Secrets: SLEEPY_HOOK and LAMPLIGHT_HOOK (Apps Script web app URL + ?k=KEY).
+- First comment is posted 60 min after the long video is really public. The API cannot pin: Saurabh pins it by hand in Studio.
+- Shorts: 9:16, blurred background + full frame, burned captions, hook line, link to the long video in the description; one per chapter; files wait on temporary feed-shorts-* branches that the workflow deletes when finished.
+- Policy: altered/synthetic flag ON, not made for kids, max 3 Shorts per channel per UTC day, at least 90 min apart; use varied passages, hooks and titles (repetitive template content is a risk).
+- Run `python ytq/ytq.py whoami` (workflow input action=whoami) after any redeploy of a hook.
