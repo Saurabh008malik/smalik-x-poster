@@ -9,10 +9,15 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: "run = post whatever is due; whoami = check both hooks"
+        description: "run = post whatever is due; whoami = check both hooks; uploadtest = 5-second unlisted upload test (channel below)"
         default: "run"
         type: choice
-        options: ["run", "whoami"]
+        options: ["run", "whoami", "uploadtest"]
+      channel:
+        description: "channel for uploadtest"
+        default: "lamplight"
+        type: choice
+        options: ["lamplight", "sleepy"]
 
 permissions:
   contents: write
@@ -46,8 +51,18 @@ jobs:
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
         run: python ytq/ytq.py whoami
 
+      - name: Upload test (unlisted 5 s clip, then deleted)
+        if: inputs.action == 'uploadtest'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+          TEST_CHANNEL: ${{ inputs.channel }}
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python ytq/ytq.py uploadtest
+
       - name: Post what is due
-        if: steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        if: steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'uploadtest'
         env:
           LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
@@ -55,7 +70,7 @@ jobs:
         run: python ytq/ytq.py run
 
       - name: Save queue
-        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'uploadtest' && inputs.action != 'uploadtest'
         run: |
           git config user.name "ytq-bot"; git config user.email "actions@users.noreply.github.com"
           git add ytq/comments.json ytq/shorts.json

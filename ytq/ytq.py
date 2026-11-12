@@ -259,5 +259,28 @@ def whoami():
             summary(f"{n}: not connected ({e})")
 
 
+def uploadtest():
+    """5-second black clip uploaded UNLISTED on the channel in env TEST_CHANNEL, checked after 90 s, then deleted.
+    An API project that is not verified gets its uploads locked to private: this proves it is not."""
+    n = os.environ.get("TEST_CHANNEL", "lamplight")
+    ch = Chan(n)
+    clip = HERE / "work" / "test.mp4"
+    clip.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "color=c=black:s=640x360:d=5",
+                    "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "5", "-c:v", "libx264", "-c:a", "aac",
+                    "-shortest", str(clip)], check=True)
+    body = {"snippet": {"title": "Pipeline test (will be deleted)", "description": "test", "categoryId": "27"},
+            "status": {"privacyStatus": "unlisted", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+    vid = upload_video(ch.h, clip, body, clip.stat().st_size)
+    summary(f"{n}: test upload accepted on **{ch.title}**: {vid}")
+    import time
+    time.sleep(90)
+    r = requests.get(f"{API}/videos", params={"part": "status", "id": vid}, headers=ch.h, timeout=30).json()
+    st = r["items"][0]["status"] if r.get("items") else r
+    summary(f"{n}: status after 90 s: {json.dumps(st)}")
+    d = requests.delete(f"{API}/videos", params={"id": vid}, headers=ch.h, timeout=30)
+    summary(f"{n}: test video deleted: HTTP {d.status_code}")
+
+
 if __name__ == "__main__":
-    {"due": due, "run": run, "whoami": whoami}[sys.argv[1]]()
+    {"due": due, "run": run, "whoami": whoami, "uploadtest": uploadtest}[sys.argv[1]]()
