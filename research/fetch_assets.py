@@ -16,18 +16,39 @@ for name, url in cfg.get("urls", {}).items():
 OK_LIC = re.compile(r"public domain|cc0|pd-|no restrictions|pd ", re.I)
 img = out / "img"; img.mkdir(exist_ok=True); sources = []
 seen = set()
+def get(url, **kw):
+    for i in range(6):
+        r = requests.get(url, headers=H, timeout=120, **kw)
+        if r.status_code == 429:
+            time.sleep(8 * (i + 1)); continue
+        r.raise_for_status(); return r
+    raise RuntimeError("429 after retries")
+
 for job in cfg.get("commons", []):
-    q, n, tag = job["q"], job.get("n", 40), job.get("tag", "x")
+    q, n, tag = job.get("q"), job.get("n", 40), job.get("tag", "x")
+    cat = job.get("category")
     try:
         api = "https://commons.wikimedia.org/w/api.php"
-        params = {"action": "query", "format": "json", "generator": "search", "gsrsearch": q, "gsrnamespace": 6, "gsrlimit": min(50, n * 2),
-                  "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": cfg.get("thumb", 1600)}
-        r = requests.get(api, params=params, headers=H, timeout=60); r.raise_for_status()
-        pages = r.json().get("query", {}).get("pages", {})
+        pages = {}
+        cont = {}
+        while len(pages) < n * 3:
+            if cat:
+                params = {"action": "query", "format": "json", "generator": "categorymembers", "gcmtitle": "Category:" + cat, "gcmtype": "file", "gcmlimit": 50,
+                          "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": cfg.get("thumb", 1400), **cont}
+            else:
+                params = {"action": "query", "format": "json", "generator": "search", "gsrsearch": q, "gsrnamespace": 6, "gsrlimit": 50,
+                          "prop": "imageinfo", "iiprop": "url|size|extmetadata|mime", "iiurlwidth": cfg.get("thumb", 1400), **cont}
+            j = get(api, params=params).json()
+            pages.update(j.get("query", {}).get("pages", {}))
+            if "continue" in j: cont = j["continue"]
+            else: break
+            time.sleep(1.5)
     except Exception as e:
-        print("ERR commons", q, e); continue
+        print("ERR commons", cat or q, e); continue
     got = 0
-    for pid, p in pages.items():
+    # prefer larger, skip obvious duplicates/derivatives
+    items = sorted(pages.values(), key=lambda p: -((p.get("imageinfo") or [{}])[0].get("width") or 0))
+    for p in items:
         if got >= n: break
         ii = (p.get("imageinfo") or [{}])[0]; em = ii.get("extmetadata", {})
         lic = (em.get("LicenseShortName", {}).get("value", "") + " " + em.get("License", {}).get("value", "") + " " + em.get("Copyrighted", {}).get("value", ""))
@@ -40,14 +61,14 @@ for job in cfg.get("commons", []):
         turl = ii.get("thumburl") or ii.get("url")
         fn = f"{tag}_{len(sources):03d}.jpg"
         try:
-            d = requests.get(turl, headers=H, timeout=120); d.raise_for_status()
+            d = get(turl)
             (img / fn).write_bytes(d.content)
         except Exception as e:
             print("ERR img", title, e); continue
         sources.append({"file": fn, "title": title, "page": f"https://commons.wikimedia.org/wiki/{title.replace(' ', '_')}",
                         "license": em.get("LicenseShortName", {}).get("value", ""), "artist": re.sub("<[^>]+>", "", em.get("Artist", {}).get("value", ""))[:120],
-                        "query": q, "width": ii.get("width"), "height": ii.get("height")})
-        got += 1; time.sleep(0.3)
-    print("OK commons", q, got)
+                        "query": cat or q, "width": ii.get("width"), "height": ii.get("height")})
+        got += 1; time.sleep(1.2)
+    print("OK commons", cat or q, got)
 json.dump(sources, open(out / "sources.json", "w"), indent=1)
 print("images:", len(sources))
