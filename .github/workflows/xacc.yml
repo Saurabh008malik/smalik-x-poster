@@ -128,6 +128,7 @@ jobs:
         if: always() && steps.s.outputs.skip == 'no'
         run: |
           git config user.name "xacc-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           rm -f xacc/queue/${{ matrix.account }}-* 2>/dev/null || true   # a post that did not go out is retried fresh, never posted late
           git add -A xacc/posted xacc/failed xacc/drafts xacc/queue 2>/dev/null || true
           git diff --cached --quiet && exit 0

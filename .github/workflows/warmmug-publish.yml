@@ -102,5 +102,6 @@ jobs:
           p.write_text(json.dumps(pub, indent=2, ensure_ascii=False))
           EOF
           git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           git add warmmug/published.json
           git commit -m "Warm Mug Radio: posted mix ${{ steps.s.outputs.today }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD

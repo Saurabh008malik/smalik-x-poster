@@ -173,6 +173,7 @@ jobs:
         if: always()
         run: |
           git config user.name "creator-adda-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           if [ "${{ steps.s.outputs.mode }}" = "make" ] && [ "${{ steps.s.outputs.dry }}" = "true" ]; then
             # dry run: never leave anything in the publishing queue (also when the run was cancelled half-way)
             mkdir -p adda/drafts; mv adda/queue/${{ steps.s.outputs.date }}-* adda/drafts/ 2>/dev/null || true

@@ -78,5 +78,6 @@ jobs:
         if: always()
         run: |
           git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           for d in money/queue money/posted money/failed adda/queue adda/posted adda/failed usfin/credit usfin/closing usfin/fineprint status; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Money page: publish run" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

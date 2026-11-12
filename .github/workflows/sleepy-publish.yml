@@ -76,5 +76,6 @@ jobs:
         if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
         run: |
           git config user.name "sleepy-biographer-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           git add sleepy/queue.json
           git commit -m "Sleepy Biographer: queue update" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD || true

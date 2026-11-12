@@ -73,6 +73,7 @@ jobs:
         if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'uploadtest' && inputs.action != 'uploadtest'
         run: |
           git config user.name "ytq-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           git add ytq/comments.json ytq/shorts.json
           git commit -m "ytq: queue update" || exit 0
-          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep 5; done
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep 5; done; git diff --quiet origin/main HEAD

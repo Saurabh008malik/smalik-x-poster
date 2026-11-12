@@ -193,6 +193,7 @@ jobs:
         if: always() && steps.s.outputs.skip == 'no'
         run: |
           git config user.name "smalik-poster-bot"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           git config user.email "actions@users.noreply.github.com"
           for d in queue posted failed drafts status reserve/used.json; do [ -e "$d" ] && git add -A "$d" || true; done
           git diff --cached --quiet || (git commit -m "Daily post ${{ steps.s.outputs.date }} ${{ steps.s.outputs.slot }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

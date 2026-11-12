@@ -193,10 +193,11 @@ jobs:
         if: always() && steps.s.outputs.skip == 'no'
         run: |
           git config user.name "smalik-poster-bot"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
           git config user.email "actions@users.noreply.github.com"
           for d in queue posted failed drafts; do [ -e "$d" ] && git add -A "$d" || true; done
           # a tweet that failed to reach X goes back for another try (up to 3) instead of being lost
           for q in queue/*-flash-*; do [ -e "$q" ] && git rm -q --cached "$q" 2>/dev/null; [ -e "$q" ] && rm -f "$q"; done
           git diff --cached --quiet && exit 0
           git commit -m "X flash ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
-          for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 5; done
+          for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 5; done; git diff --quiet origin/main HEAD
