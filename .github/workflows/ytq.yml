@@ -2,7 +2,10 @@ name: YouTube helper - first comments and Shorts (Lamplight Scripture + The Slee
 
 on:
   schedule:
-    - cron: "5,25,45 * * * *"     # backup only; the real triggers are cron-job.org and the heartbeats
+    # Backup only (GitHub minutes are limited): just after the Short slots. The real triggers are the scheduled-task heartbeats.
+    - cron: "10 2 * * *"
+    - cron: "20 4 * * *"
+    - cron: "40 18 * * *"
   workflow_dispatch:
     inputs:
       action:
