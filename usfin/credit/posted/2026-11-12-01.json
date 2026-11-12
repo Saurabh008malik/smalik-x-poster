@@ -16,5 +16,8 @@
     "source": "Source: HUD / FHA via NAR"
   },
   "image": "2026-11-12-01.jpg",
-  "publish_at": "2026-11-12T12:00:00+00:00"
+  "publish_at": "2026-11-12T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1489664594219756_122109115227530088",
+  "instagram_error": "Instagram publish failed 400: {\"error\":{\"message\":\"Media ID is not available\",\"code\":9007,\"type\":\"OAuthException\",\"error_subcode\":2207027,\"is_transient\":false,\"error_user_msg\":\"The media is not ready to be published. Please wait a moment.\",\"error_user_title\":\"Cannot publish\",\"fbtrace_id\":\"AzNZGiP_e0cEhPcP4xyl3Zq\"}}",
+  "done_at": "2026-11-12T12:06:54.998595+00:00"
 }
