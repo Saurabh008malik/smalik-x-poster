@@ -15,6 +15,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 import requests
@@ -153,6 +154,38 @@ def post_comment(ch, it):
     raise RuntimeError(f"comment failed {c.status_code}: {c.text[:200]}")
 
 
+def short_comment_text(it):
+    kind = "bedtime biographies" if it["channel"] == "sleepy" else "Bible stories"
+    return (f"\u25b6 Watch the full video here: {it['long_url']}\n\n"
+            f"Subscribe and tap the bell for new {kind}. \U0001F319")
+
+
+def comment_on_short(ch, it):
+    """First comment on a Short = link to the full video. Retries on later runs if YouTube is not ready yet."""
+    vid = it["video_id"]
+    if ch.has_own_comment(vid):
+        it["comment_done"] = True
+        return "already has a channel comment"
+    last = ""
+    for k in range(3):
+        c = requests.post(f"{API}/commentThreads", params={"part": "snippet"}, headers={**ch.h, "Content-Type": "application/json"},
+                          data=json.dumps({"snippet": {"videoId": vid, "topLevelComment": {"snippet": {"textOriginal": short_comment_text(it)}}}}),
+                          timeout=60)
+        if c.status_code in (200, 201):
+            it["comment_done"] = True
+            return "full-video link comment posted (pin it by hand if you like)"
+        last = f"{c.status_code}: {c.text[:160]}"
+        time.sleep(20)
+    it["comment_attempts"] = it.get("comment_attempts", 0) + 1
+    it["comment_error"] = last
+    return f"comment not posted yet, will retry ({last})"
+
+
+def comment_pending(s):
+    return bool(s.get("done") and s.get("video_id") and s.get("long_url") and not s.get("comment_done")
+                and s.get("comment_attempts", 0) < 6)
+
+
 def fetch_short(it, work):
     repo = os.environ["GITHUB_REPOSITORY"]
     tmp = work / ("_" + it["branch"])
@@ -185,6 +218,11 @@ def post_short(ch, it):
     vid = upload_video(ch.h, path, body, path.stat().st_size)
     path.unlink(missing_ok=True)
     it["done"], it["video_id"], it["posted_at"] = True, vid, now().isoformat(timespec="seconds")
+    it["long_url"] = f"https://youtu.be/{long_v['id']}"
+    try:
+        summary("   " + comment_on_short(ch, it))
+    except Exception as e:  # noqa: BLE001
+        summary(f"   comment on Short failed, will retry: {e}")
     return vid, "posted"
 
 
@@ -220,6 +258,14 @@ def run():
             summary(f"❌ comment {it['channel']} / {it['title_contains']}: {e}")
         save(COMMENTS, comments)
 
+    for it in [x for x in shorts if comment_pending(x)]:
+        try:
+            summary(f"\U0001F4AC short {it['id']}: {comment_on_short(chan(it['channel']), it)}")
+        except Exception as e:  # noqa: BLE001
+            it["comment_attempts"] = it.get("comment_attempts", 0) + 1
+            summary(f"\u274c short comment {it['id']}: {e}")
+        save(SHORTS, shorts)
+
     today = now().date().isoformat()
     for name in CHANNELS:
         mine = [s for s in shorts if s["channel"] == name]
@@ -247,7 +293,7 @@ def run():
 
 
 def due():
-    n = sum(1 for c in load(COMMENTS) if comment_due(c)) + sum(1 for s in load(SHORTS) if short_due(s))
+    n = sum(1 for c in load(COMMENTS) if comment_due(c)) + sum(1 for s in load(SHORTS) if short_due(s) or comment_pending(s))
     print(n)
 
 

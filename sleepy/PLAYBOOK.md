@@ -53,5 +53,6 @@ Secret: SLEEPY_HOOK (GitHub). If the Apps Script web app is ever redeployed, the
 - ytq/ytq.py + .github/workflows/ytq.yml; queues ytq/comments.json and ytq/shorts.json. Secrets: SLEEPY_HOOK and LAMPLIGHT_HOOK (Apps Script web app URL + ?k=KEY).
 - First comment is posted 60 min after the long video is really public. The API cannot pin: Saurabh pins it by hand in Studio.
 - Shorts: 9:16, blurred background + full frame, burned captions, hook line, link to the long video in the description; one per chapter; files wait on temporary feed-shorts-* branches that the workflow deletes when finished.
+- Every Short also gets a first comment from the channel with the full-video link (posted right after the Short goes public; retried on later runs if YouTube is not ready; fields comment_done/comment_attempts in ytq/shorts.json).
 - Policy: altered/synthetic flag ON, not made for kids, max 3 Shorts per channel per UTC day, at least 90 min apart; use varied passages, hooks and titles (repetitive template content is a risk).
 - Run `python ytq/ytq.py whoami` (workflow input action=whoami) after any redeploy of a hook.
