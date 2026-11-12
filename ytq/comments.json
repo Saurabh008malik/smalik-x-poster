@@ -4,7 +4,9 @@
     "title_contains": "Franklin",
     "go_live": "2026-11-11T00:00:00Z",
     "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
-    "done": false
+    "done": true,
+    "video_id": "IRC1F38kdto",
+    "posted_at": "2026-11-12T18:22:12+00:00"
   },
   {
     "channel": "sleepy",
