@@ -103,4 +103,4 @@ jobs:
           EOF
           git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
           git add warmmug/published.json
-          git commit -m "Warm Mug Radio: posted mix ${{ steps.s.outputs.today }}" && git pull --rebase -q && git push
+          git commit -m "Warm Mug Radio: posted mix ${{ steps.s.outputs.today }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD

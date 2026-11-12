@@ -199,4 +199,4 @@ jobs:
           for q in queue/*-flash-*; do [ -e "$q" ] && git rm -q --cached "$q" 2>/dev/null; [ -e "$q" ] && rm -f "$q"; done
           git diff --cached --quiet && exit 0
           git commit -m "X flash ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
-          for i in 1 2 3 4; do git pull --rebase -q && git push && break || sleep 5; done
+          for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 5; done

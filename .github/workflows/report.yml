@@ -49,4 +49,4 @@ jobs:
         run: |
           git config user.name "report-bot"; git config user.email "actions@users.noreply.github.com"
           [ -e status/report.md ] && git add status/report.md || true
-          git diff --cached --quiet || (git commit -m "Status report" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "Status report" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

@@ -77,4 +77,4 @@ jobs:
         run: |
           git config user.name "sleepy-biographer-bot"; git config user.email "actions@users.noreply.github.com"
           git add sleepy/queue.json
-          git commit -m "Sleepy Biographer: queue update" && git pull --rebase -q && git push || true
+          git commit -m "Sleepy Biographer: queue update" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD || true

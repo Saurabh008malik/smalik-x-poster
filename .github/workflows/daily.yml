@@ -195,4 +195,4 @@ jobs:
           git config user.name "smalik-poster-bot"
           git config user.email "actions@users.noreply.github.com"
           for d in queue posted failed drafts status reserve/used.json; do [ -e "$d" ] && git add -A "$d" || true; done
-          git diff --cached --quiet || (git commit -m "Daily post ${{ steps.s.outputs.date }} ${{ steps.s.outputs.slot }}" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "Daily post ${{ steps.s.outputs.date }} ${{ steps.s.outputs.slot }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

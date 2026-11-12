@@ -26,7 +26,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -79,4 +79,4 @@ jobs:
         run: |
           git config user.name "paycheck-truths-bot"; git config user.email "actions@users.noreply.github.com"
           for d in money/queue money/posted money/failed adda/queue adda/posted adda/failed usfin/credit usfin/closing usfin/fineprint status; do [ -e "$d" ] && git add -A "$d" || true; done
-          git diff --cached --quiet || (git commit -m "Money page: publish run" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "Money page: publish run" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

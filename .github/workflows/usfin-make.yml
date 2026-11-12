@@ -146,4 +146,4 @@ jobs:
         run: |
           git config user.name "usfin-bot"; git config user.email "actions@users.noreply.github.com"
           git add -A usfin/$SLUG/queue usfin/$SLUG/drafts status/perf-$SLUG.md || true
-          git diff --cached --quiet || (git commit -m "$SLUG page: posts for ${{ steps.s.outputs.target }}" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "$SLUG page: posts for ${{ steps.s.outputs.target }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

@@ -181,4 +181,4 @@ jobs:
             DIRS="adda/queue adda/drafts adda/posted adda/failed status"
           fi
           for d in $DIRS; do [ -e "$d" ] && git add -A "$d" || true; done
-          git diff --cached --quiet || (git commit -m "Creator Adda: ${{ steps.s.outputs.mode }} ${{ steps.s.outputs.date }}" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "Creator Adda: ${{ steps.s.outputs.mode }} ${{ steps.s.outputs.date }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD)

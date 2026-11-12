@@ -99,7 +99,7 @@ jobs:
           EOF
           git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
           git add warmmug/shorts.json
-          git commit -m "Warm Mug Radio: posted Short ${{ steps.s.outputs.today }}" && git pull --rebase -q && git push
+          git commit -m "Warm Mug Radio: posted Short ${{ steps.s.outputs.today }}" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD
 
       - name: Write status for Claude
         if: always() && github.event_name == 'push'
@@ -113,4 +113,4 @@ jobs:
           } > warmmug/status.md
           git config user.name "warm-mug-radio-bot"; git config user.email "actions@users.noreply.github.com"
           git add warmmug/status.md
-          git commit -m "Warm Mug Radio: status" && git pull --rebase -q && git push || true
+          git commit -m "Warm Mug Radio: status" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD || true
