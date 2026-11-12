@@ -1,0 +1,135 @@
+name: X accounts - Wall St Pulse + Bollywood Ki Baat (fresh news only)
+
+# Each run fills the earliest unposted slot (up to 2.5 h late) of each account, researched fresh by Claude at that moment.
+# Slots, ramp-up (4 -> 8 -> 12 -> 16 posts a day) and time zones: xacc/accounts.json. Rules: xacc/PROMPT-wsp.md, xacc/PROMPT-bkb.md.
+# Main triggers: cron-job.org (one job per account, every 30 min). GitHub's own timers below are only a backup.
+# A slot gets up to 3 tries; the 3rd try falls back to a question post so a slot is never empty.
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+    inputs:
+      account:
+        description: "wsp = Wall St Pulse, bkb = Bollywood Ki Baat"
+        default: "wsp"
+        type: choice
+        options: ["wsp", "bkb"]
+      dry_run:
+        description: "true = test: write a post + card but do not publish (saved to xacc/drafts/)"
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  post:
+    strategy:
+      fail-fast: false
+      matrix:
+        account: ${{ fromJSON(github.event_name == 'workflow_dispatch' && format('["{0}"]', inputs.account) || '["wsp","bkb"]') }}
+    concurrency:
+      group: xacc-${{ matrix.account }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Which slot is due?
+        id: s
+        run: python3 xacc/run.py slot ${{ matrix.account }} ${{ inputs.dry_run == 'true' && 'true' || 'false' }}
+
+      - uses: actions/setup-python@v5
+        if: steps.s.outputs.skip == 'no'
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        if: steps.s.outputs.skip == 'no'
+        continue-on-error: true
+        run: |
+          pip install -q requests requests-oauthlib cryptography playwright
+          python -m playwright install --with-deps chromium >/dev/null
+          sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null 2>&1 || true
+
+      - name: Claude researches and writes the post
+        id: a1
+        continue-on-error: true
+        if: steps.s.outputs.skip == 'no'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "*"
+          prompt: |
+            Read xacc/PROMPT-${{ matrix.account }}.md in the repository and follow it exactly.
+            DATE (account's local date) = ${{ steps.s.outputs.date }}
+            KEY (local HHMM) = ${{ steps.s.outputs.key }}
+            Write the file xacc/queue/${{ matrix.account }}-${{ steps.s.outputs.date }}-${{ steps.s.outputs.key }}.json
+          claude_args: |
+            --max-turns 50
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: One quick retry if Claude stopped early
+        id: a2
+        continue-on-error: true
+        if: steps.s.outputs.skip == 'no' && steps.a1.outcome == 'failure'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "*"
+          prompt: |
+            Read xacc/PROMPT-${{ matrix.account }}.md in the repository and follow it exactly.
+            DATE (account's local date) = ${{ steps.s.outputs.date }}
+            KEY (local HHMM) = ${{ steps.s.outputs.key }}
+            Write the file xacc/queue/${{ matrix.account }}-${{ steps.s.outputs.date }}-${{ steps.s.outputs.key }}.json
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+
+      - name: Was a post written?
+        id: w
+        if: steps.s.outputs.skip == 'no'
+        run: |
+          F="xacc/queue/${{ matrix.account }}-${{ steps.s.outputs.date }}-${{ steps.s.outputs.key }}.json"
+          if [ -f "$F" ] && python3 -c "import json;d=json.load(open('$F'));assert d['text'].strip()"; then
+            python3 - "$F" <<'PY'
+          import json, pathlib, sys
+          p = pathlib.Path(sys.argv[1]); d = json.loads(p.read_text(encoding="utf-8"))
+          if d.get("image") and not (p.parent / d["image"]).exists():
+              print("Card missing - posting as text"); d.pop("image")
+          p.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+          print(d["text"])
+          PY
+            echo "have=yes" >> "$GITHUB_OUTPUT"
+          elif [ "${{ steps.s.outputs.try }}" -ge 3 ] && [ "${{ steps.s.outputs.dry }}" = "false" ]; then
+            python3 xacc/run.py fallback ${{ matrix.account }} ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }} && echo "have=yes" >> "$GITHUB_OUTPUT"
+          else echo "No post this try - the next timer tries this slot again."; echo "have=no" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Dry run - keep as draft
+        if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'true'
+        run: |
+          mkdir -p xacc/drafts
+          mv xacc/queue/${{ matrix.account }}-${{ steps.s.outputs.date }}-${{ steps.s.outputs.key }}* xacc/drafts/
+          cat xacc/drafts/${{ matrix.account }}-${{ steps.s.outputs.date }}-${{ steps.s.outputs.key }}.json
+
+      - name: Publish to X
+        if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'false'
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+        run: python3 xacc/run.py post ${{ matrix.account }} ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}
+
+      - name: Save results
+        if: always() && steps.s.outputs.skip == 'no'
+        run: |
+          git config user.name "xacc-bot"; git config user.email "actions@users.noreply.github.com"
+          rm -f xacc/queue/${{ matrix.account }}-* 2>/dev/null || true   # a post that did not go out is retried fresh, never posted late
+          git add -A xacc/posted xacc/failed xacc/drafts xacc/queue 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "X ${{ matrix.account }} ${{ steps.s.outputs.date }} ${{ steps.s.outputs.key }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD

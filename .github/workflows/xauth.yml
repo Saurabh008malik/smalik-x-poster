@@ -1,0 +1,54 @@
+name: X accounts - connect a new account (Authorize + PIN)
+
+# Step 1 (start): prints a link. Log in to X as the NEW account, open the link, press "Authorize app", copy the PIN.
+# Step 2 (finish): run again with the PIN. The token is saved encrypted in xacc/tokens/ (never shown in logs),
+# and the account's go_live date is set, so posting starts at the first slot (4 a day in week 1).
+on:
+  workflow_dispatch:
+    inputs:
+      account:
+        description: "wsp = Wall St Pulse, bkb = Bollywood Ki Baat"
+        type: choice
+        options: ["wsp", "bkb"]
+      step:
+        description: "start = get the link, finish = save the PIN, check = test the saved token"
+        type: choice
+        options: ["start", "finish", "check"]
+      pin:
+        description: "PIN from X (only for step = finish)"
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: xauth
+  cancel-in-progress: false
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests requests-oauthlib cryptography
+      - name: Run
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          PIN: ${{ inputs.pin }}
+        run: |
+          case "${{ inputs.step }}" in
+            start) python3 xacc/run.py auth-start ${{ inputs.account }} ;;
+            finish) echo "::add-mask::$PIN"; python3 xacc/run.py auth-finish ${{ inputs.account }} "$PIN" && python3 xacc/run.py whoami ${{ inputs.account }} ;;
+            check) python3 xacc/run.py whoami ${{ inputs.account }} ;;
+          esac
+      - name: Save
+        if: inputs.step != 'check'
+        run: |
+          git config user.name "xacc-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A xacc/tokens xacc/accounts.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "X accounts: ${{ inputs.step }} ${{ inputs.account }}"
+          for i in 1 2 3 4; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep 5; done; git diff --quiet origin/main HEAD
