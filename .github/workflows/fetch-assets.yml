@@ -15,8 +15,10 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install -q requests
       - name: Fetch
+        env:
+          CFG: ${{ inputs.config }}
         run: |
-          echo '${{ inputs.config }}' > /tmp/cfg.json
+          printf '%s' "$CFG" > /tmp/cfg.json
           python3 research/fetch_assets.py /tmp/cfg.json /tmp/assets
           mkdir -p research/assets
           (cd /tmp/assets && zip -q -r "$GITHUB_WORKSPACE/research/assets/${{ inputs.name }}.zip" .)

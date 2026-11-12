@@ -20,8 +20,10 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install -q -U yt-dlp
       - name: Collect
+        env:
+          CFG: ${{ inputs.config }}
         run: |
-          echo '${{ inputs.config }}' > /tmp/cfg.json
+          printf '%s' "$CFG" > /tmp/cfg.json
           mkdir -p research/out
           python3 research/yt_research.py /tmp/cfg.json research/out/${{ inputs.name }}.json
       - name: Save
