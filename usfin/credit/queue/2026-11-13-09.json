@@ -1,0 +1,19 @@
+{
+  "caption": "Say this to a debt collector. 📞\n\n\"Please send me written validation of this debt.\"\n\nA collector is generally required to send you details of the debt. Keep your own records, and check your situation with a professional.\n\nHave you ever dealt with a collector call?",
+  "first_comment": "What was the strangest thing a collector ever said to you? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: if X happens, say this"
+  ],
+  "instagram": {
+    "first_comment": "Ever had a collector call? Share below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Collector calls? Say: <em>\"Send it in writing.\"</em>",
+    "sub": "Ask for written validation of the debt.",
+    "theme": "red"
+  },
+  "video": "2026-11-13-09.mp4",
+  "publish_at": "2026-11-13T17:00:00+00:00"
+}

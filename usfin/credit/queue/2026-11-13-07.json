@@ -1,0 +1,20 @@
+{
+  "caption": "The average FICO score is about 714. 📊\n\nFICO says it was flat from October 2025 to April 2026 and down one point from a year earlier.\n\nAverages hide the split, but it shows many households are holding steady, not soaring.\n\nDo you know your own score range?",
+  "first_comment": "Do you check your score monthly, yearly, or never? 👇",
+  "sources": [
+    "https://investors.fico.com/news-releases/news-release-details/ficor-score-credit-insights-report-average-fico-score-dips-714",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "How often do you check your score? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "The average FICO score is about <em>714</em>.",
+    "sub": "Flat since late 2025.",
+    "theme": "blue",
+    "source": "Source: FICO"
+  },
+  "image": "2026-11-13-07.jpg",
+  "publish_at": "2026-11-14T00:00:00+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "caption": "Mortgage trouble is creeping up. 🏠\n\nThe NY Fed says 1.60% of mortgage balances moved into serious delinquency (90+ days) in Q3. A year ago it was 1.28%.\n\nStill low next to credit cards, but the direction matters.\n\nHave you noticed housing costs squeezing people around you?",
+  "first_comment": "Housing or credit cards: which one stretches your budget more right now? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Which hits your budget harder, housing or cards? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Mortgage serious delinquency rose to <em>1.60%</em>.",
+    "sub": "Up from 1.28% a year ago.",
+    "theme": "blue",
+    "source": "Source: New York Fed, Q3 2026"
+  },
+  "image": "2026-11-13-01.jpg",
+  "publish_at": "2026-11-13T12:00:00+00:00"
+}
