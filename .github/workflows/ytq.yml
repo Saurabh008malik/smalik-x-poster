@@ -1,0 +1,60 @@
+name: YouTube helper - first comments and Shorts (Lamplight Scripture + The Sleepy Biographer)
+
+on:
+  schedule:
+    - cron: "5,25,45 * * * *"     # backup only; the real triggers are cron-job.org and the heartbeats
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "run = post whatever is due; whoami = check both hooks"
+        default: "run"
+        type: choice
+        options: ["run", "whoami"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ytq
+  cancel-in-progress: false
+
+jobs:
+  ytq:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Anything due?
+        id: d
+        run: |
+          pip install -q requests
+          N=$(python ytq/ytq.py due)
+          echo "due=$N" >> "$GITHUB_OUTPUT"
+          echo "Items due: $N"
+
+      - name: Who is connected
+        if: inputs.action == 'whoami'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+        run: python ytq/ytq.py whoami
+
+      - name: Post what is due
+        if: steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+          SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python ytq/ytq.py run
+
+      - name: Save queue
+        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami'
+        run: |
+          git config user.name "ytq-bot"; git config user.email "actions@users.noreply.github.com"
+          git add ytq/comments.json ytq/shorts.json
+          git commit -m "ytq: queue update" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break || sleep 5; done

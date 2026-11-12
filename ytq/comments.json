@@ -1,0 +1,30 @@
+[
+  {
+    "channel": "sleepy",
+    "title_contains": "Franklin",
+    "go_live": "2026-11-11T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
+    "done": false
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Leonardo",
+    "go_live": "2026-11-14T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
+    "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Book of Genesis",
+    "go_live": "2026-11-14T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Story of Joseph",
+    "go_live": "2026-11-18T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": false
+  }
+]
