@@ -6,7 +6,7 @@ Repeat these steps for every video. Update this file when something improves. Ow
 1. YouTube policy first: original script every time, AI voice disclosed, "Altered or synthetic content" = Yes, not made for kids, public-domain images only, no invented quotes, no copyrighted music (the fire bed is synthesized by us).
 2. Saurabh does passwords, OTPs, OAuth "Allow" clicks and pasting secrets himself. Claude pauses and asks.
 3. Short, warm, direct updates. Browser work in his main Chrome. Never use the name Pradeep Raj.
-4. Long videos only (about 2 hours, 2 a week: Tue and Fri). Shorts: since 12 Nov 2026 Saurabh wants 3 Shorts per day per channel (1 anytime, 2 evening/night) cut from the best moments of the long videos, each pointing to its long video (see ytq/ and the ytq workflow). Earlier vidIQ check (Nov 9): Shorts were only 0.2 to 8% of views at similar channels, so watch the Results log and drop them if they bring no long-video views.
+4. Long videos only (about 2 hours, 2 a week: Tue and Fri). Shorts: since 13 Nov 2026 the limit is 1 Short per channel per day (policy first; was 3) cut from the best moments of the long videos, each pointing to its long video (see ytq/ and the ytq workflow). Earlier vidIQ check (Nov 9): Shorts were only 0.2 to 8% of views at similar channels, so watch the Results log and drop them if they bring no long-video views.
 5. Repeat what works: after each video, read the numbers and copy the winning pattern (see step 12).
 
 ## Pipeline (about 4 to 5 hours of compute per video)
@@ -54,5 +54,5 @@ Secret: SLEEPY_HOOK (GitHub). If the Apps Script web app is ever redeployed, the
 - First comment is posted 60 min after the long video is really public. The API cannot pin: Saurabh pins it by hand in Studio.
 - Shorts: 9:16, blurred background + full frame, burned captions, hook line, link to the long video in the description; one per chapter; files wait on temporary feed-shorts-* branches that the workflow deletes when finished.
 - Every Short also gets a first comment from the channel with the full-video link (posted right after the Short goes public; retried on later runs if YouTube is not ready; fields comment_done/comment_attempts in ytq/shorts.json).
-- Policy: altered/synthetic flag ON, not made for kids, max 3 Shorts per channel per UTC day, at least 90 min apart; use varied passages, hooks and titles (repetitive template content is a risk).
+- Policy: altered/synthetic flag ON, not made for kids, max 1 Short per channel per UTC day (13 Nov 2026: cut from 3 because of the July 2026 repetitive-content policy); use varied passages, hooks and titles (repetitive template content is a risk).
 - Run `python ytq/ytq.py whoami` (workflow input action=whoami) after any redeploy of a hook.
