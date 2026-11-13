@@ -6,7 +6,7 @@
     "tz_offset_minutes": -300,
     "prompt": "xacc/PROMPT-wsp.md",
     "card": "wsp",
-    "go_live": "",
+    "go_live": "2026-11-12",
     "ramp": [
       [
         7,
