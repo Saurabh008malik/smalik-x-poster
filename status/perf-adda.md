@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 4.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝘁𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝗴𝗮𝗹𝘁 𝗯𝗮𝗻𝗮 𝘁𝗼 𝘃𝗶𝗱𝗲𝗼 𝗳𝗹𝗼𝗽? ❌ | likes 1, comments 1, shares 0, saves 0, views - | 2026-10-30-02
 - [reel] score 3.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝟭𝟬𝟬𝟬 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗵𝗼𝘁𝗲 𝗵𝗶 𝗽𝗮𝗶𝘀𝗲 𝗮𝗮𝘆𝗲𝗻𝗴𝗲? ❌ | likes 3, comments 0, shares 0, saves 0, views - | 2026-11-12-04
 - [reel] score 3.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗸𝗮 𝗲𝗸 𝗳𝗼𝗿𝗺𝘂𝗹𝗮: 𝗧𝗼𝗽𝗶𝗰 → 𝗧𝗶𝘁𝗹𝗲 → 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 🎯 | likes 3, comments 0, shares 0, saves 0, views - | 2026-11-10-04
 - [card] score 2.0 | 𝗖𝗮𝗺𝗲𝗿𝗮 𝗻𝗮𝗵𝗶𝗻 𝗵𝗮𝗶? 𝗣𝗵𝗶𝗿 𝗯𝗵𝗶 𝘃𝗶𝗱𝗲𝗼 𝗯𝗮𝗻 𝘀𝗮𝗸𝘁𝗮 𝗵𝗮𝗶 🎥 | likes 2, comments 0, shares 0, saves 0, views - | 2026-11-09-01
-- [card] score 2.0 | 𝟯 𝗰𝗼𝗼𝗸𝗶𝗻𝗴 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘃𝗶𝗱𝗲𝗼 𝗶𝗱𝗲𝗲𝘀 🍳 | likes 2, comments 0, shares 0, saves 0, views - | 2026-10-30-03
+- [card] score 1.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝘀𝗵𝘂𝗿𝘂 𝗸𝗮𝗿𝗻𝗲 𝗺𝗲𝗶𝗻 𝘀𝗮𝗯𝘀𝗲 𝗯𝗮𝗱𝗮 𝗱𝗮𝗿𝗿 𝗸𝘆𝗮 𝗵𝗮𝗶? 😬 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-10-03
+- [reel] score 1.0 | 𝗟𝗶𝘃𝗲 𝗮𝗮𝗻𝗮 𝗵𝗮𝗶 𝗽𝗮𝗿 𝗱𝗮𝗿 𝗹𝗮𝗴𝘁𝗮 𝗵𝗮𝗶? 𝗣𝗮𝗵𝗹𝗲 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲 𝗸𝗮𝗿𝗼 🎙️ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-10-02
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,5 +19,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.9 over 16 posts
-- card: 0.4 over 26 posts
+- reel: 0.6 over 17 posts
+- card: 0.2 over 26 posts
