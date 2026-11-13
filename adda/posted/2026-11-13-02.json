@@ -9,5 +9,8 @@
     "first_comment": "Series follow karo, Day 3 kal 📅 @real_creator_adda"
   },
   "video": "2026-11-13-02.mp4",
-  "publish_at": "2026-11-13T14:00:00+00:00"
+  "publish_at": "2026-11-13T14:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/reel/3877604439048278",
+  "instagram_error": "Instagram reel upload failed 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+  "done_at": "2026-11-13T14:10:16.142302+00:00"
 }
