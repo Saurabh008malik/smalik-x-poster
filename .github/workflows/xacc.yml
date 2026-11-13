@@ -1,7 +1,7 @@
-name: X accounts - Wall St Pulse + Bollywood Ki Baat (fresh news only)
+name: X accounts - Wall St Pulse + The Inference (fresh news only)
 
 # Each run fills the earliest unposted slot (up to 2.5 h late) of each account, researched fresh by Claude at that moment.
-# Slots, ramp-up (4 -> 8 -> 12 -> 16 posts a day) and time zones: xacc/accounts.json. Rules: xacc/PROMPT-wsp.md, xacc/PROMPT-bkb.md.
+# Slots, ramp-up (4 -> 8 -> 12 -> 16 posts a day) and time zones: xacc/accounts.json. Rules: xacc/PROMPT-wsp.md, xacc/PROMPT-inf.md.
 # Main triggers: cron-job.org (one job per account, every 30 min). GitHub's own timers below are only a backup.
 # A slot gets up to 3 tries; the 3rd try falls back to a question post so a slot is never empty.
 on:
@@ -10,10 +10,10 @@ on:
   workflow_dispatch:
     inputs:
       account:
-        description: "wsp = Wall St Pulse, bkb = Bollywood Ki Baat"
+        description: "wsp = Wall St Pulse, inf = The Inference"
         default: "wsp"
         type: choice
-        options: ["wsp", "bkb"]
+        options: ["wsp", "inf"]
       dry_run:
         description: "true = test: write a post + card but do not publish (saved to xacc/drafts/)"
         default: "false"
@@ -29,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        account: ${{ fromJSON(github.event_name == 'workflow_dispatch' && format('["{0}"]', inputs.account) || '["wsp","bkb"]') }}
+        account: ${{ fromJSON(github.event_name == 'workflow_dispatch' && format('["{0}"]', inputs.account) || '["wsp","inf"]') }}
     concurrency:
       group: xacc-${{ matrix.account }}
       cancel-in-progress: false

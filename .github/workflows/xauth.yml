@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       account:
-        description: "wsp = Wall St Pulse, bkb = Bollywood Ki Baat"
+        description: "wsp = Wall St Pulse, inf = The Inference"
         type: choice
-        options: ["wsp", "bkb"]
+        options: ["wsp", "inf"]
       step:
         description: "start = get the link, finish = save the PIN, check = test the saved token"
         type: choice

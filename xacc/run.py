@@ -1,4 +1,4 @@
-"""Automation for the extra X accounts (Wall St Pulse = wsp, Bollywood Ki Baat = bkb). 13 Nov 2026.
+"""Automation for the extra X accounts (Wall St Pulse = wsp, The Inference = inf). 13 Nov 2026.
 
   python xacc/run.py slot ACCT [dry]        -> decides which slot to fill now (writes GITHUB_OUTPUT lines)
   python xacc/run.py fallback ACCT DATE KEY -> writes a simple current-question post (last try, so a slot is never empty)
@@ -90,11 +90,11 @@ FALLBACK = {
         "𝗤𝗨𝗜𝗖𝗞 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡\n\nAre you adding to stocks, holding cash, or waiting for a dip this month?\n\nTell us below 👇",
         "𝗬𝗢𝗨𝗥 𝗧𝗔𝗞𝗘\n\nWhich sector wins the next 12 months: tech, energy, healthcare or banks?\n\nReply 👇",
     ],
-    "bkb": [
-        "आज का सवाल 🎬\n\nइस हफ़्ते आप कौन-सी फ़िल्म या वेब सीरीज़ देखने वाले हैं?\n\nकमेंट में बताइए 👇",
-        "सवाल 🍿\n\nइस साल की आपकी फ़ेवरेट हिंदी फ़िल्म कौन-सी है?\n\nनाम लिखिए 👇",
-        "आप बताइए 🎥\n\nथिएटर या OTT, नई फ़िल्में आप कहाँ देखना पसंद करते हैं?\n\nजवाब दीजिए 👇",
-        "फ़िल्मी सवाल ⭐\n\nकिस एक्टर की अगली फ़िल्म का आपको सबसे ज़्यादा इंतज़ार है?\n\nकमेंट करें 👇",
+    "inf": [
+        "𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗢𝗙 𝗧𝗛𝗘 𝗗𝗔𝗬\n\nWhich AI tool do you actually use every week?\n\nDrop it below 👇",
+        "𝗣𝗢𝗟𝗟 𝗧𝗜𝗠𝗘\n\nWhich AI assistant is your daily driver right now?\n\n→ ChatGPT\n→ Gemini\n→ Claude\n→ Something else\n\nReply 👇",
+        "𝗤𝗨𝗜𝗖𝗞 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡\n\nHas AI saved you real time at work this month? Yes, no, or not yet?\n\nTell us below 👇",
+        "𝗬𝗢𝗨𝗥 𝗧𝗔𝗞𝗘\n\nWhat will AI change first in your daily life: work, search, shopping or school?\n\nReply 👇",
     ],
 }
 
