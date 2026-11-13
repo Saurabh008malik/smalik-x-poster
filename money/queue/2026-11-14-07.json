@@ -1,0 +1,13 @@
+{
+  "caption": "Jobless claims ticked up to 200,000. 💼\n\nThe Labor Department says that's up from a revised 191,000 the week before, and a one-month high.\n\nIt's still low by historical standards. Layoffs aren't surging, but people are watching closely.\n\nHow secure does your job feel right now?",
+  "first_comment": "Job feels secure, shaky, or no idea? 👇",
+  "sources": [
+    "https://www.washingtontimes.com/news/2026/nov/12/us-jobless-claims-reach-200000-remain-low-historic-standards/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "How secure is your job feeling? @paychecktruths 👇"
+  },
+  "image": "2026-11-14-07.jpg",
+  "publish_at": "2026-11-15T00:00:00+00:00"
+}
