@@ -8,7 +8,7 @@ Files: ytq/comments.json  first comments: posted COMMENT_DELAY_MIN minutes after
        ytq/shorts.json    Shorts cut from the long videos: posted at their slot, each pointing to the long video
 Hooks (GitHub secrets): LAMPLIGHT_HOOK, SLEEPY_HOOK = Apps Script web app URL with ?k=KEY (lends a 1-hour token).
 Policy built in: altered/synthetic flag ON, never made for kids, one Short per channel per run, at least
-MIN_GAP_MIN minutes between two Shorts of a channel, max 3 Shorts per channel per UTC day.
+MIN_GAP_MIN minutes between two Shorts of a channel, max 1 Short per channel per UTC day.
 """
 import datetime as dt
 import json
@@ -28,7 +28,7 @@ API = "https://www.googleapis.com/youtube/v3"
 CHANNELS = {"lamplight": "LAMPLIGHT_HOOK", "sleepy": "SLEEPY_HOOK"}
 COMMENT_DELAY_MIN = 60
 MIN_GAP_MIN = 90
-MAX_SHORTS_PER_DAY = 3
+MAX_SHORTS_PER_DAY = 1   # 13 Nov 2026: reduced from 3 (YouTube July 2026 repetitive-content policy); Saurabh: policy first
 COMMENTS = HERE / "comments.json"
 SHORTS = HERE / "shorts.json"
 

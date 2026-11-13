@@ -38,8 +38,8 @@ jobs:
           TODAY=$(TZ=Asia/Kolkata date +%F)
           SKIP=no
           DONE=$(grep -c "\"date\": \"$TODAY\"" warmmug/shorts.json 2>/dev/null || true)
-          if [ "$MODE" = "post" ] && [ "${DONE:-0}" -ge 2 ]; then
-            SKIP=yes; echo "2 Shorts already posted today ($TODAY)."; fi
+          if [ "$MODE" = "post" ] && [ "${DONE:-0}" -ge 1 ]; then
+            SKIP=yes; echo "1 Short already posted today ($TODAY)."; fi
           if [ "$MODE" = "post" ] && [ ! -f warmmug/secret/yt_token.enc ] && [ "$HAVE_HOOK" != "true" ]; then
             SKIP=yes; echo "YouTube not connected yet - add the WARMMUG_HOOK secret (Apps Script web app link) first." | tee -a "$GITHUB_STEP_SUMMARY"; fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "today=$TODAY" >> "$GITHUB_OUTPUT"; echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
