@@ -1,0 +1,14 @@
+{
+ "text": "𝗝𝗨𝗦𝗧 𝗜𝗡: OpenAI details its \"Defense Factory\" for cyber defence\n→ Agents find, validate and patch software flaws\n→ Built from a 250-person security sprint\n→ OpenAI says 53 urgent issues closed on day one\n→ Daybreak Red: managed access for approved orgs",
+ "image": "inf-2026-11-13-1130.png",
+ "created_at": "2026-11-13T17:04:23+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://openai.com/the-defense-factory",
+  "https://www.openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2121288101272473836",
+ "posted_at": "2026-11-13T17:04:33.994619+00:00",
+ "confirmed_live": true
+}
