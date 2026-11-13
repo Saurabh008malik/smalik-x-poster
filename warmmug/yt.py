@@ -245,6 +245,11 @@ def verify(max_min="25"):
             st = re.search(r'"playabilityStatus":\{"status":"([A-Z_]+)"', html)
             ln = re.search(r'"lengthSeconds":"(\d+)"', html)
             last = f"status={st.group(1) if st else '?'} length={ln.group(1) if ln else '?'}s (expected about {want:.0f}s)"
+            if st and st.group(1) == "LOGIN_REQUIRED":   # YouTube's bot check on GitHub's servers: cannot be checked from here
+                summary(f"\u26a0\ufe0f Uploaded {res['url']} but YouTube blocks the automatic processing check from GitHub "
+                        "(bot check). Check YouTube Studio that it shows a duration and is public.")
+                print("cannot verify from here (LOGIN_REQUIRED); upload itself succeeded")
+                return
             if st and st.group(1) == "OK" and ln and int(ln.group(1)) >= want * 0.9:
                 summary(f"\u2705 YouTube finished processing the video ({last}) {res['url']}")
                 print("verified:", last)
