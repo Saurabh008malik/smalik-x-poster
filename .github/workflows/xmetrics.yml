@@ -1,0 +1,50 @@
+name: X performance tracker (what worked)
+
+# Reads impressions / likes / replies / reposts / saves for our recent X posts (all three accounts) and writes status/perf-x-*.md.
+# The post-writing prompts read these files, so the formats, hooks, topics and times that perform best get repeated (rule 13 Nov 2026).
+# Cost: about $0.001 per post read, refreshed every 4 hours at most.
+on:
+  schedule:
+    - cron: "40 */4 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "true = refresh now even if the file is fresh"
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: xmetrics
+  cancel-in-progress: false
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests requests-oauthlib cryptography
+      - name: Read the numbers
+        env:
+          X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+          X_CONSUMER_SECRET: ${{ secrets.X_CONSUMER_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: |
+          F=""; [ "${{ inputs.force }}" = "true" ] && F="--force"
+          for a in smalik wsp inf; do python3 xacc/metrics.py $a $F || echo "metrics for $a failed (not fatal)"; done
+      - name: Save
+        run: |
+          git config user.name "xmetrics-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
+          git add -A status/perf-x-*.md 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "X metrics: what worked"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD

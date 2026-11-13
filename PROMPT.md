@@ -11,6 +11,7 @@ The slot (`morning` or `evening`) and today's date (IST) are given at the end of
 If `status/perf-cricket.md` exists, read it. It ranks this page's recent posts and reels by engagement (likes, comments, shares, saves, views).
 - Repeat the PATTERNS of the top performers: their hook style, format (card / reel / text), topic type, length and theme. Never copy their text or repeat their topic.
 - Avoid the patterns of the weakest ones.
+- For the X tweet also read `status/perf-x-smalik.md` (impressions per @Smalik_wc post) if it exists, and lean toward what got the most impressions.
 - If the file says there is no data yet, skip it.
 
 Then read `status/trends-cricket.md`. It lists formats and hooks that are getting the MOST views right now on other pages in our niche (Instagram Reels / TikTok outliers).

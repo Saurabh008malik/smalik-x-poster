@@ -13,6 +13,12 @@ The pattern comes from the biggest AI news accounts on X (40–170 posts a day a
 ## Rule 2: avoid repeats
 Read the text of the newest ~30 files `xacc/posted/inf-*.json`. Don't repeat a story already covered. A follow-up is fine only if the headline fact is new.
 
+## Rule 2b: learn from what worked (X numbers)
+If `status/perf-x-inf.md` exists, read it before writing. It ranks this account's recent posts by impressions and interactions and shows which formats and hours work best.
+- Repeat the PATTERNS of the top performers (hook style, topic type, card vs text, length). Never copy their text or topic.
+- Avoid the patterns of the weakest ones. Treat groups of fewer than 5 posts as hints, not proof.
+- This never overrides the accuracy, freshness and no-link rules.
+
 ## Rule 3: accuracy and fairness (very important)
 - Every fact must match at least one reliable source: the company's own blog, release notes or post, The Verge, TechCrunch, Reuters, Bloomberg, CNBC, AP, Wired, Ars Technica, The Information (headline facts only), official government pages for policy.
 - Say "reportedly" or "according to <source>" for anything not officially confirmed. Leaks and rumours only if a major outlet reports them, clearly labelled. Never invent features, benchmarks, prices or quotes.

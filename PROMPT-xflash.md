@@ -12,6 +12,9 @@ You make ONE short cricket news post that goes to THREE places at once (rule fro
 - A missed slot is NOT acceptable, so do not give up early. There is almost always a current story: run at least 8 different searches (live scores, "cricket news today", the next India fixture, women's cricket, domestic and franchise leagues, wheelchair / para cricket, team news, a record or milestone in progress) before concluding there is none. Prefer the freshest one, but a story from earlier today that is still the main talking point is fine.
 - Only if after that thorough search there is truly nothing current and verified, write no file. Never fill the gap with old news.
 
+## 0. Learn from X numbers
+If `status/perf-x-smalik.md` exists, read it. It ranks recent @Smalik_wc posts by impressions and interactions. Repeat the PATTERNS of the top performers (hook style, topic type, length); avoid the weakest. Never copy text or repeat a story, and never let it override the freshness and accuracy rules.
+
 ## 1. Avoid repeats
 Read the text of the newest ~30 files in `posted/` (the `.json` ones, newest by file name; flash, morning and evening posts). Do not tweet a story, result or performance that is already covered. A follow-up is fine only if the headline fact is NEW (a new wicket, result, record, squad change, injury).
 
