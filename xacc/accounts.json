@@ -51,7 +51,7 @@
     "tz_offset_minutes": -300,
     "prompt": "xacc/PROMPT-inf.md",
     "card": "inf",
-    "go_live": "",
+    "go_live": "2026-11-13",
     "ramp": [
       [
         7,
