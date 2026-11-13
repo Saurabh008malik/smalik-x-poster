@@ -89,6 +89,8 @@
       "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/89309ccc-d5d9-49f7-b54b-277a103c2f7f.wav",
       "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/788136c4-6711-4668-91f2-39a6c1ad2673.wav",
       "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/5e9e8a3f-cda6-4a7e-9e1c-fe5fc5663889.wav"
-    ]
+    ],
+    "scheduled_public_at": "2026-11-15 06:00 IST (Sat 14 Nov 7:30 PM Eastern)",
+    "note": "set to Scheduled in Studio on 13 Nov so the two long mixes are not published the same day"
   }
 ]
