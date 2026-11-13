@@ -10,5 +10,8 @@
     "first_comment": "Gas price near you? Tell @paychecktruths 👇"
   },
   "image": "2026-11-12-07.jpg",
-  "publish_at": "2026-11-13T00:00:00+00:00"
+  "publish_at": "2026-11-13T00:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122109481095522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"AoHES26qApwSJRuuyqwPaOs\"}}",
+  "done_at": "2026-11-13T00:06:12.036213+00:00"
 }
