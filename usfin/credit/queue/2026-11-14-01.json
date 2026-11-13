@@ -1,0 +1,20 @@
+{
+  "caption": "Credit card balances just hit a record $1.29 trillion. 💳\n\nThe New York Fed says that's up about 4% from a year ago. At the same time, Money Management International reports its busiest two months for debt management plan sign-ups since early 2011.\n\nBig numbers, real people behind them.\n\nAre you seeing more people around you struggle with card balances?",
+  "first_comment": "Be honest: is your card balance higher or lower than a year ago? 👇",
+  "sources": [
+    "https://local12.com/news/nation-world/credit-card-balances-hit-record-as-demand-for-debt-counseling-climbs-economy-personal-finance-advice-household-debt-credit-counseling",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Higher, lower or the same as last year? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Card balances hit a record <em>$1.29 trillion</em>.",
+    "sub": "Debt counseling demand is climbing too.",
+    "theme": "blue",
+    "source": "Source: New York Fed, via TNND"
+  },
+  "image": "2026-11-14-01.jpg",
+  "publish_at": "2026-11-14T12:00:00+00:00"
+}

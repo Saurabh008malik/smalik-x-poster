@@ -1,0 +1,19 @@
+{
+  "caption": "Free, quick, and most people skip it. ✅\n\nPull your credit reports from all three bureaus and read them line by line. Look for accounts you don't recognize, wrong balances, or old addresses.\n\nThe official free reports cost nothing, so never pay anyone for them.\n\nWhen did you last check yours?",
+  "first_comment": "Have you ever found an error on your report? 👇",
+  "sources": [
+    "https://consumer.ftc.gov/articles/free-credit-reports",
+    "pattern: reassurance / checklist"
+  ],
+  "instagram": {
+    "first_comment": "Found a mistake on your report before? Share below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Read all <em>3 credit reports</em> line by line. It's free.",
+    "sub": "Look for accounts or balances you don't recognize.",
+    "theme": "green"
+  },
+  "image": "2026-11-14-04.jpg",
+  "publish_at": "2026-11-14T18:00:00+00:00"
+}

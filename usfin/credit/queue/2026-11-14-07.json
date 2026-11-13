@@ -1,0 +1,20 @@
+{
+  "caption": "The average VantageScore 4.0 stayed at 701. 📊\n\nVantageScore's September CreditGauge report (released Nov. 11) says average card utilization is the lowest since before the pandemic. Early-stage delinquencies were 1.15%, only 2 basis points above a year ago.\n\nSteady, not dramatic. But your own file is what matters.\n\nDo you know your utilization right now?",
+  "first_comment": "Do you know your utilization right now? Guess below 👇",
+  "sources": [
+    "https://www.einpresswire.com/article/956106648/consumer-credit-stays-resilient-as-leverage-drops-to-a-12-month-low-vantagescore-creditgauge-insights",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Guess your utilization % 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "SCORE TRUTH",
+    "headline": "Average VantageScore 4.0 holds at <em>701</em>.",
+    "sub": "Card utilization is the lowest since before the pandemic.",
+    "theme": "blue",
+    "source": "Source: VantageScore CreditGauge"
+  },
+  "image": "2026-11-14-07.jpg",
+  "publish_at": "2026-11-15T00:00:00+00:00"
+}

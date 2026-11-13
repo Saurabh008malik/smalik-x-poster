@@ -6,10 +6,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 1.0 | Say this to a debt collector. 📞 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-07-09
-- [reel] score 1.0 | Quick myth-buster. ✅ | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-09
-- [card] score 1.0 | Can someone explain why a card with a $500 limit can still charge 25%+ interest… and you're told to "just pay  | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-06-02
-- [reel] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-12-09
-- [card] score 0.0 | Hard vs soft inquiry. 🔍 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-12-08
+- [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-09
+- [text] score 0.0 | Real question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-06
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-05
+- [card] score 0.0 | Quick habit worth a minute today: 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.3 over 7 posts
-- card: 0.0 over 49 posts
-- text: 0.0 over 7 posts
+- reel: 0.1 over 8 posts
+- text: 0.0 over 8 posts
+- card: 0.0 over 54 posts

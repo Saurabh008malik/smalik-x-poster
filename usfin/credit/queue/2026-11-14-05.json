@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\nA bill paid 5 days late goes straight onto your credit report.\n\nThink about it, then comment your answer. We'll share the answer in the replies. 👇",
+  "first_comment": "True or false? Answer before you scroll! 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: true or false"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Comment your answer 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "A bill 5 days late hits your <em>credit report</em>. True or false?",
+    "sub": "Hint: it depends when it's reported.",
+    "theme": "blue"
+  },
+  "image": "2026-11-14-05.jpg",
+  "publish_at": "2026-11-14T20:00:00+00:00"
+}

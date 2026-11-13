@@ -1,0 +1,18 @@
+{
+  "caption": "Offered a store card at checkout? 🛍️\n\nSay: \"No thanks.\"\n\nA discount today isn't always worth a new hard inquiry and another account to manage. Check your own situation first.\n\nHave you ever signed up at the register?",
+  "first_comment": "Did you ever sign up at checkout and regret it? 👇",
+  "sources": [
+    "pattern: if X happens, say this"
+  ],
+  "instagram": {
+    "first_comment": "Signed up at checkout before? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CARD TRAP",
+    "headline": "Card offer at checkout? Say: <em>\"No thanks.\"</em>",
+    "sub": "A discount isn't always worth a new account.",
+    "theme": "red"
+  },
+  "video": "2026-11-14-09.mp4",
+  "publish_at": "2026-11-14T17:00:00+00:00"
+}
