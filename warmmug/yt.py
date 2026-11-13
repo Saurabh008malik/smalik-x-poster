@@ -226,6 +226,38 @@ def upload(folder="out"):
             + ("" if thumb_ok else "\n\n⚠️ Custom thumbnail not set - verify the channel with your phone number at youtube.com/verify"))
 
 
+def verify(max_min="25"):
+    """After an upload: wait until YouTube has really processed the video (playable, full length).
+    Exit code 1 if it is not playable in time, so the workflow does NOT log the mix as posted."""
+    out = HERE / "out"
+    res = json.loads((out / "result.json").read_text())
+    meta = json.loads((out / "meta.json").read_text())
+    want = float(meta["minutes"]) * 60
+    url = f"https://www.youtube.com/watch?v={res['video_id']}"
+    hdr = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36",
+           "Accept-Language": "en-US,en;q=0.9", "Cookie": "CONSENT=YES+1; SOCS=CAI"}
+    import re
+    deadline = time.time() + float(max_min) * 60
+    last = "no answer"
+    while time.time() < deadline:
+        try:
+            html = requests.get(url, headers=hdr, timeout=40).text
+            st = re.search(r'"playabilityStatus":\{"status":"([A-Z_]+)"', html)
+            ln = re.search(r'"lengthSeconds":"(\d+)"', html)
+            last = f"status={st.group(1) if st else '?'} length={ln.group(1) if ln else '?'}s (expected about {want:.0f}s)"
+            if st and st.group(1) == "OK" and ln and int(ln.group(1)) >= want * 0.9:
+                summary(f"\u2705 YouTube finished processing the video ({last}) {res['url']}")
+                print("verified:", last)
+                return
+        except Exception as e:  # network blip: try again
+            last = f"check failed: {e}"
+        print("waiting:", last, flush=True)
+        time.sleep(60)
+    summary(f"\u274c YouTube did NOT finish processing {res['url']} in {max_min} min ({last}). "
+            "Not logged as posted. Delete that video in YouTube Studio; the mix can be rebuilt.")
+    raise SystemExit(1)
+
+
 if __name__ == "__main__":
-    cmd = {"auth-start": auth_start, "auth-wait": auth_wait, "whoami": whoami, "upload": upload}[sys.argv[1]]
+    cmd = {"auth-start": auth_start, "auth-wait": auth_wait, "whoami": whoami, "upload": upload, "verify": verify}[sys.argv[1]]
     cmd(*sys.argv[2:])

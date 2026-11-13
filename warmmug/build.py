@@ -94,6 +94,7 @@ def main():
     ap.add_argument("--target-min", type=float, default=45)
     ap.add_argument("--min-min", type=float, default=12)
     ap.add_argument("--next", action="store_true", help="preview: use the next unpublished planned mix instead of today's")
+    ap.add_argument("--date", default="", help="catch-up: build the planned mix of this date (YYYY-MM-DD) instead of today's")
     a = ap.parse_args()
 
     inbox = load("inbox.json", [])
@@ -107,7 +108,9 @@ def main():
     today = dt.datetime.now(dt.timezone(dt.timedelta(hours=5, minutes=30))).strftime("%Y-%m-%d")
     done_titles = {p["title"] for p in published}
     entry = None
-    if a.next:
+    if a.date:
+        entry = next((m for m in plan if m["date"] == a.date and m["title"] not in done_titles), None)
+    elif a.next:
         entry = next((m for m in plan if m["title"] not in done_titles), None)
     else:
         entry = next((m for m in plan if m["date"] == today and m["title"] not in done_titles), None)

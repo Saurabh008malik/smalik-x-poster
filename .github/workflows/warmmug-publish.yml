@@ -16,6 +16,9 @@ on:
       min_minutes:
         description: "Smallest mix allowed (minutes)"
         default: "12"
+      mix_date:
+        description: "Catch-up: build the planned mix of this date (YYYY-MM-DD) instead of today's. Empty = today."
+        default: ""
 
 permissions:
   contents: write
@@ -39,6 +42,7 @@ jobs:
           MODE="${{ inputs.mode }}"; [ -z "$MODE" ] && MODE=post
           [ "${{ github.event_name }}" = "push" ] && MODE=preview
           TODAY=$(TZ=Asia/Kolkata date +%F)
+          [ -n "${{ inputs.mix_date }}" ] && TODAY="${{ inputs.mix_date }}"   # catch-up: the plan date of the missed mix
           SKIP=no
           if [ "$MODE" = "post" ] && grep -q "\"date\": \"$TODAY\"" warmmug/published.json 2>/dev/null; then
             SKIP=yes; echo "Already posted today ($TODAY)."; fi
@@ -63,7 +67,7 @@ jobs:
         if: steps.s.outputs.skip == 'no'
         run: |
           set +e
-          python warmmug/build.py --min-min "${{ inputs.min_minutes || '12' }}" $([ "${{ steps.s.outputs.mode }}" = preview ] && echo --next)
+          python warmmug/build.py --min-min "${{ inputs.min_minutes || '12' }}" $([ -n "${{ inputs.mix_date }}" ] && echo --date "${{ inputs.mix_date }}") $([ "${{ steps.s.outputs.mode }}" = preview ] && [ -z "${{ inputs.mix_date }}" ] && echo --next)
           code=$?
           if [ $code -eq 3 ]; then echo "built=no" >> "$GITHUB_OUTPUT"; cat warmmug/out/skip.txt >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
           [ $code -eq 0 ] && echo "built=yes" >> "$GITHUB_OUTPUT"
@@ -88,6 +92,9 @@ jobs:
         run: |
           python warmmug/yt.py whoami
           python warmmug/yt.py upload
+          # 13 Nov 2026: a mix is only logged as posted after YouTube has really processed it (the 7 and 12 Nov mixes were
+          # logged as posted but YouTube abandoned them: "Video is too long" on an unverified channel)
+          python warmmug/yt.py verify 25
 
       - name: Record what was posted
         if: steps.b.outputs.built == 'yes' && steps.s.outputs.mode == 'post'
