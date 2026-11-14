@@ -13,14 +13,18 @@
     "title_contains": "Leonardo",
     "go_live": "2026-11-14T00:00:00Z",
     "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
-    "done": false
+    "done": true,
+    "video_id": "Bh4z_IDu52A",
+    "posted_at": "2026-11-14T01:05:54+00:00"
   },
   {
     "channel": "lamplight",
     "title_contains": "Book of Genesis",
     "go_live": "2026-11-14T00:00:00Z",
     "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
-    "done": false
+    "done": true,
+    "video_id": "dPbUTW_jKpo",
+    "posted_at": "2026-11-14T01:05:57+00:00"
   },
   {
     "channel": "lamplight",
