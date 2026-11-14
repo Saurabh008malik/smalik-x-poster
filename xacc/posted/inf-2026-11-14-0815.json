@@ -1,0 +1,14 @@
+{
+ "text": "𝗡𝗘𝗪 𝗠𝗢𝗗𝗘𝗟: Google launches Gemini 4 Hydrogen\n→ $1.50 in / $7.50 out per 1M tokens, 1M context\n→ Google says 2.5x faster than Gemini 3.8 Flash\n→ Free Gemini app users get it via auto model selection\nWhy it matters: a cheaper Gemini 4 for everyone",
+ "image": "inf-2026-11-14-0815.png",
+ "created_at": "2026-11-14T13:34:15+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+  "https://siliconangle.com/2026/11/12/google-releases-gemini-4-hydrogen-a-lower-cost-model-said-to-outscore-argon/"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2121597612696498380",
+ "posted_at": "2026-11-14T13:34:27.310479+00:00",
+ "confirmed_live": true
+}
