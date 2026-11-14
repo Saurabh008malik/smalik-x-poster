@@ -1,5 +1,5 @@
-<!-- generated_at: 2026-11-13T16:43:44.295594+00:00 -->
-# X performance - smalik (last 10 days, 50 posts read)
+<!-- generated_at: 2026-11-14T01:02:10.852445+00:00 -->
+# X performance - smalik (last 10 days, 51 posts read)
 
 Average per post: 46 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
@@ -14,30 +14,30 @@ Average per post: 46 impressions, 0.0 interactions (likes + replies + reposts + 
 - 68 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | text | 𝗣𝗔𝗡𝗧 𝗙𝗜𝗧𝗡𝗘𝗦𝗦 𝗨𝗣𝗗𝗔𝗧𝗘 🇮🇳
 
 ## Weakest posts - do NOT repeat these angles or formats
+- 14 imp | 0 interactions | 𝗗𝗨𝗕𝗘𝗬 𝟭𝟰/𝟵𝟬! 🔥
+- 14 imp | 0 interactions | 𝗝𝗔𝗡𝗚𝗢𝗢 𝟭𝟭𝟭*! 🔥
 - 13 imp | 0 interactions | 𝗠𝗔𝗛𝗠𝗨𝗗 𝟲-𝟵𝟬! 🔥
 - 13 imp | 0 interactions | 𝗞𝗢𝗛𝗟𝗜 𝗦𝗛𝗜𝗡𝗘𝗦! 🇮🇳🔥
-- 9 imp | 0 interactions | 𝗝𝗔𝗖𝗢𝗕𝗦 𝟮𝟬𝟮*! 😳🔥
-- 7 imp | 0 interactions | 𝗦𝗘𝗥𝗜𝗘𝗦 𝗗𝗘𝗖𝗜𝗗𝗘𝗥 𝗦𝗨𝗡𝗗𝗔𝗬! 🇮🇳
 
 ## By format (average impressions / interactions per post)
-- question / poll: 34 posts, 54 imp, 0.0 interactions
+- question / poll: 35 posts, 54 imp, 0.0 interactions
 - other news / text: 16 posts, 28 imp, 0.0 interactions
-- text only: 8 posts, 60 imp, 0.0 interactions
-- with card image: 42 posts, 43 imp, 0.0 interactions
+- text only: 8 posts, 61 imp, 0.0 interactions
+- with card image: 43 posts, 43 imp, 0.0 interactions
 
 ## By hour (account local time, UTC+5h)
 - 15:00: 1 posts, 226 imp, 0.0 interactions
 - 17:00: 1 posts, 102 imp, 0.0 interactions
-- 20:00: 3 posts, 63 imp, 0.0 interactions
+- 20:00: 3 posts, 64 imp, 0.0 interactions
 - 22:00: 3 posts, 61 imp, 0.0 interactions
-- 16:00: 3 posts, 59 imp, 0.0 interactions
-- 04:00: 3 posts, 57 imp, 0.0 interactions
+- 16:00: 3 posts, 60 imp, 0.0 interactions
+- 04:00: 4 posts, 49 imp, 0.0 interactions
 - 13:00: 3 posts, 48 imp, 0.0 interactions
 - 19:00: 3 posts, 47 imp, 0.0 interactions
 - 18:00: 2 posts, 44 imp, 0.0 interactions
 - 14:00: 12 posts, 36 imp, 0.1 interactions
-- 02:00: 4 posts, 31 imp, 0.0 interactions
-- 23:00: 5 posts, 28 imp, 0.0 interactions
-- 01:00: 7 posts, 24 imp, 0.0 interactions
+- 02:00: 4 posts, 34 imp, 0.0 interactions
+- 23:00: 5 posts, 29 imp, 0.0 interactions
+- 01:00: 7 posts, 25 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
