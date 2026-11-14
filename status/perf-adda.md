@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-13)
+# What performed best on this page (last 14 days, updated 2026-11-14)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
