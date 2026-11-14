@@ -169,6 +169,16 @@ def whoami(acct):
     print(r.status_code, r.json().get("data", {}).get("username") if r.ok else r.text[:300])
 
 
+def one_cashtag(text):
+    """X rejects posts with more than one $CASHTAG (403). Keep the first, drop the $ from the rest."""
+    import re
+    seen = []
+    def fix(m):
+        seen.append(1)
+        return m.group(0) if len(seen) == 1 else m.group(0)[1:]
+    return re.sub(r"(?<![\w$])\$[A-Za-z][A-Za-z.]{0,5}\b", fix, text)
+
+
 # ---------- posting ----------
 def post(acct, date, key):
     import requests
@@ -180,6 +190,7 @@ def post(acct, date, key):
         raise SystemExit(f"Too old to post ({age:.0f} min) - never post stale news")
     if "http://" in d["text"] or "https://" in d["text"] or "www." in d["text"]:
         raise SystemExit("Post contains a link - links are not allowed (cost and reach)")
+    d["text"] = one_cashtag(d["text"])
     payload = {"text": d["text"]}
     img = Q / d["image"] if d.get("image") else None
     a = auth(acct)

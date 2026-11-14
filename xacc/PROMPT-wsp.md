@@ -28,7 +28,7 @@ If `status/perf-x-wsp.md` exists, read it before writing. It ranks this account'
 ## Rule 4: write the post (English)
 - Max 260 characters as X counts them (Unicode bold letters and emoji count as 2).
 - Line 1: a hook in Unicode bold sans capitals, e.g. 𝗕𝗥𝗘𝗔𝗞𝗜𝗡𝗚:, 𝗝𝗨𝗦𝗧 𝗜𝗡:, 𝗘𝗔𝗥𝗡𝗜𝗡𝗚𝗦:, 𝗧𝗛𝗘 𝗙𝗘𝗗:, 𝗠𝗔𝗥𝗞𝗘𝗧 𝗖𝗟𝗢𝗦𝗘:, followed by the headline in plain words.
-- Then 1–3 short lines with the key numbers; use cashtags for stocks ($NVDA, $AAPL), max 3 cashtags.
+- Then 1–3 short lines with the key numbers; use a cashtag for ONE stock only (e.g. $NVDA). X rejects posts with 2 or more cashtags, so write other tickers as plain text (AAPL, TSLA).
 - Vary the format between posts: breaking headline, earnings scorecard, "stocks hitting new highs/lows" list, data release, chart-style comparison, morning "what to watch today", closing bell wrap, a question to followers (max 1 in 6 posts).
 - At most 1 hashtag (often none). **No links. No @mentions.** Never ask for likes, reposts or follows.
 - Original wording; never copy another account's post.
