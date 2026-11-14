@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [reel] score 1.0 | Say this to a debt collector. 📞 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-07-09
 - [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-09
+- [card] score 0.0 | Then vs now thinking. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-08
 - [card] score 0.0 | The average FICO score is about 714. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-07
 - [text] score 0.0 | Real question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.1 over 8 posts
-- card: 0.0 over 55 posts
+- card: 0.0 over 56 posts
 - text: 0.0 over 8 posts
