@@ -690,7 +690,11 @@
     ],
     "hook": "Learning to write like The Spectator",
     "source": "franklin ch3",
-    "done": false
+    "done": true,
+    "video_id": "W6swr2-ub_w",
+    "posted_at": "2026-11-14T01:51:15+00:00",
+    "long_url": "https://youtu.be/IRC1F38kdto",
+    "comment_done": true
   },
   {
     "id": "sleepy-04",
