@@ -132,6 +132,28 @@ def delete(target):
     sys.exit(0 if r.ok else 1)
 
 
+def ig_images_blocked():
+    """Instagram answers 'Action is blocked' (2207051) when it flags image posting as spam.
+    Hammering a blocked action risks the account, so after such a failure pause image posts and probe once every 12h."""
+    now = dt.datetime.now(dt.timezone.utc)
+    recs = []
+    for f in POSTED.glob("*.json"):
+        try:
+            recs.append(json.loads(f.read_text()))
+        except Exception:  # noqa: BLE001
+            continue
+    recs.sort(key=lambda d: d.get("done_at", ""), reverse=True)
+    for d in recs[:30]:
+        if d.get("video") or not d.get("image"):
+            continue
+        err = d.get("instagram_error") or ""
+        if "2207051" in err and not err.startswith("paused"):
+            return (now - dt.datetime.fromisoformat(d["done_at"])).total_seconds() < 12 * 3600
+        if d.get("instagram_url"):
+            return False
+    return False
+
+
 def main():
     if not os.environ.get("MONEY_FB_PAGE_ID") or not os.environ.get("MONEY_FB_PAGE_TOKEN"):
         print("Money page secrets not set yet - nothing to do.")
@@ -161,12 +183,16 @@ def main():
             dest = POSTED
             print("OK", f.name, extra["facebook_url"])
             if (data.get("image") or data.get("video")) and (data.get("instagram") or {}).get("skip") is not True:
-                try:
-                    extra["instagram_url"] = post_instagram(data, QUEUE, page_id, token)
-                    print("OK Instagram", extra["instagram_url"])
-                except Exception as e:  # noqa: BLE001  (never blocks Facebook)
-                    extra["instagram_error"] = str(e)
-                    print("FAIL Instagram", e)
+                if not data.get("video") and ig_images_blocked():
+                    extra["instagram_error"] = "paused: Instagram blocked image posts (2207051); one probe every 12h, reels still post"
+                    print("SKIP Instagram image (circuit breaker)")
+                else:
+                  try:
+                      extra["instagram_url"] = post_instagram(data, QUEUE, page_id, token)
+                      print("OK Instagram", extra["instagram_url"])
+                  except Exception as e:  # noqa: BLE001  (never blocks Facebook)
+                      extra["instagram_error"] = str(e)
+                      print("FAIL Instagram", e)
         except Exception as e:  # noqa: BLE001
             extra["error"] = str(e)
             dest = FAILED
