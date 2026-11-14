@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-13)
+# What performed best on this page (last 14 days, updated 2026-11-14)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [reel] score 1.0 | Say this to a debt collector. 📞 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-07-09
 - [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-09
+- [card] score 0.0 | The average FICO score is about 714. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-07
 - [text] score 0.0 | Real question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-05
-- [card] score 0.0 | Quick habit worth a minute today: 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.1 over 8 posts
+- card: 0.0 over 55 posts
 - text: 0.0 over 8 posts
-- card: 0.0 over 54 posts
