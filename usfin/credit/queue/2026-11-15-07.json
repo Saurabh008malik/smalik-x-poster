@@ -1,0 +1,20 @@
+{
+  "caption": "Card interest rates, per the Fed. 💳\n\nQ3 2026 (preliminary): 21.19% across all accounts at commercial banks, and 22.36% on accounts actually charged interest.\n\nThat's why carrying a balance gets expensive.\n\nDoes your card's APR match that, or is it higher?",
+  "first_comment": "Do you know your card's APR right now? 👇",
+  "sources": [
+    "https://www.federalreserve.gov/releases/g19/current/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Check yours today. Follow @creditscoretruths."
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Fed: card APR is <em>22.36%</em> on accounts paying interest.",
+    "sub": "21.19% across all accounts, Q3 preliminary",
+    "theme": "blue",
+    "source": "Source: Federal Reserve G.19"
+  },
+  "image": "2026-11-15-07.jpg",
+  "publish_at": "2026-11-16T00:00:00+00:00"
+}

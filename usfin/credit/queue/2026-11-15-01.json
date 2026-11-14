@@ -1,0 +1,20 @@
+{
+  "caption": "Revolving credit jumped in September. 📈\n\nThe Fed's latest report shows revolving credit (mostly credit cards) rose at a 14.5% annualized pace, preliminary data.\n\nOne month can swing a lot, but it's worth watching.\n\nAre you using your cards more, less, or about the same lately?",
+  "first_comment": "Be honest: are your card balances up or down vs. last year? 👇",
+  "sources": [
+    "https://www.federalreserve.gov/releases/g19/current/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Up, down or flat? Tell us below. Follow @creditscoretruths for daily credit truths."
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Revolving credit rose <em>14.5%</em> in September.",
+    "sub": "Annualized pace, preliminary Fed data",
+    "theme": "blue",
+    "source": "Source: Federal Reserve G.19"
+  },
+  "image": "2026-11-15-01.jpg",
+  "publish_at": "2026-11-15T12:00:00+00:00"
+}

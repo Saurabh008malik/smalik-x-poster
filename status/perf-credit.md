@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 1.0 | Say this to a debt collector. 📞 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-07-09
-- [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-09
-- [card] score 0.0 | Then vs now thinking. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-08
-- [card] score 0.0 | The average FICO score is about 714. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-07
-- [text] score 0.0 | Real question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-13-06
+- [reel] score 0.0 | Offered a store card at checkout? 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-05
+- [card] score 0.0 | Free, quick, and most people skip it. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-04
+- [card] score 0.0 | Everyone starts at zero. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-02
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.1 over 8 posts
-- card: 0.0 over 56 posts
+- reel: 0.0 over 9 posts
+- card: 0.0 over 61 posts
 - text: 0.0 over 8 posts
