@@ -1,0 +1,14 @@
+{
+ "text": "𝗔𝗜 𝗧𝗢𝗢𝗟: Claude Sheets is now in beta\n→ Builds spreadsheets from plain-English prompts: tabs, formulas, dropdowns\n→ Exports to XLSX or CSV\n→ Paid plans; web, desktop, mobile\nWhy it matters: Anthropic's push into office work",
+ "image": "inf-2026-11-15-1130.png",
+ "created_at": "2026-11-15T17:04:18+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://www.itechpost.com/articles/237776/20261111/claude-gets-new-workplace-tools-anthropic-takes-aim-microsoft-office-google-workspace.htm",
+  "https://www.reworked.co/digital-workplace/anthropic-turns-claude-into-an-ai-office-suite/"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2122012860167385304",
+ "posted_at": "2026-11-15T17:04:29.990730+00:00",
+ "confirmed_live": true
+}
