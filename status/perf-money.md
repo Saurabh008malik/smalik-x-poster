@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Say this to a debt collector. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-09
-- [card] score 0.0 | Cash vs finance. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-08
-- [card] score 0.0 | Jobless claims ticked up to 200,000. 💼 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-07
-- [text] score 0.0 | Confession time. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-14-05
+- [reel] score 0.0 | The math nobody says out loud. 🤯 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-05
+- [card] score 0.0 | A simple 2-minute budget check. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-04
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-03
+- [card] score 0.0 | Unpopular opinion: 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Gas is $4.18 a gallon. ⛽ | 2026-11-01-01
-- [card] score 0.0 | Can someone explain why every checkout now asks for a tip before I even get my food? 😅 | 2026-11-01-02
-- [card] score 0.0 | Nobody gets wealthy overnight. 💡 | 2026-11-01-03
+- [text] score 0.0 | Honest question: what's one bill that surprised you the most this year? 👀 | 2026-11-01-06
+- [card] score 0.0 | Hiring has slowed. 📉 | 2026-11-01-07
+- [card] score 0.0 | $5 a day vs $0 a day. 😬 | 2026-11-01-08
 
 ## Average score by format
 
