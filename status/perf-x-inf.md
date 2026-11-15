@@ -1,11 +1,11 @@
-<!-- generated_at: 2026-11-15T00:15:28.529503+00:00 -->
+<!-- generated_at: 2026-11-15T07:10:04.902294+00:00 -->
 # X performance - inf (last 10 days, 5 posts read)
 
 Average per post: 5 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗧𝗛𝗜𝗦 𝗪𝗘𝗘𝗞 𝗜𝗡 𝗔𝗜
-- 6 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗘𝗪 𝗠𝗢𝗗𝗘𝗟: Google launches Gemini 4 Hydrogen
+- 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗘𝗪 𝗠𝗢𝗗𝗘𝗟: Google launches Gemini 4 Hydrogen
 - 6 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗝𝗨𝗦𝗧 𝗜𝗡: OpenAI details its "Defense Factory" for cyber defence
 - 4 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | text | 𝗬𝗢𝗨𝗥 𝗧𝗔𝗞𝗘
 - 3 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO roadshow is under way
@@ -18,7 +18,7 @@ Average per post: 5 impressions, 0.0 interactions (likes + replies + reposts + q
 
 ## By hour (account local time, UTC-5h)
 - 11:00: 1 posts, 7 imp, 0.0 interactions
-- 08:00: 1 posts, 6 imp, 0.0 interactions
+- 08:00: 1 posts, 7 imp, 0.0 interactions
 - 12:00: 1 posts, 6 imp, 0.0 interactions
 - 09:00: 1 posts, 4 imp, 0.0 interactions
 - 17:00: 1 posts, 3 imp, 0.0 interactions
