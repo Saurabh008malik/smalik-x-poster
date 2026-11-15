@@ -1,0 +1,20 @@
+{
+  "caption": "Holiday BNPL is climbing. 🎁\n\nIn a NerdWallet/Harris Poll survey, 38% of holiday shoppers expect to use buy now, pay later.\n\nOf those, 38% expect they won't make every payment in full and on time.\n\nIf you use BNPL, put every due date in your calendar.\n\nPlanning to use it this season?",
+  "first_comment": "Will you use BNPL this holiday season? Yes or no 👇",
+  "sources": [
+    "https://247wallst.com/investing/2026/11/04/americans-are-turning-to-buy-now-pay-later-for-the-holidays-and-trouble-paying-is-already-brewing/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Yes or no? Follow @creditscoretruths for more."
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>38%</em> of holiday shoppers plan to use BNPL.",
+    "sub": "38% of those expect to miss a payment.",
+    "theme": "blue",
+    "source": "Source: NerdWallet / Harris Poll"
+  },
+  "image": "2026-11-16-07.jpg",
+  "publish_at": "2026-11-17T00:00:00+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "caption": "Quick scam-buster. 🧠\n\nA \"government\" caller demanding gift cards or crypto? It's a scam.\n\nHang up. Report it to the FTC.\n\nHave you gotten one of these calls?",
+  "first_comment": "Ever gotten one of these calls? 👇",
+  "sources": [
+    "https://consumer.ftc.gov/consumer-alerts/2026/11/how-spot-fake-ftc-websites-and-ftc-impersonators",
+    "pattern: if X happens, say this"
+  ],
+  "instagram": {
+    "first_comment": "Send this to a family member. Follow @creditscoretruths."
+  },
+  "card": {
+    "kicker": "CARD TRAP",
+    "headline": "\"Government\" wants gift cards? <em>Scam.</em>",
+    "sub": "Hang up and report it to the FTC.",
+    "theme": "red",
+    "source": "Source: FTC"
+  },
+  "video": "2026-11-16-09.mp4",
+  "publish_at": "2026-11-16T17:00:00+00:00"
+}

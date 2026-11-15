@@ -1,0 +1,20 @@
+{
+  "caption": "Can someone explain this? 😤\n\nA hard inquiry sits on your report for 2 years.\nBut for FICO scores it generally only counts for the first 12 months.\n\nSo why does it feel like it follows you forever?\n\nDid an inquiry ever make you hesitate to apply for something?",
+  "first_comment": "What's the one application you put off because of an inquiry? 👇",
+  "sources": [
+    "https://www.myfico.com/credit-education/credit-reports/credit-inquiries",
+    "pattern: relatable frustration"
+  ],
+  "instagram": {
+    "first_comment": "Tell us your inquiry story. @creditscoretruths reads every comment."
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Why does one <em>inquiry</em> stay on my report for 2 years?",
+    "sub": "It generally only counts toward FICO scores for 12 months.",
+    "theme": "red",
+    "source": "Source: myFICO"
+  },
+  "image": "2026-11-16-02.jpg",
+  "publish_at": "2026-11-16T14:00:00+00:00"
+}

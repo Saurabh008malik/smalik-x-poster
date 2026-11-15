@@ -1,0 +1,20 @@
+{
+  "caption": "Credit freezes are free. ✅\n\nBy federal law, freezing your file at Equifax, Experian and TransUnion costs $0 and doesn't affect your score.\n\nFreeze all three, and thaw briefly when you apply for credit.\n\nHave you frozen yours yet?",
+  "first_comment": "Frozen or not yet? Be honest 👇",
+  "sources": [
+    "https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts",
+    "pattern: simple steps"
+  ],
+  "instagram": {
+    "first_comment": "Save this for later. Follow @creditscoretruths for more habits like this."
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Freeze all <em>3 bureaus</em>. It's free.",
+    "sub": "Thaw it briefly when you apply for credit.",
+    "theme": "green",
+    "source": "Source: FTC"
+  },
+  "image": "2026-11-16-04.jpg",
+  "publish_at": "2026-11-16T18:00:00+00:00"
+}

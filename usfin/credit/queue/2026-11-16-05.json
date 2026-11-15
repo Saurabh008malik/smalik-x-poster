@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\n\"A credit freeze lowers your credit score.\"\n\nTell us what you think before you read the answer.\n\nFalse. A freeze doesn't touch your score. It just blocks new lenders from opening accounts in your name.\n\nDid you get this one right?",
+  "first_comment": "True or False? Vote below 👇",
+  "sources": [
+    "https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts",
+    "pattern: true or false"
+  ],
+  "instagram": {
+    "first_comment": "Vote true or false. @creditscoretruths will share the answer in the post."
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "A credit freeze <em>lowers</em> your score. True or false?",
+    "sub": "",
+    "theme": "blue"
+  },
+  "image": "2026-11-16-05.jpg",
+  "publish_at": "2026-11-16T20:00:00+00:00"
+}
