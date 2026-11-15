@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗩𝗶𝗱𝗲𝗼 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗰𝗵𝗲𝗲𝘇𝗲𝗻 𝘇𝗮𝗮𝗿𝗼𝗼𝗿 𝗹𝗶𝗸𝗵𝗼 📝 | 2026-11-01-01
-- [reel] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗮𝗯 𝘃𝗶𝗱𝗲𝗼 𝗸𝗲 𝟯 𝗰𝘂𝘁 𝘁𝗲𝘀𝘁 𝗸𝗮𝗿𝗲𝗴𝗮 🎬 | 2026-11-01-02
 - [card] score 0.0 | 𝗧𝗶𝘁𝗹𝗲 𝗹𝗶𝗸𝗵𝗻𝗲 𝗸𝗲 𝟰 𝗮𝗮𝘀𝗮𝗮𝗻 𝗿𝘂𝗹𝗲𝘀 ✍️ | 2026-11-02-01
+- [card] score 0.0 | 𝗔𝗮𝗽𝗸𝗮 𝗽𝗮𝘀𝗮𝗻𝗱𝗶𝗱𝗮 𝘃𝗶𝗱𝗲𝗼 𝘁𝘆𝗽𝗲 𝗸𝗮𝘂𝗻𝘀𝗮 𝗵𝗮𝗶? 🤔 | 2026-11-02-03
+- [card] score 0.0 | 𝗣𝗲𝗵𝗹𝗲 𝟯 𝘀𝗲𝗰𝗼𝗻𝗱 𝗺𝗲𝗶𝗻 𝗱𝗲𝗸𝗵𝗻𝗲 𝘄𝗮𝗹𝗲 𝗸𝗼 𝗿𝗼𝗸𝗼 ✋ | 2026-11-03-01
 
 ## Average score by format
 
-- reel: 0.7 over 18 posts
+- reel: 0.6 over 19 posts
 - card: 0.2 over 26 posts
