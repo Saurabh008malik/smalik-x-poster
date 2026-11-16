@@ -259,6 +259,32 @@ def post_instagram(data, base_dir):
     return igpost.post_ig_image(page_id, token, base_dir / fb["image"], caption, comment)
 
 
+def ig_images_blocked():
+    """Instagram answers 'Action is blocked' (2207051) when it flags image posting as spam.
+    Hammering a blocked action risks the account, so after such a failure pause image posts
+    and probe once every 12h. Reels are unaffected."""
+    now = dt.datetime.now(IST)
+    recs = []
+    for f in POSTED.glob("*.json"):
+        try:
+            recs.append(json.loads(f.read_text()))
+        except Exception:  # noqa: BLE001
+            continue
+    recs.sort(key=lambda d: d.get("posted_at", ""), reverse=True)
+    for d in recs[:40]:
+        if ((d.get("facebook") or {}).get("video")):
+            continue
+        err = d.get("instagram_error") or ""
+        if "2207051" in err and not err.startswith("paused"):
+            try:
+                return (now - dt.datetime.fromisoformat(d["posted_at"])).total_seconds() < 12 * 3600
+            except Exception:  # noqa: BLE001
+                return True
+        if d.get("instagram_url"):
+            return False
+    return False
+
+
 def backfill_instagram(names):
     """python poster.py instagram <posted-json-name>...  -> publish already-posted items to Instagram."""
     for name in names:
@@ -305,11 +331,15 @@ def post_item(item, data):
             errors["facebook_error"] = str(e); print("❌ Facebook:", e)
 
     if "facebook" in platforms and (fb_image or fb_video) and data.get("instagram", {}).get("skip") is not True:
-        try:
-            results["instagram_url"] = post_instagram(data, QUEUE)
-            print("✅ Instagram:", results["instagram_url"])
-        except Exception as e:  # Instagram problems never block X/Facebook
-            errors["instagram_error"] = str(e); print("❌ Instagram:", e)
+        if not fb_video and ig_images_blocked():
+            errors["instagram_error"] = "paused: Instagram blocked image posts (2207051); one probe every 12h, reels still post"
+            print("⏸️  Instagram image skipped (circuit breaker)")
+        else:
+            try:
+                results["instagram_url"] = post_instagram(data, QUEUE)
+                print("✅ Instagram:", results["instagram_url"])
+            except Exception as e:  # Instagram problems never block X/Facebook
+                errors["instagram_error"] = str(e); print("❌ Instagram:", e)
 
     stamp = dt.datetime.now(IST).isoformat()
     files = [x_image, fb_image, fb_video, item.with_suffix(".png")]
@@ -317,7 +347,9 @@ def post_item(item, data):
         move(item, files, POSTED, {"posted_at": stamp, **results, **errors, **notes})
     else:
         move(item, files, FAILED, {"failed_at": stamp, **errors, **notes})
-    return bool(errors)
+    # An Instagram-only problem is recorded but does not mark the run failed:
+    # X and Facebook went out, and a red run just mails a false alarm every time.
+    return any(k != "instagram_error" for k in errors)
 
 
 if __name__ == "__main__":
