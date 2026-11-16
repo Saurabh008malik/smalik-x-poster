@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | The math nobody says out loud. 🤯 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-09
-- [card] score 0.0 | Same loan, different year. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-08
-- [card] score 0.0 | Gas dipped below $4 a gallon. ⛽ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-07
-- [text] score 0.0 | Be honest. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-05
+- [reel] score 0.0 | If a collector calls, say this. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-09
+- [card] score 0.0 | Signs you're doing better than you think. 💚 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-04
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-03
+- [card] score 0.0 | Unpopular opinion: 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-02
+- [card] score 0.0 | Household debt just hit $19.1 trillion. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | The Fed hit pause. 🏦 | 2026-11-02-01
-- [card] score 0.0 | Can someone explain why every 'basic' plan has a price that keeps creeping up? 😩 | 2026-11-02-02
-- [card] score 0.0 | Wealth is mostly boring. 💡 | 2026-11-02-03
+- [card] score 0.0 | TRUE or FALSE? 🤔 | 2026-11-02-05
+- [text] score 0.0 | Honest question. 👀 | 2026-11-02-06
+- [card] score 0.0 | People are saving less. 📉 | 2026-11-02-07
 
 ## Average score by format
 
