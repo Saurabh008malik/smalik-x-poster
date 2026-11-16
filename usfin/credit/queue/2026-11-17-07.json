@@ -1,0 +1,20 @@
+{
+  "caption": "Household debt in America just hit $19.1 trillion. 📊\n\nThat's up $334 billion in one quarter, per the New York Fed's latest report, as covered by CNBC.\n\nBig numbers, but your own habits are what you control.\n\nDoes that number surprise you?",
+  "first_comment": "Does $19.1 trillion shock you or not really? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html",
+    "pattern: big dollar number"
+  ],
+  "instagram": {
+    "first_comment": "Shocked or not? Follow @creditscoretruths for daily credit truths 📊"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "US household debt: <em>$19.1 trillion</em>.",
+    "sub": "Up $334 billion in one quarter.",
+    "theme": "blue",
+    "source": "Source: New York Fed via CNBC"
+  },
+  "image": "2026-11-17-07.jpg",
+  "publish_at": "2026-11-18T00:00:00+00:00"
+}

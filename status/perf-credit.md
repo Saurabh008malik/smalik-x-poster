@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-09
-- [card] score 0.0 | What interest really costs. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-08
-- [card] score 0.0 | Card interest rates, per the Fed. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-05
+- [reel] score 0.0 | Quick scam-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-09
+- [card] score 0.0 | Credit freezes are free. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-04
+- [card] score 0.0 | On-time is a quiet superpower. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-02
+- [card] score 0.0 | Scammers love pretending to be the FTC. 🚨 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-01
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.0 over 10 posts
-- card: 0.0 over 70 posts
+- reel: 0.0 over 11 posts
+- card: 0.0 over 74 posts
 - text: 0.0 over 10 posts

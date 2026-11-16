@@ -1,0 +1,20 @@
+{
+  "caption": "The average credit card balance per consumer: $6,678. 💳\n\n178 million Americans now hold a card, per TransUnion data reported by CNBC.\n\nThat's an average, so yours may be way higher or lower, and both are normal.\n\nDo you know your own balance right now?",
+  "first_comment": "Be honest: do you know your exact card balance today? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html",
+    "pattern: big dollar number"
+  ],
+  "instagram": {
+    "first_comment": "Know your number? Tell us below. Follow @creditscoretruths for daily credit truths 💳"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "The average card balance is <em>$6,678</em>.",
+    "sub": "Across 178 million cardholders, per TransUnion.",
+    "theme": "blue",
+    "source": "Source: CNBC / TransUnion"
+  },
+  "image": "2026-11-17-01.jpg",
+  "publish_at": "2026-11-17T12:00:00+00:00"
+}
