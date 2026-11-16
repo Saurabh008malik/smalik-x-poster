@@ -6,10 +6,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-09
+- [card] score 0.0 | What interest really costs. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-08
 - [card] score 0.0 | Card interest rates, per the Fed. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-07
 - [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-05
-- [card] score 0.0 | A simple habit: set a calendar reminder for your statement date. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-15-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.0 over 10 posts
-- card: 0.0 over 69 posts
+- card: 0.0 over 70 posts
 - text: 0.0 over 10 posts
