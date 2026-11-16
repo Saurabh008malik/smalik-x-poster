@@ -92,5 +92,39 @@
     ],
     "scheduled_public_at": "2026-11-15 06:00 IST (Sat 14 Nov 7:30 PM Eastern)",
     "note": "set to Scheduled in Studio on 13 Nov so the two long mixes are not published the same day"
+  },
+  {
+    "date": "2026-11-17",
+    "title": "Leaves Turning, Nothing to Prove | Autumn Lofi Jazz 🍂",
+    "url": "https://youtu.be/pHaQTOnswbQ",
+    "minutes": 33.6,
+    "tracks": [
+      "Golden Hour Nylon",
+      "Clarinet by the Fence",
+      "Harvest Vibraphone",
+      "Porch Sax at Dusk",
+      "Rustling Cello Leaves",
+      "October Flute Evening",
+      "Foggy Morning Cello Keys",
+      "Bonfire Evening Picking",
+      "Bookstore Afternoon Trumpet",
+      "First Cold Breeze Harp",
+      "Sunset Commute Delay Guitar",
+      "Falling Leaves Swing"
+    ],
+    "track_urls": [
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/d1e738b6-2cf5-41d2-b803-1693dc1e25a3.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/f7f8f175-02cb-4ede-9fdb-7e6f9bdfd410.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/aa51d439-5e88-48ea-ba59-823ad8c40333.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/33cc5378-d86c-4b0b-b6bc-0a8ec0fa2c3b.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/935db282-8010-4685-81fc-908d64bbe5a4.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/c706a261-1e93-4c94-800c-e7813f7d51dc.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/c89540a8-ab99-4c71-bc3e-832eb2fdb92c.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/9c28ac1f-b1fd-4719-b385-af31a8818447.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/fea8d64d-fcf3-4b2d-bf7c-21bb87b5991a.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/0fc87a67-f7a5-415c-8603-540498257cbb.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/feded2da-cb63-4dbf-9eab-56ffc12567b2.wav",
+      "https://ai-music-tracks.s3.us-east-1.amazonaws.com/84c347e0-cf9a-411f-9a5a-0c7b8d0bbcd6/6c6a98fa-2375-4aa3-8650-15ad271dd879.wav"
+    ]
   }
 ]
