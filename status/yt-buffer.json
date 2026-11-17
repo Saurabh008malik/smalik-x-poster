@@ -1,0 +1,17 @@
+{
+  "rule": "Always keep 14 days of content ready ahead for The Sleepy Biographer, Lamplight Scripture and Warm Mug Radio (long videos and Shorts). Skip anything that needs vidIQ credits. Schedule on YouTube only when Saurabh's laptop is on; until then keep finished files in the cloud (GitHub backup branches + Google Drive folder 'YouTube 2-week buffer'). Policy first: max 2 long videos a week per long-form channel, 1 Short a day per channel, never double up a missed slot.",
+  "slots": {
+    "sleepy": "Wed and Sat 05:30 IST (Tue and Fri 7 PM New York)",
+    "lamplight": "Wed and Sat 05:30 IST (Tue and Fri 7 PM New York)",
+    "warmmug": "fully cloud: mixes per warmmug/plan.json, Shorts by warmmug-shorts.yml from warmmug/inbox.json"
+  },
+  "status_values": "made-in-progress -> ready-cloud -> scheduled -> public; missed = slot passed with nothing ready (do not reuse)",
+  "long": [
+    {"channel": "sleepy", "slot": "2026-11-11", "title": "Benjamin Franklin (sleep biography)", "status": "public", "video_id": "IRC1F38kdto"},
+    {"channel": "sleepy", "slot": "2026-11-14", "title": "Leonardo da Vinci (sleep biography)", "status": "scheduled"},
+    {"channel": "lamplight", "slot": "2026-11-14", "title": "Book of Genesis: Creation to Abraham", "status": "public", "video_id": "dPbUTW_jKpo"},
+    {"channel": "lamplight", "slot": "2026-11-18", "title": "The Story of Joseph", "status": "scheduled", "video_id": "Ct3CDo4hROU"},
+    {"channel": "sleepy", "slot": "2026-11-18", "title": null, "status": "missed", "note": "weekly production task failed 14 Nov (usage limit); not doubled up later"}
+  ],
+  "updated": "2026-11-17"
+}
