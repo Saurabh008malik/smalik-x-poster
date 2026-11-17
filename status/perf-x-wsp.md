@@ -1,5 +1,5 @@
-<!-- generated_at: 2026-11-16T18:53:59.371363+00:00 -->
-# X performance - wsp (last 10 days, 10 posts read)
+<!-- generated_at: 2026-11-17T03:09:33.973282+00:00 -->
+# X performance - wsp (last 10 days, 11 posts read)
 
 Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
@@ -9,26 +9,26 @@ Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + q
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗: Retail earnings take over Wall Street.
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗠𝗔𝗥𝗞𝗘𝗧 𝗖𝗟𝗢𝗦𝗘: Stocks end mixed Friday, but all three indexes finish th...
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗗𝗔𝗧𝗔: October producer prices rose 0.3%, below the 0.4% forecast.
-- 1 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗝𝗨𝗦𝗧 𝗜𝗡: Bitcoin slid below $64,000 this weekend, its lowest in months...
-- 1 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗: Anthropic's IPO and the Fed minutes headline a busy week.
-- 0 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: The AI-led selloff deepens on Wall Street.
+- 2 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: The AI-led selloff deepens on Wall Street.
+- 2 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: Chip stocks lead a Monday selloff on Wall Street.
+- 2 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: Stock futures slide as AI shares fall ahead of Nvidia earning...
 
 ## Weakest posts - do NOT repeat these angles or formats
+- 2 imp | 0 interactions | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: Stock futures slide as AI shares fall ahead of Nvidia earning...
+- 2 imp | 0 interactions | 𝗝𝗨𝗦𝗧 𝗜𝗡: Bitcoin slid below $64,000 this weekend, its lowest in months...
+- 1 imp | 0 interactions | 𝗠𝗔𝗥𝗞𝗘𝗧 𝗖𝗟𝗢𝗦𝗘: Stocks fall for a third straight day as chips lead the s...
 - 1 imp | 0 interactions | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗: Anthropic's IPO and the Fed minutes headline a busy week.
-- 0 imp | 0 interactions | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: The AI-led selloff deepens on Wall Street.
-- 0 imp | 0 interactions | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: Chip stocks lead a Monday selloff on Wall Street.
-- 0 imp | 0 interactions | 𝗠𝗔𝗥𝗞𝗘𝗧𝗦: Stock futures slide as AI shares fall ahead of Nvidia earning...
 
 ## By format (average impressions / interactions per post)
-- other news / text: 9 posts, 3 imp, 0.0 interactions
-- weekly recap: 1 posts, 1 imp, 0.0 interactions
-- with card image: 10 posts, 3 imp, 0.0 interactions
+- other news / text: 10 posts, 4 imp, 0.0 interactions
+- weekly recap: 1 posts, 2 imp, 0.0 interactions
+- with card image: 11 posts, 3 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
-- 16:00: 1 posts, 5 imp, 0.0 interactions
 - 07:00: 3 posts, 4 imp, 0.0 interactions
-- 10:00: 4 posts, 3 imp, 0.0 interactions
-- 13:00: 1 posts, 0 imp, 0.0 interactions
-- 08:00: 1 posts, 0 imp, 0.0 interactions
+- 10:00: 4 posts, 4 imp, 0.0 interactions
+- 16:00: 2 posts, 3 imp, 0.0 interactions
+- 13:00: 1 posts, 2 imp, 0.0 interactions
+- 08:00: 1 posts, 2 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
