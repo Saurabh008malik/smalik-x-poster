@@ -14,5 +14,7 @@
     "theme": "green"
   },
   "video": "2026-11-17-09.mp4",
-  "publish_at": "2026-11-17T17:00:00+00:00"
+  "publish_at": "2026-11-17T17:00:00+00:00",
+  "error": "[Errno 2] No such file or directory: '/home/runner/work/smalik-x-poster/smalik-x-poster/usfin/credit/queue/2026-11-17-09.mp4'",
+  "done_at": "2026-11-17T17:09:20.452028+00:00"
 }
