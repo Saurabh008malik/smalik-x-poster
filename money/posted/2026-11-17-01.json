@@ -9,5 +9,8 @@
     "first_comment": "Tell us the bill a 3.6% raise won't cover. Follow @paychecktruths for more real money talk 💬"
   },
   "image": "2026-11-17-01.jpg",
-  "publish_at": "2026-11-17T12:00:00+00:00"
+  "publish_at": "2026-11-17T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122110785051522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"AWR6uFXKzfmfOoolKLdpRC6\"}}",
+  "done_at": "2026-11-17T12:06:21.567263+00:00"
 }
