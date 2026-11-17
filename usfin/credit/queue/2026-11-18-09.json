@@ -1,0 +1,19 @@
+{
+  "caption": "Quick myth-buster. 🧠\n\nHard inquiries stop counting toward your FICO score after 12 months, even though they stay on your report for 2 years.\n\nDid you know that?",
+  "first_comment": "Did you know this? 👇",
+  "sources": [
+    "https://www.myfico.com/credit-education/credit-reports/credit-inquiries",
+    "pattern: myth-buster reveal"
+  ],
+  "instagram": {
+    "first_comment": "Did you know? Tell us below. @creditscoretruths 🧠"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Hard inquiries stop hurting FICO after <em>12 months</em>.",
+    "sub": "They stay on your report 2 years.",
+    "theme": "green"
+  },
+  "video": "2026-11-18-09.mp4",
+  "publish_at": "2026-11-18T17:00:00+00:00"
+}

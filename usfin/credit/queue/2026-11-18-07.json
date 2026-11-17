@@ -1,0 +1,21 @@
+{
+  "caption": "Mortgage score news 🏠\n\nFannie Mae's lender playbook says lenders may order Classic FICO, VantageScore 4.0, or both when a loan is made.\n\nEquifax and TransUnion have also committed to about $1 VantageScore pricing for mortgage lenders through 2028.\n\nWhat that means for your own loan depends on the lender, so ask them which score they pull.\n\nDid you know there was more than one score?",
+  "first_comment": "Did you know lenders can use different scores? 👇",
+  "sources": [
+    "https://singlefamily.fanniemae.com/media/34286/display",
+    "https://insights.informativeresearch.com/industry-news/credit-bureaus-statements-following-ficos-new-mortgage-pricing-announcement",
+    "pattern: news explainer"
+  ],
+  "instagram": {
+    "first_comment": "Which score did your lender pull? Tell us. @creditscoretruths 🏠"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Mortgage lenders can now choose <em>FICO or VantageScore</em>.",
+    "sub": "Ask your lender which score they pull.",
+    "theme": "blue",
+    "source": "Source: Fannie Mae"
+  },
+  "image": "2026-11-18-07.jpg",
+  "publish_at": "2026-11-19T00:00:00+00:00"
+}

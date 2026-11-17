@@ -1,0 +1,20 @@
+{
+  "caption": "New York Fed numbers are out for Q3 📊\n\n5.0% of all household debt is now in some stage of delinquency. That's up 0.3 points from the quarter before.\n\nCredit card serious-delinquency flow actually eased a bit (6.87% vs 7.05% a year ago), while mortgages and auto ticked up.\n\nWhich bill feels the heaviest in your house right now?",
+  "first_comment": "Be honest: which payment is hardest to keep up with lately? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Which bill is squeezing you most? Tell us below. @creditscoretruths 💬"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>5.0%</em> of household debt is now delinquent.",
+    "sub": "Up 0.3 points from Q2, per the NY Fed.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-18-01.jpg",
+  "publish_at": "2026-11-18T12:00:00+00:00"
+}

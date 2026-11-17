@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [card] score 0.0 | Small habit, big relief. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-04
+- [card] score 0.0 | Progress isn't a number. It's a habit. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-02
+- [card] score 0.0 | The average credit card balance per consumer: $6,678. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-01
 - [reel] score 0.0 | Quick scam-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-09
-- [card] score 0.0 | What a holiday balance really costs. 🎄 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-08
-- [card] score 0.0 | Holiday BNPL is climbing. 🎁 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-05
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
+- card: 0.0 over 81 posts
 - reel: 0.0 over 11 posts
-- card: 0.0 over 77 posts
 - text: 0.0 over 11 posts
