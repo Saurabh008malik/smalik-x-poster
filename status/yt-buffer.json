@@ -44,11 +44,25 @@
   {
    "channel": "sleepy",
    "slot": "2026-11-21",
-   "title": "Queen Victoria (sleep biography)",
-   "status": "made-in-progress",
-   "branch": "work-sleepy-victoria",
-   "started": "2026-11-17"
+   "title": "Queen Victoria: A Long Reign, a Quiet Heart | Biography for Sleep",
+   "status": "ready-cloud",
+   "branch": "backup-sleepy-victoria",
+   "repo_folder": "sleepy/video03",
+   "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-11-21 Queen Victoria: A Long Reign, a Quiet Heart",
+   "drive_folder_id": "1gWAnelsvxDYlsdRWNfUds4vw0tmjyeVD",
+   "duration": "1:58:04",
+   "schedule_utc": "2026-11-21T00:00:00Z",
+   "shorts": [
+    "sleepy-18",
+    "sleepy-19",
+    "sleepy-20",
+    "sleepy-21"
+   ],
+   "finished": "2026-11-17"
   }
  ],
- "updated": "2026-11-17"
+ "updated": "2026-11-17",
+ "notes": [
+  "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere."
+ ]
 }

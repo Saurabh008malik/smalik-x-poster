@@ -1041,5 +1041,101 @@
     "hook": "Who was the Mona Lisa?",
     "source": "leonardo ch9",
     "done": false
+  },
+  {
+    "id": "sleepy-18",
+    "channel": "sleepy",
+    "branch": "feed-shorts-sleepy-4",
+    "file": "shorts/sleepy_18_victoria_c3.mp4",
+    "publish_after": "2026-11-29T01:34:00Z",
+    "link_title_contains": "Queen Victoria",
+    "title": "The Morning Victoria Became Queen, 1837",
+    "description": "Watch the full bedtime biography, told slowly and calmly: {LONG_URL}\n\nSubscribe and turn on the notification bell for new bedtime biographies.\n\nThe Sleepy Biographer tells the true stories of remarkable lives in a calm voice, for sleep. Narration is AI-generated; the story is based on historical sources.\n\n#SleepStory #History #Shorts",
+    "tags": [
+      "sleep story",
+      "bedtime story for adults",
+      "history for sleep",
+      "biography",
+      "calm narration",
+      "the sleepy biographer",
+      "queen victoria",
+      "kensington palace",
+      "british history"
+    ],
+    "hook": "Woken at six to be told she was Queen",
+    "source": "victoria ch3",
+    "done": false
+  },
+  {
+    "id": "sleepy-19",
+    "channel": "sleepy",
+    "branch": "feed-shorts-sleepy-4",
+    "file": "shorts/sleepy_19_victoria_c4.mp4",
+    "publish_after": "2026-11-30T01:31:00Z",
+    "link_title_contains": "Queen Victoria",
+    "title": "The Old Lord Who Fell at Victoria's Coronation",
+    "description": "Watch the full bedtime biography, told slowly and calmly: {LONG_URL}\n\nSubscribe and turn on the notification bell for new bedtime biographies.\n\nThe Sleepy Biographer tells the true stories of remarkable lives in a calm voice, for sleep. Narration is AI-generated; the story is based on historical sources.\n\n#SleepStory #History #Shorts",
+    "tags": [
+      "sleep story",
+      "bedtime story for adults",
+      "history for sleep",
+      "biography",
+      "calm narration",
+      "the sleepy biographer",
+      "queen victoria",
+      "coronation",
+      "westminster abbey"
+    ],
+    "hook": "Lord Rolle falls on the steps",
+    "source": "victoria ch4",
+    "done": false
+  },
+  {
+    "id": "sleepy-20",
+    "channel": "sleepy",
+    "branch": "feed-shorts-sleepy-4",
+    "file": "shorts/sleepy_20_victoria_c5.mp4",
+    "publish_after": "2026-12-01T01:36:00Z",
+    "link_title_contains": "Queen Victoria",
+    "title": "Why Queen Victoria Had to Propose to Albert",
+    "description": "Watch the full bedtime biography, told slowly and calmly: {LONG_URL}\n\nSubscribe and turn on the notification bell for new bedtime biographies.\n\nThe Sleepy Biographer tells the true stories of remarkable lives in a calm voice, for sleep. Narration is AI-generated; the story is based on historical sources.\n\n#SleepStory #History #Shorts",
+    "tags": [
+      "sleep story",
+      "bedtime story for adults",
+      "history for sleep",
+      "biography",
+      "calm narration",
+      "the sleepy biographer",
+      "queen victoria",
+      "prince albert",
+      "royal love story"
+    ],
+    "hook": "She had to ask him",
+    "source": "victoria ch5",
+    "done": false
+  },
+  {
+    "id": "sleepy-21",
+    "channel": "sleepy",
+    "branch": "feed-shorts-sleepy-4",
+    "file": "shorts/sleepy_21_victoria_c11.mp4",
+    "publish_after": "2026-12-02T01:33:00Z",
+    "link_title_contains": "Queen Victoria",
+    "title": "The Queen's Telegram to the Whole Empire, 1897",
+    "description": "Watch the full bedtime biography, told slowly and calmly: {LONG_URL}\n\nSubscribe and turn on the notification bell for new bedtime biographies.\n\nThe Sleepy Biographer tells the true stories of remarkable lives in a calm voice, for sleep. Narration is AI-generated; the story is based on historical sources.\n\n#SleepStory #History #Shorts",
+    "tags": [
+      "sleep story",
+      "bedtime story for adults",
+      "history for sleep",
+      "biography",
+      "calm narration",
+      "the sleepy biographer",
+      "queen victoria",
+      "diamond jubilee",
+      "victorian era"
+    ],
+    "hook": "One button, the whole Empire",
+    "source": "victoria ch11",
+    "done": false
   }
 ]
