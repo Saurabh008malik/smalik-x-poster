@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗣𝗲𝗵𝗹𝗲 𝟯 𝘀𝗲𝗰𝗼𝗻𝗱 𝗺𝗲𝗶𝗻 𝗱𝗲𝗸𝗵𝗻𝗲 𝘄𝗮𝗹𝗲 𝗸𝗼 𝗿𝗼𝗸𝗼 ✋ | 2026-11-03-01
-- [reel] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗔𝗻𝗮𝗹𝘆𝘁𝗶𝗰𝘀 𝗱𝗲𝗸𝗵𝗻𝗲 𝗸𝗮 𝘀𝗮𝗵𝗶 𝘁𝗮𝗿𝗶𝗸𝗮 📊 | 2026-11-03-02
-- [card] score 0.0 | 𝟯 𝘀𝘁𝘂𝗱𝘆 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘃𝗶𝗱𝗲𝗼 𝗶𝗱𝗲𝗲𝘀 📚 | 2026-11-03-03
+- [card] score 0.0 | 𝗠𝗼𝗻𝗲𝘁𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗸𝗲 𝗹𝗶𝘆𝗲 𝘀𝗶𝗿𝗳 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗸𝗮𝗳𝗶 𝗻𝗮𝗵𝗶𝗻 💰 | 2026-11-04-01
+- [reel] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗦𝘁𝘂𝗱𝗶𝗼 𝗮𝗯 𝗸𝗵𝘂𝗱 𝘀𝗮𝗹𝗮𝗵 𝗱𝗲𝗴𝗮 🔥 | 2026-11-04-02
+- [card] score 0.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝗦𝗵𝗼𝗿𝘁𝘀 𝗸𝗲 𝘄𝗮𝘁𝗰𝗵 𝗵𝗼𝘂𝗿𝘀 𝟰,𝟬𝟬𝟬 𝗺𝗲𝗶𝗻 𝗷𝘂𝗱𝘁𝗲 𝗵𝗮𝗶𝗻? ❌ | 2026-11-04-03
 
 ## Average score by format
 
-- reel: 0.7 over 20 posts
+- reel: 0.6 over 21 posts
 - card: 0.2 over 26 posts
