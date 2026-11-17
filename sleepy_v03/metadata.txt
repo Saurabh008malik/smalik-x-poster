@@ -1,0 +1,62 @@
+TITLE
+Queen Victoria: A Long Reign, a Quiet Heart | Biography for Sleep
+
+DESCRIPTION
+Fall asleep to the true story of Queen Victoria, who reigned for more than sixty-three years. In this calm, slow biography we follow her from a quiet nursery at Kensington Palace in 1819, through the morning she became Queen at eighteen, her marriage to Prince Albert, the seaside house at Osborne and the hills of Balmoral, to her long widowhood, her two Jubilees, and a winter evening at Osborne in 1901. About 118 minutes of gentle narration over a quiet fireside sound.
+
+🌙 CHAPTERS
+0:00 1. Welcome, and a Baby at Kensington
+10:18 2. The Kensington Years
+20:18 3. The Morning She Became Queen
+30:05 4. A Crown in the Abbey
+40:05 5. Albert
+50:12 6. A Growing Family, and a House by the Sea
+1:00:32 7. The Highlands and the Crystal Palace
+1:10:01 8. War, Medals, and the Wider World
+1:19:23 9. The Winter of 1861
+1:29:02 10. The Widow of Windsor
+1:38:18 11. Two Jubilees, and the Grandmother of Europe
+1:47:10 12. A Winter Afternoon at Osborne, and Goodnight
+
+📚 SOURCES
+- Queen Victoria's journals and letters (public-domain editions: The Letters of Queen Victoria, ed. Benson and Esher, 1907; The Girlhood of Queen Victoria, ed. Esher, 1912)
+- The Royal Family / Royal Collection Trust: Timeline of Queen Victoria and Prince Albert (royal.uk)
+- Encyclopaedia Britannica: Victoria, queen of the United Kingdom
+- Lytton Strachey, Queen Victoria (1921, public domain)
+- English Heritage: Osborne; Royal Collection Trust: Balmoral and the Great Exhibition
+Short lines from Victoria's own journal are quoted or closely paraphrased from her public-domain writings. Where a story comes only from a later memory (for example "I will be good"), the narration says so.
+
+🎙 Narration: AI-generated voice (Kokoro, open source). Research, script writing, fact-checking and production: The Sleepy Biographer. This video is labelled as altered/synthetic content.
+🖼 Images: public-domain paintings, prints and photographs from Wikimedia Commons (including works from the Royal Collection, The Met Open Access, the British Museum and the Library of Congress). Fireside sound: synthesized by us.
+
+This is a calm history story for rest and sleep. It is not medical advice.
+
+New biography every Tuesday and Friday. Subscribe for more calm history for sleep.
+
+#HistoryForSleep #BiographyForSleep #QueenVictoria
+
+TAGS (comma separated)
+queen victoria, queen victoria biography, history for sleep, biography for sleep, fall asleep to history, sleep story for adults, bedtime history, calm biography, history documentary, relaxing history, victorian era, prince albert, british royal history, kings and queens for sleep, boring history for sleep, sleepy history, osborne house, balmoral
+
+FIRST COMMENT (post from the channel 60 minutes after it goes public; pin it by hand in Studio)
+Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.
+
+PLAYLIST
+Kings & Queens for Sleep
+
+UPLOAD CHECKLIST
+- Visibility: Schedule, Sat 21 Nov 2026 05:30 IST (= Fri 20 Nov 2026 7:00 PM New York = 2026-11-21T00:00:00Z)
+- Altered or synthetic content: Yes
+- Made for kids: No
+- Category: Education; Language: English
+- Thumbnail: thumbnail.jpg
+- Playlist: Kings & Queens for Sleep
+- Chapters: on (first at 0:00)
+- End screen: Subscribe + best video
+- First comment: queued in ytq/comments.json (posts 60 min after public); pin it by hand
+
+SLOT
+sleepy 2026-11-21 05:30 IST (2026-11-21T00:00:00Z)
+
+FILES
+Video backup: branch backup-sleepy-victoria (90 MB parts; join with: cat sleepy_v03_victoria.mp4.part* > video.mp4)
