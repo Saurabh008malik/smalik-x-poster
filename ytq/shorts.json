@@ -113,7 +113,11 @@
     ],
     "hook": "“Where are you?”",
     "source": "lamplight_v1 ch4",
-    "done": false
+    "done": true,
+    "video_id": "ts-YL1CCZR8",
+    "posted_at": "2026-11-17T01:36:03+00:00",
+    "long_url": "https://youtu.be/dPbUTW_jKpo",
+    "comment_done": true
   },
   {
     "id": "lamplight-05",
@@ -779,7 +783,11 @@
     ],
     "hook": "The angel in the corner",
     "source": "leonardo ch3",
-    "done": false
+    "done": true,
+    "video_id": "496gVKlAC6M",
+    "posted_at": "2026-11-17T01:36:07+00:00",
+    "long_url": "https://youtu.be/Bh4z_IDu52A",
+    "comment_done": true
   },
   {
     "id": "sleepy-07",
