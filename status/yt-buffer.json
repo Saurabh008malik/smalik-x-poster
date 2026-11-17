@@ -59,6 +59,14 @@
     "sleepy-21"
    ],
    "finished": "2026-11-17"
+  },
+  {
+   "channel": "lamplight",
+   "slot": "2026-11-21",
+   "title": "Exodus: Moses and the Sea (Bible stories for sleep)",
+   "status": "made-in-progress",
+   "branch": "work-lamplight-exodus",
+   "started": "2026-11-17"
   }
  ],
  "updated": "2026-11-17",
