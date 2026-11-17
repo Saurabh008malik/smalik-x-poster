@@ -63,10 +63,21 @@
   {
    "channel": "lamplight",
    "slot": "2026-11-21",
-   "title": "Exodus: Moses and the Sea (Bible stories for sleep)",
-   "status": "made-in-progress",
-   "branch": "work-lamplight-exodus",
-   "started": "2026-11-17"
+   "title": "Exodus: Moses and the Sea | Fall Asleep to the Whole Story | Bible Stories for Sleep",
+   "status": "ready-cloud",
+   "branch": "backup-lamplight-exodus",
+   "repo_folder": "lamplight/v3",
+   "drive_folder": "YouTube 2-week buffer/Lamplight Scripture/2026-11-21 Exodus: Moses and the Sea",
+   "drive_folder_id": "1avVKB9NOgk4YUF25rFI1ezXJ_o4Pggby",
+   "duration": "2:06:37",
+   "schedule_utc": "2026-11-21T00:00:00Z",
+   "shorts": [
+    "lamplight-25",
+    "lamplight-26",
+    "lamplight-27",
+    "lamplight-28"
+   ],
+   "finished": "2026-11-17"
   }
  ],
  "updated": "2026-11-17",
