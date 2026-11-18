@@ -1,0 +1,20 @@
+{
+  "caption": "Buy now, pay later is everywhere this holiday season. 🛍️\n\nPer Federal Reserve data cited by 24/7 Wall St., slightly more than a quarter of BNPL users paid late.\n11% said a payment triggered an overdraft or insufficient-funds fee.\n\nBefore you split a payment, check when each installment hits your account.\n\nDo you use BNPL?",
+  "first_comment": "Yes, no, or only sometimes? Tell us how you use BNPL 👇",
+  "sources": [
+    "https://247wallst.com/investing/2026/11/04/americans-are-turning-to-buy-now-pay-later-for-the-holidays-and-trouble-paying-is-already-brewing/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Do you use BNPL for holiday gifts? @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "1 in 4 BNPL users <em>paid late</em>, per Fed data.",
+    "sub": "11% said a payment triggered an overdraft or NSF fee.",
+    "theme": "blue",
+    "source": "Source: Federal Reserve, via 24/7 Wall St."
+  },
+  "image": "2026-11-19-07.jpg",
+  "publish_at": "2026-11-20T00:00:00+00:00"
+}

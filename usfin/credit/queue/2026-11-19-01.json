@@ -1,0 +1,20 @@
+{
+  "caption": "New card offers are not cheap right now. 📊\n\nLendingTree's October data: the average APR on new card offers was 23.96%.\nBest-credit tier: about 20.32%. Weakest: about 27.59%.\n\nThat gap is why paying in full matters so much.\n\nWhat's the APR on your main card? 👇",
+  "first_comment": "Be honest: do you know your card's APR without checking? 👇",
+  "sources": [
+    "https://www.lendingtree.com/credit-cards/study/average-credit-card-interest-rate-in-america/",
+    "pattern: big number or dollar amount hook"
+  ],
+  "instagram": {
+    "first_comment": "Do you know your APR by heart? Tell us below. Follow @creditscoretruths for daily credit truths."
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "New card offers average <em>23.96%</em> APR.",
+    "sub": "Best-credit tier: 20.32%. Weakest: 27.59%.",
+    "theme": "blue",
+    "source": "Source: LendingTree (Oct. data)"
+  },
+  "image": "2026-11-19-01.jpg",
+  "publish_at": "2026-11-19T12:00:00+00:00"
+}

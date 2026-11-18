@@ -1,0 +1,18 @@
+{
+  "caption": "Small timing trick. 💡\n\nMany issuers report your balance as of the statement date, not the due date.\nPaying down before the statement closes can show a lower balance.\n\nCheck how your own issuer does it.\n\nDid you know this?",
+  "first_comment": "Did you know the statement date matters? Yes or no 👇",
+  "sources": [
+    "pattern: simple formula / habit"
+  ],
+  "instagram": {
+    "first_comment": "Yes or no: did you know this? @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Pay <em>before</em> the statement date to show a lower balance.",
+    "sub": "Many issuers report the statement balance.",
+    "theme": "green"
+  },
+  "image": "2026-11-19-04.jpg",
+  "publish_at": "2026-11-19T18:00:00+00:00"
+}

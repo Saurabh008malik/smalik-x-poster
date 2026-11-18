@@ -5,20 +5,20 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [card] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-08
-- [card] score 0.0 | Household debt in America just hit $19.1 trillion. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-06
-- [card] score 0.0 | True or false? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-05
-- [card] score 0.0 | Small habit, big relief. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-04
+- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-09
+- [card] score 0.0 | Small habit, big relief ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-04
+- [card] score 0.0 | A score is a snapshot. 📸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-02
+- [card] score 0.0 | New York Fed numbers are out for Q3 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Americans now owe $1.263 trillion on credit cards. 💳 | 2026-11-04-01
-- [card] score 0.0 | Can someone explain why one missed payment can follow you for years… but paying on time for years barely gets  | 2026-11-04-02
-- [card] score 0.0 | A credit score is not your worth. 🟡 | 2026-11-04-03
+- [card] score 0.0 | True or False? 🤔 | 2026-11-04-05
+- [text] score 0.0 | Confession time: what's the one credit-card thing you wish someone had told you at 18? 💬 | 2026-11-04-06
+- [card] score 0.0 | Student loan delinquencies are hitting credit scores hard. 📉 | 2026-11-04-07
 
 ## Average score by format
 
+- reel: 0.0 over 11 posts
 - card: 0.0 over 84 posts
 - text: 0.0 over 12 posts
-- reel: 0.0 over 11 posts
