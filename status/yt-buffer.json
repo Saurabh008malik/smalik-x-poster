@@ -78,9 +78,19 @@
     "lamplight-28"
    ],
    "finished": "2026-11-17"
+  },
+  {
+   "channel": "sleepy",
+   "slot": "2026-11-25",
+   "title": "Abraham Lincoln: From Log Cabin to the White House | Biography for Sleep",
+   "status": "made-in-progress",
+   "branch": "work-sleepy-lincoln",
+   "repo_folder": "sleepy/video04",
+   "schedule_utc": "2026-11-25T00:00:00Z",
+   "started": "2026-11-18"
   }
  ],
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "notes": [
   "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere."
  ]
