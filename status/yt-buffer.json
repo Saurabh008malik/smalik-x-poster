@@ -83,15 +83,28 @@
    "channel": "sleepy",
    "slot": "2026-11-25",
    "title": "Abraham Lincoln: From Log Cabin to the White House | Biography for Sleep",
-   "status": "made-in-progress",
-   "branch": "work-sleepy-lincoln",
+   "status": "ready-cloud",
+   "branch": "backup-sleepy-lincoln",
    "repo_folder": "sleepy/video04",
    "schedule_utc": "2026-11-25T00:00:00Z",
-   "started": "2026-11-18"
+   "started": "2026-11-18",
+   "work_branch": "work-sleepy-lincoln",
+   "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-11-25 Abraham Lincoln: From Log Cabin to the White House",
+   "drive_folder_id": "1UcqKu2e3rMnE_6FQk7eP9ro57B2a8o6W",
+   "duration": "2:33:07",
+   "playlist": "American Lives for Sleep",
+   "shorts": [
+    "sleepy-22",
+    "sleepy-23",
+    "sleepy-24",
+    "sleepy-25"
+   ],
+   "finished": "2026-11-18"
   }
  ],
  "updated": "2026-11-18",
  "notes": [
-  "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere."
+  "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere.",
+  "2026-11-18 run: horizon 2 Dec. Covered: sleepy 21 Nov, 25 Nov (Lincoln, made this run); lamplight 21 Nov. Still open: lamplight 25 Nov, sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first). Shorts: sleepy to 6 Dec, lamplight to 11 Dec (1/day). Warm Mug: plan.json mixes 22 Nov, 27 Nov, 2 Dec each have 12 tagged unused tracks; no untagged unused tracks left, so no mix date after 2 Dec until the monthly free-music task refills on 3 Dec; Short excerpts still plentiful."
  ]
 }

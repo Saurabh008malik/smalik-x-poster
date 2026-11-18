@@ -1,0 +1,75 @@
+import json
+tl = json.load(open('/home/claude/lincoln/timeline.json'))
+durs = {int(k): v for k, v in tl['durs'].items()}
+names = ["Welcome, and a Cabin by a Spring", "Little Pigeon Creek", "Down the Great River", "The Village on the Bluff",
+         "Springfield, and a Room Above the Store", "Mary, and a House on Eighth Street", "Riding the Prairie Circuit", "A House Divided",
+         "The Road to the White House", "A House at War, and a Cottage on a Hill", "A Day of Thanksgiving, and a Few Words at Gettysburg",
+         "With Malice Toward None, and Goodnight"]
+def ts(s):
+    s = int(s); h, m, sec = s // 3600, s % 3600 // 60, s % 60
+    return f"{h}:{m:02d}:{sec:02d}" if h else f"{m}:{sec:02d}"
+lines = []; t = tl['lead']
+for n in range(1, 13):
+    lines.append(f"{'0:00' if n == 1 else ts(t)} {n}. {names[n-1]}"); t += durs[n]
+mins = round(tl['total'] / 60)
+title = "Abraham Lincoln: From Log Cabin to the White House | Biography for Sleep"
+desc = f"""Fall asleep to the true story of Abraham Lincoln, the sixteenth President of the United States. In this calm, slow biography we follow him from a one-room log cabin by a spring in Kentucky in 1809, through his boyhood in the Indiana woods, a flatboat journey down the Mississippi, the little village of New Salem and the prairie law circuit, to Springfield, the White House, the Civil War years, Gettysburg, and the autumn of 1863, when he asked the whole nation to keep a day of Thanksgiving on the last Thursday of November. About {mins} minutes of gentle narration over a quiet fireside sound.
+
+🌙 CHAPTERS
+""" + "\n".join(lines) + """
+
+📚 SOURCES
+- Abraham Lincoln's own writings (public domain): autobiographical sketches of 1859 and 1860, letters, the Peoria speech, the House Divided speech, the Farewell Address, the Gettysburg Address, the First and Second Inaugural Addresses (Collected Works of Abraham Lincoln, ed. Basler)
+- Proclamation of Thanksgiving, 3 October 1863 (National Archives; American Battlefield Trust primary sources)
+- National Park Service: Lincoln Home National Historic Site (Lincoln chronology, Lincoln and Thanksgiving, Lincoln's New Salem), Lincoln Boyhood National Memorial, Abraham Lincoln Birthplace
+- Library of Congress: Abraham Lincoln Papers
+- Encyclopaedia Britannica: Abraham Lincoln
+- Frederick Douglass, Life and Times of Frederick Douglass (1881, public domain)
+Short lines from Lincoln's own public-domain speeches and letters are quoted. Where a story comes only from a later memory (for example the borrowed book, Honest Abe and the change, Ann Rutledge, the turkey reprieve), the narration says so.
+
+🎙 Narration: AI-generated voice (Kokoro, open source). Research, script writing, fact-checking and production: The Sleepy Biographer. This video is labelled as altered/synthetic content.
+🖼 Images: public-domain photographs, paintings and prints from Wikimedia Commons (including works from the Library of Congress, the National Gallery of Art, The Met Open Access, the Smithsonian and the Boston Public Library). Fireside sound: synthesized by us.
+
+This is a calm history story for rest and sleep. It is not medical advice.
+
+New biography every Tuesday and Friday. Subscribe for more calm history for sleep.
+
+#HistoryForSleep #BiographyForSleep #AbrahamLincoln"""
+tags = "abraham lincoln, abraham lincoln biography, lincoln for sleep, history for sleep, biography for sleep, fall asleep to history, sleep story for adults, bedtime history, calm biography, history documentary, relaxing history, american history for sleep, thanksgiving history, gettysburg address, civil war history, us presidents, boring history for sleep, sleepy history"
+comment = "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And whose life should The Sleepy Biographer tell next? Leave a name below."
+txt = f"""TITLE
+{title}
+
+DESCRIPTION
+{desc}
+
+TAGS (comma separated)
+{tags}
+
+FIRST COMMENT (post from the channel 60 minutes after it goes public; pin it by hand in Studio)
+{comment}
+
+PLAYLIST
+American Lives for Sleep
+
+UPLOAD CHECKLIST
+- Visibility: Schedule, Wed 25 Nov 2026 05:30 IST (= Tue 24 Nov 2026 7:00 PM New York = 2026-11-25T00:00:00Z), Thanksgiving week
+- Altered or synthetic content: Yes
+- Made for kids: No
+- Category: Education; Language: English
+- Thumbnail: thumbnail.jpg
+- Playlist: American Lives for Sleep
+- Chapters: on (first at 0:00)
+- End screen: Subscribe + best video
+- First comment: queued in ytq/comments.json (posts 60 min after public); pin it by hand
+
+SLOT
+sleepy 2026-11-25 05:30 IST (2026-11-25T00:00:00Z)
+
+FILES
+Video backup: branch backup-sleepy-lincoln (90 MB parts; join with: cat sleepy_v04_lincoln.mp4.part* > video.mp4)
+Duration: {ts(tl['total'])}
+"""
+open('/home/claude/lincoln/metadata.txt', 'w').write(txt)
+json.dump({'title': title, 'comment': comment}, open('/home/claude/lincoln/meta_short.json', 'w'))
+print(len(desc), 'chars desc;', ts(tl['total']))
