@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [card] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-08
 - [card] score 0.0 | Household debt in America just hit $19.1 trillion. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-07
 - [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-06
 - [card] score 0.0 | True or false? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-05
 - [card] score 0.0 | Small habit, big relief. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-04
-- [card] score 0.0 | Progress isn't a number. It's a habit. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-03
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- card: 0.0 over 83 posts
+- card: 0.0 over 84 posts
 - text: 0.0 over 12 posts
 - reel: 0.0 over 11 posts
