@@ -350,7 +350,11 @@
     ],
     "hook": "The dream that cost him everything",
     "source": "lamplight_v2 ch1",
-    "done": false
+    "done": true,
+    "video_id": "L3hugsDmeGs",
+    "posted_at": "2026-11-18T01:36:51+00:00",
+    "long_url": "https://youtu.be/Ct3CDo4hROU",
+    "comment_done": true
   },
   {
     "id": "lamplight-14",
@@ -810,7 +814,11 @@
     ],
     "hook": "A man overboard in a storm",
     "source": "franklin ch4",
-    "done": false
+    "done": true,
+    "video_id": "N03YKgqzV6M",
+    "posted_at": "2026-11-18T01:36:55+00:00",
+    "long_url": "https://youtu.be/IRC1F38kdto",
+    "comment_done": true
   },
   {
     "id": "sleepy-08",
