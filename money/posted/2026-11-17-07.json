@@ -1,0 +1,16 @@
+{
+  "caption": "Mortgage rates dipped to 7.11%. 🏠\n\nFreddie Mac's weekly survey (Nov 12) shows the 30-year fixed at 7.11%, down from 7.18% the week before.\n\nA year ago it was 6.24%.\n\nIs this rate still keeping you out of the market?",
+  "first_comment": "Are you waiting on rates, or have you given up on buying? 👇",
+  "sources": [
+    "https://www.freddiemac.com/pmms",
+    "pattern: then vs now"
+  ],
+  "instagram": {
+    "first_comment": "Waiting, buying or renting? Tell @paychecktruths 🏠"
+  },
+  "image": "2026-11-17-07.jpg",
+  "publish_at": "2026-11-18T00:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122110932933522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"A4832KqEmKRB0GD9BP4dzdh\"}}",
+  "done_at": "2026-11-18T00:06:56.342327+00:00"
+}
