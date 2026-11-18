@@ -7,9 +7,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [reel] score 1.0 | 𝗔𝗧𝗞𝗜𝗡𝗦𝗢𝗡 𝗞𝗔 𝟰/𝟮𝟴! 🔥🏏 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-15-evening-reel
 - [reel] score 1.0 | 𝟮𝟭 𝗦𝗜𝗫𝗘𝗦, 𝗣𝗘𝗛𝗟𝗘 𝗛𝗔𝗜 𝗥𝗘𝗖𝗢𝗥𝗗! 🔥😳 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-13-evening-reel
-- [card] score 0.0 | 𝗣𝗥𝗔𝗦𝗜𝗗𝗛 𝗬𝗔 𝗚𝗨𝗥𝗡𝗢𝗢𝗥? 🇮🇳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-flash-0730
-- [card] score 0.0 | 𝗡𝗔𝗦𝗘𝗘𝗥 𝗞𝗔 𝗗𝗘𝗕𝗨𝗧 𝗗𝗛𝗔𝗠𝗔𝗞𝗔! 🔥🇦🇫 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-morning
-- [card] score 0.0 | 𝗣𝗔𝗞𝗜𝗦𝗧𝗔𝗡 𝗡𝗘 𝗜𝗡𝗗𝗜𝗔 𝗞𝗢 𝗟𝗔𝗦𝗧 𝗕𝗔𝗟𝗟 𝗣𝗔𝗥 𝗛𝗔𝗔𝗥𝗔𝗬𝗔! 🏏 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-flash-2230
+- [card] score 0.0 | 𝗭𝗜𝗠𝗕𝗔𝗕𝗪𝗘 𝗡𝗘 𝗝𝗘𝗘𝗧𝗜 𝗦𝗘𝗥𝗜𝗘𝗦! 🇿🇼🔥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-morning
+- [card] score 0.0 | 𝗘𝗡𝗚𝗟𝗔𝗡𝗗 𝗡𝗘 𝗝𝗜𝗧𝗜 𝗦𝗘𝗥𝗜𝗘𝗦! 🏆 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-flash-1800
+- [card] score 0.0 | 𝗪𝗲𝗹𝗹𝗶𝗻𝗴𝘁𝗼𝗻 𝗽𝗶𝘁𝗰𝗵 𝗵𝗮𝗿𝗶 𝗵𝗮𝗿𝗶! 🌱🏏 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-flash-1630
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.2 over 11 posts
-- card: 0.0 over 91 posts
+- card: 0.0 over 99 posts
 - text: 0.0 over 8 posts
