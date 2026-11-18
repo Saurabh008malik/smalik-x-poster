@@ -1,15 +1,15 @@
-# What performed best on this page (last 14 days, updated 2026-11-17)
+# What performed best on this page (last 14 days, updated 2026-11-18)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [card] score 0.0 | Household debt in America just hit $19.1 trillion. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-07
+- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-06
+- [card] score 0.0 | True or false? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-05
 - [card] score 0.0 | Small habit, big relief. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-04
 - [card] score 0.0 | Progress isn't a number. It's a habit. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-03
-- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-02
-- [card] score 0.0 | The average credit card balance per consumer: $6,678. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-01
-- [reel] score 0.0 | Quick scam-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-16-09
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- card: 0.0 over 81 posts
+- card: 0.0 over 83 posts
+- text: 0.0 over 12 posts
 - reel: 0.0 over 11 posts
-- text: 0.0 over 11 posts
