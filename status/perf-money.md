@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Checking your own credit score does NOT lower it. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-09
-- [card] score 0.0 | Cash or finance? 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-08
-- [card] score 0.0 | Mortgage rates dipped to 7.11%. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-07
-- [text] score 0.0 | Confession time. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-17-05
+- [reel] score 0.0 | Start your emergency fund with $500, not $10,000. 🛟 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-09
+- [card] score 0.0 | Try this: sort your spending into 3 buckets. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-04
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-03
+- [card] score 0.0 | Can someone explain why saving $200 a month feels harder every year? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-02
+- [card] score 0.0 | ACA health plan prices are going up again for 2027. 🏥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Mortgage rates dipped again. Still not cheap. 🏠 | 2026-11-04-01
-- [card] score 0.0 | Can someone explain why 'sign up in 2 minutes' becomes 'cancel by calling during business hours'? 😤 | 2026-11-04-02
-- [card] score 0.0 | Nobody posts about the boring years. 💡 | 2026-11-04-03
+- [card] score 0.0 | True or False? 🤔 | 2026-11-04-05
+- [text] score 0.0 | Quick poll, no judgment. 👀 | 2026-11-04-06
+- [card] score 0.0 | People are quitting jobs again. 💼 | 2026-11-04-07
 
 ## Average score by format
 
