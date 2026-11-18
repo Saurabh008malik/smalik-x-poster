@@ -1,7 +1,7 @@
-<!-- generated_at: 2026-11-18T07:56:17.372081+00:00 -->
-# X performance - inf (last 10 days, 11 posts read)
+<!-- generated_at: 2026-11-18T17:32:14.518791+00:00 -->
+# X performance - inf (last 10 days, 13 posts read)
 
-Average per post: 8 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 7 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 13 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗘𝗪 𝗠𝗢𝗗𝗘𝗟: Google launches Gemini 4 Hydrogen
@@ -14,22 +14,22 @@ Average per post: 8 impressions, 0.0 interactions (likes + replies + reposts + q
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO roadshow is under way
 
 ## Weakest posts - do NOT repeat these angles or formats
-- 7 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO roadshow is under way
-- 5 imp | 0 interactions | 𝗬𝗢𝗨𝗥 𝗧𝗔𝗞𝗘
 - 4 imp | 0 interactions | 𝗔𝗜 𝗧𝗢𝗢𝗟: Claude Sheets is now in beta
 - 4 imp | 0 interactions | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗 𝗜𝗡 𝗔𝗜
+- 0 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: NVIDIA's Q3 revenue hits $115.8B
+- 0 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO is set to price tonight
 
 ## By format (average impressions / interactions per post)
-- news with → bullets: 10 posts, 8 imp, 0.0 interactions
+- news with → bullets: 12 posts, 7 imp, 0.0 interactions
 - question / poll: 1 posts, 5 imp, 0.0 interactions
-- with card image: 10 posts, 8 imp, 0.0 interactions
+- with card image: 12 posts, 7 imp, 0.0 interactions
 - text only: 1 posts, 5 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
-- 11:00: 2 posts, 9 imp, 0.0 interactions
-- 08:00: 4 posts, 8 imp, 0.0 interactions
 - 12:00: 3 posts, 8 imp, 0.0 interactions
 - 17:00: 1 posts, 7 imp, 0.0 interactions
+- 08:00: 5 posts, 7 imp, 0.0 interactions
+- 11:00: 3 posts, 6 imp, 0.0 interactions
 - 09:00: 1 posts, 5 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
