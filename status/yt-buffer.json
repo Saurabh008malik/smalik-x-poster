@@ -18,7 +18,7 @@
    "channel": "sleepy",
    "slot": "2026-11-14",
    "title": "Leonardo da Vinci (sleep biography)",
-   "status": "scheduled"
+   "status": "public"
   },
   {
    "channel": "lamplight",
@@ -31,22 +31,21 @@
    "channel": "lamplight",
    "slot": "2026-11-18",
    "title": "The Story of Joseph",
-   "status": "scheduled",
+   "status": "public",
    "video_id": "Ct3CDo4hROU"
   },
   {
    "channel": "sleepy",
    "slot": "2026-11-18",
-   "title": null,
-   "status": "missed",
-   "note": "weekly production task failed 14 Nov (usage limit); not doubled up later"
+   "title": "Isaac Newton (sleep biography)",
+   "status": "public",
+   "note": "uploaded and published 18 Nov (replaces the earlier note that the slot was missed)"
   },
   {
    "channel": "sleepy",
    "slot": "2026-11-21",
-   "title": "Queen Victoria: A Long Reign, a Quiet Heart | Biography for Sleep",
+   "title": "Queen Victoria (sleep biography)",
    "status": "scheduled",
-   "branch": "backup-sleepy-victoria",
    "repo_folder": "sleepy/video03",
    "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-11-21 Queen Victoria: A Long Reign, a Quiet Heart",
    "drive_folder_id": "1gWAnelsvxDYlsdRWNfUds4vw0tmjyeVD",
@@ -64,9 +63,8 @@
   {
    "channel": "lamplight",
    "slot": "2026-11-21",
-   "title": "Exodus: Moses and the Sea | Fall Asleep to the Whole Story | Bible Stories for Sleep",
+   "title": "Exodus: Moses and the Sea",
    "status": "scheduled",
-   "branch": "backup-lamplight-exodus",
    "repo_folder": "lamplight/v3",
    "drive_folder": "YouTube 2-week buffer/Lamplight Scripture/2026-11-21 Exodus: Moses and the Sea",
    "drive_folder_id": "1avVKB9NOgk4YUF25rFI1ezXJ_o4Pggby",
@@ -84,12 +82,10 @@
   {
    "channel": "sleepy",
    "slot": "2026-11-25",
-   "title": "Abraham Lincoln: From Log Cabin to the White House | Biography for Sleep",
+   "title": "Abraham Lincoln (sleep biography)",
    "status": "scheduled",
-   "branch": "backup-sleepy-lincoln",
    "repo_folder": "sleepy/video04",
    "schedule_utc": "2026-11-25T00:00:00Z",
-   "started": "2026-11-18",
    "work_branch": "work-sleepy-lincoln",
    "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-11-25 Abraham Lincoln: From Log Cabin to the White House",
    "drive_folder_id": "1UcqKu2e3rMnE_6FQk7eP9ro57B2a8o6W",
