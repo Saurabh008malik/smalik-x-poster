@@ -1,7 +1,7 @@
-<!-- generated_at: 2026-11-18T17:32:14.148863+00:00 -->
-# X performance - wsp (last 10 days, 17 posts read)
+<!-- generated_at: 2026-11-19T01:59:48.131112+00:00 -->
+# X performance - wsp (last 10 days, 19 posts read)
 
-Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 2 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗: Nvidia reports Tuesday, its first results since CEO Jensen...
@@ -20,16 +20,16 @@ Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + q
 - 0 imp | 0 interactions | 𝗧𝗢𝗡𝗜𝗚𝗛𝗧: Nvidia reports after the close, its first results since Jense...
 
 ## By format (average impressions / interactions per post)
-- other news / text: 16 posts, 3 imp, 0.0 interactions
+- other news / text: 18 posts, 2 imp, 0.0 interactions
 - weekly recap: 1 posts, 2 imp, 0.0 interactions
-- with card image: 17 posts, 3 imp, 0.0 interactions
+- with card image: 19 posts, 2 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
 - 10:00: 5 posts, 3 imp, 0.0 interactions
 - 07:00: 5 posts, 3 imp, 0.0 interactions
-- 16:00: 3 posts, 3 imp, 0.0 interactions
+- 16:00: 4 posts, 2 imp, 0.0 interactions
 - 08:00: 1 posts, 2 imp, 0.0 interactions
-- 13:00: 2 posts, 2 imp, 0.0 interactions
+- 13:00: 3 posts, 1 imp, 0.0 interactions
 - 11:00: 1 posts, 0 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
