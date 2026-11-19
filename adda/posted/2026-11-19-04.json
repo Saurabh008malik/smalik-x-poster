@@ -9,5 +9,8 @@
     "first_comment": "Save karo aur kisi naye YouTuber dost ko tag karo 🔖 @real_creator_adda"
   },
   "video": "2026-11-19-04.mp4",
-  "publish_at": "2026-11-19T17:00:00+00:00"
+  "publish_at": "2026-11-19T17:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/reel/1852333356082925",
+  "instagram_error": "Instagram reel upload failed 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+  "done_at": "2026-11-19T17:11:35.132807+00:00"
 }
