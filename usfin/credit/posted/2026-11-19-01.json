@@ -16,5 +16,8 @@
     "source": "Source: LendingTree (Oct. data)"
   },
   "image": "2026-11-19-01.jpg",
-  "publish_at": "2026-11-19T12:00:00+00:00"
+  "publish_at": "2026-11-19T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1489664594219756_122111360871530088",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"AcClVr7cveTZXEm3Z5Wpw2e\"}}",
+  "done_at": "2026-11-19T12:08:21.878460+00:00"
 }
