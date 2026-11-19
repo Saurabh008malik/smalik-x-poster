@@ -2,19 +2,17 @@
 
 Welcome back. Let us go west now, out of the hills, down into a long green valley in the springtime of a very old war.
 
-{{1SA 17:1-3}}
-
 Picture the scene from a little height. A broad valley floor, flat and fertile, with fields and scattered terebinth trees. Down the middle, a dry stream bed, full of smooth stones washed down by the winter rains. On one ridge, the tents and campfires of the Philistines. On the opposite ridge, the tents and campfires of Israel. Between them, the open valley. And every morning, both armies came out, drew up their battle lines, shouted their war cries, and stood looking at each other across the empty ground.
 
 Then, out of the Philistine lines, a single man walked down into the valley.
 
-{{1SA 17:4-7}}
+{{1SA 17:4-5}}
 
 The old text measures his height in cubits and spans. The traditional Hebrew text gives six cubits and a span, which would make him close to three metres tall, nearly ten feet. One of the oldest Greek translations, and one of the Dead Sea Scrolls, give four cubits and a span instead, which is still a very big man, around two metres, more than six and a half feet. Either way, he was enormous to the farmers and shepherds facing him, and he was armoured from head to foot in bronze. Before him walked another man, carrying his great shield.
 
 And he called out across the valley.
 
-{{1SA 17:8-11}}
+{{1SA 17:8-10}}
 
 This was an old custom of the ancient world, a contest of champions. Instead of the whole army fighting, one man from each side would meet in the middle, and the result would stand for all. But no one in Israel's army would go down. Not even Saul, who had once been the tallest man in all of Israel. Every morning and every evening the giant came out, and every morning and every evening the men of Israel looked at their feet. The old writers say this went on for forty days.
 
@@ -26,13 +24,9 @@ So David rose early in the morning, left the sheep with a keeper, loaded up the 
 
 David heard it. And he saw the men around him draw back in fear. He began to ask questions. Who is this man, he asked, that he should defy the armies of the living God? The soldiers told him that the king had promised great riches to whoever killed the giant, and his daughter in marriage, and freedom from taxes for his father's house.
 
-His eldest brother Eliab heard him talking, and was angry, the way older brothers sometimes are. Why have you come down here, he said? And with whom have you left those few sheep in the wilderness? I know your pride, and the naughtiness of your heart. You have come down to watch the battle.
-
-And David answered with words that every youngest brother will recognise. What have I done now?
-
 But his questions reached the king. And Saul sent for him.
 
-{{1SA 17:32-37}}
+{{1SA 17:34-37}}
 
 Saul agreed. Go, he said, and the Lord will be with you. And then the king did what kings do. He put his own armour on the young man. A bronze helmet on his head, a coat of armour on his body, and Saul's sword at his side. David tried to walk, and could not. I cannot go with these, he said. I am not used to them. And he took them off.
 
@@ -40,7 +34,7 @@ Let us watch what he did instead.
 
 {{1SA 17:40}}
 
-Five smooth stones from the brook. That is the detail people have remembered for three thousand years. The stream bed in the valley of Elah is still full of them today, rounded and grey, worn smooth by centuries of winter water. A sling in those days was not a child's toy. It was a long cord, or two cords, with a little pouch in the middle. You put the stone in the pouch, whirled it around your head, and let go of one cord at the right moment. In skilled hands, it could throw a stone hard and far and true. Armies of the ancient world kept companies of slingers, and the book of Judges speaks of men of Benjamin who could sling a stone at a hair and not miss. A shepherd would practise for hours, alone on the hillside, aiming at rocks and branches, so that he could turn a wolf or a lion away from the flock.
+Five smooth stones from the brook. That is the detail people have remembered for three thousand years. The stream bed in the valley of Elah is still full of them today, rounded and grey, worn smooth by centuries of winter water. A sling in those days was not a child's toy. It was a long cord, or two cords, with a little pouch in the middle. You put the stone in the pouch, whirled it around your head, and let go of one cord at the right moment. In skilled hands, it could throw a stone hard and far and true. A shepherd would practise for hours, alone on the hillside, aiming at rocks and branches, so that he could turn a wolf or a lion away from the flock.
 
 The giant came forward, with his shield-bearer in front of him. He looked at David, and saw a youth, ruddy and good-looking, and he despised him. Am I a dog, he said, that you come to me with sticks? And he cursed David by his gods.
 
@@ -50,11 +44,9 @@ David's answer is one of the great speeches of the whole Bible. Here are the old
 
 And then it happened very quickly.
 
-{{1SA 17:48-50}}
+{{1SA 17:49-50}}
 
 One stone. That was all. The other four were still in the shepherd's bag. When the Philistines saw that their champion was dead, they fled, and the men of Israel rose up with a great shout and chased them back down the valley toward the coast.
-
-It is a story that has been told so many times that it has become a saying in many languages. A small person standing against a great one. But in the book of Samuel, the point is not quite that David was small and brave. The point is the thing David said himself, standing in the valley with a sling in his hand. The battle is the Lord's.
 
 When it was over, the old writers say, Saul asked his commander Abner, whose son is this young man? And Abner did not know. So David was brought to the king, still holding the giant's head, and Saul asked him, whose son are you? And David answered, simply, I am the son of your servant Jesse the Bethlehemite.
 
