@@ -1,0 +1,20 @@
+{
+  "caption": "Credit card debt hit a new record. 💳\n\nThe New York Fed says balances reached $1.285 trillion in Q3, up $22 billion from the quarter before.\n\nThat's about $52 billion more than a year ago.\n\nAre your card balances going up, down, or flat this year?",
+  "first_comment": "Be honest: is your card balance higher or lower than last year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Higher, lower, or flat vs last year? Tell us below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Card debt hit a record <em>$1.285 trillion</em>.",
+    "sub": "Up $22 billion in one quarter.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-20-01.jpg",
+  "publish_at": "2026-11-20T12:00:00+00:00"
+}

@@ -5,11 +5,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-09
-- [card] score 0.0 | The math nobody says out loud 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-08
-- [card] score 0.0 | Mortgage score news 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-07
-- [text] score 0.0 | Real question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-06
-- [card] score 0.0 | True or false? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-18-05
+- [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-09
+- [card] score 0.0 | Small timing trick. 💡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-04
+- [card] score 0.0 | Boring wins. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-02
+- [card] score 0.0 | New card offers are not cheap right now. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-01
 
 ## Weakest — avoid repeating these patterns
 
@@ -19,6 +19,6 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Average score by format
 
-- reel: 0.0 over 11 posts
-- card: 0.0 over 84 posts
+- reel: 0.0 over 12 posts
+- card: 0.0 over 88 posts
 - text: 0.0 over 12 posts

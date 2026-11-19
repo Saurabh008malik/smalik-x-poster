@@ -1,0 +1,20 @@
+{
+  "caption": "A new New York Fed study looked at who got credit cards. 📊\n\nThe median score at card issuance dipped from 699 (2017-19) to 688 (2020-22). It has since moved back above pre-pandemic levels.\n\nCards opened since early 2023 have mostly gone to higher-score borrowers.\n\nWere cards easier or harder to get for you lately?",
+  "first_comment": "Easier or harder to get approved lately? 👇",
+  "sources": [
+    "https://libertystreeteconomics.newyorkfed.org/2026/11/a-look-at-the-wider-divide-in-credit-card-delinquency-by-income/",
+    "pattern: then vs now"
+  ],
+  "instagram": {
+    "first_comment": "Easier or harder to get approved lately? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Typical card approval score: <em>699</em> to <em>688</em> to higher.",
+    "sub": "2017-19, 2020-22, then back up.",
+    "theme": "blue",
+    "source": "Source: NY Fed Liberty Street"
+  },
+  "image": "2026-11-20-07.jpg",
+  "publish_at": "2026-11-21T00:00:00+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "caption": "True or false? 🤔\n\nYour credit score is the same at every lender.\n\nThink first, then check the card. 👇\n\nWhat did you answer?",
+  "first_comment": "Answer: FALSE. Lenders use different scoring models and versions. Did you guess right? 👇",
+  "sources": [
+    "pattern: true or false"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Answer: FALSE — different models, different scores. Did you get it? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "You have <em>one</em> credit score. True or false?",
+    "sub": "False. Models and bureaus differ.",
+    "theme": "gold"
+  },
+  "image": "2026-11-20-05.jpg",
+  "publish_at": "2026-11-20T20:00:00+00:00"
+}

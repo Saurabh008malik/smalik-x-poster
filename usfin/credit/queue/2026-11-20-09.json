@@ -1,0 +1,18 @@
+{
+  "caption": "Collector called? Say this. 📞\n\n\"Please send me written validation of this debt.\"\n\nThen stay calm and keep your notes. Check your own situation and rights.\n\nHave you ever dealt with a collector call?",
+  "first_comment": "Ever had a collector call? What did you do? 👇",
+  "sources": [
+    "pattern: if X happens, say this"
+  ],
+  "instagram": {
+    "first_comment": "What would you add? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Collector calls? Say: <em>\"Send it in writing.\"</em>",
+    "sub": "Ask for written validation of the debt.",
+    "theme": "green"
+  },
+  "video": "2026-11-20-09.mp4",
+  "publish_at": "2026-11-20T17:00:00+00:00"
+}
