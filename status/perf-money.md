@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | A 0% APR card is NOT free money. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-09
+- [card] score 0.0 | If your landlord sends a rent increase, say this. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-08
 - [card] score 0.0 | Americans are feeling a bit better, with a catch. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-07
 - [text] score 0.0 | Quick poll, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-05
-- [card] score 0.0 | Set your holiday budget BEFORE you shop. 🎁 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-04
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | $50 vs $500. 😬 | 2026-11-05-08
 - [card] score 0.0 | Gas is finally easing. Still not cheap. ⛽ | 2026-11-06-01
 - [card] score 0.0 | Can someone explain this? 😅 | 2026-11-06-02
+- [card] score 0.0 | Quiet money wins. 💡 | 2026-11-06-03
 
 ## Average score by format
 
