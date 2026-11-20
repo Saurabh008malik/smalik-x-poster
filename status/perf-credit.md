@@ -6,10 +6,10 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-09
+- [card] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-08
 - [card] score 0.0 | Buy now, pay later is everywhere this holiday season. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-07
 - [text] score 0.0 | Confession time. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-05
-- [card] score 0.0 | Small timing trick. 💡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-04
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.0 over 12 posts
-- card: 0.0 over 90 posts
+- card: 0.0 over 91 posts
 - text: 0.0 over 13 posts
