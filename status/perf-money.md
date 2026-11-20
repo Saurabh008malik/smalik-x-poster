@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-19)
+# What performed best on this page (last 14 days, updated 2026-11-20)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | A 0% APR card is NOT free money. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-09
+- [card] score 0.0 | Americans are feeling a bit better, with a catch. 📊 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-07
+- [text] score 0.0 | Quick poll, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-06
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-05
 - [card] score 0.0 | Set your holiday budget BEFORE you shop. 🎁 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-04
-- [card] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-03
-- [card] score 0.0 | Week 2 of biweekly pay. 😳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-02
-- [card] score 0.0 | Gas is at a Thanksgiving record. ⛽ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | True or False? 🤔 | 2026-11-05-05
-- [text] score 0.0 | Honest question. 👀 | 2026-11-05-06
-- [card] score 0.0 | Prices and interest rates are in the news again. 📊 | 2026-11-05-07
+- [card] score 0.0 | $50 vs $500. 😬 | 2026-11-05-08
+- [card] score 0.0 | Gas is finally easing. Still not cheap. ⛽ | 2026-11-06-01
+- [card] score 0.0 | Can someone explain this? 😅 | 2026-11-06-02
 
 ## Average score by format
 
