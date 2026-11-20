@@ -1,0 +1,14 @@
+{
+ "text": "𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Apple is reportedly building an AI agent\n→ Bloomberg spotted a job listing for \"agentic AI\"\n→ It would browse, use apps, run commands, write code\n→ Apple hasn't announced it or given a date\nWhy it matters: a possible next step for Siri",
+ "image": "inf-2026-11-20-0945.png",
+ "created_at": "2026-11-20T15:07:51+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://www.bloomberg.com/news/articles/2026-11-19/apple-is-working-on-ai-agent-for-device-control-apps-browsing-and-coding",
+  "https://macrumors.com/2026/11/19/apple-ai-agent-development"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2123795497668509987",
+ "posted_at": "2026-11-20T15:08:03.860555+00:00",
+ "confirmed_live": true
+}
