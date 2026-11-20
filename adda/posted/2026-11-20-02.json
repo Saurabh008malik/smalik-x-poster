@@ -9,5 +9,8 @@
     "first_comment": "Series follow karo, Day 9 kal aayega 📅 @real_creator_adda"
   },
   "video": "2026-11-20-02.mp4",
-  "publish_at": "2026-11-20T14:00:00+00:00"
+  "publish_at": "2026-11-20T14:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/reel/2287270555387326",
+  "instagram_error": "Instagram reel upload failed 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+  "done_at": "2026-11-20T14:12:01.173071+00:00"
 }
