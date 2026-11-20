@@ -1,0 +1,14 @@
+{
+ "text": "𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Microsoft bets on AI agents at Ignite\n→ Copilot pitched as a work hub; Autopilot agent rolling out to Frontier customers\n→ MAI-Code-2 now GA in GitHub Copilot\n→ Cobalt 200 VMs GA, up to 50% faster",
+ "image": "inf-2026-11-20-0815.png",
+ "created_at": "2026-11-20T14:05:48+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://azure.microsoft.com/en-us/blog/microsoft-ignite-2026-whats-new-in-azure-the-platform-purpose-built-for-ai/",
+  "https://www.constellationr.com/insights/news/ignite-2026-microsoft-makes-case-be-your-work-operating-system-intelligence-layer"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2123779879120539731",
+ "posted_at": "2026-11-20T14:06:00.150846+00:00",
+ "confirmed_live": true
+}
