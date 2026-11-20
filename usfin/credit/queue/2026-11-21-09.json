@@ -1,0 +1,19 @@
+{
+  "caption": "Nobody tells you this. 🧠\n\nYour credit report is free to check, and checking your own doesn't hurt your score.\n\nWhat's stopping you from looking?",
+  "first_comment": "Did you know this before today? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Did you know this? @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT MYTH",
+    "headline": "Nobody tells you: <em>free</em> reports exist, every week.",
+    "sub": "AnnualCreditReport.com, no score impact.",
+    "theme": "green"
+  },
+  "video": "2026-11-21-09.mp4",
+  "publish_at": "2026-11-21T17:00:00+00:00"
+}

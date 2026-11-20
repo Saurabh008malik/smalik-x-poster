@@ -1,0 +1,18 @@
+{
+  "caption": "True or False? 🤔\n\nYou have to be in debt to build credit.\n\nTell us your answer before you read the comments.",
+  "first_comment": "True or false? Vote below and tell us why. 👇",
+  "sources": [
+    "pattern: myth question"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Comment your answer. @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "You must <em>stay in debt</em> to build credit. True or false?",
+    "sub": "Answer in the comments.",
+    "theme": "blue"
+  },
+  "image": "2026-11-21-05.jpg",
+  "publish_at": "2026-11-21T20:00:00+00:00"
+}

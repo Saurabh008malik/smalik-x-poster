@@ -1,0 +1,20 @@
+{
+  "caption": "Student loans are still the shakiest part of household credit. 📚\n\nThe New York Fed says 10.9% of student loan balances are now 90+ days past due, up from 10.6% last quarter. Total student debt: $1.66 trillion.\n\nA late payment can show up on a credit report, so knowing your servicer status matters.\n\nHave you checked your student loan status on your credit report lately?",
+  "first_comment": "Do you know exactly what your loan servicer is reporting? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/medialibrary/interactives/householdcredit/data/pdf/hhdc_2026q3.pdf",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Tell us in the comments: checked your report this year? @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>10.9%</em> of student loan balances are 90+ days late.",
+    "sub": "Total student debt: $1.66 trillion.",
+    "theme": "blue",
+    "source": "Source: New York Fed, Q3 2026"
+  },
+  "image": "2026-11-21-01.jpg",
+  "publish_at": "2026-11-21T12:00:00+00:00"
+}

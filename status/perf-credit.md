@@ -5,20 +5,20 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
+- [reel] score 0.0 | Collector called? Say this. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-20-09
+- [card] score 0.0 | Signs you're doing better with credit than you think: 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-20-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-20-02
+- [card] score 0.0 | Credit card debt hit a new record. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-20-01
 - [reel] score 0.0 | Quick myth-buster. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-09
-- [card] score 0.0 | The math nobody says out loud. 🧮 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-08
-- [card] score 0.0 | Buy now, pay later is everywhere this holiday season. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-07
-- [text] score 0.0 | Confession time. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-19-05
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | The average new credit card offer now sits around 22.46% APR. 💳 | 2026-11-06-01
-- [card] score 0.0 | Can someone explain why a card with a $500 limit can still charge 25%+ interest… and you're told to "just pay  | 2026-11-06-02
-- [card] score 0.0 | Your score is built by habits, not luck. 🟡 | 2026-11-06-03
+- [card] score 0.0 | True or False? 🤔 | 2026-11-06-05
+- [text] score 0.0 | Be honest: what's the one thing about your credit score you still don't understand? 💬 | 2026-11-06-06
+- [card] score 0.0 | The Fed's latest consumer credit report (August data): revolving credit, mostly credit cards, fell at a 4.2% a | 2026-11-06-07
 
 ## Average score by format
 
 - reel: 0.0 over 12 posts
-- card: 0.0 over 91 posts
+- card: 0.0 over 90 posts
 - text: 0.0 over 13 posts

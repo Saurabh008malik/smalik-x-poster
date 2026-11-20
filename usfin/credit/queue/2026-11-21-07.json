@@ -1,0 +1,20 @@
+{
+  "caption": "A lot more people have a collection account than you'd think. 📞\n\nThe New York Fed says 4.9% of consumers had a third-party collection account on their credit report in Q3 2026. That share was steady from the previous quarter.\n\nIf you see one you don't recognize, you can dispute it.\n\nHave you ever had a surprise collection on your report?",
+  "first_comment": "Ever found something on your report you didn't recognize? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/medialibrary/interactives/householdcredit/data/pdf/hhdc_2026q3.pdf",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Share your story below. @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>4.9%</em> of consumers have a collection account.",
+    "sub": "Steady from the previous quarter.",
+    "theme": "blue",
+    "source": "Source: New York Fed, Q3 2026"
+  },
+  "image": "2026-11-21-07.jpg",
+  "publish_at": "2026-11-22T00:00:00+00:00"
+}
