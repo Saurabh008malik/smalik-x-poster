@@ -125,12 +125,24 @@
   {
    "channel": "sleepy",
    "slot": "2026-11-28",
-   "title": "Marcus Aurelius (sleep biography)",
-   "status": "made-in-progress",
+   "title": "Marcus Aurelius: The Emperor Who Wrote to Himself",
+   "status": "ready-cloud",
    "work_branch": "work-sleepy-marcus",
    "repo_folder": "sleepy/video05",
    "started": "2026-11-20",
-   "playlist": "Ancient Lives for Sleep"
+   "playlist": "Ancient Lives for Sleep",
+   "backup_branch": "backup-sleepy-marcus",
+   "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-11-28 Marcus Aurelius: The Emperor Who Wrote to Himself",
+   "drive_folder_id": "1meYZSXKVKF18EFWMQe9CB_RzQ6aFSGHm",
+   "duration": "2:23:08",
+   "schedule_utc": "2026-11-28T00:00:00Z",
+   "shorts": [
+    "sleepy-26",
+    "sleepy-27",
+    "sleepy-28",
+    "sleepy-29"
+   ],
+   "finished": "2026-11-20"
   }
  ],
  "updated": "2026-11-20",
@@ -138,6 +150,7 @@
   "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere.",
   "2026-11-18 run: horizon 2 Dec. Covered: sleepy 21 Nov, 25 Nov (Lincoln, made this run); lamplight 21 Nov. Still open: lamplight 25 Nov, sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first). Shorts: sleepy to 6 Dec, lamplight to 11 Dec (1/day). Warm Mug: plan.json mixes 22 Nov, 27 Nov, 2 Dec each have 12 tagged unused tracks; no untagged unused tracks left, so no mix date after 2 Dec until the monthly free-music task refills on 3 Dec; Short excerpts still plentiful.",
   "2026-11-18 laptop run: scheduled sleepy 21 Nov (Victoria 7Ndj1EozRC0), lamplight 21 Nov (Exodus 1oOxYrNFf9A), sleepy 25 Nov (Lincoln E_GCDAMON5Q), all 05:30 IST. Newton (11 Nov+) was already public on Sleepy channel (j41bLLSmiTI); Downloads sleepy-03-newton needs no upload.",
-  "2026-11-19 run: horizon 3 Dec. Made lamplight 25 Nov (The Life of David, 2:27:22, ready-cloud, backup-lamplight-david, 4 Shorts lamplight-29..32 on feed-shorts-lamplight-6 for 12-15 Dec). Still open: sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first: sleepy 28 Nov). Shorts: sleepy to 6 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged unused tracks; only 5 untagged unused tracks (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec."
+  "2026-11-19 run: horizon 3 Dec. Made lamplight 25 Nov (The Life of David, 2:27:22, ready-cloud, backup-lamplight-david, 4 Shorts lamplight-29..32 on feed-shorts-lamplight-6 for 12-15 Dec). Still open: sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first: sleepy 28 Nov). Shorts: sleepy to 6 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged unused tracks; only 5 untagged unused tracks (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec.",
+  "2026-11-20 run: horizon 4 Dec. Made sleepy 28 Nov (Marcus Aurelius: The Emperor Who Wrote to Himself, 2:23:08, ready-cloud, backup-sleepy-marcus, 4 Shorts sleepy-26..29 on feed-shorts-sleepy-6 for 7-10 Dec; topic from the Notion blueprint month-1 plan, no vidIQ). Still open: lamplight 28 Nov, then sleepy+lamplight 2 Dec (next run: lamplight 28 Nov). Shorts: sleepy to 10 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; Short excerpts plentiful; monthly free-music task refills 3 Dec."
  ]
 }
