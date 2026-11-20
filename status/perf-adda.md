@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗨𝗽𝗹𝗼𝗮𝗱 𝘀𝗲 𝗽𝗲𝗵𝗹𝗲 𝘆𝗲 𝟰 𝗰𝗵𝗲𝗰𝗸 𝗸𝗮𝗿𝗼 ✅ | 2026-11-06-01
-- [card] score 0.0 | 𝗔𝗮𝗽𝗸𝗮 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗸𝗶𝘀 𝗻𝗶𝗰𝗵𝗲 𝗺𝗲𝗶𝗻 𝗵𝗮𝗶? 👇 | 2026-11-06-03
 - [card] score 0.0 | 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗰𝗵𝗲𝗲𝘇𝗲𝗻 𝘇𝗮𝗮𝗿𝗼𝗼𝗿 𝗿𝗮𝗸𝗵𝗼 🖼️ | 2026-11-07-01
+- [reel] score 0.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗸𝗮𝗺 𝘁𝗼 𝘃𝗶𝗱𝗲𝗼 𝗻𝗮𝗵𝗶𝗻 𝗰𝗵𝗮𝗹𝗲𝗴𝗮? ❌ | 2026-11-07-02
+- [card] score 0.0 | 𝟯 𝘁𝗲𝗰𝗵 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘃𝗶𝗱𝗲𝗼 𝗶𝗱𝗲𝗲𝘀 📱 | 2026-11-07-03
 
 ## Average score by format
 
-- reel: 0.9 over 23 posts
+- reel: 0.8 over 24 posts
 - card: 0.2 over 26 posts
