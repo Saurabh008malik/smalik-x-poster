@@ -872,7 +872,11 @@
     ],
     "hook": "He swam the River Thames",
     "source": "franklin ch5",
-    "done": false
+    "done": true,
+    "video_id": "c3tlRbyD2Sg",
+    "posted_at": "2026-11-20T01:37:09+00:00",
+    "long_url": "https://youtu.be/IRC1F38kdto",
+    "comment_done": true
   },
   {
     "id": "sleepy-10",
