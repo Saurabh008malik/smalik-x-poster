@@ -383,7 +383,11 @@
     ],
     "hook": "Sold for twenty pieces of silver",
     "source": "lamplight_v2 ch2",
-    "done": false
+    "done": true,
+    "video_id": "8qAIQoV9lWc",
+    "posted_at": "2026-11-20T01:52:27+00:00",
+    "long_url": "https://youtu.be/Ct3CDo4hROU",
+    "comment_done": true
   },
   {
     "id": "lamplight-15",
