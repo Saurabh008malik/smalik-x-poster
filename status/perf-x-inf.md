@@ -1,12 +1,12 @@
-<!-- generated_at: 2026-11-20T17:17:32.995109+00:00 -->
+<!-- generated_at: 2026-11-21T01:46:02.655931+00:00 -->
 # X performance - inf (last 10 days, 18 posts read)
 
 Average per post: 6 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 13 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗘𝗪 𝗠𝗢𝗗𝗘𝗟: Google launches Gemini 4 Hydrogen
+- 12 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: US tightens AI chip export rules over remote access
 - 12 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗙𝗨𝗡𝗗𝗜𝗡𝗚: Dreamteam raises $53M for an AI-native CRM
-- 11 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: US tightens AI chip export rules over remote access
 - 11 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗧𝗛𝗜𝗦 𝗪𝗘𝗘𝗞 𝗜𝗡 𝗔𝗜
 - 9 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗙𝗨𝗡𝗗𝗜𝗡𝗚: Isomorphic Labs raises $5B for AI drug discovery
 - 9 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗝𝗨𝗦𝗧 𝗜𝗡: OpenAI details its "Defense Factory" for cyber defence
