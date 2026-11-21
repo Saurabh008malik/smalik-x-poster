@@ -9,5 +9,8 @@
     "first_comment": "Where are you on the housing ladder right now? Tell @paychecktruths 👇"
   },
   "image": "2026-11-21-01.jpg",
-  "publish_at": "2026-11-21T12:00:00+00:00"
+  "publish_at": "2026-11-21T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122111939829522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"AX4UQ4uUsUqBIRGw-niWOtC\"}}",
+  "done_at": "2026-11-21T12:08:12.507657+00:00"
 }
