@@ -73,5 +73,12 @@
     "go_live": "2026-11-28T00:00:00Z",
     "text": "Welcome, and goodnight. 🌙 Marcus Aurelius wrote his notebook for no one but himself. If you keep a journal, or have one line from the Meditations that stays with you, share it below. And who should The Sleepy Biographer tell next?",
     "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Daniel in Babylon",
+    "go_live": "2026-11-28T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Daniel kept his window open toward home and prayed three times a day, as he did before. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
+    "done": false
   }
 ]
