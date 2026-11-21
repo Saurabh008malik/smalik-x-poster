@@ -6,6 +6,7 @@ def clean(t):
     t=t.replace('“','').replace('”','').replace('‘',"").replace('’',"'").replace('"','')
     t=t.replace("'MENE","MENE").replace("UPHARSIN.'","UPHARSIN.")
     t=t.replace('Lord GOD','Lord God').replace('LORD','Lord')
+    t=t.replace(' (',', ').replace(')',',').replace(',,',',')
     t=re.sub(r'\s+',' ',t).strip()
     return t[0].upper()+t[1:]
 tot=0
