@@ -173,7 +173,11 @@
     ],
     "hook": "Noah found favor",
     "source": "lamplight_v1 ch6",
-    "done": false
+    "done": true,
+    "video_id": "DQW7nx_zX3k",
+    "posted_at": "2026-11-21T01:38:08+00:00",
+    "long_url": "https://youtu.be/dPbUTW_jKpo",
+    "comment_done": true
   },
   {
     "id": "lamplight-07",
@@ -903,7 +907,11 @@
     ],
     "hook": "A contract for a painting",
     "source": "leonardo ch5",
-    "done": false
+    "done": true,
+    "video_id": "9PBbi1NmH1Y",
+    "posted_at": "2026-11-21T01:38:13+00:00",
+    "long_url": "https://youtu.be/Bh4z_IDu52A",
+    "comment_done": true
   },
   {
     "id": "sleepy-11",
