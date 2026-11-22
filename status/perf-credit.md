@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-09
+- [card] score 0.0 | Same balance. Very different look. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-08
 - [card] score 0.0 | A lot more people have a collection account than you'd think. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-07
 - [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-05
-- [card] score 0.0 | Free tip: check your credit reports weekly. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-04
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Same $1,000 purchase, two ways to pay. 💸 | 2026-11-07-08
 - [card] score 0.0 | Revolving credit just hit about $1.37 trillion. 💳 | 2026-11-09-01
 - [card] score 0.0 | Can someone explain this? 🤔 | 2026-11-09-02
+- [card] score 0.0 | Your credit score is a snapshot, not a verdict. 🌱 | 2026-11-09-03
 
 ## Average score by format
 
