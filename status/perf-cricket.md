@@ -8,8 +8,8 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 - [reel] score 4.0 | 𝗝𝗔𝗜𝗦𝗪𝗔𝗟 𝟴𝟱 𝗢𝗙𝗙 𝟴𝟵! 🔥 | likes 4, comments 0, shares 0, saves 0, views - | 2026-11-20-evening-reel
 - [reel] score 1.0 | 𝗔𝗧𝗞𝗜𝗡𝗦𝗢𝗡 𝗞𝗔 𝟰/𝟮𝟴! 🔥🏏 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-15-evening-reel
 - [reel] score 1.0 | 𝟮𝟭 𝗦𝗜𝗫𝗘𝗦, 𝗣𝗘𝗛𝗟𝗘 𝗛𝗔𝗜 𝗥𝗘𝗖𝗢𝗥𝗗! 🔥😳 | likes 1, comments 0, shares 0, saves 0, views - | 2026-11-13-evening-reel
-- [text] score 0.0 | 𝗗𝗘𝗕𝗔𝗧𝗘 🔥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-22-flash-0730
-- [card] score 0.0 | 𝗥𝗔𝗛𝗨𝗟 𝗞𝗔 𝗦𝗘𝗡𝗔 𝗥𝗘𝗖𝗢𝗥𝗗! 🇮🇳🔥 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-morning
+- [card] score 0.0 | 𝗔𝘀𝗵𝗲𝘀 𝗸𝗶 𝗸𝗮𝗵𝗮𝗻𝗶 𝘆𝗮𝗵𝗶𝗻 𝘀𝗲 𝘀𝗵𝘂𝗿𝘂 𝗵𝘂𝗶! ⚰️🏏 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-22-morning
+- [text] score 0.0 | 𝗙𝗔𝗡 𝗣𝗢𝗟𝗟 🏏 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-22-flash-1800
 
 ## Weakest — avoid repeating these patterns
 
@@ -20,5 +20,5 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Average score by format
 
 - reel: 0.5 over 12 posts
-- text: 0.0 over 9 posts
-- card: 0.0 over 132 posts
+- card: 0.0 over 133 posts
+- text: 0.0 over 16 posts
