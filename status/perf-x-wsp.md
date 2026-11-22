@@ -1,7 +1,7 @@
-<!-- generated_at: 2026-11-22T07:28:58.631761+00:00 -->
-# X performance - wsp (last 10 days, 39 posts read)
+<!-- generated_at: 2026-11-22T16:38:17.619100+00:00 -->
+# X performance - wsp (last 10 days, 41 posts read)
 
-Average per post: 2 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗪𝗘𝗘𝗞 𝗔𝗛𝗘𝗔𝗗: Nvidia reports Tuesday, its first results since CEO Jensen...
@@ -22,18 +22,19 @@ Average per post: 2 impressions, 0.0 interactions (likes + replies + reposts + q
 ## By format (average impressions / interactions per post)
 - other news / text: 37 posts, 2 imp, 0.0 interactions
 - weekly recap: 2 posts, 1 imp, 0.0 interactions
+- question / poll: 2 posts, 0 imp, 0.0 interactions
 - with card image: 38 posts, 2 imp, 0.0 interactions
-- text only: 1 posts, 0 imp, 0.0 interactions
+- text only: 3 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
 - 07:00: 7 posts, 2 imp, 0.0 interactions
-- 10:00: 8 posts, 2 imp, 0.0 interactions
 - 16:00: 6 posts, 2 imp, 0.0 interactions
 - 15:00: 2 posts, 2 imp, 0.0 interactions
 - 14:00: 1 posts, 2 imp, 0.0 interactions
+- 10:00: 9 posts, 2 imp, 0.0 interactions
 - 19:00: 2 posts, 1 imp, 0.0 interactions
-- 08:00: 2 posts, 1 imp, 0.0 interactions
 - 13:00: 5 posts, 1 imp, 0.0 interactions
+- 08:00: 3 posts, 1 imp, 0.0 interactions
 - 11:00: 3 posts, 1 imp, 0.0 interactions
 - 17:00: 1 posts, 0 imp, 0.0 interactions
 - 09:00: 2 posts, 0 imp, 0.0 interactions
