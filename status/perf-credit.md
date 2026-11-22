@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-21)
+# What performed best on this page (last 14 days, updated 2026-11-22)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-09
+- [card] score 0.0 | A lot more people have a collection account than you'd think. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-07
+- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-05
 - [card] score 0.0 | Free tip: check your credit reports weekly. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-04
-- [card] score 0.0 | Small steps still count. 🌱 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-03
-- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-21-02
 
 ## Weakest — avoid repeating these patterns
 
-- [text] score 0.0 | Confession time. 💬 | 2026-11-07-06
-- [card] score 0.0 | Car loans are now the second-biggest pile of consumer debt after mortgages. 🚗 | 2026-11-07-07
 - [card] score 0.0 | Same $1,000 purchase, two ways to pay. 💸 | 2026-11-07-08
+- [card] score 0.0 | Revolving credit just hit about $1.37 trillion. 💳 | 2026-11-09-01
+- [card] score 0.0 | Can someone explain this? 🤔 | 2026-11-09-02
 
 ## Average score by format
 
