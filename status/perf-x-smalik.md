@@ -1,40 +1,42 @@
-<!-- generated_at: 2026-11-21T21:54:10.131381+00:00 -->
+<!-- generated_at: 2026-11-22T07:28:58.375779+00:00 -->
 # X performance - smalik (last 10 days, 100 posts read)
 
-Average per post: 64 impressions, 0.3 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 63 impressions, 0.3 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 281 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗜𝗣𝗟 𝗟𝗜𝗦𝗧𝗦 𝗔𝗧 𝟲 𝗣𝗠? 🏏
-- 207 imp | 0 likes, 1 replies, 0 reposts, 0 saves | 0.5% | card | 𝗕𝗔𝗡𝗚𝗟𝗔𝗗𝗘𝗦𝗛 𝟰𝟬𝟬 𝗔𝗟𝗟 𝗢𝗨𝗧! 🇧🇩
+- 209 imp | 0 likes, 1 replies, 0 reposts, 0 saves | 0.5% | card | 𝗕𝗔𝗡𝗚𝗟𝗔𝗗𝗘𝗦𝗛 𝟰𝟬𝟬 𝗔𝗟𝗟 𝗢𝗨𝗧! 🇧🇩
 - 197 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗜𝗡𝗗𝗜𝗔 𝟭𝟯𝟮/𝟭 𝗜𝗡 𝟮𝟱! 🇮🇳
-- 170 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗜𝗖𝗛𝗢𝗟𝗟𝗦 𝗖𝗔𝗥𝗥𝗜𝗘𝗦 𝗛𝗜𝗦 𝗕𝗔𝗧! 🏏
+- 171 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗜𝗖𝗛𝗢𝗟𝗟𝗦 𝗖𝗔𝗥𝗥𝗜𝗘𝗦 𝗛𝗜𝗦 𝗕𝗔𝗧! 🏏
 - 168 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗔𝗞 𝟭𝟭𝟬/𝟭 𝗜𝗡 𝟭𝟯.𝟯! 🔥🇵🇰
 - 164 imp | 1 likes, 0 replies, 0 reposts, 0 saves | 0.6% | card | 𝗜𝗡𝗗𝗜𝗔 𝟭𝟲𝟲/𝟴 𝗜𝗡 𝟯𝟲! 😳🇮🇳
 - 163 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗜𝗡𝗗𝗜𝗔 𝗖𝗛𝗔𝗦𝗘 𝟯𝟯𝟴! 🇮🇳
 - 160 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗜𝗣𝗟 𝗗𝗘𝗔𝗗𝗟𝗜𝗡𝗘 𝗧𝗢𝗠𝗢𝗥𝗥𝗢𝗪! 🏏
 
 ## Weakest posts - do NOT repeat these angles or formats
-- 11 imp | 0 interactions | 𝟭𝟯𝟬 𝗢𝗣𝗘𝗡𝗜𝗡𝗚 𝗦𝗧𝗔𝗡𝗗! 🇮🇳🔥
-- 9 imp | 0 interactions | 𝗣𝗛𝗜𝗟𝗟𝗜𝗣𝗦 𝟲 𝗦𝗛𝗢𝗥𝗧 𝗢𝗙 𝗔 𝗧𝗢𝗡! 🏏
-- 6 imp | 0 interactions | 𝗛𝗨𝗥𝗥𝗜𝗖𝗔𝗡𝗘𝗦 𝗪𝗜𝗡 𝗕𝗬 𝟴! 🔥
 - 5 imp | 0 interactions | 𝗝𝗔𝗬 𝗦𝗛𝗔𝗛 𝗥𝗘-𝗔𝗣𝗣𝗢𝗜𝗡𝗧𝗘𝗗! 🏏
+- 0 imp | 0 interactions | 𝗬𝗢𝗨𝗥 𝗖𝗔𝗟𝗟 🏏
+- 0 imp | 0 interactions | 𝗙𝗔𝗡 𝗣𝗢𝗟𝗟 🏏
+- 0 imp | 0 interactions | 𝗖𝗥𝗜𝗖𝗞𝗘𝗧 𝗧𝗔𝗟𝗞 🎙️
 
 ## By format (average impressions / interactions per post)
-- question / poll: 88 posts, 66 imp, 0.2 interactions
-- other news / text: 12 posts, 46 imp, 0.3 interactions
-- with card image: 100 posts, 64 imp, 0.3 interactions
+- question / poll: 88 posts, 65 imp, 0.2 interactions
+- other news / text: 12 posts, 47 imp, 0.3 interactions
+- with card image: 96 posts, 65 imp, 0.3 interactions
+- text only: 4 posts, 1 imp, 0.0 interactions
 
 ## By hour (account local time, UTC+5h)
-- 22:00: 8 posts, 127 imp, 0.4 interactions
-- 19:00: 8 posts, 88 imp, 0.4 interactions
-- 20:00: 8 posts, 76 imp, 0.2 interactions
-- 14:00: 16 posts, 69 imp, 0.3 interactions
-- 17:00: 8 posts, 64 imp, 0.0 interactions
+- 22:00: 8 posts, 128 imp, 0.4 interactions
+- 19:00: 8 posts, 89 imp, 0.4 interactions
+- 20:00: 8 posts, 77 imp, 0.2 interactions
+- 14:00: 18 posts, 62 imp, 0.3 interactions
 - 16:00: 8 posts, 61 imp, 0.4 interactions
-- 23:00: 9 posts, 52 imp, 0.4 interactions
-- 13:00: 8 posts, 49 imp, 0.2 interactions
-- 01:00: 9 posts, 46 imp, 0.1 interactions
-- 04:00: 9 posts, 40 imp, 0.0 interactions
-- 02:00: 9 posts, 35 imp, 0.3 interactions
+- 17:00: 9 posts, 57 imp, 0.0 interactions
+- 23:00: 8 posts, 52 imp, 0.5 interactions
+- 13:00: 8 posts, 50 imp, 0.2 interactions
+- 01:00: 8 posts, 46 imp, 0.1 interactions
+- 04:00: 8 posts, 42 imp, 0.0 interactions
+- 02:00: 8 posts, 37 imp, 0.4 interactions
+- 15:00: 1 posts, 0 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
