@@ -1,5 +1,5 @@
-<!-- generated_at: 2026-11-22T16:38:17.955889+00:00 -->
-# X performance - inf (last 10 days, 23 posts read)
+<!-- generated_at: 2026-11-22T22:04:50.280023+00:00 -->
+# X performance - inf (last 10 days, 25 posts read)
 
 Average per post: 5 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
@@ -20,17 +20,18 @@ Average per post: 5 impressions, 0.0 interactions (likes + replies + reposts + q
 - 0 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO is set to price tonight
 
 ## By format (average impressions / interactions per post)
-- news with → bullets: 20 posts, 6 imp, 0.0 interactions
-- question / poll: 3 posts, 2 imp, 0.0 interactions
-- with card image: 20 posts, 6 imp, 0.0 interactions
-- text only: 3 posts, 2 imp, 0.0 interactions
+- news with → bullets: 21 posts, 5 imp, 0.0 interactions
+- question / poll: 4 posts, 1 imp, 0.0 interactions
+- with card image: 21 posts, 5 imp, 0.0 interactions
+- text only: 4 posts, 1 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
-- 12:00: 4 posts, 7 imp, 0.0 interactions
 - 17:00: 1 posts, 7 imp, 0.0 interactions
 - 08:00: 7 posts, 6 imp, 0.0 interactions
+- 12:00: 5 posts, 6 imp, 0.0 interactions
 - 11:00: 5 posts, 5 imp, 0.0 interactions
 - 09:00: 3 posts, 4 imp, 0.0 interactions
 - 10:00: 3 posts, 2 imp, 0.0 interactions
+- 16:00: 1 posts, 0 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
