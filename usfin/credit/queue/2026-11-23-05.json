@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\nChecking your own credit report or score hurts your score.\n\nTake a guess, then check the card.\n\nWhat did you think before today?",
+  "first_comment": "True or false: what's the credit myth you believed longest? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: myth-buster"
+  ],
+  "instagram": {
+    "first_comment": "Which myth fooled you longest? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Checking your own score <em>lowers</em> it. True or false?",
+    "theme": "blue",
+    "source": ""
+  },
+  "image": "2026-11-23-05.jpg",
+  "publish_at": "2026-11-23T20:00:00+00:00"
+}

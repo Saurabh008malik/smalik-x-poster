@@ -1,0 +1,20 @@
+{
+  "caption": "The average card rate is a little lower than it was. 💳\n\nBankrate puts it at 19.71% as of Nov 4, down from the record 20.79% in Aug 2024.\n\nStill, on a $5,000 balance that's roughly $985 a year in interest if you carry it.\n\nDid you notice your own rate change this year?",
+  "first_comment": "Do you know your card's APR off the top of your head? 👇",
+  "sources": [
+    "https://www.wsmv.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "pattern: big number / math nobody says out loud"
+  ],
+  "instagram": {
+    "first_comment": "Know your APR? Tell us below 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Average card APR: <em>19.71%</em>, down from the 20.79% record.",
+    "sub": "Still about $985 a year on a $5,000 balance.",
+    "theme": "blue",
+    "source": "Source: Bankrate"
+  },
+  "image": "2026-11-23-01.jpg",
+  "publish_at": "2026-11-23T12:00:00+00:00"
+}

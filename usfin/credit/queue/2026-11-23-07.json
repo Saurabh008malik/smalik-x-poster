@@ -1,0 +1,20 @@
+{
+  "caption": "Credit reporting is where most complaints land. 📞\n\nThe CFPB's 2025 annual report says it got about 5.8 million credit/consumer reporting complaints. That's roughly 88% of the 6.6+ million total.\n\nIt's one reason to read your full report now and then.\n\nHave you ever found an error on yours?",
+  "first_comment": "Have you ever disputed something on your report? How did it go? 👇",
+  "sources": [
+    "https://www.pymnts.com/legal/2026/cfpb-complaints-show-credit-reporting-system-under-pressure/",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Ever disputed an error? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "<em>88%</em> of CFPB complaints in 2025 were about credit reporting.",
+    "sub": "About 5.8 million of 6.6 million+ total.",
+    "theme": "blue",
+    "source": "Source: CFPB annual report via PYMNTS"
+  },
+  "image": "2026-11-23-07.jpg",
+  "publish_at": "2026-11-24T00:00:00+00:00"
+}

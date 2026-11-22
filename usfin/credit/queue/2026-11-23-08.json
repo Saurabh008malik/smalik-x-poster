@@ -1,0 +1,21 @@
+{
+  "caption": "Same $5,000 balance. Different rate. 👀\n\nAt 19.71% (Bankrate's average) that's about $985 a year in interest.\n\nAt 21.19% (the Fed's August figure) it's about $1,060.\n\nSmall rate gap, real money. Those are rough one-year numbers, not exact.\n\nWhich rate is on your card?",
+  "first_comment": "What's the APR on your main card? 👇",
+  "sources": [
+    "https://www.wsmv.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "https://www.fool.com/money/research/average-credit-card-interest-rate",
+    "pattern: then vs now / comparison"
+  ],
+  "instagram": {
+    "first_comment": "Your APR? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "DEBT REALITY",
+    "headline": "$5,000 balance: about <em>$985</em> a year at 19.71% vs <em>$1,060</em> at 21.19%.",
+    "sub": "Rough one-year interest, if the balance stays.",
+    "theme": "red",
+    "source": "Rates: Bankrate, Federal Reserve"
+  },
+  "image": "2026-11-23-08.jpg",
+  "publish_at": "2026-11-24T02:00:00+00:00"
+}
