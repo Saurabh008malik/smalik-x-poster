@@ -15,9 +15,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 - [reel] score 0.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝗦𝗵𝗼𝗿𝘁𝘀 𝘀𝗶𝗿𝗳 𝟲𝟬 𝘀𝗲𝗰𝗼𝗻𝗱 𝗸𝗲 𝗵𝗼𝘁𝗲 𝗵𝗮𝗶𝗻? ❌ | 2026-11-09-02
 - [card] score 0.0 | 𝗔𝗮𝗽 𝗦𝗵𝗼𝗿𝘁𝘀 𝗯𝗮𝗻𝗮𝘁𝗲 𝗵𝗼 𝘆𝗮 𝗹𝗼𝗻𝗴 𝘃𝗶𝗱𝗲𝗼? 🤔 | 2026-11-09-03
-- [card] score 0.0 | 𝗘𝗱𝗶𝘁𝗶𝗻𝗴 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 𝘆𝗮𝗮𝗱 𝗿𝗮𝗸𝗵𝗼 ✂️ | 2026-11-11-01
+- [card] score 0.0 | 𝗖𝗼𝗺𝗺𝗲𝗻𝘁𝘀 𝗸𝗼 𝘀𝗮𝗵𝗶 𝘁𝗮𝗿𝗶𝗾𝗲 𝘀𝗲 𝘀𝗮𝗻𝗯𝗵𝗮𝗮𝗹𝗼 💬 | 2026-11-10-01
 
 ## Average score by format
 
-- reel: 1.0 over 25 posts
-- card: 0.2 over 26 posts
+- reel: 0.9 over 27 posts
+- card: 0.1 over 28 posts
