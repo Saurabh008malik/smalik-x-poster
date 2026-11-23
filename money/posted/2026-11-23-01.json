@@ -9,5 +9,8 @@
     "first_comment": "Hosting or just showing up hungry? Tell @paychecktruths 🦃"
   },
   "image": "2026-11-23-01.jpg",
-  "publish_at": "2026-11-23T12:00:00+00:00"
+  "publish_at": "2026-11-23T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122112462495522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"AQdCqoBCgli0Ug8lCovIeCD\"}}",
+  "done_at": "2026-11-23T12:09:44.150307+00:00"
 }
