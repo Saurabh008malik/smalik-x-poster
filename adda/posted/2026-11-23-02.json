@@ -9,5 +9,8 @@
     "first_comment": "Series follow karo, Day 13 kal aa raha hai 📅 @real_creator_adda"
   },
   "video": "2026-11-23-02.mp4",
-  "publish_at": "2026-11-23T14:00:00+00:00"
+  "publish_at": "2026-11-23T14:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/reel/1158605339963733",
+  "instagram_error": "Instagram reel upload failed 400: {\"debug_info\":{\"retriable\":false,\"type\":\"ProcessingFailedError\",\"message\":\"Request processing failed\"}}",
+  "done_at": "2026-11-23T14:12:08.487573+00:00"
 }
