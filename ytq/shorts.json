@@ -449,7 +449,11 @@
     ],
     "hook": "Do not interpretations belong to God?",
     "source": "lamplight_v2 ch4",
-    "done": false
+    "done": true,
+    "video_id": "UKdZK90VO2k",
+    "posted_at": "2026-11-24T01:38:04+00:00",
+    "long_url": "https://youtu.be/Ct3CDo4hROU",
+    "comment_done": true
   },
   {
     "id": "lamplight-17",
@@ -996,7 +1000,11 @@
     ],
     "hook": "Sent to London",
     "source": "franklin ch10",
-    "done": false
+    "done": true,
+    "video_id": "q5bTBd0rt1M",
+    "posted_at": "2026-11-24T01:38:08+00:00",
+    "long_url": "https://youtu.be/IRC1F38kdto",
+    "comment_done": true
   },
   {
     "id": "sleepy-14",
