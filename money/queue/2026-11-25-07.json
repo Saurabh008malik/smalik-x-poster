@@ -1,0 +1,13 @@
+{
+  "caption": "Black Friday is expected to bring in $12.9 billion online. 🛍️\n\nAdobe forecasts about $807 million of that will be buy now, pay later, and $21.3 billion for the whole season.\n\nSplitting a purchase doesn't make it cheaper. It just moves the bill.\n\nWill you use BNPL this weekend?",
+  "first_comment": "Yes, no, or only if it's 0%? 👇",
+  "sources": [
+    "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Are you using BNPL this Black Friday? @paychecktruths 👇"
+  },
+  "image": "2026-11-25-07.jpg",
+  "publish_at": "2026-11-26T00:00:00+00:00"
+}

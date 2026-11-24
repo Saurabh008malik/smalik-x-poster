@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | This one surprises people. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-09
-- [card] score 0.0 | $100 saved vs $1,000 saved. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-08
-- [card] score 0.0 | Holiday shopping forecast: $1.013 trillion. 🎁 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-07
-- [text] score 0.0 | Quick question, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-05
+- [reel] score 0.0 | Paying only the minimum? Read this. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-05
+- [card] score 0.0 | A tiny habit with a big payoff. 💵 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-04
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-03
+- [card] score 0.0 | Unpopular opinion: 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Fewer layoffs than you'd think. 💼 | 2026-11-10-01
-- [card] score 0.0 | Unpopular opinion: 😤 | 2026-11-10-02
-- [card] score 0.0 | Quiet truth. 💛 | 2026-11-10-03
+- [text] score 0.0 | Real talk. 👀 | 2026-11-10-06
+- [card] score 0.0 | Grad school just got more complicated to pay for. 🎓 | 2026-11-10-07
+- [card] score 0.0 | $100 vs $1,000. 😬 | 2026-11-10-08
 
 ## Average score by format
 
