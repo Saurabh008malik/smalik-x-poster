@@ -13,9 +13,9 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗖𝗼𝗺𝗺𝗲𝗻𝘁𝘀 𝗸𝗼 𝘀𝗮𝗵𝗶 𝘁𝗮𝗿𝗶𝗾𝗲 𝘀𝗲 𝘀𝗮𝗻𝗯𝗵𝗮𝗮𝗹𝗼 💬 | 2026-11-10-01
-- [reel] score 0.0 | 𝗟𝗶𝘃𝗲 𝗮𝗮𝗻𝗮 𝗵𝗮𝗶 𝗽𝗮𝗿 𝗱𝗮𝗿 𝗹𝗮𝗴𝘁𝗮 𝗵𝗮𝗶? 𝗣𝗮𝗵𝗹𝗲 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲 𝗸𝗮𝗿𝗼 🎙️ | 2026-11-10-02
-- [card] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝘀𝗵𝘂𝗿𝘂 𝗸𝗮𝗿𝗻𝗲 𝗺𝗲𝗶𝗻 𝘀𝗮𝗯𝘀𝗲 𝗯𝗮𝗱𝗮 𝗱𝗮𝗿𝗿 𝗸𝘆𝗮 𝗵𝗮𝗶? 😬 | 2026-11-10-03
+- [card] score 0.0 | 𝗘𝗱𝗶𝘁𝗶𝗻𝗴 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 𝘆𝗮𝗮𝗱 𝗿𝗮𝗸𝗵𝗼 ✂️ | 2026-11-11-01
+- [reel] score 0.0 | 𝗡𝗮𝘆𝗲 𝗬𝗼𝘂𝗧𝘂𝗯𝗲𝗿𝘀 𝗸𝗶 𝟯 𝗴𝗮𝗹𝘁𝗶𝘆𝗮𝗻 ❌ | 2026-11-11-02
+- [card] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝘂𝗽𝗱𝗮𝘁𝗲: 𝗔𝘀𝗸 𝗦𝘁𝘂𝗱𝗶𝗼 𝗸𝗮 𝗔𝗜 𝗳𝗲𝗲𝗱𝗯𝗮𝗰𝗸 🤖 | 2026-11-11-03
 
 ## Average score by format
 
