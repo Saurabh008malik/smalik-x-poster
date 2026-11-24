@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-09
-- [card] score 0.0 | Same $5,000 balance. Different rate. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-08
-- [card] score 0.0 | Credit reporting is where most complaints land. 📞 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-23-05
+- [reel] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-05
+- [card] score 0.0 | Holiday shopping tip. 🎁 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-04
+- [card] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Mortgage lenders can now choose between scores. 🏠 | 2026-11-10-01
-- [card] score 0.0 | Can someone explain this? 😤 | 2026-11-10-02
-- [card] score 0.0 | Quiet truth. 🟡 | 2026-11-10-03
+- [text] score 0.0 | Confession time. 💬 | 2026-11-10-06
+- [card] score 0.0 | Medical debt and your credit report: it's complicated. 🏥 | 2026-11-10-07
+- [card] score 0.0 | Same money. Different habits. 💸 | 2026-11-10-08
 
 ## Average score by format
 

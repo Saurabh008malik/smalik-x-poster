@@ -1,0 +1,20 @@
+{
+  "caption": "Revolving credit, mostly credit cards, is still climbing. 💳\n\nThe Fed's latest G.19 report (released Nov 6) shows revolving credit at about $1.37 trillion in September.\n\nThat's a lot of balances being carried.\n\nAre you paying yours down, or holding steady?",
+  "first_comment": "Paying down, holding steady, or growing? Be honest 👇",
+  "sources": [
+    "https://www.federalreserve.gov/releases/g19/20261106/",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Where's your card balance headed? 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Revolving credit sits near <em>$1.37 trillion</em>.",
+    "sub": "Mostly credit cards. September data.",
+    "theme": "blue",
+    "source": "Source: Federal Reserve G.19"
+  },
+  "image": "2026-11-25-07.jpg",
+  "publish_at": "2026-11-26T00:00:00+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "caption": "Mortgage score rules are shifting. 🏠\n\nFannie Mae and Freddie Mac are moving to one pricing grid, with VantageScore 4.0 joining the FICO Classic grid, per HousingWire's report on the FHFA announcement.\n\nIn one example, a borrower's upfront fee drops from 1.5% to 1.25% under VantageScore.\n\nYour own pricing depends on your situation, so ask your lender. Did you know there was more than one score model?",
+  "first_comment": "Did you know lenders can use different score models? 👇",
+  "sources": [
+    "https://www.housingwire.com/articles/fhfa-unified-llpa-grid-fico-vantagescore/",
+    "pattern: big number / news explainer"
+  ],
+  "instagram": {
+    "first_comment": "Which score model did your lender use? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Fannie and Freddie are moving to <em>one pricing grid</em> for FICO and VantageScore.",
+    "theme": "blue",
+    "source": "Source: HousingWire"
+  },
+  "image": "2026-11-25-01.jpg",
+  "publish_at": "2026-11-25T12:00:00+00:00"
+}

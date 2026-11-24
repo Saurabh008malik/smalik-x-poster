@@ -1,0 +1,19 @@
+{
+  "caption": "Wrong item on your credit report? 🔍\n\nYou can dispute it for free. Bureaus generally have to investigate, usually within about 30 days.\n\nHave you ever found an error on yours?",
+  "first_comment": "Ever found an error on your report? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/",
+    "pattern: say this / myth-buster reel"
+  ],
+  "instagram": {
+    "first_comment": "Found an error before? Tell us 👇 @creditscoretruths"
+  },
+  "card": {
+    "kicker": "SCORE TRUTH",
+    "headline": "Wrong item on your report? Dispute it. It's <em>free</em>.",
+    "sub": "Bureaus generally must investigate, usually within 30 days.",
+    "theme": "green"
+  },
+  "video": "2026-11-25-09.mp4",
+  "publish_at": "2026-11-25T17:00:00+00:00"
+}
