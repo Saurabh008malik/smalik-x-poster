@@ -170,21 +170,34 @@
    "channel": "sleepy",
    "slot": "2026-12-02",
    "title": "Jane Austen: A Quiet Life of Ink and Wit",
-   "status": "made-in-progress",
+   "status": "ready-cloud",
    "work_branch": "work-sleepy-austen",
    "repo_folder": "sleepy/video06",
    "started": "2026-11-23",
    "playlist": "Artists & Writers for Sleep",
-   "topic_source": "Notion blueprint month-1 plan (video 6), no vidIQ"
+   "topic_source": "Notion blueprint month-1 plan (video 6), no vidIQ",
+   "backup_branch": "backup-sleepy-austen",
+   "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-12-02 Jane Austen: A Quiet Life of Ink and Wit",
+   "drive_folder_id": "1KbLxA0luIhkXU1uEYkz7J2IFvr-g5_wO",
+   "duration": "2:17:32",
+   "schedule_utc": "2026-12-02T00:00:00Z",
+   "shorts": [
+    "sleepy-30",
+    "sleepy-31",
+    "sleepy-32",
+    "sleepy-33"
+   ],
+   "finished": "2026-11-24"
   }
  ],
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "notes": [
   "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere.",
   "2026-11-18 run: horizon 2 Dec. Covered: sleepy 21 Nov, 25 Nov (Lincoln, made this run); lamplight 21 Nov. Still open: lamplight 25 Nov, sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first). Shorts: sleepy to 6 Dec, lamplight to 11 Dec (1/day). Warm Mug: plan.json mixes 22 Nov, 27 Nov, 2 Dec each have 12 tagged unused tracks; no untagged unused tracks left, so no mix date after 2 Dec until the monthly free-music task refills on 3 Dec; Short excerpts still plentiful.",
   "2026-11-18 laptop run: scheduled sleepy 21 Nov (Victoria 7Ndj1EozRC0), lamplight 21 Nov (Exodus 1oOxYrNFf9A), sleepy 25 Nov (Lincoln E_GCDAMON5Q), all 05:30 IST. Newton (11 Nov+) was already public on Sleepy channel (j41bLLSmiTI); Downloads sleepy-03-newton needs no upload.",
   "2026-11-19 run: horizon 3 Dec. Made lamplight 25 Nov (The Life of David, 2:27:22, ready-cloud, backup-lamplight-david, 4 Shorts lamplight-29..32 on feed-shorts-lamplight-6 for 12-15 Dec). Still open: sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first: sleepy 28 Nov). Shorts: sleepy to 6 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged unused tracks; only 5 untagged unused tracks (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec.",
   "2026-11-20 run: horizon 4 Dec. Made sleepy 28 Nov (Marcus Aurelius: The Emperor Who Wrote to Himself, 2:23:08, ready-cloud, backup-sleepy-marcus, 4 Shorts sleepy-26..29 on feed-shorts-sleepy-6 for 7-10 Dec; topic from the Notion blueprint month-1 plan, no vidIQ). Still open: lamplight 28 Nov, then sleepy+lamplight 2 Dec (next run: lamplight 28 Nov). Shorts: sleepy to 10 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; Short excerpts plentiful; monthly free-music task refills 3 Dec.",
-  "2026-11-21 run: horizon 5 Dec. Made lamplight 28 Nov (Daniel in Babylon: The Furnace, the Wall and the Lions, 2:42:27, ready-cloud, backup-lamplight-daniel, 4 Shorts lamplight-33..36 on feed-shorts-lamplight-7 for 16-19 Dec; topic from the Notion blueprint 'next ideas', no vidIQ). Still open: sleepy+lamplight 2 Dec and 5 Dec (next run: sleepy 2 Dec). Shorts: sleepy to 10 Dec, lamplight to 19 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec."
+  "2026-11-21 run: horizon 5 Dec. Made lamplight 28 Nov (Daniel in Babylon: The Furnace, the Wall and the Lions, 2:42:27, ready-cloud, backup-lamplight-daniel, 4 Shorts lamplight-33..36 on feed-shorts-lamplight-7 for 16-19 Dec; topic from the Notion blueprint 'next ideas', no vidIQ). Still open: sleepy+lamplight 2 Dec and 5 Dec (next run: sleepy 2 Dec). Shorts: sleepy to 10 Dec, lamplight to 19 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec.",
+  "2026-11-24 run: horizon 8 Dec. Finished sleepy 2 Dec (Jane Austen: A Quiet Life of Ink and Wit, 2:17:32, ready-cloud, backup-sleepy-austen, metadata+thumbnail in repo sleepy/video06 and Drive; 4 Shorts sleepy-30..33 on feed-shorts-sleepy-7 for 11-14 Dec; first comment queued). Still open: lamplight 2 Dec, then sleepy+lamplight 5 Dec (next run: lamplight 2 Dec). Shorts: sleepy to 14 Dec, lamplight to 19 Dec (1/day). Warm Mug: mixes 27 Nov and 2 Dec each 12 tagged tracks; next mix step 7 Dec (inside horizon) has no plan entry: only 5 untagged unused tracks (too few for a 12-track mix); the monthly free-music task refills on 3 Dec, before 7 Dec, then a 7 Dec mix can be planned. Short excerpts still plentiful."
  ]
 }
