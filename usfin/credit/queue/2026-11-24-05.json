@@ -1,0 +1,19 @@
+{
+  "caption": "True or False? 🤔\n\nA credit freeze lowers your credit score.\n\nTake a guess, then check the comments.",
+  "first_comment": "True or false? Tell us before you scroll! 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-freeze-or-security-freeze-on-my-credit-report-en-1341/",
+    "pattern: myth-buster"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Answer for @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "A credit freeze <em>lowers</em> your score. True or false?",
+    "sub": "Answer: False. A freeze doesn't affect your score.",
+    "theme": "gold"
+  },
+  "image": "2026-11-24-05.jpg",
+  "publish_at": "2026-11-24T20:00:00+00:00"
+}

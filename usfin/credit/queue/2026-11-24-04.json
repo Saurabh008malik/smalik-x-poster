@@ -1,0 +1,19 @@
+{
+  "caption": "Holiday shopping tip. 🎁\n\nBefore you check out, pay with a credit card rather than a debit card when you can. Disputes on card charges are usually easier.\n\nNever pay anyone in gift cards. Real businesses don't ask for that.\n\nCheck your own card's terms.\n\nAny shopping safety tip you swear by?",
+  "first_comment": "What's your best tip for safe online shopping? 👇",
+  "sources": [
+    "https://www.occ.gov/topics/consumers-and-communities/consumer-protection/fraud-resources/holiday-and-gift-card-scams.html",
+    "pattern: say this / exact words"
+  ],
+  "instagram": {
+    "first_comment": "Drop your safe-shopping tip for @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Shopping online? Never pay anyone in <em>gift cards</em>.",
+    "sub": "Real businesses don't ask for that.",
+    "theme": "green"
+  },
+  "image": "2026-11-24-04.jpg",
+  "publish_at": "2026-11-24T18:00:00+00:00"
+}

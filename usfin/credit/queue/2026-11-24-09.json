@@ -1,0 +1,19 @@
+{
+  "caption": "Nobody tells you this. 🧠\n\nFreezing your credit is free and doesn't hurt your score.\n\nIt just blocks new accounts being opened in your name.\n\nHave you ever frozen yours?",
+  "first_comment": "Have you frozen your credit yet? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-freeze-or-security-freeze-on-my-credit-report-en-1341/",
+    "pattern: myth-buster reveal"
+  ],
+  "instagram": {
+    "first_comment": "Frozen or not? Tell @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "SCORE TRUTH",
+    "headline": "A credit freeze does <em>NOT</em> hurt your score.",
+    "sub": "It's free, and you can lift it anytime.",
+    "theme": "green"
+  },
+  "video": "2026-11-24-09.mp4",
+  "publish_at": "2026-11-24T17:00:00+00:00"
+}

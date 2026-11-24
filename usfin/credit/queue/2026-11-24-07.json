@@ -1,0 +1,20 @@
+{
+  "caption": "Holiday BNPL is expected to be big. 🛍️\n\nAdobe forecasts $21.3 billion in buy now pay later spending online in Nov-Dec, up 6.6% from last year.\n\nSplitting a purchase can help some people, but missed payments can still cost you.\n\nDo you use BNPL for gifts?",
+  "first_comment": "Have you ever lost track of a BNPL payment? Be honest 👇",
+  "sources": [
+    "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "BNPL for gifts, yes or no? Tell @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Holiday BNPL spending is forecast at <em>$21.3 billion</em>.",
+    "sub": "Up 6.6% from last year, online.",
+    "theme": "blue",
+    "source": "Source: Adobe forecast"
+  },
+  "image": "2026-11-24-07.jpg",
+  "publish_at": "2026-11-25T00:00:00+00:00"
+}
