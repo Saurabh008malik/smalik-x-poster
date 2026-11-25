@@ -1,4 +1,4 @@
-# What performed best on this page (last 14 days, updated 2026-11-24)
+# What performed best on this page (last 14 days, updated 2026-11-25)
 
 Score = likes + 3×comments + 2×shares + 2×saves + views/100 (Facebook + Instagram together).
 Views/reach not available yet (token lacks insights permission) — ranking uses engagement only.
@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | Paying only the minimum? Read this. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-09
+- [card] score 0.0 | Thanksgiving travel will cost more. ⛽✈️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-07
+- [text] score 0.0 | Quick question, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-05
 - [card] score 0.0 | A tiny habit with a big payoff. 💵 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-04
-- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-03
-- [card] score 0.0 | Unpopular opinion: 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-02
 
 ## Weakest — avoid repeating these patterns
 
-- [text] score 0.0 | Real talk. 👀 | 2026-11-10-06
-- [card] score 0.0 | Grad school just got more complicated to pay for. 🎓 | 2026-11-10-07
 - [card] score 0.0 | $100 vs $1,000. 😬 | 2026-11-10-08
+- [card] score 0.0 | Prices rose 0.4% in October. 📈 | 2026-11-11-01
+- [card] score 0.0 | Can someone explain this? 😅 | 2026-11-11-02
 
 ## Average score by format
 
