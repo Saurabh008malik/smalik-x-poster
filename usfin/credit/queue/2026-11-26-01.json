@@ -1,0 +1,20 @@
+{
+  "caption": "Home equity borrowing just hit a milestone. 🏠\n\nThe New York Fed says HELOC balances rose $23 billion last quarter to $481 billion, the biggest quarterly jump since 2005.\n\nA HELOC is borrowing against your home, so missed payments carry bigger stakes than a card.\n\nDo you think more people are tapping home equity to cover everyday costs?",
+  "first_comment": "Have you ever looked into a HELOC? Tell us why or why not 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Would you borrow against your home? Tell us below. Follow @creditscoretruths for daily credit truths 🏠"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "HELOC balances rose <em>$23 billion</em>, the most since 2005.",
+    "sub": "Total: $481 billion, per the New York Fed.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-26-01.jpg",
+  "publish_at": "2026-11-26T12:00:00+00:00"
+}

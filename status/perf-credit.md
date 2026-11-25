@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Nobody tells you this. 🧠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-09
-- [card] score 0.0 | What a balance really costs. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-08
-- [card] score 0.0 | Holiday BNPL is expected to be big. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-05
+- [reel] score 0.0 | Wrong item on your credit report? 🔍 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-05
+- [card] score 0.0 | Old card, still works? Read this. 💡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-04
+- [card] score 0.0 | A score is a snapshot. 🌱 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | US household debt just hit $19.1 trillion. 📊 | 2026-11-11-01
-- [card] score 0.0 | Can someone explain this? 😤 | 2026-11-11-02
-- [card] score 0.0 | Boring is a strategy. 🟡 | 2026-11-11-03
+- [text] score 0.0 | Honest question. 💬 | 2026-11-11-06
+- [card] score 0.0 | Student loan trouble is easing, at least in this one number. 🎓 | 2026-11-11-07
+- [card] score 0.0 | Same $3,000 balance. Two paths. 💸 | 2026-11-11-08
 
 ## Average score by format
 

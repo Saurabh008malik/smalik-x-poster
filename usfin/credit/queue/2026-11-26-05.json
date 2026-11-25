@@ -1,0 +1,17 @@
+{
+  "caption": "True or False? 🤔\n\nYour credit score is the same number everywhere.\n\nTell us below, then check the answer in the comments.",
+  "first_comment": "Answer: False. Different models and bureau data mean different numbers. Did you know? 👇",
+  "sources": [
+    "pattern: myth quiz"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Tell us. @creditscoretruths 🤔"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Every lender sees the <em>exact same</em> score. True or false?",
+    "theme": "blue"
+  },
+  "image": "2026-11-26-05.jpg",
+  "publish_at": "2026-11-26T20:00:00+00:00"
+}

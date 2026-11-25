@@ -1,0 +1,20 @@
+{
+  "caption": "Black Friday tip. 🛍️\n\nWhen you can, pay online with a credit card instead of a debit card. Card charges can generally be disputed if the item never shows up, and the FTC's holiday guidance says the same.\n\nA seller asking for gift cards, wires or crypto is a red flag.\n\nWhat's your rule for online deals?",
+  "first_comment": "Do you use a credit or debit card online? 👇",
+  "sources": [
+    "https://consumer.ftc.gov",
+    "pattern: say this / nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Share your safe-shopping rule. Follow @creditscoretruths for more 🛍️"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Online deals: a <em>credit card</em> is easier to dispute than debit.",
+    "sub": "Gift cards or wires? Walk away.",
+    "theme": "green",
+    "source": "Source: FTC guidance"
+  },
+  "image": "2026-11-26-04.jpg",
+  "publish_at": "2026-11-26T18:00:00+00:00"
+}

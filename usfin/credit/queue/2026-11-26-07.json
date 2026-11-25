@@ -1,0 +1,20 @@
+{
+  "caption": "Good sign in the latest data. 📉\n\nThe New York Fed says the share of credit card balances newly seriously delinquent eased to 6.87% in Q3, from 7.05% a year earlier.\n\nStill high, but moving the right way.\n\nAre you seeing it in your own budget?",
+  "first_comment": "Is your card balance up, down or flat this year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Up, down or flat? Follow @creditscoretruths for daily credit truths 📉"
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Serious card delinquency flow eased to <em>6.87%</em> from 7.05%.",
+    "sub": "Q3 2026 vs a year earlier.",
+    "theme": "blue",
+    "source": "Source: New York Fed"
+  },
+  "image": "2026-11-26-07.jpg",
+  "publish_at": "2026-11-27T00:00:00+00:00"
+}
