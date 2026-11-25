@@ -1,14 +1,14 @@
-<!-- generated_at: 2026-11-24T19:44:11.730904+00:00 -->
-# X performance - inf (last 10 days, 28 posts read)
+<!-- generated_at: 2026-11-25T03:46:03.898649+00:00 -->
+# X performance - inf (last 10 days, 29 posts read)
 
 Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 12 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: US tightens AI chip export rules over remote access
 - 12 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗙𝗨𝗡𝗗𝗜𝗡𝗚: Dreamteam raises $53M for an AI-native CRM
+- 9 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Amazon reportedly nears a $7.5B deal for AI startup Decart
 - 9 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗙𝗨𝗡𝗗𝗜𝗡𝗚: Isomorphic Labs raises $5B for AI drug discovery
 - 8 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: NVIDIA reinstates Jensen Huang as CEO
-- 8 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Amazon reportedly nears a $7.5B deal for AI startup Decart
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: NVIDIA reports Q3 results today
 - 6 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Microsoft bets on AI agents at Ignite
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Apple is reportedly building an AI agent
@@ -20,18 +20,19 @@ Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + q
 - 0 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO is set to price tonight
 
 ## By format (average impressions / interactions per post)
-- news with → bullets: 24 posts, 4 imp, 0.0 interactions
+- news with → bullets: 25 posts, 4 imp, 0.0 interactions
 - question / poll: 4 posts, 0 imp, 0.0 interactions
-- with card image: 24 posts, 4 imp, 0.0 interactions
+- with card image: 25 posts, 4 imp, 0.0 interactions
 - text only: 4 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
 - 08:00: 8 posts, 5 imp, 0.0 interactions
 - 16:00: 2 posts, 4 imp, 0.0 interactions
 - 12:00: 5 posts, 4 imp, 0.0 interactions
+- 20:00: 1 posts, 3 imp, 0.0 interactions
+- 13:00: 1 posts, 3 imp, 0.0 interactions
 - 09:00: 2 posts, 3 imp, 0.0 interactions
 - 11:00: 7 posts, 3 imp, 0.0 interactions
 - 10:00: 3 posts, 2 imp, 0.0 interactions
-- 13:00: 1 posts, 1 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
