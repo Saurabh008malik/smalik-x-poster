@@ -6,18 +6,18 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 3.0 | 𝗗𝗮𝘆 𝟭𝟬: 𝗨𝗽𝗹𝗼𝗮𝗱 𝗸𝗮 𝗮𝗽𝗻𝗮 𝘀𝗰𝗵𝗲𝗱𝘂𝗹 𝗯𝗮𝗻𝗮𝗼 📅 | likes 3, comments 0, shares 0, saves 0, views - | 2026-11-21-02
-- [reel] score 3.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝟭𝟬𝟬𝟬 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗵𝗼𝘁𝗲 𝗵𝗶 𝗽𝗮𝗶𝘀𝗲 𝗮𝗮𝘆𝗲𝗻𝗴𝗲? ❌ | likes 3, comments 0, shares 0, saves 0, views - | 2026-11-12-04
 - [reel] score 2.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗸𝗮 𝗲𝗸 𝗳𝗼𝗿𝗺𝘂𝗹𝗮: 𝗧𝗼𝗽𝗶𝗰 → 𝗧𝗶𝘁𝗹𝗲 → 𝗧𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 → 𝗦𝗰𝗿𝗶𝗽𝘁 🎯 | likes 2, comments 0, shares 0, saves 0, views - | 2026-11-21-04
 - [reel] score 2.0 | 𝗗𝗮𝘆 𝟳: 𝗣𝗮𝗵𝗹𝗲 𝘃𝗶𝗱𝗲𝗼 𝗸𝗮 𝗲𝗱𝗶𝘁 𝗸𝗮𝗿𝗼 ✂️ | likes 2, comments 0, shares 0, saves 0, views - | 2026-11-19-02
 - [reel] score 2.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗸𝗵𝗮𝗿𝗶𝗱𝗻𝗲 𝘀𝗲 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗯𝗮𝗱𝗵𝘁𝗮 𝗵𝗮𝗶? ❌ | likes 2, comments 0, shares 0, saves 0, views - | 2026-11-18-04
+- [reel] score 2.0 | 𝗦𝗵𝗼𝗿𝘁𝘀 𝗺𝗼𝗻𝗲𝘁𝗶𝘀𝗮𝘁𝗶𝗼𝗻 𝗺𝗲𝗶𝗻 𝗯𝗮𝗱𝗮𝗹 𝗮𝗮 𝗿𝗮𝗵𝗮 𝗵𝗮𝗶 📢 | likes 2, comments 0, shares 0, saves 0, views - | 2026-11-17-04
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗘𝗱𝗶𝘁𝗶𝗻𝗴 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 𝘆𝗮𝗮𝗱 𝗿𝗮𝗸𝗵𝗼 ✂️ | 2026-11-11-01
-- [reel] score 0.0 | 𝗡𝗮𝘆𝗲 𝗬𝗼𝘂𝗧𝘂𝗯𝗲𝗿𝘀 𝗸𝗶 𝟯 𝗴𝗮𝗹𝘁𝗶𝘆𝗮𝗻 ❌ | 2026-11-11-02
-- [card] score 0.0 | 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝘂𝗽𝗱𝗮𝘁𝗲: 𝗔𝘀𝗸 𝗦𝘁𝘂𝗱𝗶𝗼 𝗸𝗮 𝗔𝗜 𝗳𝗲𝗲𝗱𝗯𝗮𝗰𝗸 🤖 | 2026-11-11-03
+- [card] score 0.0 | 𝗧𝗶𝘁𝗹𝗲 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟯 𝗴𝗮𝗹𝘁𝗶𝘆𝗮𝗻 𝗺𝗮𝘁 𝗸𝗮𝗿𝗼 ❌ | 2026-11-12-01
+- [reel] score 0.0 | 𝗗𝗮𝘆 𝟭: 𝗣𝗲𝗵𝗹𝗲 𝗮𝗽𝗻𝗮 𝗻𝗶𝗰𝗵𝗲 𝗰𝗵𝘂𝗻𝗼 🎯 | 2026-11-12-02
+- [card] score 0.0 | 𝗔𝗮𝗽𝗸𝗮 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗸𝗶𝘀 𝗻𝗶𝗰𝗵𝗲 𝗺𝗲𝗶𝗻 𝗵𝗮𝗶? 👇 | 2026-11-12-03
 
 ## Average score by format
 
-- reel: 0.8 over 28 posts
+- reel: 0.7 over 28 posts
 - card: 0.0 over 28 posts
