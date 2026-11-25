@@ -1,0 +1,13 @@
+{
+  "caption": "More than 9 million student loan borrowers are in default. 🎓\n\nThey owe about $234 billion combined.\n\nWage garnishment and tax refund seizure have been paused since January. Reports say collections are expected to come back next year, but the Education Department hasn't confirmed a timeline.\n\nIf you have federal loans, have you checked your status lately?",
+  "first_comment": "Have you looked at your loan status recently? 👇",
+  "sources": [
+    "https://www.21alivenews.com/2026/11/14/collections-are-coming-millions-student-loans-default/",
+    "pattern: big number hook"
+  ],
+  "instagram": {
+    "first_comment": "Check your status at studentaid.gov, then tell us below 👇 @paychecktruths"
+  },
+  "image": "2026-11-26-07.jpg",
+  "publish_at": "2026-11-27T00:00:00+00:00"
+}

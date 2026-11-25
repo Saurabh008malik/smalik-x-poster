@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Paying only the minimum? Read this. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-09
-- [card] score 0.0 | $5 a day vs $1,825 a year. ☕ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-08
-- [card] score 0.0 | Thanksgiving travel will cost more. ⛽✈️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-07
-- [text] score 0.0 | Quick question, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-24-05
+- [reel] score 0.0 | This one surprises people. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-09
+- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-05
+- [card] score 0.0 | Signs you're doing better than you think. 🙌 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-04
+- [card] score 0.0 | Quiet truth. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-03
+- [card] score 0.0 | Can someone explain this? 😅 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Prices rose 0.4% in October. 📈 | 2026-11-11-01
-- [card] score 0.0 | Can someone explain this? 😅 | 2026-11-11-02
-- [card] score 0.0 | Quiet truth. 💛 | 2026-11-11-03
+- [text] score 0.0 | Honest question. 👀 | 2026-11-11-06
+- [card] score 0.0 | Mortgage rates dipped again. 🏠 | 2026-11-11-07
+- [card] score 0.0 | Cash or finance? 💳 | 2026-11-11-08
 
 ## Average score by format
 
