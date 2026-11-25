@@ -9,5 +9,8 @@
     "first_comment": "Growing or shrinking: where does your savings stand? Tell us at @paychecktruths 👇"
   },
   "image": "2026-11-25-01.jpg",
-  "publish_at": "2026-11-25T12:00:00+00:00"
+  "publish_at": "2026-11-25T12:00:00+00:00",
+  "facebook_url": "https://www.facebook.com/1325179577355986_122112965097522878",
+  "instagram_error": "Instagram publish failed 403: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"We restrict certain activity to protect our community. Tell us if you think that we've made a mistake.\",\"error_user_title\":\"Action is blocked\",\"fbtrace_id\":\"A6nIo2NWvsCk2SvBd7zVJSY\"}}",
+  "done_at": "2026-11-25T12:09:35.519863+00:00"
 }
