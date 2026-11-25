@@ -90,5 +90,12 @@
     "go_live": "2026-12-02T00:00:00Z",
     "text": "Welcome, and goodnight. 🌙 Jane Austen wrote her novels on small sheets of paper at a little table by the window, and almost nobody knew her name. Which of her heroines do you love most: Elizabeth, Anne, Emma, Elinor, Fanny or Catherine? And who should The Sleepy Biographer tell next?",
     "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Ruth and Esther",
+    "go_live": "2026-12-02T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Ruth said, where you go, I will go. Esther said, if I perish, I perish. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
+    "done": false
   }
 ]
