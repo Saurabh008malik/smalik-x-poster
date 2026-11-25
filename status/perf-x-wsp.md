@@ -1,5 +1,5 @@
-<!-- generated_at: 2026-11-25T03:46:03.600501+00:00 -->
-# X performance - wsp (last 10 days, 54 posts read)
+<!-- generated_at: 2026-11-25T14:58:29.457992+00:00 -->
+# X performance - wsp (last 10 days, 55 posts read)
 
 Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
@@ -21,9 +21,9 @@ Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + q
 
 ## By format (average impressions / interactions per post)
 - weekly recap: 2 posts, 1 imp, 0.0 interactions
-- other news / text: 50 posts, 1 imp, 0.0 interactions
+- other news / text: 51 posts, 1 imp, 0.0 interactions
 - question / poll: 2 posts, 0 imp, 0.0 interactions
-- with card image: 51 posts, 1 imp, 0.0 interactions
+- with card image: 52 posts, 1 imp, 0.0 interactions
 - text only: 3 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
@@ -33,10 +33,10 @@ Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + q
 - 10:00: 9 posts, 1 imp, 0.0 interactions
 - 19:00: 4 posts, 1 imp, 0.0 interactions
 - 08:00: 3 posts, 1 imp, 0.0 interactions
-- 07:00: 7 posts, 1 imp, 0.0 interactions
 - 13:00: 8 posts, 0 imp, 0.0 interactions
+- 07:00: 7 posts, 0 imp, 0.0 interactions
 - 11:00: 5 posts, 0 imp, 0.0 interactions
-- 09:00: 4 posts, 0 imp, 0.0 interactions
+- 09:00: 5 posts, 0 imp, 0.0 interactions
 - 17:00: 1 posts, 0 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.

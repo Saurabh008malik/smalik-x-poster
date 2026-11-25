@@ -1,4 +1,4 @@
-<!-- generated_at: 2026-11-25T03:46:03.898649+00:00 -->
+<!-- generated_at: 2026-11-25T14:58:29.760473+00:00 -->
 # X performance - inf (last 10 days, 29 posts read)
 
 Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
@@ -26,13 +26,13 @@ Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + q
 - text only: 4 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
-- 08:00: 8 posts, 5 imp, 0.0 interactions
+- 08:00: 7 posts, 5 imp, 0.0 interactions
 - 16:00: 2 posts, 4 imp, 0.0 interactions
 - 12:00: 5 posts, 4 imp, 0.0 interactions
-- 20:00: 1 posts, 3 imp, 0.0 interactions
+- 20:00: 1 posts, 4 imp, 0.0 interactions
 - 13:00: 1 posts, 3 imp, 0.0 interactions
-- 09:00: 2 posts, 3 imp, 0.0 interactions
 - 11:00: 7 posts, 3 imp, 0.0 interactions
 - 10:00: 3 posts, 2 imp, 0.0 interactions
+- 09:00: 3 posts, 2 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
