@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗧𝗶𝘁𝗹𝗲 𝗺𝗲𝗶𝗻 𝘆𝗲 𝟯 𝗴𝗮𝗹𝘁𝗶𝘆𝗮𝗻 𝗺𝗮𝘁 𝗸𝗮𝗿𝗼 ❌ | 2026-11-12-01
-- [reel] score 0.0 | 𝗗𝗮𝘆 𝟭: 𝗣𝗲𝗵𝗹𝗲 𝗮𝗽𝗻𝗮 𝗻𝗶𝗰𝗵𝗲 𝗰𝗵𝘂𝗻𝗼 🎯 | 2026-11-12-02
-- [card] score 0.0 | 𝗔𝗮𝗽𝗸𝗮 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗸𝗶𝘀 𝗻𝗶𝗰𝗵𝗲 𝗺𝗲𝗶𝗻 𝗵𝗮𝗶? 👇 | 2026-11-12-03
+- [reel] score 0.0 | 𝗠𝘆𝘁𝗵 𝘃𝘀 𝗙𝗮𝗰𝘁: 𝟭𝟬𝟬𝟬 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗿 𝗵𝗼𝘁𝗲 𝗵𝗶 𝗽𝗮𝗶𝘀𝗲 𝗮𝗮𝘆𝗲𝗻𝗴𝗲? ❌ | 2026-11-12-04
+- [card] score 0.0 | 𝗣𝗵𝗼𝗻𝗲 𝘀𝗲 𝘃𝗶𝗱𝗲𝗼 𝘀𝗵𝗼𝗼𝘁 𝗸𝗮𝗿𝗻𝗲 𝗸𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 📱 | 2026-11-13-01
+- [reel] score 0.0 | 𝗗𝗮𝘆 𝟮: 𝗣𝗲𝗵𝗹𝗲 𝟯 𝘃𝗶𝗱𝗲𝗼 𝗸𝗶 𝗽𝗹𝗮𝗻𝗻𝗶𝗻𝗴 𝗸𝗮𝗿𝗼 📅 | 2026-11-13-02
 
 ## Average score by format
 
-- reel: 0.7 over 28 posts
+- reel: 0.7 over 29 posts
 - card: 0.0 over 28 posts
