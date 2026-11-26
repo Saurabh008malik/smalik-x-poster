@@ -6,16 +6,16 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 ## Top performers — repeat these patterns (hook style, topic, format)
 
 - [reel] score 0.0 | This one surprises people. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-09
+- [card] score 0.0 | 1960 vs now. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-08
 - [card] score 0.0 | Black Friday is expected to bring in $12.9 billion online. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-07
 - [text] score 0.0 | Quick confession. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-06
 - [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-05
-- [card] score 0.0 | Signs you're doing better than you think. 🙌 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-04
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Cash or finance? 💳 | 2026-11-11-08
 - [card] score 0.0 | Mortgage rates dipped again. 🏠 | 2026-11-12-01
 - [card] score 0.0 | Can someone explain this? 😅 | 2026-11-12-02
+- [card] score 0.0 | Quiet truth. 💛 | 2026-11-12-03
 
 ## Average score by format
 
