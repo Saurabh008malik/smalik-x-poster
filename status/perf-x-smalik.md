@@ -1,7 +1,7 @@
-<!-- generated_at: 2026-11-26T08:57:59.912440+00:00 -->
+<!-- generated_at: 2026-11-26T21:58:18.689434+00:00 -->
 # X performance - smalik (last 10 days, 100 posts read)
 
-Average per post: 45 impressions, 0.1 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 43 impressions, 0.1 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 173 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗡𝗜𝗖𝗛𝗢𝗟𝗟𝗦 𝗖𝗔𝗥𝗥𝗜𝗘𝗦 𝗛𝗜𝗦 𝗕𝗔𝗧! 🏏
@@ -20,23 +20,23 @@ Average per post: 45 impressions, 0.1 interactions (likes + replies + reposts + 
 - 2 imp | 0 interactions | 𝗖𝗥𝗜𝗖𝗞𝗘𝗧 𝗧𝗔𝗟𝗞 🎙️
 
 ## By format (average impressions / interactions per post)
-- other news / text: 8 posts, 51 imp, 0.1 interactions
-- question / poll: 92 posts, 44 imp, 0.1 interactions
-- with card image: 88 posts, 50 imp, 0.1 interactions
+- other news / text: 8 posts, 52 imp, 0.1 interactions
+- question / poll: 92 posts, 43 imp, 0.1 interactions
+- with card image: 88 posts, 49 imp, 0.1 interactions
 - text only: 12 posts, 7 imp, 0.0 interactions
 
 ## By hour (account local time, UTC+5h)
-- 20:00: 7 posts, 65 imp, 0.1 interactions
 - 22:00: 8 posts, 64 imp, 0.1 interactions
-- 23:00: 7 posts, 56 imp, 0.4 interactions
-- 01:00: 8 posts, 48 imp, 0.1 interactions
-- 14:00: 17 posts, 48 imp, 0.1 interactions
-- 13:00: 7 posts, 46 imp, 0.3 interactions
-- 19:00: 9 posts, 44 imp, 0.3 interactions
-- 02:00: 7 posts, 39 imp, 0.0 interactions
-- 17:00: 9 posts, 38 imp, 0.0 interactions
-- 16:00: 8 posts, 36 imp, 0.1 interactions
-- 04:00: 8 posts, 32 imp, 0.0 interactions
+- 23:00: 8 posts, 58 imp, 0.4 interactions
+- 20:00: 7 posts, 55 imp, 0.1 interactions
+- 14:00: 16 posts, 49 imp, 0.0 interactions
+- 13:00: 7 posts, 47 imp, 0.3 interactions
+- 01:00: 9 posts, 44 imp, 0.2 interactions
+- 02:00: 8 posts, 41 imp, 0.0 interactions
+- 16:00: 7 posts, 39 imp, 0.1 interactions
+- 19:00: 8 posts, 39 imp, 0.2 interactions
+- 17:00: 8 posts, 32 imp, 0.0 interactions
+- 04:00: 9 posts, 31 imp, 0.0 interactions
 - 00:00: 1 posts, 6 imp, 0.0 interactions
 - 21:00: 1 posts, 5 imp, 0.0 interactions
 - 18:00: 1 posts, 3 imp, 0.0 interactions
