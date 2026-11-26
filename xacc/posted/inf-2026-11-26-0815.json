@@ -1,0 +1,14 @@
+{
+ "text": "𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Thomson Reuters builds its next AI model on US and Chinese open models\n→ Thomson 1.1 mixes Google's Gemma and Z.ai's GLM, per Business Insider\n→ GLM for computer use, Gemma for small size\n→ Launch planned by end of 2026",
+ "image": "inf-2026-11-26-0815.png",
+ "created_at": "2026-11-26T14:37:30+00:00",
+ "kind": "news",
+ "max_age_minutes": 120,
+ "sources": [
+  "https://dataconomy.com/2026/11/26/thomson-reuters-to-launch-ai-model-built-on-chinese-and-us/",
+  "https://mlq.ai/news/thomson-reuters-builds-thomson-11-on-googles-gemma-and-chinas-glm/"
+ ],
+ "x_url": "https://x.com/TheInferenceHQ/status/2125962175399207128",
+ "posted_at": "2026-11-26T14:37:40.181043+00:00",
+ "confirmed_live": true
+}
