@@ -102,9 +102,9 @@
   },
   {
    "channel": "lamplight",
-   "slot": "2026-11-25",
+   "slot": "2026-12-05",
    "title": "The Life of David: Shepherd, Poet and King",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-lamplight-david",
    "repo_folder": "lamplight/v4",
    "started": "2026-11-19",
@@ -120,13 +120,16 @@
     "lamplight-31",
     "lamplight-32"
    ],
-   "finished": "2026-11-19"
+   "finished": "2026-11-19",
+   "video_id": "jeLfxY9kcGE",
+   "note": "David moved to the 5 Dec slot (missed 25 Nov); uploaded by the cloud uploader 27 Nov",
+   "uploaded_by": "cloud uploader (no laptop)"
   },
   {
    "channel": "sleepy",
    "slot": "2026-11-28",
    "title": "Marcus Aurelius: The Emperor Who Wrote to Himself",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-sleepy-marcus",
    "repo_folder": "sleepy/video05",
    "started": "2026-11-20",
@@ -142,13 +145,15 @@
     "sleepy-28",
     "sleepy-29"
    ],
-   "finished": "2026-11-20"
+   "finished": "2026-11-20",
+   "video_id": "f0D0gYWpTTI",
+   "uploaded_by": "cloud uploader (no laptop)"
   },
   {
    "channel": "lamplight",
    "slot": "2026-11-28",
    "title": "Daniel in Babylon: The Furnace, the Wall and the Lions",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-lamplight-daniel",
    "repo_folder": "lamplight/v5",
    "started": "2026-11-21",
@@ -164,13 +169,15 @@
     "lamplight-35",
     "lamplight-36"
    ],
-   "finished": "2026-11-21"
+   "finished": "2026-11-21",
+   "video_id": "S74uiT-KpWI",
+   "uploaded_by": "cloud uploader (no laptop)"
   },
   {
    "channel": "sleepy",
    "slot": "2026-12-02",
    "title": "Jane Austen: A Quiet Life of Ink and Wit",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-sleepy-austen",
    "repo_folder": "sleepy/video06",
    "started": "2026-11-23",
@@ -187,13 +194,15 @@
     "sleepy-32",
     "sleepy-33"
    ],
-   "finished": "2026-11-24"
+   "finished": "2026-11-24",
+   "video_id": "eQZi258bW8s",
+   "uploaded_by": "cloud uploader (no laptop)"
   },
   {
    "channel": "lamplight",
    "slot": "2026-12-02",
    "title": "Ruth and Esther: Two Women of Quiet Courage",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-lamplight-ruth-esther",
    "repo_folder": "lamplight/v6",
    "started": "2026-11-25",
@@ -210,13 +219,15 @@
     "lamplight-39",
     "lamplight-40"
    ],
-   "finished": "2026-11-25"
+   "finished": "2026-11-25",
+   "video_id": "hXCAfrkJnsY",
+   "uploaded_by": "cloud uploader (no laptop)"
   },
   {
    "channel": "sleepy",
    "slot": "2026-12-05",
    "title": "Charles Dickens and the Story of A Christmas Carol",
-   "status": "ready-cloud",
+   "status": "scheduled",
    "work_branch": "work-sleepy-dickens",
    "repo_folder": "sleepy/video07",
    "started": "2026-11-26",
@@ -233,7 +244,9 @@
     "sleepy-36",
     "sleepy-37"
    ],
-   "finished": "2026-11-26"
+   "finished": "2026-11-26",
+   "video_id": "vxKCRzAq-A0",
+   "uploaded_by": "cloud uploader (no laptop)"
   }
  ],
  "updated": "2026-11-26",
