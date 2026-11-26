@@ -262,7 +262,7 @@ def post_instagram(data, base_dir):
 def ig_images_blocked():
     """Instagram answers 'Action is blocked' (2207051) when it flags image posting as spam.
     Hammering a blocked action risks the account, so after such a failure pause image posts
-    and probe once every 12h. Reels are unaffected."""
+    and probe once every 72h. Reels are unaffected."""
     now = dt.datetime.now(IST)
     recs = []
     for f in POSTED.glob("*.json"):
@@ -277,7 +277,7 @@ def ig_images_blocked():
         err = d.get("instagram_error") or ""
         if "2207051" in err and not err.startswith("paused"):
             try:
-                return (now - dt.datetime.fromisoformat(d["posted_at"])).total_seconds() < 12 * 3600
+                return (now - dt.datetime.fromisoformat(d["posted_at"])).total_seconds() < 72 * 3600
             except Exception:  # noqa: BLE001
                 return True
         if d.get("instagram_url"):
@@ -331,8 +331,8 @@ def post_item(item, data):
             errors["facebook_error"] = str(e); print("❌ Facebook:", e)
 
     if "facebook" in platforms and (fb_image or fb_video) and data.get("instagram", {}).get("skip") is not True:
-        if not fb_video and ig_images_blocked():
-            errors["instagram_error"] = "paused: Instagram blocked image posts (2207051); one probe every 12h, reels still post"
+        if not fb_video and (ig_images_blocked() or not igpost.image_budget_ok(POSTED)):
+            errors["instagram_error"] = "paused: Instagram blocked image posts (2207051); or the 2-images-a-day Instagram cap reached; reels still post"
             print("⏸️  Instagram image skipped (circuit breaker)")
         else:
             try:

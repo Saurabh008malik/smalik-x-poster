@@ -14,9 +14,16 @@ from playwright.sync_api import sync_playwright
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import reel as reel_mod  # noqa: E402
+sys.path.insert(0, str(HERE.parent / "design"))
+try:
+    import engine as design  # new poster design (Nov 2026); old template stays as fallback
+except Exception as e:  # noqa: BLE001
+    design = None
+    print("design engine unavailable, using old template:", e)
 
 SLOTS_ET = [7, 9, 11, 13, 15, 17, 19, 21]
 REEL_SLOT_ET = 12
+REEL_SLOTS_ET = [12, 16, 20]  # up to 3 reels a day (Nov 2026)
 
 
 def main(slug, posts_file, date, outdir):
@@ -30,9 +37,9 @@ def main(slug, posts_file, date, outdir):
     day = dt.date.fromisoformat(date)
     with sync_playwright() as p:
         b = p.chromium.launch()
-        n_std = 0
+        n_std = n_reel = 0
         reels = []
-        for i, post in enumerate(posts[: len(SLOTS_ET) + 1]):
+        for i, post in enumerate(posts[: len(SLOTS_ET) + 3]):
             name = f"{date}-{i + 1:02d}"
             item = {"caption": post["caption"], "first_comment": post.get("first_comment", ""),
                     "sources": post.get("sources", [])}
@@ -43,15 +50,24 @@ def main(slug, posts_file, date, outdir):
             if post.get("reel") and post.get("card"):
                 reels.append((post["card"], out / f"{name}.mp4"))  # rendered after this browser closes
                 item["video"] = f"{name}.mp4"
-                slot = REEL_SLOT_ET
+                slot = REEL_SLOTS_ET[n_reel % len(REEL_SLOTS_ET)]
+                n_reel += 1
             elif post.get("card"):
-                html = tpl.replace("<script>", "<script>window.DATA = " + json.dumps(post["card"]) + ";", 1)
-                page = b.new_page(viewport={"width": 1080, "height": 1350})
-                page.set_content(html, wait_until="networkidle")
-                size = page.evaluate("window.__fit")
-                page.screenshot(path=str(out / f"{name}.jpg"), type="jpeg", quality=92,
-                                clip={"x": 0, "y": 0, "width": 1080, "height": 1350})
-                page.close()
+                size = None
+                if design is not None:
+                    try:
+                        size = design.render_card(slug, post["card"], out / f"{name}.jpg", browser=b)
+                    except Exception as e:  # noqa: BLE001
+                        print(f"{name}: new design failed ({e}); using old template")
+                        size = None
+                if size is None:
+                    html = tpl.replace("<script>", "<script>window.DATA = " + json.dumps(post["card"]) + ";", 1)
+                    page = b.new_page(viewport={"width": 1080, "height": 1350})
+                    page.set_content(html, wait_until="networkidle")
+                    size = page.evaluate("window.__fit")
+                    page.screenshot(path=str(out / f"{name}.jpg"), type="jpeg", quality=92,
+                                    clip={"x": 0, "y": 0, "width": 1080, "height": 1350})
+                    page.close()
                 item["image"] = f"{name}.jpg"
                 print(f"{name}: card ok (headline font {size}px){'  <-- SMALL, shorten the headline' if size < 80 else ''}")
             else:
@@ -64,7 +80,7 @@ def main(slug, posts_file, date, outdir):
             (out / f"{name}.json").write_text(json.dumps(item, ensure_ascii=False, indent=2))
         b.close()
     for card, mp4 in reels:
-        reel_mod.render(page_cfg["name"], card, mp4)
+        reel_mod.render(page_cfg["name"], card, mp4, slug)
 
 
 if __name__ == "__main__":

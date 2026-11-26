@@ -28,7 +28,7 @@ a) **X tweet (English)**
 - Line 1: hook in Unicode bold sans letters (e.g. 𝗕𝗥𝗘𝗔𝗞𝗜𝗡𝗚, 𝗪𝗜𝗖𝗞𝗘𝗧, 𝗥𝗘𝗖𝗢𝗥𝗗), then 1–3 short lines of key facts, then a punchy closer or a fan question ("Your pick? 👇").
 - 1–2 relevant hashtags (#INDvNZ-style match tag, #Cricket, #TeamIndia, #WomensCricket, #WheelchairCricket). Vary them; never stuff them.
 - Original wording, **no links**, no @-mention spam. Vary the format between flashes: breaking news, live score moment, record alert, squad/injury update, fan poll question, one-line reaction.
-b) **Facebook caption (Hinglish, Roman script)**: first line = hook in Unicode bold sans letters, then 2–5 short lines with 👉 bullets, a fan question ("… Comment karo 👇"), hashtags #CricketKiBaat + 2 relevant. No links. Not a word-for-word translation of the tweet — natural Hinglish.
+b) **Facebook caption (Hinglish, Roman script)**: first line = hook in Unicode bold sans letters, then 2–5 short lines with 👉 bullets, ONE genuine fan question (never "comment karo", "like karo", "tag karo" or "share karo": Meta cuts reach for engagement bait), hashtags #CricketKiBaat + 2 relevant. No links. Not a word-for-word translation of the tweet — natural Hinglish.
 c) **Facebook first comment (Hinglish, one line)**, e.g. "Aisi hi taaza cricket updates ke liye Cricket Ki Baat ko Follow karo 🔔🏏" — vary it.
 d) **Instagram first comment (Hinglish, one line)** — different from (c), mentions @realcricketkibaat.
 

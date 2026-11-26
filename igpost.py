@@ -97,3 +97,33 @@ def _post_ig_reel_once(page_id, token, video_path, caption, first_comment=None):
         raise RuntimeError(f"Instagram reel upload failed {u.status_code}: {u.text[:300]}")
     _wait_ready(c["id"], token, tries=60)
     return _publish(ig_id, c["id"], token, first_comment)
+
+
+IG_IMAGES_PER_DAY = 2  # 27 Nov 2026: Instagram flagged image posting as spam (2207051) on 3 accounts; reels are not capped
+
+
+def image_budget_ok(posted_dir, cap=IG_IMAGES_PER_DAY, hours=24):
+    """True while fewer than `cap` IMAGE posts reached Instagram from this account in the last `hours`.
+    Keeps image volume low so Instagram does not flag the account; Facebook is not affected."""
+    import datetime as _dt
+    import json as _json
+    import pathlib as _pl
+    now = _dt.datetime.now(_dt.timezone.utc)
+    n = 0
+    for f in _pl.Path(posted_dir).glob("*.json"):
+        try:
+            d = _json.loads(f.read_text())
+        except Exception:  # noqa: BLE001
+            continue
+        if d.get("video") or (d.get("facebook") or {}).get("video") or not d.get("instagram_url"):
+            continue
+        ts = d.get("posted_at") or d.get("done_at")
+        try:
+            t = _dt.datetime.fromisoformat(ts)
+            if t.tzinfo is None:
+                t = t.replace(tzinfo=_dt.timezone.utc)
+        except Exception:  # noqa: BLE001
+            continue
+        if (now - t).total_seconds() < hours * 3600:
+            n += 1
+    return n < cap

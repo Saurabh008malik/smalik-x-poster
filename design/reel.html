@@ -1,0 +1,166 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/*FONTS*/
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:antialiased}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+.layer{position:absolute;inset:0}
+#content{position:absolute;left:84px;right:110px;top:230px;height:1180px;display:flex;flex-direction:column;justify-content:center}
+#kick{align-self:flex-start;font-size:32px;letter-spacing:.16em;text-transform:uppercase}
+#hero{margin:36px 0 26px}
+#hero:empty{display:none}
+#h{font-size:140px;line-height:1.04}
+#h .w{display:inline-block;margin-right:.22em;will-change:transform}
+#h .w.em{color:var(--acc)}
+#sub{margin-top:40px;font-size:46px;line-height:1.28}
+#sub:empty,#src:empty{display:none}
+#src{margin-top:22px;font-family:"Mono";font-size:26px;opacity:.75}
+#end{position:absolute;left:84px;right:110px;top:640px;height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0}
+#end .nm{font-size:96px;line-height:1.02;letter-spacing:-.02em}
+#end .hd{margin-top:18px;font-family:"Mono";font-size:32px;opacity:.75}
+#end .pill{margin-top:46px;font-size:40px;padding:24px 44px;border-radius:999px;background:var(--acc);color:var(--pillInk)}
+#prog{position:absolute;left:84px;right:110px;top:1460px;height:8px;border-radius:8px;background:rgba(127,127,127,.25);overflow:hidden}
+#prog i{display:block;height:100%;width:100%;background:var(--acc);transform-origin:left center;transform:scaleX(0)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+
+/* paper */
+.paper{--bg:#EFE8DA;--ink:#16130F;--pillInk:#FBF8F1;color:var(--ink)}
+.paper #k1{background-image:radial-gradient(rgba(80,60,20,.07) 1.2px,transparent 1.4px);background-size:8px 8px}
+.paper #k2{background:linear-gradient(180deg,#16130F 0 150px,transparent 150px)}
+.paper #k3{top:150px;height:28px;background:radial-gradient(circle at 14px 14px,var(--bg) 8px,transparent 8.5px) 0 -14px/38px 28px repeat-x;bottom:auto}
+.paper .bandtxt{position:absolute;left:84px;right:84px;top:0;height:150px;display:flex;align-items:center;justify-content:space-between;color:#FBF8F1;font-family:"Brico";font-size:44px}
+.paper .bandtxt span{font-family:"Mono";font-size:26px;letter-spacing:.16em;color:#CFC6B4}
+.paper #kick{font-family:"Mono";color:var(--acc);border:5px solid var(--acc);padding:12px 26px}
+.paper #h{font-family:"Brico";letter-spacing:-.035em}
+.paper #h .w.em{color:var(--ink);background:linear-gradient(transparent 56%,var(--mark) 56%,var(--mark) 92%,transparent 92%)}
+.paper #sub{font-family:"OutfitR";color:#4A443A}
+.paper .big{font-family:"Brico";font-size:230px;line-height:.9;letter-spacing:-.05em;color:var(--acc)}
+.paper #end .nm{font-family:"Brico"}
+
+/* night */
+.night{--bg:#070B14;--ink:#F3F6FC;--pillInk:#061018;color:var(--ink)}
+.night #k1{background:radial-gradient(900px 800px at 50% 10%,var(--glow),transparent 65%)}
+.night #k2{background-image:radial-gradient(rgba(255,255,255,.08) 1.2px,transparent 1.5px);background-size:30px 30px;mask-image:linear-gradient(180deg,#000,transparent 75%)}
+.night #kick{font-family:"Outfit";color:var(--acc);border:4px solid var(--acc);border-radius:999px;padding:14px 30px}
+.night #h{font-family:"Outfit";letter-spacing:-.03em}
+.night #sub{font-family:"OutfitR";color:#B9C3D8}
+.night .big{font-family:"Outfit";font-size:210px;line-height:.9;letter-spacing:-.04em;color:var(--acc)}
+.night #end .nm{font-family:"Outfit"}
+
+/* sticker */
+.sticker{--bg:#FFD43B;--ink:#111;--acc:#FF2E2E;--pillInk:#fff;color:var(--ink)}
+.sticker.dark{--bg:#141210;--ink:#FFFDF7}
+.sticker #k1{background-image:radial-gradient(rgba(0,0,0,.10) 3px,transparent 3.3px);background-size:36px 36px}
+.sticker #kick{font-family:"Brico";background:#111;color:#fff;padding:16px 30px;border-radius:16px;box-shadow:8px 8px 0 #FF2E2E;letter-spacing:.04em}
+.sticker #h{font-family:"Anton";text-transform:uppercase;line-height:1.14}
+.sticker #h .w.em{color:#fff;background:#FF2E2E;padding:0 .1em;border-radius:8px}
+.sticker #sub{font-family:"Outfit"}
+.sticker .big{font-family:"Anton";font-size:260px;line-height:.9;color:#FF2E2E}
+.sticker #end .nm{font-family:"Anton";text-transform:uppercase}
+
+/* stadium */
+.stadium{--bg:#050B08;--ink:#F4F6FB;--pillInk:#0A0F0C;color:var(--ink)}
+.stadium #k1{background:radial-gradient(700px 600px at 15% 0%,rgba(255,236,190,.24),transparent 60%),radial-gradient(700px 600px at 85% 0%,rgba(255,236,190,.20),transparent 60%),linear-gradient(180deg,#0B1F17,#06120D 55%,#040806)}
+.stadium #k2{top:auto;height:700px;left:-15%;right:-15%;background:repeating-linear-gradient(90deg,rgba(80,160,90,.12) 0 110px,rgba(80,160,90,.04) 110px 220px);transform:perspective(700px) rotateX(58deg);transform-origin:bottom}
+.stadium #kick{font-family:"Outfit";background:var(--acc);color:#0A0F0C;padding:15px 30px;border-radius:10px}
+.stadium #h{font-family:"Anton";text-transform:uppercase;line-height:1.02}
+.stadium #sub{font-family:"Outfit";color:#C8D3CC}
+.stadium .big{font-family:"Anton";font-size:300px;line-height:.88;color:var(--acc)}
+.stadium #end .nm{font-family:"Anton";text-transform:uppercase}
+</style></head>
+<body>
+<div id="stage">
+ <div class="layer" id="k1"></div><div class="layer" id="k2"></div><div class="layer" id="k3"></div>
+ <div id="deco"></div>
+ <div id="content"><div id="kick"></div><div id="hero"></div><h1 id="h"></h1><div id="sub"></div><div id="src"></div></div>
+ <div id="end"><div class="nm"></div><div class="hd"></div><div class="pill"></div></div>
+ <div id="prog"><i></i></div>
+ <div id="flash"></div>
+</div>
+<script>/*GSAP*/</script>
+<script>
+/*DATA*/
+(function(){
+const D=window.DATA,B=window.BRAND,key=B.key;
+const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium'}[key]||'night';
+const st=document.getElementById('stage');st.className=SKIN+(SKIN==='sticker'&&D.theme==='dark'?' dark':'');
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const P={paper:{green:['#0E7C47','#BFE8C8'],red:['#C8332F','#F7C7BE'],gold:['#B7791F','#F6DE9A'],blue:['#1F5FBF','#C5D8F7']},
+ night:{green:['#2EE6A6','rgba(46,230,166,.26)'],red:['#FF6B6B','rgba(255,107,107,.26)'],gold:['#FFC64D','rgba(255,198,77,.26)'],blue:['#5B9BFF','rgba(91,155,255,.28)']},
+ stadium:{saffron:'#FF9933',gold:'#FFC64D',green:'#3DDC84',red:'#FF5A5F',blue:'#5B9BFF'}};
+if(SKIN==='paper'){const t=P.paper[D.theme]||P.paper.green;st.style.setProperty('--acc',t[0]);st.style.setProperty('--mark',t[1]);
+ $('deco').innerHTML=`<div class="bandtxt"><span style="font-family:Brico;font-size:44px;letter-spacing:0;color:#FBF8F1">${esc(B.name)}</span><span>${key==='fineprint'?'FINE PRINT':'PAY STUB'}</span></div>`;}
+if(SKIN==='night'){const t=P.night[D.theme]||P.night.green;st.style.setProperty('--acc',t[0]);st.style.setProperty('--glow',t[1]);}
+if(SKIN==='stadium'){st.style.setProperty('--acc',P.stadium[D.theme]||'#FF9933');}
+$('kick').textContent=D.kicker||'Truth';
+// hero: big stat, or credit gauge
+let gaugeVal=null;
+if(D.big){$('hero').innerHTML=`<div class="big" id="bigv">${esc(D.big)}</div>`;}
+else if(key==='credit'){
+ const segs=['#FF5A5F','#FF9F43','#FFD84D','#9BE36B','#2EE6A6'];let p='';
+ for(let i=0;i<5;i++){const a0=Math.PI*(1-i/5)-0.02,a1=Math.PI*(1-(i+1)/5)+0.02,r=230,cx=260,cy=260;
+  p+=`<path class="seg" d="M${cx+r*Math.cos(a0)},${cy-r*Math.sin(a0)} A${r},${r} 0 0 1 ${cx+r*Math.cos(a1)},${cy-r*Math.sin(a1)}" stroke="${segs[i]}" stroke-width="34" fill="none"/>`;}
+ gaugeVal=Math.max(300,Math.min(850,Number(D.score)||({red:540,gold:670,blue:720,green:790}[D.theme]||720)));
+ $('hero').innerHTML=`<svg width="520" height="290" viewBox="0 0 520 290" style="overflow:visible">${p}<g id="needle" style="transform-origin:260px 260px"><line x1="260" y1="260" x2="460" y2="260" stroke="#F3F6FC" stroke-width="11" stroke-linecap="round"/></g><circle cx="260" cy="260" r="20" fill="#F3F6FC"/><text id="gnum" x="260" y="200" text-anchor="middle" fill="#F3F6FC" font-family="Outfit" font-size="72">300</text></svg>`;
+}
+// words
+const tmp=document.createElement('div');tmp.innerHTML=String(D.headline||'').replace(/([A-Za-z0-9$%]+(?:-[A-Za-z0-9$%]+)+)/g,'$1');const words=[];
+tmp.childNodes.forEach(n=>{const em=n.nodeName==='EM'||n.nodeName==='B';(n.textContent||'').split(/\s+/).filter(Boolean).forEach(w=>words.push({w,em}));});
+$('h').innerHTML=words.map(x=>`<span class="w${x.em?' em':''}">${esc(x.w)}</span>`).join(' ');
+$('sub').textContent=D.sub||'';$('src').textContent=D.source||'';
+document.querySelector('#end .nm').textContent=B.name;document.querySelector('#end .hd').textContent=B.handle;
+document.querySelector('#end .pill').textContent=(D.cta||B.cta);
+document.fonts.ready.then(()=>{
+ const c=$('content'),h=$('h');let size=140;
+ while((c.scrollHeight>c.clientHeight+1||h.scrollWidth>h.clientWidth+1)&&size>48){size-=4;h.style.fontSize=size+'px';}
+ window.__fit=size;
+ const g=gsap,tl=g.timeline({paused:true}),W=[...document.querySelectorAll('#h .w')];
+ const nW=W.length,chars=(tmp.textContent||'').length+(D.sub||'').length;
+ // 1. hook (0 - 1.0s): flash + kicker slam + hero
+ tl.fromTo('#flash',{opacity:.55},{opacity:0,duration:.35,ease:'power2.out'},0);
+ tl.fromTo('#kick',{scale:1.6,opacity:0,rotation:SKIN==='paper'?-12:0},{scale:1,opacity:1,rotation:SKIN==='paper'?-3:0,duration:.45,ease:'back.out(2.2)'},.05);
+ tl.fromTo('#k1',{scale:1.12},{scale:1,duration:1.2,ease:'power3.out'},0);
+ let t=.45;
+ if(D.big){
+  const m=String(D.big).match(/^([^\d-]*)(-?[\d,.]+)(.*)$/);const bv=$('bigv');
+  tl.fromTo(bv,{scale:.4,opacity:0,transformOrigin:'left center'},{scale:1,opacity:1,duration:.5,ease:'back.out(2)'},t);
+  if(m){const num=parseFloat(m[2].replace(/,/g,'')),dec=(m[2].split('.')[1]||'').length,comma=m[2].includes(','),o={v:0};
+   tl.to(o,{v:num,duration:1.1,ease:'power2.out',onUpdate:()=>{let s=o.v.toFixed(dec);if(comma)s=Number(s).toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});bv.textContent=m[1]+s+m[3];}},t);
+   tl.set(bv,{textContent:D.big},t+1.12);}
+  t+=1.0;
+ }else if(gaugeVal){
+  tl.from('.seg',{opacity:0,duration:.25,stagger:.08},t);
+  const o={v:300},nd=$('needle'),gn=$('gnum');
+  tl.fromTo(o,{v:300},{v:gaugeVal,duration:1.2,ease:'power3.out',onUpdate:()=>{const a=-180+(o.v-300)/550*180;nd.style.transform=`rotate(${a}deg)`;gn.textContent=Math.round(o.v);}},t);
+  t+=1.0;
+ }
+ // 2. headline words
+ const WS=.2;
+ tl.from(W,{y:70,opacity:0,rotationX:-60,scale:.9,duration:.42,ease:'power3.out',stagger:WS},t);
+ t+=nW*WS+.35;
+ W.forEach((el,i)=>{if(el.classList.contains('em'))tl.to(el,{scale:1.08,duration:.18,yoyo:true,repeat:1,ease:'sine.inOut'},t-.1);});
+ // 3. sub + source
+ if(D.sub){tl.from('#sub',{y:40,opacity:0,duration:.5,ease:'power2.out'},t);t+=.4;}
+ if(D.source)tl.from('#src',{opacity:0,duration:.4},t);
+ const hold=Math.max(2.2,Math.min(5.5,chars/22));t+=hold;
+ // 4. end card
+ tl.to('#content',{y:-60,opacity:0,duration:.45,ease:'power2.in'},t);
+ tl.fromTo('#end',{opacity:0,y:60},{opacity:1,y:0,duration:.5,ease:'power3.out'},t+.3);
+ tl.from('#end .pill',{scale:.6,duration:.45,ease:'back.out(2.5)'},t+.55);
+ const dur=t+2.4;
+ tl.fromTo('#prog i',{scaleX:0},{scaleX:1,duration:dur,ease:'none'},0);
+ // ambient motion (deterministic, timeline driven)
+ tl.fromTo('#k2',{x:0,y:0},{x:SKIN==='stadium'?0:-20,y:SKIN==='stadium'?0:-30,duration:dur,ease:'none'},0);
+ if(SKIN==='stadium')tl.fromTo('#k1',{opacity:.85},{opacity:1,duration:.6,yoyo:true,repeat:Math.floor(dur/.6),ease:'sine.inOut'},1.2);
+ tl.set({},{},dur);
+ window.__duration=dur;
+ window.setT=s=>{tl.seek(s,false);};
+ tl.seek(0);
+ window.__tl=tl;window.__ready=true;
+});
+})();
+</script>
+</body></html>

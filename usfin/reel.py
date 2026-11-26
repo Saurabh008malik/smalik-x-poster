@@ -18,7 +18,18 @@ MUSIC = MONEY / "music"
 BY_THEME = {"green": "calm", "gold": "uplift", "red": "focus", "blue": "focus"}
 
 
-def render(brand, card, out):
+def render(brand, card, out, slug=None):
+    track = MUSIC / f"{card.get('music') or BY_THEME.get(card.get('theme'), 'calm')}.mp3"
+    if not track.exists():
+        track = MUSIC / "calm.mp3"
+    try:
+        sys.path.insert(0, str(ROOT / "design"))
+        import engine as design
+        key = slug or {v["name"]: k for k, v in design.BRANDS.items()}.get(brand, "credit")
+        design.render_reel(key, card, out, track)
+        return
+    except Exception as e:  # noqa: BLE001
+        print("new reel design failed, using old template:", e)
     tpl = (MONEY / "cards" / "template-reel.html").read_text().replace("Paycheck Truths", brand)
     html = tpl.replace("<script>", "<script>window.DATA = " + json.dumps(card) + ";", 1)
     with tempfile.TemporaryDirectory() as tmp, sync_playwright() as p:

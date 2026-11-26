@@ -56,3 +56,11 @@ Secret: SLEEPY_HOOK (GitHub). If the Apps Script web app is ever redeployed, the
 - Every Short also gets a first comment from the channel with the full-video link (posted right after the Short goes public; retried on later runs if YouTube is not ready; fields comment_done/comment_attempts in ytq/shorts.json).
 - Policy: altered/synthetic flag ON, not made for kids, max 1 Short per channel per UTC day (13 Nov 2026: cut from 3 because of the July 2026 repetitive-content policy); use varied passages, hooks and titles (repetitive template content is a risk).
 - Run `python ytq/ytq.py whoami` (workflow input action=whoami) after any redeploy of a hook.
+
+## Upgrade 27 Nov 2026 (approved by Saurabh): animation + poster-quality thumbnails, no paid AI video
+Applies to The Sleepy Biographer AND Lamplight Scripture, from the next video made.
+- **Animated segments with HyperFrames** (skill `hyperframes-video`, free, renders in the cloud workspace; about 3 min of compute per 6 s at 1080p vertical, so plan about 1 to 2 h of render for the animation): an animated title/hook for the first 20 to 40 seconds, an animated chapter card at each chapter start (6 to 8 s, e.g. "CHAPTER FOUR / The Road to Bethlehem"), 1 to 3 journey maps or timelines per video where the story moves (label routes "one likely path" when the source does not record it), and scripture/quote cards. Total about 3 to 5 minutes of animation per video. Sample: Lamplight chapter card + Nazareth to Bethlehem map (sent 27 Nov).
+- Keep the calm look: warm dark palette, serif titles (Gloock / Crimson Pro / Instrument Serif), slow eases, no flashes. Sleep viewers must not be jolted.
+- Livelier picture sections (free): add very subtle drifting dust, candle glow and film grain over the slow-zoom images.
+- **Thumbnails**: design with the `poster-canvas-design` method (bold modern type, one focal image, strong contrast, 3 to 5 words max), still public-domain art. Make 2 variants and use YouTube "Test & compare" when available.
+- Paid AI video (moving realistic scenes like Scripture Rebuilt) is on hold until there is a budget; later idea: a 30 to 45 min non-sleep story documentary on Lamplight with an animated hook.

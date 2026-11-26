@@ -1,0 +1,175 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/*FONTS*/
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:antialiased}
+#card{position:relative;width:1080px;height:1350px;overflow:hidden;display:flex;flex-direction:column}
+#main{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+#h{font-weight:400}
+#sub:empty,#src:empty,#big:empty,#pts:empty{display:none}
+
+/* ---------- PAPER (Paycheck Truths, Fine Print Facts) ---------- */
+.paper{background:#E9E1D2}
+.paper #card{padding:54px}
+.paper .sheet{position:absolute;inset:54px;background:#FBF8F1;border-radius:6px;box-shadow:0 30px 60px rgba(60,40,10,.18),0 2px 0 rgba(0,0,0,.04)}
+.paper .sheet::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(80,60,20,.06) 1px,transparent 1.2px);background-size:7px 7px;border-radius:6px}
+.paper .band{position:relative;z-index:1;height:118px;background:#16130F;color:#FBF8F1;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-radius:6px 6px 0 0}
+.paper .band b{font-family:"Brico";font-size:40px;letter-spacing:-.01em;display:flex;align-items:center;gap:16px}
+.paper .band b i{width:40px;height:40px;border-radius:50%;background:var(--acc);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:26px;color:#FBF8F1}
+.paper .band span{font-family:"Mono";font-size:22px;letter-spacing:.16em;color:#CFC6B4}
+.paper .perf{position:relative;z-index:1;height:26px;background:radial-gradient(circle at 13px 13px,#E9E1D2 7px,transparent 7.5px) 0 0/36px 26px repeat-x}
+.paper .inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:34px 56px 40px;min-height:0}
+.paper #kick{align-self:flex-start;font-family:"Mono";font-size:28px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);border:4px solid var(--acc);padding:10px 22px;transform:rotate(-3deg);margin:14px 0 0 6px}
+.paper #big{font-family:"Brico";font-size:190px;line-height:.9;letter-spacing:-.05em;color:var(--acc);margin-bottom:22px}
+.paper #h{font-family:"Brico";color:#16130F;line-height:1.02;letter-spacing:-.035em;font-size:128px}
+.paper #h em{font-style:normal;background:linear-gradient(transparent 56%,var(--mark) 56%,var(--mark) 92%,transparent 92%);padding:0 .06em}
+.paper #sub{margin-top:30px;font-family:"OutfitR";font-size:38px;line-height:1.3;color:#4A443A}
+.paper .rows{font-family:"Mono";font-size:23px;color:#8A8170;border-top:3px dashed #CFC6B4;padding-top:22px;display:flex;justify-content:space-between;gap:20px}
+.paper .rows #src{color:#6B6354}
+.paper .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-family:"Outfit";font-size:28px;color:#16130F}
+.paper .foot span{font-family:"OutfitR";color:#6B6354;font-size:25px}
+
+/* ---------- NIGHT (Credit Score Truths, Closing Costs) ---------- */
+.night{background:#080D1A;color:#F3F6FC}
+.night #card{padding:70px 72px 56px;background:radial-gradient(900px 700px at 50% 0%,var(--glow),transparent 65%),linear-gradient(180deg,#0C1426,#070B14 80%)}
+.night #card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.3px);background-size:28px 28px;mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.night .top{position:relative;display:flex;justify-content:space-between;align-items:center}
+.night #kick{font-family:"Outfit";font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);border:3px solid var(--acc);border-radius:999px;padding:12px 26px}
+.night .top span{font-family:"Mono";font-size:22px;color:#7F8BA6;letter-spacing:.1em}
+.night .gauge{position:relative;width:560px;height:300px;margin:40px auto 0}
+.night .gauge svg{width:560px;height:300px;overflow:visible}
+.night #big{font-family:"Outfit";font-size:150px;line-height:.95;letter-spacing:-.04em;color:var(--acc);text-align:center;margin:-40px 0 14px}
+.night #h{font-family:"Outfit";line-height:1.04;letter-spacing:-.03em;font-size:122px}
+.night #h em{font-style:normal;color:var(--acc)}
+.night #sub{margin-top:30px;font-family:"OutfitR";font-size:38px;line-height:1.3;color:#B9C3D8}
+.night #src{font-family:"Mono";font-size:22px;color:#7F8BA6;margin:16px 0}
+.night .foot{position:relative;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.1);padding-top:26px;font-family:"Outfit";font-size:31px}
+.night .foot b{display:flex;align-items:center;gap:14px;font-weight:400}
+.night .foot span{font-family:"OutfitR";color:#9AA6C0;font-size:24px}
+
+/* ---------- STICKER (Creator Adda) ---------- */
+.sticker{background:var(--bg)}
+.sticker #card{padding:70px 70px 56px;background:var(--bg)}
+.sticker #card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--dot) 2.4px,transparent 2.6px);background-size:30px 30px;mask-image:linear-gradient(160deg,#000 0%,transparent 55%)}
+.sticker .top{position:relative;display:flex;align-items:center;gap:22px}
+.sticker #kick{font-family:"Brico";font-size:30px;letter-spacing:.04em;text-transform:uppercase;background:#111;color:#fff;padding:14px 26px;border-radius:14px;transform:rotate(-3deg);box-shadow:6px 6px 0 #FF2E2E}
+.sticker #lab{font-family:"Anton";font-size:44px;width:92px;height:92px;border-radius:50%;background:#FF2E2E;color:#fff;display:flex;align-items:center;justify-content:center;border:4px solid #111;transform:rotate(6deg)}
+.sticker #lab:empty{display:none}
+.sticker #h{font-family:"Anton";text-transform:uppercase;line-height:1.14;letter-spacing:.005em;color:var(--ink);font-size:150px}
+.sticker #h em{font-style:normal;color:#fff;background:#FF2E2E;padding:.02em .12em 0;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:8px}
+.sticker #sub{margin-top:26px;font-family:"Outfit";font-size:38px;line-height:1.28;color:var(--sub)}
+.sticker #pts{list-style:none;margin-top:34px;display:flex;flex-direction:column;gap:18px}
+.sticker #pts li{display:flex;align-items:center;gap:20px;background:#fff;border:4px solid #111;border-radius:18px;padding:18px 24px;box-shadow:7px 7px 0 #111;font-family:"Outfit";font-size:36px;color:#111}
+.sticker #pts li b{flex:none;width:52px;height:52px;border-radius:50%;background:#FF2E2E;color:#fff;font-family:"Anton";font-weight:400;font-size:30px;display:flex;align-items:center;justify-content:center}
+.sticker .foot{position:relative;display:flex;justify-content:space-between;align-items:center;border-top:3px solid var(--line);padding-top:24px}
+.sticker .who{display:flex;align-items:center;gap:16px;font-family:"Brico";font-size:30px;color:var(--ink)}
+.sticker .who img{width:74px;height:74px;border-radius:50%;border:3px solid #111;object-fit:cover}
+.sticker .who small{display:block;font-family:"OutfitR";font-size:22px;color:var(--sub)}
+.sticker .foot span{font-family:"Brico";font-size:24px;background:#111;color:#fff;padding:12px 20px;border-radius:999px}
+
+/* ---------- STADIUM (Cricket Ki Baat headline cards) ---------- */
+.stadium{background:#050B08;color:#F4F6FB}
+.stadium #card{padding:70px 70px 56px;background:radial-gradient(700px 520px at 18% -4%,rgba(255,236,190,.22),transparent 60%),radial-gradient(700px 520px at 82% -4%,rgba(255,236,190,.18),transparent 60%),linear-gradient(180deg,#0B1F17 0%,#06120D 55%,#040806 100%)}
+.stadium #card::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-120px;height:520px;background:repeating-linear-gradient(90deg,rgba(80,160,90,.10) 0 90px,rgba(80,160,90,.04) 90px 180px);transform:perspective(600px) rotateX(55deg);transform-origin:bottom}
+.stadium .top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center}
+.stadium #kick{font-family:"Outfit";font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:#0A0F0C;background:var(--acc);padding:13px 26px;border-radius:8px}
+.stadium #big{position:relative;z-index:1;font-family:"Anton";font-size:250px;line-height:.9;color:var(--acc);letter-spacing:.01em}
+.stadium #h{position:relative;z-index:1;font-family:"Anton";text-transform:uppercase;line-height:1.0;font-size:150px}
+.stadium #h em{font-style:normal;color:var(--acc)}
+.stadium #sub{position:relative;z-index:1;margin-top:26px;font-family:"Outfit";font-size:38px;line-height:1.3;color:#C8D3CC}
+.stadium #src{position:relative;z-index:1;font-family:"Mono";font-size:22px;color:#8FA197;margin:14px 0}
+.stadium .foot{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.12);padding-top:24px;font-family:"Outfit";font-size:31px}
+.stadium .foot b{font-weight:400;display:flex;align-items:center;gap:14px}
+.stadium .foot span{font-family:"OutfitR";color:#A8B7AE;font-size:24px}
+.stadium .meta{font-family:"Mono";font-size:22px;letter-spacing:.08em;color:#A8B7AE;text-transform:uppercase}
+.stadium.sc #h{font-size:176px;margin-top:10px}
+.stadium .rows2{position:relative;z-index:1;margin-top:34px;display:flex;flex-direction:column;gap:14px}
+.stadium .tr{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;border-radius:16px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.08)}
+.stadium .tr.win{border-color:var(--acc);background:rgba(255,255,255,.10)}
+.stadium .tr .nm{font-family:"Outfit";font-size:40px;display:flex;align-items:center;gap:16px}
+.stadium .tr .nm i{width:12px;height:44px;border-radius:6px;display:inline-block}
+.stadium .tr .nm small{display:block;font-family:"OutfitR";font-size:24px;color:#A8B7AE}
+.stadium .tr .sc{font-family:"Anton";font-size:72px;line-height:1}
+.stadium .tr.win .sc{color:var(--acc)}
+.stadium .res{position:relative;z-index:1;margin-top:22px;font-family:"Outfit";font-size:34px;line-height:1.3;color:#E6ECE8}
+.stadium .chips{position:relative;z-index:1;margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px}
+.stadium .chip{background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.10);border-radius:16px;padding:20px 20px}
+.stadium .chip b{display:block;font-family:"Anton";font-size:46px;line-height:1.05;color:#fff}
+.stadium .chip span{display:block;margin-top:8px;font-family:"OutfitR";font-size:22px;line-height:1.25;color:#B9C6BF}
+.stadium.sc #main{justify-content:center}
+</style></head>
+<body>
+<div id="card"></div>
+<script>
+/*DATA*/
+(function(){
+const D=window.DATA, B=window.BRAND, key=B.key;
+const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium'}[key]||'night';
+document.body.className=SKIN;
+const card=document.getElementById('card');
+const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const T={
+ paper:{green:['#0E7C47','#BFE8C8'],red:['#C8332F','#F7C7BE'],gold:['#B7791F','#F6DE9A'],blue:['#1F5FBF','#C5D8F7']},
+ night:{green:['#2EE6A6','rgba(46,230,166,.22)'],red:['#FF6B6B','rgba(255,107,107,.22)'],gold:['#FFC64D','rgba(255,198,77,.22)'],blue:['#5B9BFF','rgba(91,155,255,.24)']},
+ stadium:{saffron:'#FF9933',gold:'#FFC64D',green:'#3DDC84',red:'#FF5A5F',blue:'#5B9BFF'}
+};
+let theme=D.theme;
+if(SKIN==='paper'){const t=T.paper[theme]||T.paper.green;card.style.setProperty('--acc',t[0]);card.style.setProperty('--mark',t[1]);}
+if(SKIN==='night'){const t=T.night[theme]||T.night.green;card.style.setProperty('--acc',t[0]);card.style.setProperty('--glow',t[1]);}
+if(SKIN==='stadium'){card.style.setProperty('--acc',T.stadium[theme]||'#FF9933');}
+if(SKIN==='sticker'){
+ const S={yellow:{bg:'#FFD43B',ink:'#111',sub:'#3B2F12',dot:'rgba(0,0,0,.10)',line:'rgba(0,0,0,.18)'},
+          dark:{bg:'#141210',ink:'#FFFDF7',sub:'#D9D2C6',dot:'rgba(255,212,59,.12)',line:'rgba(255,255,255,.16)'},
+          white:{bg:'#FFFDF7',ink:'#111',sub:'#3B342D',dot:'rgba(255,46,46,.10)',line:'rgba(0,0,0,.14)'}}[theme]||null;
+ const s=S||{bg:'#FFD43B',ink:'#111',sub:'#3B2F12',dot:'rgba(0,0,0,.10)',line:'rgba(0,0,0,.18)'};
+ for(const k in s) card.style.setProperty('--'+k,s[k]);
+}
+const no=String(Math.abs([...String(D.headline||'')].reduce((a,c)=>(a*31+c.charCodeAt(0))|0,7))%9000+1000);
+const H=`<h1 id="h">${String(D.headline||'').replace(/([A-Za-z0-9$%]+(?:-[A-Za-z0-9$%]+)+)/g,'<span style="white-space:nowrap">$1</span>')}</h1>`;
+const SUB=`<div id="sub">${esc(D.sub)}</div>`;
+const BIG=`<div id="big">${esc(D.big)}</div>`;
+const cta=esc(D.cta||B.cta);
+if(SKIN==='paper'){
+ card.innerHTML=`<div class="sheet"></div><div class="band"><b><i>✓</i>${esc(B.name)}</b><span>${key==='fineprint'?'THE FINE PRINT':'PAY STUB'} · NO. ${no}</span></div><div class="perf"></div>
+ <div class="inner"><div id="kick">${esc(D.kicker||'Money truth')}</div><div id="main">${BIG}${H}${SUB}</div>
+ <div class="rows"><span id="src">${esc(D.source)}</span><span>TRUTH, NOT ADVICE</span></div>
+ <div class="foot"><b>${esc(B.handle)}</b><span>${cta}</span></div></div>`;
+}else if(SKIN==='night'){
+ const gauge=key==='credit'?(()=>{const segs=['#FF5A5F','#FF9F43','#FFD84D','#9BE36B','#2EE6A6'];let p='';for(let i=0;i<5;i++){const a0=Math.PI*(1-i/5)-0.02,a1=Math.PI*(1-(i+1)/5)+0.02;const r=250,cx=280,cy=280;p+=`<path d="M${cx+r*Math.cos(a0)},${cy-r*Math.sin(a0)} A${r},${r} 0 0 1 ${cx+r*Math.cos(a1)},${cy-r*Math.sin(a1)}" stroke="${segs[i]}" stroke-width="34" fill="none" stroke-linecap="butt"/>`;}
+   const val=Math.max(300,Math.min(850,Number(D.score)||({red:540,gold:670,blue:720,green:790}[theme]||720)));const ang=Math.PI*(1-(val-300)/550);
+   return `<div class="gauge"><svg viewBox="0 0 560 300">${p}<text x="30" y="318" fill="#7F8BA6" font-family="Mono" font-size="22">300</text><text x="490" y="318" fill="#7F8BA6" font-family="Mono" font-size="22">850</text><line x1="280" y1="280" x2="${280+200*Math.cos(ang)}" y2="${280-200*Math.sin(ang)}" stroke="#F3F6FC" stroke-width="10" stroke-linecap="round"/><circle cx="280" cy="280" r="20" fill="#F3F6FC"/></svg></div>`})()
+  :`<div class="gauge" style="height:220px"><svg viewBox="0 0 560 220"><path d="M120 200 V110 L280 20 L440 110 V200 Z" fill="none" stroke="var(--acc)" stroke-width="10" stroke-linejoin="round"/><rect x="245" y="130" width="70" height="70" fill="none" stroke="var(--acc)" stroke-width="8"/></svg></div>`;
+ card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||'Truth')}</div><span>${esc(B.handle)}</span></div>
+ ${D.big?'':gauge}<div id="main">${BIG}${H}${SUB}</div><div id="src">${esc(D.source)}</div>
+ <div class="foot"><b>${esc(B.name)}</b><span>${cta}</span></div>`;
+}else if(SKIN==='sticker'){
+ let img='';try{img=window.HOST||''}catch(e){}
+ const pts=(D.points||[]).slice(0,5).map((p,i)=>`<li><b>${i+1}</b><span>${esc(p)}</span></li>`).join('');
+ card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||'Creator tip')}</div><div id="lab">${esc(D.label)}</div></div>
+ <div id="main">${H}${SUB}<ul id="pts">${pts}</ul></div>
+ <div class="foot"><div class="who">${img?`<img src="${img}">`:''}<div>${esc(B.name)}<small>${esc(B.handle)}</small></div></div><span>${cta}</span></div>`;
+}else if(D.teams||D.stats){
+ document.body.classList.add('sc');
+ const H2=`<h1 id="h">${String(D.headline||'')}</h1>`;
+ const rows=(D.teams||[]).slice(0,2).map(t=>`<div class="tr${t.win?' win':''}"><div class="nm"><i style="background:${esc(t.color||'#9AA4B2')}"></i><div>${esc(t.name)}<small>${esc(t.overs)}</small></div></div><div class="sc">${esc(t.score)}</div></div>`).join('');
+ const chips=(D.stats||[]).slice(0,3).map(x=>`<div class="chip"><b>${esc(x.big)}</b><span>${esc(x.small)}</span></div>`).join('');
+ card.innerHTML=`<div class="top"><div id="kick">${esc(D.tag||D.kicker||'Cricket')}</div><span class="meta">${esc(D.pill)}</span></div>
+ <div id="main">${H2}<div class="rows2">${rows}</div><div class="res">${esc(D.result||D.sub)}</div></div>
+ <div class="chips">${chips}</div><div class="foot"><b>🏏 ${esc(B.name)}</b><span>${esc(D.source)}</span></div>`;
+}else{
+ card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||'Cricket')}</div></div>
+ <div id="main">${BIG}${H}${SUB}</div><div id="src">${esc(D.source)}</div>
+ <div class="foot"><b>🏏 ${esc(B.name)}</b><span>${cta}</span></div>`;
+}
+document.fonts.ready.then(()=>{
+const m=document.getElementById('main'),h=document.getElementById('h');
+let size=parseFloat(getComputedStyle(h).fontSize);
+const fits=()=>m.scrollHeight<=m.clientHeight+1&&h.scrollWidth<=h.clientWidth+1;
+while(!fits()&&size>40){size-=4;h.style.fontSize=size+'px';
+ if(size<90){const l=document.querySelectorAll('#pts li');l.forEach(x=>x.style.fontSize=Math.max(26,size*.4)+'px');}}
+window.__fit=size;window.__ready=true;});
+})();
+</script>
+</body></html>

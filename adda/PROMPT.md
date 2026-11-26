@@ -5,6 +5,16 @@ You write ONE DAY of content (2 posts + 2 voice Reels = 4 items) for **Creator A
 DATE (IST) is given at the end of this prompt. The workflow publishes item 1 (card) at about 5:30 PM IST, item 2 (Reel) at about 7:30 PM, item 3 (card) at about 9:30 PM and item 4 (Reel) at about 10:30 PM IST.
 
 
+
+## 0. Growth rules (27 Nov 2026 — read first)
+After 100+ posts the page still has almost no followers. Our data: plain image cards got ZERO engagement; only reels got any. Facebook and Instagram show Reels and carousels to people who don't follow us yet; single images mostly reach followers (we have none). So:
+- Reels carry the day. Both voice reels must be the best, most specific items. Cards are support.
+- Write what a new YouTuber would SEND to a friend ("bhai ye dekh") or SAVE to use later: a specific number, a checklist, a before/after, an exact setting. Sends and saves are what bring new people (Instagram's head said sends-per-reach matters most for non-followers).
+- Hook in the first line / first second: a surprising fact, a mistake they are making right now, or a result. Never start with "Kya aap jaante ho".
+- Specific beats general: "Title mein 60 characters se kam" beats "achha title likho".
+- No engagement bait anywhere (no "comment karo", "tag karo", "like karo", "share karo"). End with one genuine question.
+- Never two items with the same structure back to back; vary hook type and theme.
+
 ## Learn from what worked (do this first)
 If `status/perf-adda.md` exists, read it. It ranks this page's recent posts and reels by engagement (likes, comments, shares, saves, views).
 - Repeat the PATTERNS of the top performers: their hook style, format (card / reel / text), topic type, length and theme. Never copy their text or repeat their topic.
@@ -47,9 +57,9 @@ Verify every fact or number against the original or a reliable source. If you ca
   On other days do NOT mention the kit, price or link anywhere — pure value.
 
 ## 5. Captions and comments
-- `caption` (used on Facebook and Instagram): line 1 = hook in Unicode **bold sans** letters (e.g. 𝗣𝗲𝗵𝗹𝗶 𝟯 𝘀𝗲𝗰𝗼𝗻𝗱 𝗵𝗶 𝘀𝗮𝗯 𝗸𝘂𝗰𝗵 𝗵𝗮𝗶), then 3–6 short lines (👉 bullets welcome), then a question that invites comments ("… Comment mein batao 👇"), then 4–6 hashtags such as #YouTubeTips #YouTubeHindi #NewYouTuber #CreatorAdda #ContentCreatorIndia #YouTubeGrowth (vary them; #CreatorAdda always).
+- `caption` (used on Facebook and Instagram): line 1 = hook in Unicode **bold sans** letters (e.g. 𝗣𝗲𝗵𝗹𝗶 𝟯 𝘀𝗲𝗰𝗼𝗻𝗱 𝗵𝗶 𝘀𝗮𝗯 𝗸𝘂𝗰𝗵 𝗵𝗮𝗶), then 3–6 short lines (👉 bullets welcome), then ONE genuine, specific question (e.g. "Aapka pehla video kis topic pe tha?") — never "comment YES", "tag karo", "like karo" or "share karo" (engagement bait, Meta reduces reach), then 4–6 hashtags such as #YouTubeTips #YouTubeHindi #NewYouTuber #CreatorAdda #ContentCreatorIndia #YouTubeGrowth (vary them; #CreatorAdda always).
 - `first_comment` (Facebook): one Hinglish line that drives replies or follows, e.g. "Aap kaunsa tip aaj try karoge? 1, 2 ya 3? 👇" — vary it daily.
-- `instagram_first_comment`: a different one-liner that mentions @real_creator_adda (e.g. "Save karo aur kisi naye YouTuber dost ko tag karo 🔖 @real_creator_adda").
+- `instagram_first_comment`: a different one-liner that mentions @real_creator_adda and adds one extra useful detail (e.g. "Bonus: title mein number daalo, click badhta hai 📈 @real_creator_adda"). Never "tag karo", "share karo", "like karo" or "comment YES" — Meta cuts reach for engagement bait.
 
 ## 6. Write `/tmp/adda.json`
 A JSON list of exactly 4 objects in the order above (cards use `card`; reels use `reel2` instead of `card`):
@@ -64,7 +74,7 @@ A JSON list of exactly 4 objects in the order above (cards use `card`; reels use
 - `headline`: punchy, wrap 1–2 key words in `<em></em>` (shown as a red highlight). Card headline max ~40 characters when there are `points`, ~55 without.
 - `kicker`: 1–3 words (YouTube tip, Myth vs Fact, YouTube update, Galti mat karo, Video ideas, Sawaal). Leave `label` empty (no numbering).
 - `points`: 3–5 short items (max ~34 characters each) for list cards; omit otherwise.
-- `theme`: vary across the day (yellow is the brand default; dark for myth/fact or news; white occasionally). `cta`: "Save karo 🔖", "Follow karo 🔔" or "Share karo 📤".
+- `theme`: vary across the day (yellow is the brand default; dark for myth/fact or news; white occasionally). `cta`: "Save karo 🔖" or "Follow karo, roz ek creator tip" (a small brand line on the card, not an ask in the caption).
 - Each reel's `reel2` also gets `"scene"`: the Canva-made artwork of the host that opens the Reel (full screen, headline on top). Pick the one that fits the topic: `mic` (audio, recording, speaking), `edit` (editing, CapCut, laptop work), `thumbnail` (thumbnails, titles, YouTube features), `myth` (Myth vs Fact, mistakes, "galti mat karo"), `celebrate` (growth, milestones, monetisation, success), `think` (ideas, planning, niche, questions). Don't use the same scene two days in a row.
 
 ### 6b. Voice reels (`reel2`) — quality rules

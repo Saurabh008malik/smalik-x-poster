@@ -51,6 +51,13 @@ def page_html(template, data):
 
 
 def render_card(browser, data, out):
+    try:
+        sys.path.insert(0, str(HERE.parent / "design"))
+        import engine as design  # new poster design (Nov 2026)
+        size = design.render_card("adda", data, out, browser=browser)
+        return size, (64 if data.get("points") else 76)
+    except Exception as e:  # noqa: BLE001
+        print("new card design failed, using old template:", e)
     page = browser.new_page(viewport={"width": 1080, "height": 1350})
     page.set_content(page_html("template.html", data), wait_until="networkidle")
     page.evaluate("document.fonts.ready")
@@ -61,6 +68,13 @@ def render_card(browser, data, out):
 
 
 def render_reel(browser, data, out):
+    try:
+        sys.path.insert(0, str(HERE.parent / "design"))
+        import engine as design
+        track = MUSIC / f"{data.get('music') or 'uplift'}.mp3"
+        return design.render_reel("adda", data, out, track if track.exists() else MUSIC / "uplift.mp3", browser=browser)
+    except Exception as e:  # noqa: BLE001
+        print("new reel design failed, using old template:", e)
     page = browser.new_page(viewport={"width": 1080, "height": 1920})
     page.set_content(page_html("template-reel.html", data), wait_until="networkidle")
     page.evaluate("document.fonts.ready")

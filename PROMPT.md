@@ -35,7 +35,7 @@ Use WebSearch (several queries for today's date) and WebFetch. Sweep: ESPNcricin
 
 ## 3. Write three texts
 a) **X tweet (English)**: ≤ 250 characters as X counts them (Unicode-bold letters and emoji count as 2). Hook in Unicode bold sans letters (e.g. 𝗛𝗜𝗦𝗧𝗢𝗥𝗜𝗖!), 2–3 short lines of key facts, a punchy closer, 2 evergreen hashtags (#Cricket #TeamIndia #WomensCricket #WheelchairCricket, or a simple match tag like #INDvNZ). Original wording. **No links.**
-b) **Facebook caption (Hinglish, Roman script)**: first line = hook in Unicode bold sans letters, then 3–6 short lines with 👉 bullets, a fan question ("… Comment karo 👇"), hashtags #CricketKiBaat + 2 relevant. No links.
+b) **Facebook caption (Hinglish, Roman script)**: first line = hook in Unicode bold sans letters, then 3–6 short lines with 👉 bullets, ONE genuine fan question (e.g. "Aapke hisaab se Player of the Match kaun?") — never "comment karo", "like karo", "tag karo" or "share karo" (Meta cuts reach for engagement bait), hashtags #CricketKiBaat + 2 relevant. No links.
 c) **Facebook first comment (Hinglish, one line)**, e.g. "Aisi hi daily cricket updates ke liye Cricket Ki Baat ko Follow karo 🔔🏏" — vary it.
 
 ## 4. Make both cards
@@ -66,13 +66,15 @@ Write `queue/DATE-SLOT.json` (UTF-8, keep the bold letters and emoji as-is):
  "instagram":{"first_comment":"<different Hinglish one-liner that mentions @realcricketkibaat>"},
  "sources":["<url>","<url>"]}
 ```
-## 6. Reel (ONLY when SLOT = evening) — REQUIRED every evening
+## 6. Reel — REQUIRED every slot (morning AND evening, since 27 Nov 2026)
 The reel is not optional: budget your research so you always reach this step. Keep research to what the post needs.
+Why: after 100+ posts our data shows image cards got ZERO engagement and only reels got any. Facebook and Instagram show Reels to people who don't follow us yet; images mostly reach followers (we have almost none). The reel is now the most important item of the slot.
+Reel rules: the hook number or the moment in the first second (put the key number in `big`, e.g. "85" or "4/28" — it counts up on screen); a DIFFERENT angle from the card (stat reveal, "kisne socha tha", record, turning point); headline in caps with the key word in `<em>`. Never invent facts.
 
 Also make ONE short animated Reel for the Facebook Page (not for X). Same brand design and same music as everything else.
 - Pick the most exciting fact/moment of the day (can be the same story as the post but a different angle, e.g. a stat reveal). Never invent facts.
-- Write `/tmp/reel.json`: `{"brand":"ckb","theme":"saffron","music":"uplift","kicker":"Record alert","headline":"ERASMUS <em>156*</em> OFF 125","sub":"Namibia 321/6, Ireland all out 290","source":"Data: ESPNcricinfo"}` — headline max ~40 characters (caps, key number in `<em>`), sub max ~60 characters, `source` optional.
-- Render: `python3 money/reel.py /tmp/reel.json queue/DATE-SLOT-reel.mp4` (about 40 seconds). Optionally view a frame with `ffmpeg -ss 5 -i queue/DATE-SLOT-reel.mp4 -frames:v 1 /tmp/f.png` and Read it.
+- Write `/tmp/reel.json`: `{"brand":"ckb","theme":"saffron","music":"uplift","kicker":"Record alert","big":"156*","headline":"ERASMUS <em>156*</em> OFF 125","sub":"Namibia 321/6, Ireland all out 290","source":"Data: ESPNcricinfo"}` (`big` optional: the one key number, max ~6 characters; `theme`: saffron, gold, green, red or blue) — headline max ~40 characters (caps, key number in `<em>`), sub max ~60 characters, `source` optional.
+- Render: `python3 money/reel.py /tmp/reel.json queue/DATE-SLOT-reel.mp4` (about 20–40 seconds; new animated design). Optionally view a frame with `ffmpeg -ss 5 -i queue/DATE-SLOT-reel.mp4 -frames:v 1 /tmp/f.png` and Read it.
 - Write `queue/DATE-SLOT-reel.json`:
 ```json
 {"text":"","created_at":"<now, UTC ISO-8601 with +00:00, 1 minute AFTER the main post's created_at>",

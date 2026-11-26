@@ -17,6 +17,16 @@ BY_THEME = {"green": "calm", "gold": "uplift", "red": "focus", "blue": "focus"}
 
 
 def render(card, out):
+    track = MUSIC / f"{card.get('music') or BY_THEME.get(card.get('theme'), 'calm')}.mp3"
+    if not track.exists():
+        track = MUSIC / "calm.mp3"
+    try:
+        sys.path.insert(0, str(HERE.parent / "design"))
+        import engine as design
+        design.render_reel("ckb" if card.get("brand") == "ckb" else "paycheck", card, out, track)
+        return
+    except Exception as e:  # noqa: BLE001
+        print("new reel design failed, using old template:", e)
     tpl = (HERE / "cards" / "template-reel.html").read_text()
     html = tpl.replace("<script>", "<script>window.DATA = " + json.dumps(card) + ";", 1)
     with tempfile.TemporaryDirectory() as tmp, sync_playwright() as p:
