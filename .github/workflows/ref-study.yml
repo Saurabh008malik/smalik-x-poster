@@ -1,18 +1,29 @@
-name: Reference video study (private artifact)
+name: Reference video study (temporary branch, deleted after)
 on:
   workflow_dispatch:
     inputs:
       url: {description: "YouTube URL", required: true}
       channel: {description: "channel handle, e.g. @ScriptureRebuilt", default: ""}
+      cleanup: {description: "yes = only delete the tmp-ref branch", default: "no"}
+permissions:
+  contents: write
 jobs:
   study:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
+      - name: Cleanup only
+        if: inputs.cleanup == 'yes'
+        run: |
+          git init -q x && cd x && git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push origin --delete tmp-ref || true
       - uses: actions/setup-python@v5
+        if: inputs.cleanup != 'yes'
         with: {python-version: "3.12"}
-      - run: pip install -q -U yt-dlp && sudo apt-get update -qq && sudo apt-get -qq install -y ffmpeg bc >/dev/null
+      - if: inputs.cleanup != 'yes'
+        run: pip install -q -U yt-dlp && sudo apt-get update -qq && sudo apt-get -qq install -y ffmpeg bc >/dev/null
       - name: Fetch
+        if: inputs.cleanup != 'yes'
         env: {URL: "${{ inputs.url }}", CH: "${{ inputs.channel }}"}
         run: |
           mkdir -p out && cd out
@@ -27,5 +38,10 @@ jobs:
             grep -o "pts_time:[0-9.]*" scenes.log | cut -d: -f2 > cuts.txt; rm -f scenes.log "$V"
           fi
           if [ -n "$CH" ]; then yt-dlp --flat-playlist --dump-single-json --playlist-end 60 "https://www.youtube.com/$CH/videos" > channel.json || true; fi
-      - uses: actions/upload-artifact@v4
-        with: {name: ref-study, path: out, retention-days: 1}
+      - name: Save to temporary branch (deleted right after reading)
+        if: inputs.cleanup != 'yes'
+        run: |
+          cd out && git init -q && git checkout -q -b tmp-ref
+          git config user.name smalik-poster-bot; git config user.email actions@users.noreply.github.com
+          git add -A && git commit -q -m "tmp reference study"
+          git push -f -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" tmp-ref
