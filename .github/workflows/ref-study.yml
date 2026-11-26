@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install -q -U yt-dlp && sudo apt-get -qq install -y ffmpeg >/dev/null
+      - run: pip install -q -U yt-dlp && sudo apt-get update -qq && sudo apt-get -qq install -y ffmpeg bc >/dev/null
       - name: Fetch
         env: {URL: "${{ inputs.url }}", CH: "${{ inputs.channel }}"}
         run: |
