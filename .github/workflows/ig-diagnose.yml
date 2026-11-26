@@ -1,0 +1,23 @@
+name: Instagram health check (read-only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 1}
+      - run: pip install -q requests
+      - name: Check
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          MONEY_FB_PAGE_ID: ${{ secrets.MONEY_FB_PAGE_ID }}
+          MONEY_FB_PAGE_TOKEN: ${{ secrets.MONEY_FB_PAGE_TOKEN }}
+          CREDIT_FB_PAGE_ID: ${{ secrets.CREDIT_FB_PAGE_ID }}
+          CREDIT_FB_PAGE_TOKEN: ${{ secrets.CREDIT_FB_PAGE_TOKEN }}
+          ADDA_FB_PAGE_ID: ${{ secrets.ADDA_FB_PAGE_ID }}
+          ADDA_FB_PAGE_TOKEN: ${{ secrets.ADDA_FB_PAGE_TOKEN }}
+        run: python tools/ig_diag.py
