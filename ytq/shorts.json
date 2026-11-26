@@ -1058,7 +1058,11 @@
     ],
     "hook": "Franklin crosses to France",
     "source": "franklin ch11",
-    "done": false
+    "done": true,
+    "video_id": "qXnmIYS_Awg",
+    "posted_at": "2026-11-26T01:38:11+00:00",
+    "long_url": "https://youtu.be/IRC1F38kdto",
+    "comment_done": true
   },
   {
     "id": "sleepy-16",
