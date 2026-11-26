@@ -35,6 +35,8 @@ BRANDS = {
     "fineprint": {"name": "Fine Print Facts", "handle": "@fineprintfacts", "cta": "Follow so you never miss the fine print"},
     "adda": {"name": "Creator Adda", "handle": "@real_creator_adda", "cta": "Follow karo, roz ek creator tip"},
     "ckb": {"name": "Cricket Ki Baat", "handle": "@realcricketkibaat", "cta": "Follow karo, roz ki cricket"},
+    "wsp": {"name": "Wall St Pulse", "handle": "@WallStPulseHQ", "cta": "Follow for the market in 30 seconds"},
+    "inf": {"name": "The Inference", "handle": "@TheInferenceHQ", "cta": "Follow for AI news without the hype"},
 }
 _cache = {}
 
@@ -123,3 +125,31 @@ def _frames(b, brand, data, tmp):
         page.screenshot(path=f"{tmp}/f{f:04d}.jpg", type="jpeg", quality=88)
     page.close()
     return dur
+
+
+def short_overlay(channel, hook, in_mp4, out_mp4):
+    """27 Nov 2026: give an already-rendered long-video Short the new animated top (channel chip, hook words
+    popping in, 'link in the description' pill). The new panel covers the old title area; the rest of the
+    Short is unchanged. Raises on any problem so the caller can upload the original file instead."""
+    html = (HERE / "short_top.html").read_text()
+    html = html.replace("/*FONTS*/", _font_css()).replace("/*GSAP*/", (HERE / "vendor" / "gsap.min.js").read_text())
+    html = html.replace("/*DATA*/", "window.DATA=" + json.dumps({"channel": channel, "hook": hook}, ensure_ascii=False).replace("</", "<\\/") + ";")
+    with tempfile.TemporaryDirectory() as tmp, sync_playwright() as p:
+        b = p.chromium.launch()
+        try:
+            page = b.new_page(viewport={"width": 1080, "height": 1920})
+            page.set_content(html, wait_until="load")
+            page.wait_for_function("window.__ready === true", timeout=15000)
+            dur = float(page.evaluate("window.__duration"))
+            n = int(dur * FPS) + 1
+            for f in range(n):
+                page.evaluate(f"window.setT({f / FPS})")
+                page.screenshot(path=f"{tmp}/o{f:04d}.png", omit_background=True)
+        finally:
+            b.close()
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(in_mp4), "-framerate", str(FPS), "-i", f"{tmp}/o%04d.png",
+               "-filter_complex", "[0:v][1:v]overlay=0:0:eof_action=repeat:format=auto[v]", "-map", "[v]", "-map", "0:a?",
+               "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy",
+               "-movflags", "+faststart", str(out_mp4)]
+        subprocess.run(cmd, check=True)
+    return out_mp4

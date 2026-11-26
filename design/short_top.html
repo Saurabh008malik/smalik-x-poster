@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+/*FONTS*/
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+#panel{position:absolute;left:0;top:0;width:1080px;height:476px;background:linear-gradient(180deg,var(--bg) 0,var(--bg) 430px,rgba(0,0,0,0) 476px)}
+#glow{position:absolute;left:240px;top:-260px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0%,rgba(0,0,0,0) 70%)}
+#chip{position:absolute;left:0;right:0;top:92px;text-align:center}
+#chip span{display:inline-block;font-family:"Outfit";font-size:24px;letter-spacing:.32em;color:var(--acc);border:2px solid var(--acc);border-radius:999px;padding:10px 26px}
+#hook{position:absolute;left:70px;right:70px;top:150px;height:200px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Serif";font-size:76px;line-height:1.04;color:#FBF4E6}
+#hin{width:100%}
+#hook .w{display:inline-block;margin:0 .1em}
+#pill{position:absolute;left:0;right:0;top:362px;text-align:center}
+#pill span{display:inline-block;font-family:"Outfit";font-size:30px;color:#1A1208;background:var(--acc);border-radius:999px;padding:12px 30px}
+</style></head>
+<body>
+<div id="panel"></div><div id="glow"></div>
+<div id="chip"><span></span></div><div id="hook"></div><div id="pill"><span>Full story &#8595; link in the description</span></div>
+<script>/*GSAP*/</script>
+<script>
+/*DATA*/
+(function(){
+const D=window.DATA;
+const P={lamplight:{bg:'#160E07',acc:'#E9C27A',glow:'rgba(255,190,110,.30)',label:'LAMPLIGHT SCRIPTURE'},
+         sleepy:{bg:'#0E1018',acc:'#E8C987',glow:'rgba(232,201,135,.24)',label:'THE SLEEPY BIOGRAPHER'}}[D.channel]||{bg:'#120C07',acc:'#E9C27A',glow:'rgba(255,190,110,.3)',label:''};
+const r=document.documentElement.style;r.setProperty('--bg',P.bg);r.setProperty('--acc',P.acc);r.setProperty('--glow',P.glow);
+document.querySelector('#chip span').textContent=P.label;if(!P.label)document.getElementById('chip').style.display='none';
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const words=String(D.hook||'').replace(/#shorts/ig,'').trim().split(/\s+/).filter(Boolean);
+const h=document.getElementById('hook');h.innerHTML='<div id="hin">'+words.map(w=>`<span class="w">${esc(w)}</span>`).join(' ')+'</div>';
+document.fonts.ready.then(()=>{
+ const hin=document.getElementById('hin');let size=80;h.style.fontSize=size+'px';while((hin.scrollHeight>h.clientHeight+1||hin.scrollWidth>h.clientWidth+1)&&size>40){size-=3;h.style.fontSize=size+'px';}
+ const tl=gsap.timeline({paused:true});
+ tl.fromTo('#glow',{opacity:0,scale:.7},{opacity:1,scale:1,duration:1.2,ease:'power2.out'},0);
+ tl.fromTo('#chip span',{opacity:0,y:-14},{opacity:1,y:0,duration:.5,ease:'power2.out'},.1);
+ const W=[...document.querySelectorAll('#hook .w')];const step=Math.min(.12,1.0/Math.max(W.length,1));
+ W.forEach((w,i)=>tl.fromTo(w,{opacity:0,y:26,scale:.96},{opacity:1,y:0,scale:1,duration:.42,ease:'power3.out'},.3+i*step));
+ tl.fromTo('#pill span',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.45,ease:'back.out(1.8)'},.5+W.length*step);
+ window.__duration=Math.max(1.6,tl.duration());
+ window.setT=s=>{tl.seek(s,false);};
+ tl.seek(0);window.__ready=true;
+});
+})();
+</script>
+</body></html>

@@ -67,7 +67,10 @@ jobs:
           LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
           SLEEPY_HOOK: ${{ secrets.SLEEPY_HOOK }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python ytq/ytq.py run
+        run: |
+          # ffmpeg + headless Chrome for the new animated Short top (27 Nov 2026); if this fails, Shorts upload unchanged
+          (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && pip install -q playwright && python -m playwright install --with-deps chromium >/dev/null) || echo "::warning::animated top tools not installed - Shorts upload unchanged"
+          python ytq/ytq.py run
 
       - name: Save queue
         if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'uploadtest' && inputs.action != 'uploadtest'

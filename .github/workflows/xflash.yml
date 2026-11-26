@@ -159,7 +159,7 @@ jobs:
           # 16 Nov 2026: Instagram blocked this account for posting too often (error 2207051).
           # All 10 flashes still go to X and Facebook; only this one slot also goes to Instagram,
           # which keeps Instagram at 4 posts a day (morning, this flash, evening, evening reel).
-          IG_FLASH_SLOT = "1330"
+          IG_FLASH_SLOTS = {"1330", "2230"}  # 27 Nov 2026: these two are reels now (Instagram only flagged images)
           p = pathlib.Path(sys.argv[1]); slot = sys.argv[2]
           d = json.loads(p.read_text(encoding="utf-8"))
           q = p.parent
@@ -170,12 +170,19 @@ jobs:
               print("Facebook card missing - Facebook text post, Instagram skipped"); fb.pop("image")
           if "facebook" in d.get("platforms", []) and not fb.get("caption"):
               print("No Facebook caption - X only"); d["platforms"] = ["x"]
-          if slot != IG_FLASH_SLOT:
+          if slot not in IG_FLASH_SLOTS:
               d["instagram"] = {**(d.get("instagram") or {}), "skip": True}
-              print(f"Instagram skipped for this slot (only {IG_FLASH_SLOT} posts to Instagram)")
+              print(f"Instagram skipped for this slot (only {sorted(IG_FLASH_SLOTS)} post to Instagram)")
           p.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
           print("platforms:", d.get("platforms"), "| x card:", bool(d.get("image")), "| fb card:", bool(fb.get("image")))
           PY
+          # 27 Nov 2026: 4 of the 10 flashes go to Facebook/Instagram as an animated REEL instead of an image
+          # (reels reach non-followers; images barely do). X keeps its card. Any problem = stays an image post.
+          case "${{ steps.s.outputs.key }}" in
+            1200|1330|1800|2230)
+              (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null) || true
+              if [ -f /tmp/card.json ]; then python3 tools/flash_reel.py "queue/${{ steps.s.outputs.date }}-flash-${{ steps.s.outputs.key }}.json" /tmp/card.json || true; fi ;;
+          esac
 
       - name: Dry run - keep as draft
         if: steps.w.outputs.have == 'yes' && steps.s.outputs.dry == 'true'

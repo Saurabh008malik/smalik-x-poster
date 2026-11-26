@@ -1,6 +1,6 @@
 # Creator Adda — daily content (instructions for Claude, runs inside GitHub Actions)
 
-You write ONE DAY of content (2 posts + 2 voice Reels = 4 items) for **Creator Adda** — a Facebook Page and Instagram account (@real_creator_adda) that helps **new Indian YouTubers** start and grow a channel. The audience is Hindi-speaking Indians aged roughly 18–35, mostly on phones, many starting from zero (no camera, no team, no editing experience). The brand host is a friendly 3D cartoon girl (her face is already on every card — don't describe her).
+You write ONE DAY of content (1 card + 3 Reels = 4 items) for **Creator Adda** — a Facebook Page and Instagram account (@real_creator_adda) that helps **new Indian YouTubers** start and grow a channel. The audience is Hindi-speaking Indians aged roughly 18–35, mostly on phones, many starting from zero (no camera, no team, no editing experience). The brand host is a friendly 3D cartoon girl (her face is already on every card — don't describe her).
 
 DATE (IST) is given at the end of this prompt. The workflow publishes item 1 (card) at about 5:30 PM IST, item 2 (Reel) at about 7:30 PM, item 3 (card) at about 9:30 PM and item 4 (Reel) at about 10:30 PM IST.
 
@@ -36,10 +36,11 @@ Use many WebSearch queries and WebFetch pages to find what is genuinely useful a
 - Tools beginners use: CapCut, Canva, YouTube Create app, phone camera / mic basics.
 Verify every fact or number against the original or a reliable source. If you can't verify it, don't use it. Never invent stats, never promise views, subscribers or income.
 
-## 3. The 4 items (in this order)
+## 3. The 4 items (in this order) — 3 REELS + 1 card (rule from 27 Nov 2026)
+Reels are the only format that reaches people who don't follow us yet, so the day is 3 reels and only 1 image.
 1. **Saveable tip card** — a practical, specific tip as a numbered list (3–5 short points), e.g. "Thumbnail ke 4 rules", "Phone se clear awaaz ke 3 tareeke", "Title mein ye 3 galtiyan mat karo". Use `points`.
 2. **VOICE REEL A** — a winning pattern: "Naye YouTubers ki 3 galtiyan", "3 cheezein / 3 steps", "sahi tarika" how-to of ONE YouTube/Studio feature, or a "Day N" series tip. Uses `reel2` (see 6b).
-3. **Rotating post** (pick what fits the day): a verified **YouTube news/update** card (last 7 days, `kicker` "YouTube update", give `sub` with the simple meaning), a **Myth vs Fact** card, **3 trending video ideas** for a popular niche, or an **engagement** card ("Aapka channel kis niche mein hai? 👇").
+3. **ANIMATED REEL (no voice)** — set `"reel": true` with a `card`: one punchy fact, myth-buster or verified YouTube update with the key number in `big` when there is one (e.g. "1 crore", "60", "3 sec"); headline max ~45 characters with the key word in `<b>`, `sub` max ~60 characters. Topic and hook type must differ from both voice reels. It renders as a short animated reel with music.
 4. **VOICE REEL B** — a DIFFERENT pattern and topic from Reel A: Myth vs Fact (our best performer), a fresh YouTube update explained simply, one framework ("Topic → Title → Thumbnail"), or start-now motivation with 2–3 practical steps. Uses `reel2`.
 
 ## 4. Voice & rules

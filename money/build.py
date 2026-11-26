@@ -24,7 +24,7 @@ except Exception as e:  # noqa: BLE001
 HERE = pathlib.Path(__file__).parent
 SLOTS_ET = [7, 9, 11, 13, 15, 17, 19, 21]
 REEL_SLOT_ET = 12
-REEL_SLOTS_ET = [12, 16, 20]  # up to 3 reels a day (Nov 2026: reels are the only format reaching non-followers)
+REEL_SLOTS_ET = [10, 13, 17, 20]  # up to 4 reels a day (Nov 2026: reels are the only format reaching non-followers)
 BRAND = "paycheck"
 
 
@@ -39,7 +39,7 @@ def main(posts_file, date, outdir):
         b = p.chromium.launch()
         n_std = n_reel = 0
         reels = []
-        for i, post in enumerate(posts[: len(SLOTS_ET) + 3]):
+        for i, post in enumerate(posts[: len(SLOTS_ET) + 4]):
             name = f"{date}-{i + 1:02d}"
             item = {"caption": post["caption"], "first_comment": post.get("first_comment", ""),
                     "sources": post.get("sources", [])}

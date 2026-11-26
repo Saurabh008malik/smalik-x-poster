@@ -24,7 +24,7 @@ HERE = pathlib.Path(__file__).parent
 IST = ZoneInfo("Asia/Kolkata")
 # (hour, minute) IST for item 1, 2, 3 ... the reel goes to REEL_SLOT
 POST_SLOTS = [(17, 30), (21, 30), (16, 30)]  # cards: 5:30 PM, 9:30 PM IST (hourly publisher runs at :35 from 4:35 PM)
-REEL_SLOTS = [(19, 30), (22, 30)]  # reels: 7:30 PM, 10:30 PM IST
+REEL_SLOTS = [(19, 30), (21, 0), (22, 30)]  # reels: 7:30 PM, 9 PM, 10:30 PM IST (3 reels a day since 27 Nov 2026)
 FPS = 24
 MUSIC = HERE.parent / "money" / "music"
 

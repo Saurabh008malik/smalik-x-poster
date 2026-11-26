@@ -99,6 +99,10 @@ body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:a
 .stadium .chip b{display:block;font-family:"Anton";font-size:46px;line-height:1.05;color:#fff}
 .stadium .chip span{display:block;margin-top:8px;font-family:"OutfitR";font-size:22px;line-height:1.25;color:#B9C6BF}
 .stadium.sc #main{justify-content:center}
+.night .chips{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 24px}
+.night .chip{background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.10);border-radius:16px;padding:20px}
+.night .chip b{display:block;font-family:"Outfit";font-size:44px;line-height:1.05;color:var(--acc);letter-spacing:-.02em}
+.night .chip span{display:block;margin-top:8px;font-family:"OutfitR";font-size:22px;line-height:1.25;color:#B9C3D8}
 </style></head>
 <body>
 <div id="card"></div>
@@ -106,7 +110,7 @@ body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:a
 /*DATA*/
 (function(){
 const D=window.DATA, B=window.BRAND, key=B.key;
-const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium'}[key]||'night';
+const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium',wsp:'night',inf:'night'}[key]||'night';
 document.body.className=SKIN;
 const card=document.getElementById('card');
 const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
@@ -141,8 +145,10 @@ if(SKIN==='paper'){
    const val=Math.max(300,Math.min(850,Number(D.score)||({red:540,gold:670,blue:720,green:790}[theme]||720)));const ang=Math.PI*(1-(val-300)/550);
    return `<div class="gauge"><svg viewBox="0 0 560 300">${p}<text x="30" y="318" fill="#7F8BA6" font-family="Mono" font-size="22">300</text><text x="490" y="318" fill="#7F8BA6" font-family="Mono" font-size="22">850</text><line x1="280" y1="280" x2="${280+200*Math.cos(ang)}" y2="${280-200*Math.sin(ang)}" stroke="#F3F6FC" stroke-width="10" stroke-linecap="round"/><circle cx="280" cy="280" r="20" fill="#F3F6FC"/></svg></div>`})()
   :`<div class="gauge" style="height:220px"><svg viewBox="0 0 560 220"><path d="M120 200 V110 L280 20 L440 110 V200 Z" fill="none" stroke="var(--acc)" stroke-width="10" stroke-linejoin="round"/><rect x="245" y="130" width="70" height="70" fill="none" stroke="var(--acc)" stroke-width="8"/></svg></div>`;
- card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||'Truth')}</div><span>${esc(B.handle)}</span></div>
- ${D.big?'':gauge}<div id="main">${BIG}${H}${SUB}</div><div id="src">${esc(D.source)}</div>
+ const chips=(D.stats||[]).slice(0,3).map(x=>`<div class="chip"><b>${esc(x.big)}</b><span>${esc(x.small)}</span></div>`).join('');
+ const news=key==='wsp'||key==='inf';
+ card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||D.tag||'Truth')}</div><span>${esc(D.date||B.handle)}</span></div>
+ ${(D.big||news)?'':gauge}<div id="main">${D.big?BIG:''}${H}${SUB}</div>${chips?`<div class="chips">${chips}</div>`:''}<div id="src">${esc(D.source)}</div>
  <div class="foot"><b>${esc(B.name)}</b><span>${cta}</span></div>`;
 }else if(SKIN==='sticker'){
  let img='';try{img=window.HOST||''}catch(e){}

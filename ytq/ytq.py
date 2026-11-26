@@ -209,6 +209,17 @@ def post_short(ch, it):
     work = HERE / "work"
     work.mkdir(exist_ok=True)
     path = fetch_short(it, work)
+    try:  # 27 Nov 2026: new animated top (HyperFrames method); on any problem the original Short is uploaded
+        sys.path.insert(0, str(HERE.parent / "design"))
+        import engine  # noqa: PLC0415
+        newp = path.with_name(path.stem + "_v2.mp4")
+        engine.short_overlay(it.get("channel", ""), it["title"], path, newp)
+        if newp.exists() and newp.stat().st_size > 100_000:
+            path.unlink(missing_ok=True)
+            path = newp
+            summary("   new animated top added")
+    except Exception as e:  # noqa: BLE001
+        summary(f"   animated top skipped, original Short used: {str(e)[:150]}")
     title = it["title"]
     if "#shorts" not in title.lower():
         title = (title[:88] + " #Shorts").strip()
