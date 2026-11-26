@@ -32,7 +32,10 @@
     ],
     "playlist": "Ancient Lives for Sleep",
     "category": "27",
-    "done": false
+    "done": true,
+    "video_id": "f0D0gYWpTTI",
+    "url": "https://youtu.be/f0D0gYWpTTI",
+    "posted_at": "2026-11-26T17:35:32+00:00"
   },
   {
     "id": "austen",
@@ -67,7 +70,10 @@
     ],
     "playlist": "Artists & Writers for Sleep",
     "category": "27",
-    "done": false
+    "done": true,
+    "video_id": "eQZi258bW8s",
+    "url": "https://youtu.be/eQZi258bW8s",
+    "posted_at": "2026-11-26T17:36:28+00:00"
   },
   {
     "id": "dickens",
