@@ -1,0 +1,64 @@
+TITLE
+Charles Dickens and the Story of A Christmas Carol | Biography for Sleep
+
+DESCRIPTION
+Fall asleep to the true story of Charles Dickens, the boy from the blacking warehouse who grew up to write Oliver Twist, David Copperfield, Great Expectations and, in one cold autumn, A Christmas Carol. In this calm, slow biography we follow him from a winter birth in Portsmouth in 1812, through golden childhood years by the Medway, a hard year tying up pots of boot blacking while his father sat in the Marshalsea debtors' prison, shorthand and the reporters' gallery, the first sketch dropped into a dark letter-box, the sudden fame of Mr. Pickwick, a stormy crossing to America, and the six weeks of night walks in which he wrote A Christmas Carol. Then the busy middle years, the real shadows of his marriage, the public readings, Gad's Hill, and a summer evening in 1870. About 147 minutes of gentle narration over a quiet fireside sound.
+
+🌙 CHAPTERS
+0:00 1. Welcome, and a Winter Birth in Portsmouth
+11:52 2. Golden Years by the Medway
+23:13 3. The Blacking Warehouse and the Marshalsea
+35:44 4. School Again, a Lawyer's Office, and a Girl Named Maria
+47:24 5. A Reporter in the Gallery, and the Birth of Boz
+59:55 6. Mr. Pickwick, Sam Weller, and a Sorrow in Doughty Street
+1:11:53 7. Nickleby, Little Nell, and a House by Regent's Park
+1:23:17 8. A Winter Crossing, and Six Months in America
+1:34:58 9. Six Weeks in the Dark Streets: Writing A Christmas Carol
+1:47:48 10. Five Shillings, Red and Gold, and a Christmas That Changed
+1:59:53 11. The Busy Middle Years: Italy, Copperfield, and Household Words
+2:11:18 12. Gad's Hill, the Last Readings, and a Gentle Goodnight
+
+📚 SOURCES
+- John Forster, The Life of Charles Dickens (1872-74; includes Dickens's own autobiographical fragment)
+- The Letters of Charles Dickens (ed. by his sister-in-law and eldest daughter, 1880; public domain), incl. letters to Cornelius Felton, Southwood Smith and Angela Burdett-Coutts
+- Charles Dickens, A Christmas Carol (1843), Preface to The Pickwick Papers (1847), The Uncommercial Traveller (1860)
+- Library of Congress blog: A Tale of Two Publishings (A Christmas Carol, 2015); Penguin: The story of A Christmas Carol; Encyclopaedia Britannica: The Origins of A Christmas Carol
+- The National Archives: Charles Dickens, Warren's Blacking and the Chancery Court (Michael Allen); Victorian Web: Dickens and debtors' prisons
+- Charles Dickens Museum (48 Doughty Street) and Charles Dickens' Birthplace Museum (Portsmouth) visitor information
+Short lines are quoted only from Dickens's own public-domain writing (A Christmas Carol, his prefaces, essays and letters) and from Thackeray's 1844 review. Stories that come from later memory or later accounts (the walks to Gad's Hill with his father, the New York crowds asking about Little Nell, the girl who asked whether Father Christmas would die too) are marked as such in the narration. Dates of the blacking-warehouse year are uncertain, and the narration says so.
+
+🎙 Narration: AI-generated voice (Kokoro, open source). Research, script writing, fact-checking and production: The Sleepy Biographer. This video is labelled as altered/synthetic content.
+🖼 Images: public-domain and CC0 portraits, photographs, paintings, prints and book illustrations from Wikimedia Commons (including Daniel Maclise's and W. P. Frith's portraits, John Leech's original 1843 Christmas Carol plates, Phiz, Seymour, Cruikshank and Fred Barnard illustrations, Gustave Doré's London, and views of Rochester, Boston and Niagara). Fireside sound: synthesized by us.
+
+This is a calm history story for rest and sleep. It is not medical, legal or financial advice.
+
+New biography every Tuesday and Friday. Subscribe for more calm history for sleep.
+
+#HistoryForSleep #BiographyForSleep #CharlesDickens
+
+TAGS (comma separated)
+charles dickens, charles dickens biography, a christmas carol, life of charles dickens, victorian era, victorian london, english literature, oliver twist, history for sleep, biography for sleep, fall asleep to history, sleep story for adults, bedtime history, calm biography, history documentary, relaxing history, christmas history for sleep, writers for sleep
+
+FIRST COMMENT (post from the channel 60 minutes after it goes public; pin it by hand in Studio)
+Welcome, and goodnight. 🌙 Dickens wrote A Christmas Carol in about six weeks, walking the dark streets of London at night with the story in his head. Do you read or watch A Christmas Carol every December? And who should The Sleepy Biographer tell next?
+
+PLAYLIST
+Artists & Writers for Sleep
+
+UPLOAD CHECKLIST
+- Visibility: Schedule, Sat 5 Dec 2026 05:30 IST (= Fri 4 Dec 2026 7:00 PM New York = 2026-12-05T00:00:00Z)
+- Altered or synthetic content: Yes
+- Made for kids: No
+- Category: Education; Language: English
+- Thumbnail: thumbnail.jpg
+- Playlist: Artists & Writers for Sleep
+- Chapters: on (first at 0:00)
+- End screen: Subscribe + best video
+- First comment: queued in ytq/comments.json (posts 60 min after public); pin it by hand
+
+SLOT
+sleepy 2026-12-05 05:30 IST (2026-12-05T00:00:00Z)
+
+FILES
+Video backup: branch backup-sleepy-dickens (90 MB parts; join with: cat sleepy_v07_dickens.mp4.part* > video.mp4)
+Duration: 2:27:20

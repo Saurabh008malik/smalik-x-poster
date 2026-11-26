@@ -216,12 +216,24 @@
    "channel": "sleepy",
    "slot": "2026-12-05",
    "title": "Charles Dickens and the Story of A Christmas Carol",
-   "status": "made-in-progress",
+   "status": "ready-cloud",
    "work_branch": "work-sleepy-dickens",
    "repo_folder": "sleepy/video07",
    "started": "2026-11-26",
    "playlist": "Artists & Writers for Sleep",
-   "topic_source": "Notion blueprint month-1 plan (video 8, Charles Dickens), no vidIQ"
+   "topic_source": "Notion blueprint month-1 plan (video 8, Charles Dickens), no vidIQ",
+   "backup_branch": "backup-sleepy-dickens",
+   "drive_folder": "YouTube 2-week buffer/The Sleepy Biographer/2026-12-05 Charles Dickens and the Story of A Christmas Carol",
+   "drive_folder_id": "1ASQztjMcsd05X4zOp7hVSM83I8Q2lrD-",
+   "duration": "2:27:20",
+   "schedule_utc": "2026-12-05T00:00:00Z",
+   "shorts": [
+    "sleepy-34",
+    "sleepy-35",
+    "sleepy-36",
+    "sleepy-37"
+   ],
+   "finished": "2026-11-26"
   }
  ],
  "updated": "2026-11-26",
@@ -233,6 +245,7 @@
   "2026-11-20 run: horizon 4 Dec. Made sleepy 28 Nov (Marcus Aurelius: The Emperor Who Wrote to Himself, 2:23:08, ready-cloud, backup-sleepy-marcus, 4 Shorts sleepy-26..29 on feed-shorts-sleepy-6 for 7-10 Dec; topic from the Notion blueprint month-1 plan, no vidIQ). Still open: lamplight 28 Nov, then sleepy+lamplight 2 Dec (next run: lamplight 28 Nov). Shorts: sleepy to 10 Dec, lamplight to 15 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; Short excerpts plentiful; monthly free-music task refills 3 Dec.",
   "2026-11-21 run: horizon 5 Dec. Made lamplight 28 Nov (Daniel in Babylon: The Furnace, the Wall and the Lions, 2:42:27, ready-cloud, backup-lamplight-daniel, 4 Shorts lamplight-33..36 on feed-shorts-lamplight-7 for 16-19 Dec; topic from the Notion blueprint 'next ideas', no vidIQ). Still open: sleepy+lamplight 2 Dec and 5 Dec (next run: sleepy 2 Dec). Shorts: sleepy to 10 Dec, lamplight to 19 Dec (1/day). Warm Mug: mixes 22 Nov, 27 Nov, 2 Dec each 12 tagged tracks; 5 untagged unused (too few for a new mix); next mix step 7 Dec is past the horizon; monthly free-music task refills 3 Dec.",
   "2026-11-24 run: horizon 8 Dec. Finished sleepy 2 Dec (Jane Austen: A Quiet Life of Ink and Wit, 2:17:32, ready-cloud, backup-sleepy-austen, metadata+thumbnail in repo sleepy/video06 and Drive; 4 Shorts sleepy-30..33 on feed-shorts-sleepy-7 for 11-14 Dec; first comment queued). Still open: lamplight 2 Dec, then sleepy+lamplight 5 Dec (next run: lamplight 2 Dec). Shorts: sleepy to 14 Dec, lamplight to 19 Dec (1/day). Warm Mug: mixes 27 Nov and 2 Dec each 12 tagged tracks; next mix step 7 Dec (inside horizon) has no plan entry: only 5 untagged unused tracks (too few for a 12-track mix); the monthly free-music task refills on 3 Dec, before 7 Dec, then a 7 Dec mix can be planned. Short excerpts still plentiful.",
-  "2026-11-25 run: horizon 9 Dec. Made lamplight 2 Dec (Ruth and Esther: Two Women of Quiet Courage, 2:32:36, ready-cloud, backup-lamplight-ruth-esther, metadata+thumbnail in repo lamplight/v6 and Drive; 4 Shorts lamplight-37..40 on feed-shorts-lamplight-8 for 20-23 Dec; first comment queued; topic from the Notion blueprint 'next ideas', no vidIQ; new images in research asset set lamplight8, not kept on main). Still open: sleepy+lamplight 5 Dec, then sleepy+lamplight 9 Dec (next run: sleepy 5 Dec). Shorts: sleepy to 14 Dec, lamplight to 23 Dec (1/day). Warm Mug: mixes 27 Nov and 2 Dec planned (12 tagged tracks each); next mix step 7 Dec (inside horizon) still has no plan entry: only 5 untagged unused tracks; the monthly free-music task refills on 3 Dec, then a 7 Dec mix can be planned. Short excerpts still plentiful."
+  "2026-11-25 run: horizon 9 Dec. Made lamplight 2 Dec (Ruth and Esther: Two Women of Quiet Courage, 2:32:36, ready-cloud, backup-lamplight-ruth-esther, metadata+thumbnail in repo lamplight/v6 and Drive; 4 Shorts lamplight-37..40 on feed-shorts-lamplight-8 for 20-23 Dec; first comment queued; topic from the Notion blueprint 'next ideas', no vidIQ; new images in research asset set lamplight8, not kept on main). Still open: sleepy+lamplight 5 Dec, then sleepy+lamplight 9 Dec (next run: sleepy 5 Dec). Shorts: sleepy to 14 Dec, lamplight to 23 Dec (1/day). Warm Mug: mixes 27 Nov and 2 Dec planned (12 tagged tracks each); next mix step 7 Dec (inside horizon) still has no plan entry: only 5 untagged unused tracks; the monthly free-music task refills on 3 Dec, then a 7 Dec mix can be planned. Short excerpts still plentiful.",
+  "2026-11-26 run: horizon 10 Dec. Made sleepy 5 Dec (Charles Dickens and the Story of A Christmas Carol, 2:27:20, ready-cloud, backup-sleepy-dickens, metadata+thumbnail in repo sleepy/video07 and Drive; 4 Shorts sleepy-34..37 on feed-shorts-sleepy-8 for 15-18 Dec; first comment queued; topic from the Notion blueprint month-1 plan (video 8, Dickens), no vidIQ; images from research asset sets dickens1-3). Still open: lamplight 5 Dec, then sleepy+lamplight 9 Dec (next run: lamplight 5 Dec). Shorts: sleepy to 18 Dec, lamplight to 23 Dec (1/day). Warm Mug: mixes 27 Nov and 2 Dec planned (12 tagged tracks each); next mix step 7 Dec (inside horizon) still has no plan entry: only 5 untagged unused tracks (too few for a 12-track mix); the monthly free-music task refills on 3 Dec, then a 7 Dec mix can be planned. Short excerpts still plentiful."
  ]
 }

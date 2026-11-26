@@ -1,0 +1,11 @@
+{
+ "hook": "Dickens Wrote A Christmas Carol in Six Weeks",
+ "text": "In the autumn of eighteen forty-three, Charles Dickens was worried about money, and troubled by the poor children he saw all around him in London. So he began a small Christmas book. He wrote it in about six weeks. At night, when all sober folks had gone to bed, he walked the black streets of London, fifteen and twenty miles, with the story turning in his head. He wept and laughed as he wrote. The book came out six days before Christmas. Every copy of the first printing was sold by Christmas Eve.",
+ "images": [
+  "/home/claude/dickens/img/r2_dore_004.jpg",
+  "/home/claude/dickens/img/r1_leech_028.jpg",
+  "/home/claude/dickens/img/r1_leech_031.jpg"
+ ],
+ "voice": "bm_george",
+ "speed": 0.74
+}
