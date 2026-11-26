@@ -1,0 +1,20 @@
+{
+  "caption": "Nobody tells you this. 🧠\nYou can ask a hospital about financial assistance before you put a bill on a card.\nMany nonprofit hospitals are required to have a written plan.\nBills can also contain errors, so check yours.\nHave you ever asked?",
+  "first_comment": "Did you know this? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/11/12/medical-bills-credit-card-debt.html",
+    "pattern: nobody tells you"
+  ],
+  "instagram": {
+    "first_comment": "Nobody tells you this. Follow @creditscoretruths for more."
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Before carding a medical bill, <em>ask</em> for assistance.",
+    "sub": "Many nonprofit hospitals must have a plan.",
+    "theme": "green",
+    "source": "Source: CNBC"
+  },
+  "video": "2026-11-27-09.mp4",
+  "publish_at": "2026-11-27T17:00:00+00:00"
+}

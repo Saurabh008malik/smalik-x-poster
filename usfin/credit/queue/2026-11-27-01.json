@@ -1,0 +1,20 @@
+{
+  "caption": "Medical bills on a credit card? 🏥\nCNBC reports that when bills get paid with cards or loans, they get recorded as that other debt, so it's hard to see how much is really medical. One counselor calls it \"shadow debt.\"\nBefore borrowing: check for errors and ask about financial assistance.\nHas a medical bill ever ended up on your card?",
+  "first_comment": "Did you know to ask about financial assistance before paying a hospital bill? 👇",
+  "sources": [
+    "https://www.cnbc.com/2026/11/12/medical-bills-credit-card-debt.html",
+    "pattern: reassurance/say-this"
+  ],
+  "instagram": {
+    "first_comment": "Medical bill on a card? Tell us how it went. Follow @creditscoretruths for daily credit truths."
+  },
+  "card": {
+    "kicker": "NEWS",
+    "headline": "Medical bills on cards become <em>\"shadow debt.\"</em>",
+    "sub": "Ask about financial assistance before you borrow.",
+    "theme": "blue",
+    "source": "Source: CNBC"
+  },
+  "image": "2026-11-27-01.jpg",
+  "publish_at": "2026-11-27T12:00:00+00:00"
+}

@@ -5,17 +5,17 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Wrong item on your credit report? 🔍 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-09
-- [card] score 0.0 | What a balance really costs. 💸 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-08
-- [card] score 0.0 | Revolving credit, mostly credit cards, is still climbing. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-07
-- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-25-05
+- [reel] score 0.0 | Pay a collection and it's gone? Not quite. 🔍 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-09
+- [card] score 0.0 | Black Friday tip. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-04
+- [card] score 0.0 | Progress isn't always loud. 🌱 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-03
+- [card] score 0.0 | Can someone explain this? 😤 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-02
+- [card] score 0.0 | Home equity borrowing just hit a milestone. 🏠 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-01
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | FHA loans are getting new score options. 🏠 | 2026-11-12-01
-- [card] score 0.0 | Can someone explain this? 😤 | 2026-11-12-02
-- [card] score 0.0 | A score is a snapshot, not a verdict. 🟡 | 2026-11-12-03
+- [card] score 0.0 | True or false? 🤔 | 2026-11-12-05
+- [text] score 0.0 | Honest question. 💬 | 2026-11-12-06
+- [card] score 0.0 | Credit card rates, a quick snapshot. 💳 | 2026-11-12-07
 
 ## Average score by format
 

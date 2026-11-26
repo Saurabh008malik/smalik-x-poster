@@ -1,0 +1,18 @@
+{
+  "caption": "True or False? 🤔\nChecking your own credit score lowers it.\nThink about it, then check the card.\nWhat did you think before you knew?",
+  "first_comment": "True or False? Vote below. 👇",
+  "sources": [
+    "pattern: myth-buster"
+  ],
+  "instagram": {
+    "first_comment": "True or false? Answer for @creditscoretruths 👇"
+  },
+  "card": {
+    "kicker": "TRUE OR FALSE?",
+    "headline": "Checking your own score <em>lowers</em> it. True or false?",
+    "sub": "Answer: False. It's a soft inquiry.",
+    "theme": "blue"
+  },
+  "image": "2026-11-27-05.jpg",
+  "publish_at": "2026-11-27T20:00:00+00:00"
+}
