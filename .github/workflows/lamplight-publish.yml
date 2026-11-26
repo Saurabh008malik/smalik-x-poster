@@ -1,0 +1,73 @@
+name: Lamplight Scripture - publish due videos and Shorts
+
+on:
+  schedule:
+    - cron: "25,55 * * * *"      # checks the queue twice an hour; does nothing unless an item is due
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "publish = post anything due now; whoami = only check which channel is connected"
+        default: "publish"
+        type: choice
+        options: ["publish", "whoami", "tokentest"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lamplight
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Anything due?
+        id: d
+        run: |
+          pip install -q requests
+          N=$(python lamplight/yt.py due)
+          echo "due=$N" >> "$GITHUB_OUTPUT"
+          echo "Items due: $N"
+
+      - name: Check hook
+        if: steps.d.outputs.due != '0' || inputs.action == 'whoami' || inputs.action == 'tokentest' || inputs.action == 'uploadtest'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+        run: |
+          if [ -z "$LAMPLIGHT_HOOK" ]; then echo "LAMPLIGHT_HOOK secret is not set yet - finish the Apps Script setup." | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; fi
+
+      - name: Who is connected / token test
+        if: inputs.action == 'whoami' || inputs.action == 'tokentest'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+        run: python lamplight/yt.py ${{ inputs.action }}
+
+      - name: Upload test (5-second clip, deleted after)
+        if: inputs.action == 'uploadtest'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          python lamplight/yt.py uploadtest
+
+      - name: Publish
+        if: steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
+        env:
+          LAMPLIGHT_HOOK: ${{ secrets.LAMPLIGHT_HOOK }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python lamplight/yt.py publish
+
+      - name: Save queue
+        if: always() && steps.d.outputs.due != '0' && inputs.action != 'whoami' && inputs.action != 'tokentest' && inputs.action != 'uploadtest'
+        run: |
+          git config user.name "lamplight-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"; git config --local --unset-all credential.helper 2>/dev/null || true
+          git add lamplight/queue.json
+          git commit -m "Lamplight Scripture: queue update" && for i in 1 2 3 4; do git pull --rebase -q origin main && git push origin HEAD:main && break || sleep 7; done; git diff --quiet origin/main HEAD || true
