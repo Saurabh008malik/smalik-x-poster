@@ -1,7 +1,7 @@
-<!-- generated_at: 2026-11-25T14:58:29.760473+00:00 -->
-# X performance - inf (last 10 days, 29 posts read)
+<!-- generated_at: 2026-11-26T00:40:31.059150+00:00 -->
+# X performance - inf (last 10 days, 32 posts read)
 
-Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
+Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
 ## Best posts (by impressions) - REPEAT these patterns: topic type, hook, format, length
 - 12 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: US tightens AI chip export rules over remote access
@@ -20,19 +20,20 @@ Average per post: 4 impressions, 0.0 interactions (likes + replies + reposts + q
 - 0 imp | 0 interactions | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Anthropic's IPO is set to price tonight
 
 ## By format (average impressions / interactions per post)
-- news with → bullets: 25 posts, 4 imp, 0.0 interactions
+- news with → bullets: 28 posts, 4 imp, 0.0 interactions
 - question / poll: 4 posts, 0 imp, 0.0 interactions
-- with card image: 25 posts, 4 imp, 0.0 interactions
+- with card image: 28 posts, 4 imp, 0.0 interactions
 - text only: 4 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
 - 08:00: 7 posts, 5 imp, 0.0 interactions
 - 16:00: 2 posts, 4 imp, 0.0 interactions
-- 12:00: 5 posts, 4 imp, 0.0 interactions
 - 20:00: 1 posts, 4 imp, 0.0 interactions
-- 13:00: 1 posts, 3 imp, 0.0 interactions
+- 12:00: 5 posts, 4 imp, 0.0 interactions
+- 15:00: 1 posts, 3 imp, 0.0 interactions
 - 11:00: 7 posts, 3 imp, 0.0 interactions
-- 10:00: 3 posts, 2 imp, 0.0 interactions
+- 10:00: 4 posts, 2 imp, 0.0 interactions
 - 09:00: 3 posts, 2 imp, 0.0 interactions
+- 13:00: 2 posts, 2 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.
