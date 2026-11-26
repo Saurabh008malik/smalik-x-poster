@@ -34,8 +34,11 @@
     ],
     "playlist": "Bible Stories for Sleep",
     "category": "27",
-    "done": false,
-    "attempts": 0
+    "done": true,
+    "attempts": 0,
+    "video_id": "S74uiT-KpWI",
+    "url": "https://youtu.be/S74uiT-KpWI",
+    "posted_at": "2026-11-26T18:09:39+00:00"
   },
   {
     "id": "ruth-esther",
@@ -72,8 +75,11 @@
     ],
     "playlist": "Bible Stories for Sleep",
     "category": "27",
-    "done": false,
-    "attempts": 0
+    "done": true,
+    "attempts": 0,
+    "video_id": "hXCAfrkJnsY",
+    "url": "https://youtu.be/hXCAfrkJnsY",
+    "posted_at": "2026-11-26T18:11:11+00:00"
   },
   {
     "id": "david",
