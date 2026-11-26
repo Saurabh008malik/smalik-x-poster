@@ -1,108 +1,108 @@
 [
- {
-  "channel": "sleepy",
-  "title_contains": "Franklin",
-  "go_live": "2026-11-11T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
-  "done": true,
-  "video_id": "IRC1F38kdto",
-  "posted_at": "2026-11-12T18:22:12+00:00"
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Leonardo",
-  "go_live": "2026-11-14T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
-  "done": true,
-  "video_id": "Bh4z_IDu52A",
-  "posted_at": "2026-11-14T01:05:54+00:00"
- },
- {
-  "channel": "lamplight",
-  "title_contains": "Book of Genesis",
-  "go_live": "2026-11-14T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
-  "done": true,
-  "video_id": "dPbUTW_jKpo",
-  "posted_at": "2026-11-14T01:05:57+00:00"
- },
- {
-  "channel": "lamplight",
-  "title_contains": "Story of Joseph",
-  "go_live": "2026-11-18T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
-  "done": true,
-  "video_id": "Ct3CDo4hROU",
-  "posted_at": "2026-11-18T01:06:40+00:00"
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Queen Victoria",
-  "go_live": "2026-11-21T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
-  "done": true,
-  "video_id": "7Ndj1EozRC0",
-  "posted_at": "2026-11-21T01:07:12+00:00"
- },
- {
-  "channel": "lamplight",
-  "title_contains": "Exodus: Moses and the Sea",
-  "go_live": "2026-11-21T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
-  "done": true,
-  "video_id": "1oOxYrNFf9A",
-  "posted_at": "2026-11-21T01:07:14+00:00"
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Abraham Lincoln",
-  "go_live": "2026-11-25T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And whose life should The Sleepy Biographer tell next? Leave a name below.",
-  "done": true,
-  "video_id": "E_GCDAMON5Q",
-  "posted_at": "2026-11-25T01:08:53+00:00"
- },
- {
-  "channel": "lamplight",
-  "title_contains": "The Life of David",
-  "go_live": "2026-11-25T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
-  "done": false,
-  "attempts": 0
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Marcus Aurelius",
-  "go_live": "2026-11-28T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 Marcus Aurelius wrote his notebook for no one but himself. If you keep a journal, or have one line from the Meditations that stays with you, share it below. And who should The Sleepy Biographer tell next?",
-  "done": false
- },
- {
-  "channel": "lamplight",
-  "title_contains": "Daniel in Babylon",
-  "go_live": "2026-11-28T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 Daniel kept his window open toward home and prayed three times a day, as he did before. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
-  "done": false
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Jane Austen",
-  "go_live": "2026-12-02T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 Jane Austen wrote her novels on small sheets of paper at a little table by the window, and almost nobody knew her name. Which of her heroines do you love most: Elizabeth, Anne, Emma, Elinor, Fanny or Catherine? And who should The Sleepy Biographer tell next?",
-  "done": false
- },
- {
-  "channel": "lamplight",
-  "title_contains": "Ruth and Esther",
-  "go_live": "2026-12-02T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 Ruth said, where you go, I will go. Esther said, if I perish, I perish. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
-  "done": false
- },
- {
-  "channel": "sleepy",
-  "title_contains": "Charles Dickens",
-  "go_live": "2026-12-05T00:00:00Z",
-  "text": "Welcome, and goodnight. 🌙 Dickens wrote A Christmas Carol in about six weeks, walking the dark streets of London at night with the story in his head. Do you read or watch A Christmas Carol every December? And who should The Sleepy Biographer tell next?",
-  "done": false
- }
+  {
+    "channel": "sleepy",
+    "title_contains": "Franklin",
+    "go_live": "2026-11-11T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
+    "done": true,
+    "video_id": "IRC1F38kdto",
+    "posted_at": "2026-11-12T18:22:12+00:00"
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Leonardo",
+    "go_live": "2026-11-14T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
+    "done": true,
+    "video_id": "Bh4z_IDu52A",
+    "posted_at": "2026-11-14T01:05:54+00:00"
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Book of Genesis",
+    "go_live": "2026-11-14T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": true,
+    "video_id": "dPbUTW_jKpo",
+    "posted_at": "2026-11-14T01:05:57+00:00"
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Story of Joseph",
+    "go_live": "2026-11-18T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": true,
+    "video_id": "Ct3CDo4hROU",
+    "posted_at": "2026-11-18T01:06:40+00:00"
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Queen Victoria",
+    "go_live": "2026-11-21T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And who should The Sleepy Biographer put to bed next? Leave a name below.",
+    "done": true,
+    "video_id": "7Ndj1EozRC0",
+    "posted_at": "2026-11-21T01:07:12+00:00"
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Exodus: Moses and the Sea",
+    "go_live": "2026-11-21T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": true,
+    "video_id": "1oOxYrNFf9A",
+    "posted_at": "2026-11-21T01:07:14+00:00"
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Abraham Lincoln",
+    "go_live": "2026-11-25T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where you are in the world and what time it is there. And whose life should The Sleepy Biographer tell next? Leave a name below.",
+    "done": true,
+    "video_id": "E_GCDAMON5Q",
+    "posted_at": "2026-11-25T01:08:53+00:00"
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "The Life of David",
+    "go_live": "2026-11-25T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 If you are listening tonight, tell us where in the world you are, and which Bible story you would like Lamplight Scripture to tell next.",
+    "done": false,
+    "attempts": 0
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Marcus Aurelius",
+    "go_live": "2026-11-28T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Marcus Aurelius wrote his notebook for no one but himself. If you keep a journal, or have one line from the Meditations that stays with you, share it below. And who should The Sleepy Biographer tell next?",
+    "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Daniel in Babylon",
+    "go_live": "2026-11-28T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Daniel kept his window open toward home and prayed three times a day, as he did before. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
+    "done": false
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Jane Austen",
+    "go_live": "2026-12-02T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Jane Austen wrote her novels on small sheets of paper at a little table by the window, and almost nobody knew her name. Which of her heroines do you love most: Elizabeth, Anne, Emma, Elinor, Fanny or Catherine? And who should The Sleepy Biographer tell next?",
+    "done": false
+  },
+  {
+    "channel": "lamplight",
+    "title_contains": "Ruth and Esther",
+    "go_live": "2026-12-02T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Ruth said, where you go, I will go. Esther said, if I perish, I perish. Where in the world are you listening from tonight? And which Bible story should Lamplight Scripture tell next?",
+    "done": false
+  },
+  {
+    "channel": "sleepy",
+    "title_contains": "Charles Dickens",
+    "go_live": "2026-12-05T00:00:00Z",
+    "text": "Welcome, and goodnight. 🌙 Dickens wrote A Christmas Carol in about six weeks, walking the dark streets of London at night with the story in his head. Do you read or watch A Christmas Carol every December? And who should The Sleepy Biographer tell next?",
+    "done": false
+  }
 ]
