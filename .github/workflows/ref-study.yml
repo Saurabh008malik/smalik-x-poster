@@ -1,0 +1,31 @@
+name: Reference video study (private artifact)
+on:
+  workflow_dispatch:
+    inputs:
+      url: {description: "YouTube URL", required: true}
+      channel: {description: "channel handle, e.g. @ScriptureRebuilt", default: ""}
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q -U yt-dlp && sudo apt-get -qq install -y ffmpeg >/dev/null
+      - name: Fetch
+        env: {URL: "${{ inputs.url }}", CH: "${{ inputs.channel }}"}
+        run: |
+          mkdir -p out && cd out
+          yt-dlp --skip-download --write-info-json --write-auto-subs --write-subs --sub-langs "en.*" --sub-format vtt -o "ref.%(ext)s" "$URL" || true
+          yt-dlp -f "bv*[height<=480][ext=mp4]/b[height<=480]" -o "v.%(ext)s" "$URL" || true
+          V=$(ls v.* 2>/dev/null | head -1)
+          if [ -n "$V" ]; then
+            ffprobe -v error -show_entries format=duration -of csv=p=0 "$V" > duration.txt
+            mkdir -p f; ffmpeg -loglevel error -i "$V" -vf "fps=1/45,scale=480:-2" f/s%03d.jpg
+            mkdir -p b; for t in 5 60 200 400 700 1000 1300 1600; do for k in 0 1 2 3; do ffmpeg -loglevel error -ss $(echo "$t + $k*0.5" | bc) -i "$V" -frames:v 1 -vf scale=480:-2 b/t${t}_$k.jpg; done; done
+            ffmpeg -loglevel error -i "$V" -vf "select='gt(scene,0.3)',showinfo" -f null - 2> scenes.log || true
+            grep -o "pts_time:[0-9.]*" scenes.log | cut -d: -f2 > cuts.txt; rm -f scenes.log "$V"
+          fi
+          if [ -n "$CH" ]; then yt-dlp --flat-playlist --dump-single-json --playlist-end 60 "https://www.youtube.com/$CH/videos" > channel.json || true; fi
+      - uses: actions/upload-artifact@v4
+        with: {name: ref-study, path: out, retention-days: 1}
