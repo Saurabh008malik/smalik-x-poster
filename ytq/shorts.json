@@ -263,7 +263,11 @@
     ],
     "hook": "Leave everything you know",
     "source": "lamplight_v1 ch9",
-    "done": false
+    "done": true,
+    "video_id": "lI0HAjo4rTk",
+    "posted_at": "2026-11-27T01:55:59+00:00",
+    "long_url": "https://youtu.be/dPbUTW_jKpo",
+    "comment_done": true
   },
   {
     "id": "lamplight-10",
@@ -1089,7 +1093,11 @@
     ],
     "hook": "Milan falls",
     "source": "leonardo ch8",
-    "done": false
+    "done": true,
+    "video_id": "1i8lCX-35xM",
+    "posted_at": "2026-11-27T01:56:18+00:00",
+    "long_url": "https://youtu.be/Bh4z_IDu52A",
+    "comment_done": true
   },
   {
     "id": "sleepy-17",
