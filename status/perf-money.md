@@ -5,20 +5,20 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Small habit, real number. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-09
-- [card] score 0.0 | $100 vs $1,000 saved. 😬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-08
-- [card] score 0.0 | More than 9 million student loan borrowers are in default. 🎓 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-07
-- [text] score 0.0 | Quick question, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-05
+- [card] score 0.0 | Cheap isn't the same as needed. 💛 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-08
+- [card] score 0.0 | Before the next sale: set a cap first. 💵 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-06
+- [text] score 0.0 | Quick question, no judgment. 👀 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-04
+- [reel] score 0.0 | 58% of shoppers think most Black Friday deals aren't real. 🛍️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-03
+- [card] score 0.0 | Inflation is 3.8% and your raise has to beat it. 📈 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Consumer sentiment hit a 3-month high. 📈 | 2026-11-13-01
-- [card] score 0.0 | Unpopular opinion: 😤 | 2026-11-13-02
-- [card] score 0.0 | Quiet truth. 💛 | 2026-11-13-03
+- [card] score 0.0 | True or False? 🤔 | 2026-11-13-05
+- [text] score 0.0 | Be honest. 👀 | 2026-11-13-06
+- [card] score 0.0 | Retirees got a 3.6% raise for 2027. 🧓 | 2026-11-13-07
 
 ## Average score by format
 
-- reel: 0.0 over 13 posts
-- card: 0.0 over 91 posts
-- text: 0.0 over 13 posts
+- card: 0.0 over 90 posts
+- text: 0.0 over 14 posts
+- reel: 0.0 over 14 posts
