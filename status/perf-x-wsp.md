@@ -1,5 +1,5 @@
-<!-- generated_at: 2026-11-26T21:58:19.025252+00:00 -->
-# X performance - wsp (last 10 days, 66 posts read)
+<!-- generated_at: 2026-11-27T09:06:10.717461+00:00 -->
+# X performance - wsp (last 10 days, 68 posts read)
 
 Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
 
@@ -20,24 +20,24 @@ Average per post: 1 impressions, 0.0 interactions (likes + replies + reposts + q
 - 0 imp | 0 interactions | 𝗧𝗢𝗡𝗜𝗚𝗛𝗧: Nvidia reports after the close, its first results since Jense...
 
 ## By format (average impressions / interactions per post)
-- other news / text: 62 posts, 1 imp, 0.0 interactions
-- question / poll: 3 posts, 0 imp, 0.0 interactions
+- other news / text: 63 posts, 1 imp, 0.0 interactions
+- question / poll: 4 posts, 0 imp, 0.0 interactions
 - weekly recap: 1 posts, 0 imp, 0.0 interactions
-- with card image: 62 posts, 1 imp, 0.0 interactions
-- text only: 4 posts, 0 imp, 0.0 interactions
+- with card image: 63 posts, 1 imp, 0.0 interactions
+- text only: 5 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
 - 12:00: 1 posts, 2 imp, 0.0 interactions
 - 14:00: 2 posts, 2 imp, 0.0 interactions
-- 19:00: 5 posts, 1 imp, 0.0 interactions
 - 16:00: 9 posts, 1 imp, 0.0 interactions
 - 15:00: 7 posts, 1 imp, 0.0 interactions
+- 19:00: 6 posts, 1 imp, 0.0 interactions
 - 07:00: 9 posts, 1 imp, 0.0 interactions
 - 11:00: 7 posts, 1 imp, 0.0 interactions
 - 10:00: 9 posts, 1 imp, 0.0 interactions
 - 09:00: 6 posts, 0 imp, 0.0 interactions
 - 13:00: 8 posts, 0 imp, 0.0 interactions
+- 17:00: 2 posts, 0 imp, 0.0 interactions
 - 08:00: 2 posts, 0 imp, 0.0 interactions
-- 17:00: 1 posts, 0 imp, 0.0 interactions
 
 How to use: keep the account's rules, but lean toward the formats, hooks and topics at the top of this file and away from the weakest. Never copy a post; repeat the pattern with new facts. Small samples (under ~5 posts per group) are hints, not proof.

@@ -1,4 +1,4 @@
-<!-- generated_at: 2026-11-26T21:58:19.362533+00:00 -->
+<!-- generated_at: 2026-11-27T09:06:11.021342+00:00 -->
 # X performance - inf (last 10 days, 34 posts read)
 
 Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
@@ -8,8 +8,8 @@ Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + q
 - 9 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗙𝗨𝗡𝗗𝗜𝗡𝗚: Isomorphic Labs raises $5B for AI drug discovery
 - 8 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: NVIDIA reinstates Jensen Huang as CEO
 - 7 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: NVIDIA reports Q3 results today
+- 6 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: State AGs fight Character.AI's sale of user chats
 - 6 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Microsoft bets on AI agents at Ignite
-- 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗣𝗢𝗟𝗜𝗖𝗬: State AGs fight Character.AI's sale of user chats
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗝𝗨𝗦𝗧 𝗜𝗡: Pinterest lets parents limit AI content for teens
 - 5 imp | 0 likes, 0 replies, 0 reposts, 0 saves | 0.0% | card | 𝗕𝗜𝗚 𝗧𝗘𝗖𝗛: Apple is reportedly building an AI agent
 
@@ -26,13 +26,13 @@ Average per post: 3 impressions, 0.0 interactions (likes + replies + reposts + q
 - text only: 4 posts, 0 imp, 0.0 interactions
 
 ## By hour (account local time, UTC-5h)
-- 15:00: 1 posts, 5 imp, 0.0 interactions
+- 15:00: 1 posts, 6 imp, 0.0 interactions
 - 20:00: 1 posts, 5 imp, 0.0 interactions
 - 16:00: 2 posts, 5 imp, 0.0 interactions
 - 08:00: 6 posts, 4 imp, 0.0 interactions
 - 11:00: 8 posts, 3 imp, 0.1 interactions
+- 10:00: 5 posts, 3 imp, 0.0 interactions
 - 13:00: 2 posts, 2 imp, 0.0 interactions
-- 10:00: 5 posts, 2 imp, 0.0 interactions
 - 09:00: 4 posts, 2 imp, 0.0 interactions
 - 12:00: 4 posts, 2 imp, 0.0 interactions
 - 21:00: 1 posts, 0 imp, 0.0 interactions
