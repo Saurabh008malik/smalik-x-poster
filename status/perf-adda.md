@@ -13,11 +13,11 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | 𝗣𝗵𝗼𝗻𝗲 𝘀𝗲 𝘃𝗶𝗱𝗲𝗼 𝘀𝗵𝗼𝗼𝘁 𝗸𝗮𝗿𝗻𝗲 𝗸𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 📱 | 2026-11-13-01
-- [reel] score 0.0 | 𝗗𝗮𝘆 𝟮: 𝗣𝗲𝗵𝗹𝗲 𝟯 𝘃𝗶𝗱𝗲𝗼 𝗸𝗶 𝗽𝗹𝗮𝗻𝗻𝗶𝗻𝗴 𝗸𝗮𝗿𝗼 📅 | 2026-11-13-02
-- [card] score 0.0 | 𝟯 𝗲𝗱𝘂𝗰𝗮𝘁𝗶𝗼𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘃𝗶𝗱𝗲𝗼 𝗶𝗱𝗲𝗲𝘀 📚 | 2026-11-13-03
+- [card] score 0.0 | 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗸𝗮 𝗻𝗮𝗮𝗺 𝗰𝗵𝘂𝗻𝗻𝗲 𝗸𝗲 𝟰 𝗿𝘂𝗹𝗲𝘀 🏷️ | 2026-11-14-01
+- [reel] score 0.0 | 𝗗𝗮𝘆 𝟯: 𝗣𝗲𝗵𝗹𝗲 𝘃𝗶𝗱𝗲𝗼 𝗸𝗮 𝗵𝗼𝗼𝗸 𝗹𝗶𝗸𝗵𝗼 ✍️ | 2026-11-14-02
+- [card] score 0.0 | 𝟯 𝗳𝗼𝗼𝗱 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘃𝗶𝗱𝗲𝗼 𝗶𝗱𝗲𝗮𝘀 🍛 | 2026-11-14-03
 
 ## Average score by format
 
-- reel: 0.8 over 28 posts
-- card: 0.0 over 28 posts
+- reel: 0.7 over 29 posts
+- card: 0.0 over 27 posts
