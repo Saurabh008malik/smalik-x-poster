@@ -247,9 +247,20 @@
    "finished": "2026-11-26",
    "video_id": "vxKCRzAq-A0",
    "uploaded_by": "cloud uploader (no laptop)"
+  },
+  {
+   "channel": "sleepy",
+   "slot": "2026-12-09",
+   "title": "Marie Antoinette: The Last Queen of Versailles",
+   "status": "made-in-progress",
+   "work_branch": "work-sleepy-marie-antoinette",
+   "repo_folder": "sleepy/video08",
+   "started": "2026-11-27",
+   "playlist": "Kings & Queens for Sleep",
+   "topic_source": "Notion blueprint month-1 plan (video 9, Marie Antoinette), no vidIQ"
   }
  ],
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "notes": [
   "2026-11-17: branch backup-newton holds a finished Isaac Newton video (2h29m, made 14 Nov) with no ledger entry or metadata; not used, because it may already be on the channel. Saurabh to confirm before it is scheduled anywhere.",
   "2026-11-18 run: horizon 2 Dec. Covered: sleepy 21 Nov, 25 Nov (Lincoln, made this run); lamplight 21 Nov. Still open: lamplight 25 Nov, sleepy+lamplight 28 Nov and 2 Dec (next runs, earliest first). Shorts: sleepy to 6 Dec, lamplight to 11 Dec (1/day). Warm Mug: plan.json mixes 22 Nov, 27 Nov, 2 Dec each have 12 tagged unused tracks; no untagged unused tracks left, so no mix date after 2 Dec until the monthly free-music task refills on 3 Dec; Short excerpts still plentiful.",
