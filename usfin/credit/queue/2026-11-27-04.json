@@ -1,18 +1,11 @@
 {
-  "caption": "Signs you're doing better than you think. ✅\n• You pay at least the minimum on time\n• You know your due dates\n• You check your report for errors\nCheck your own situation, but these habits help.\nHow many do you have?",
-  "first_comment": "Which one is hardest for you? 👇",
+  "caption": "Confession time: how long did it take you to really understand what's in your credit score? 💬\nMost of us were just handed a number and told 'it matters.'\nNobody sat us down and explained it.\nWhat's one thing you wish someone had told you at 18?",
+  "first_comment": "What's one credit thing you learned the hard way? 👇",
   "sources": [
-    "pattern: signs you're doing better than you think"
+    "pattern: relatable confession"
   ],
   "instagram": {
-    "first_comment": "How many did you tick? Tell @creditscoretruths 👇"
+    "first_comment": "Share what you learned the hard way. Follow @creditscoretruths."
   },
-  "card": {
-    "kicker": "CREDIT HABIT",
-    "headline": "Signs your credit habits are <em>better</em> than you think.",
-    "sub": "On-time payments. Known due dates. Report checked.",
-    "theme": "green"
-  },
-  "image": "2026-11-27-04.jpg",
-  "publish_at": "2026-11-27T18:00:00+00:00"
+  "publish_at": "2026-11-27T14:00:00+00:00"
 }

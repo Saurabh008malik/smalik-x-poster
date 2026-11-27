@@ -1,18 +1,20 @@
 {
-  "caption": "True or False? 🤔\nChecking your own credit score lowers it.\nThink about it, then check the card.\nWhat did you think before you knew?",
-  "first_comment": "True or False? Vote below. 👇",
+  "caption": "$4,000 on a card at 21% APR, paying $100 a month? 💸\nThat takes about 6 years and roughly $2,900 in interest, assuming no new charges.\nSame payment, but a lower rate or a bigger payment changes it a lot.\nWould you send this to someone who only pays the minimum?",
+  "first_comment": "Do you know your card's APR off the top of your head? 👇",
   "sources": [
-    "pattern: myth-buster"
+    "pattern: the math nobody says out loud",
+    "Calculated: standard amortization, 21% APR, $100/mo"
   ],
   "instagram": {
-    "first_comment": "True or false? Answer for @creditscoretruths 👇"
+    "first_comment": "Know your APR? Follow @creditscoretruths."
   },
   "card": {
-    "kicker": "TRUE OR FALSE?",
-    "headline": "Checking your own score <em>lowers</em> it. True or false?",
-    "sub": "Answer: False. It's a soft inquiry.",
-    "theme": "blue"
+    "big": "$2,900",
+    "kicker": "DEBT REALITY",
+    "headline": "$4,000 at 21%, paying $100 a month, costs <em>interest</em>",
+    "sub": "About 6 years. Estimate, no new charges",
+    "theme": "red"
   },
-  "image": "2026-11-27-05.jpg",
-  "publish_at": "2026-11-27T20:00:00+00:00"
+  "video": "2026-11-27-05.mp4",
+  "publish_at": "2026-11-27T22:00:00+00:00"
 }

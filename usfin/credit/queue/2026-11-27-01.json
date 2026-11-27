@@ -1,20 +1,21 @@
 {
-  "caption": "Medical bills on a credit card? 🏥\nCNBC reports that when bills get paid with cards or loans, they get recorded as that other debt, so it's hard to see how much is really medical. One counselor calls it \"shadow debt.\"\nBefore borrowing: check for errors and ask about financial assistance.\nHas a medical bill ever ended up on your card?",
-  "first_comment": "Did you know to ask about financial assistance before paying a hospital bill? 👇",
+  "caption": "714. That's the average FICO score in America right now.\nThe 'good' range starts at 670, so the typical person is fine, not perfect.\nBut an average hides a lot of different stories. 📊\nWhere do you think you land: above or below the average?",
+  "first_comment": "Do you know your score right now, roughly? 👇",
   "sources": [
-    "https://www.cnbc.com/2026/11/12/medical-bills-credit-card-debt.html",
-    "pattern: reassurance/say-this"
+    "https://www.barchart.com/story/news/917429/fico-score-credit-insights-report-average-fico-score-dips-to-714",
+    "pattern: big number hook"
   ],
   "instagram": {
-    "first_comment": "Medical bill on a card? Tell us how it went. Follow @creditscoretruths for daily credit truths."
+    "first_comment": "Know your range? Tell us where you sit. Follow @creditscoretruths for daily credit truths."
   },
   "card": {
-    "kicker": "NEWS",
-    "headline": "Medical bills on cards become <em>\"shadow debt.\"</em>",
-    "sub": "Ask about financial assistance before you borrow.",
+    "big": "714",
+    "kicker": "SCORE TRUTH",
+    "headline": "The average <em>FICO score</em> in America",
+    "sub": "'Good' starts at 670",
     "theme": "blue",
-    "source": "Source: CNBC"
+    "source": "Source: FICO"
   },
-  "image": "2026-11-27-01.jpg",
-  "publish_at": "2026-11-27T12:00:00+00:00"
+  "video": "2026-11-27-01.mp4",
+  "publish_at": "2026-11-27T15:00:00+00:00"
 }

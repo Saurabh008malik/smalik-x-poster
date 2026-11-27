@@ -1,19 +1,22 @@
 {
-  "caption": "Consumer borrowing is still growing. 📈\nThe Federal Reserve's latest G.19 report says consumer credit rose at a 6.4% annual rate in September.\nThat covers cards, auto and student loans, but not mortgages.\nIs your own borrowing going up or down?",
-  "first_comment": "Up, down, or flat this year? 👇",
+  "caption": "Americans now owe a record $1.285 trillion on credit cards. 😳\nThat's up $52 billion in a year, per the New York Fed's Q3 report.\nBehind that number are regular people and regular bills.\nIs your card balance bigger or smaller than last Christmas?",
+  "first_comment": "Are you paying for the holidays on a card this year? 👇",
   "sources": [
-    "https://www.federalreserve.gov/releases/g19/current/"
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "https://stockanalysis.com/news/credit-card-debt-record-third-quarter-2026/",
+    "pattern: story in one number"
   ],
   "instagram": {
-    "first_comment": "Is your borrowing up or down? Tell @creditscoretruths 👇"
+    "first_comment": "Card balance bigger or smaller than last year? Follow @creditscoretruths."
   },
   "card": {
+    "big": "$1.285T",
     "kicker": "NEWS",
-    "headline": "Consumer credit grew at a <em>6.4%</em> annual rate in September.",
-    "sub": "Cards, auto and student loans. Not mortgages.",
-    "theme": "blue",
-    "source": "Source: Federal Reserve G.19"
+    "headline": "Credit card debt just hit a <em>new record</em>",
+    "sub": "Up $52 billion in a year",
+    "theme": "gold",
+    "source": "Source: New York Fed"
   },
-  "image": "2026-11-27-07.jpg",
-  "publish_at": "2026-11-28T00:00:00+00:00"
+  "video": "2026-11-27-07.mp4",
+  "publish_at": "2026-11-28T01:00:00+00:00"
 }

@@ -1,18 +1,21 @@
 {
-  "caption": "Can someone explain this? 😤\nYou pay on time, keep balances low, and your score still moves a few points for no clear reason.\nScores are recalculated whenever your report changes, so small swings are normal.\nWhat's the most random score move you've seen?",
-  "first_comment": "Be honest: how often do you check your score? 👇",
+  "caption": "5.0% of all US household debt is in some stage of delinquency. 📰\nThat's up 0.3 points in a quarter and the highest since 2016, per the New York Fed.\nTotal household debt is now about $19.1 trillion.\nIs your own debt feeling heavier or lighter than a year ago?",
+  "first_comment": "What's the one bill that grew most for you this year? 👇",
   "sources": [
-    "pattern: relatable frustration"
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "https://pro.thestreet.com/market-commentary/household-debt-jumps-the-most-since-2022-delinquencies-climb-to-highest-since-2016"
   ],
   "instagram": {
-    "first_comment": "Random score swing? Share it with @creditscoretruths 👇"
+    "first_comment": "Which bill grew most for you? Follow @creditscoretruths."
   },
   "card": {
-    "kicker": "DEBT REALITY",
-    "headline": "Why did my score <em>move</em> when I did nothing?",
-    "sub": "Small swings are usually normal.",
-    "theme": "red"
+    "big": "5.0%",
+    "kicker": "NEWS",
+    "headline": "Of household debt is <em>behind</em> on payments",
+    "sub": "Highest since 2016",
+    "theme": "blue",
+    "source": "Source: New York Fed, Q3 2026"
   },
   "image": "2026-11-27-02.jpg",
-  "publish_at": "2026-11-27T14:00:00+00:00"
+  "publish_at": "2026-11-27T12:00:00+00:00"
 }

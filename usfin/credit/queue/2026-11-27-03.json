@@ -1,18 +1,19 @@
 {
-  "caption": "Quiet wins count. 🌱\nOn-time payments, a lower balance, an old account left open. None of it looks dramatic.\nOver time, it adds up.\nWhat's one small credit habit you're proud of?",
-  "first_comment": "Drop your small win below. 👇",
+  "caption": "Your salary isn't in your credit score. At all. 🤯\nScores look at payment history, balances, history length, new credit and mix.\nSomeone earning $40k can have a higher score than someone earning $400k.\nDid anyone ever tell you income mattered here?",
+  "first_comment": "What's the weirdest credit myth you've heard? 👇",
   "sources": [
-    "pattern: reassurance list"
+    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
+    "pattern: myth-buster"
   ],
   "instagram": {
-    "first_comment": "Small credit wins matter. Tell @creditscoretruths yours 👇"
+    "first_comment": "Weirdest credit myth you've heard? Follow @creditscoretruths."
   },
   "card": {
-    "kicker": "CREDIT HABIT",
-    "headline": "Boring habits build <em>great</em> credit.",
-    "sub": "Small and repeated beats big and rare.",
-    "theme": "gold"
+    "kicker": "CREDIT MYTH",
+    "headline": "Your <em>income</em> isn't in your credit score",
+    "sub": "It tracks how you borrow, not earn",
+    "theme": "red"
   },
-  "image": "2026-11-27-03.jpg",
-  "publish_at": "2026-11-27T16:00:00+00:00"
+  "video": "2026-11-27-03.mp4",
+  "publish_at": "2026-11-27T18:00:00+00:00"
 }

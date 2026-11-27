@@ -1,8 +1,21 @@
 {
-  "caption": "Honest question. 💬\nWhen a bill is wrong, do you call and dispute it, or just pay it to get it over with?\nNo judgment. Just curious how most people handle it.",
-  "first_comment": "Call or just pay? 👇",
+  "caption": "Payment history is the biggest piece of a FICO score: about 35%. ✅\nOne missed due date can hurt more than people expect.\nSetting autopay for at least the minimum is a simple safety net.\nCheck your own situation, and keep enough in the account.\nWhat's your system for never missing a due date?",
+  "first_comment": "Autopay, calendar alert or sticky note? 👇",
   "sources": [
-    "pattern: confession"
+    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
+    "pattern: simple formula"
   ],
-  "publish_at": "2026-11-27T22:00:00+00:00"
+  "instagram": {
+    "first_comment": "Autopay or reminder? Follow @creditscoretruths."
+  },
+  "card": {
+    "big": "35%",
+    "kicker": "CREDIT HABIT",
+    "headline": "Payment history is the <em>biggest</em> piece of your score",
+    "sub": "Autopay the minimum as a safety net",
+    "theme": "green",
+    "source": "Source: myFICO"
+  },
+  "image": "2026-11-27-06.jpg",
+  "publish_at": "2026-11-27T16:00:00+00:00"
 }
