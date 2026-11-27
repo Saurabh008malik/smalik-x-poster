@@ -1,17 +1,19 @@
 {
-  "caption": "Rebuilding credit takes months, not a miracle. 🌱\nOn-time payments and lower balances add up slowly, and that's okay.\nNo one can promise a number, so be wary of anyone who does.\nWhat's one small step you're taking this month?",
-  "first_comment": "What's one small credit win this month? 👇",
+  "caption": "Credit mix is only about 10% of a FICO Score. 🟡\n\nThat means you don't need to take out a loan you don't need just to look 'diverse'. Payment history (35%) and amounts owed (30%) carry far more weight.\n\nThese are general weights and vary by person.\n\nWhat's one credit rule you wish someone had explained sooner?",
+  "first_comment": "What credit rule do you wish you'd learned sooner? 👇",
   "sources": [
-    "pattern: reassurance"
+    "https://www.myfico.com/credit-education/whats-in-your-credit-score"
   ],
   "instagram": {
-    "first_comment": "One small credit win? Follow @creditscoretruths."
+    "first_comment": "Credit rule you wish you'd learned sooner? @creditscoretruths 👇"
   },
   "card": {
-    "kicker": "CREDIT HABIT",
-    "headline": "Rebuilding takes <em>months</em>, not a miracle",
-    "sub": "Small steps, repeated",
-    "theme": "gold"
+    "big": "10%",
+    "kicker": "SCORE TRUTH",
+    "headline": "Credit mix is a <em>small</em> piece. Don't borrow for it.",
+    "sub": "Payment history is 35%, amounts owed 30%",
+    "theme": "gold",
+    "source": "Source: myFICO"
   },
   "image": "2026-11-27-08.jpg",
   "publish_at": "2026-11-27T18:00:00+00:00"

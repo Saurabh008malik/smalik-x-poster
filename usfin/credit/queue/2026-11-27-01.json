@@ -1,20 +1,20 @@
 {
-  "caption": "714. That's the average FICO score in America right now.\nThe 'good' range starts at 670, so the typical person is fine, not perfect.\nBut an average hides a lot of different stories. 📊\nWhere do you think you land: above or below the average?",
-  "first_comment": "Do you know your score right now, roughly? 👇",
+  "caption": "30 days. That's how late a payment has to be before it can show up on your credit report.\n\nMiss the due date by a week and you'll likely get a late fee, but a lender generally can't report it as late until you're 30+ days past due.\n\nStill, don't test it. Once it's reported, it can stay on your report for up to 7 years.\n\nWhat's the one bill you always forget to pay on time?",
+  "first_comment": "Which bill sneaks up on you most: card, phone, or rent? 👇",
   "sources": [
-    "https://www.barchart.com/story/news/917429/fico-score-credit-insights-report-average-fico-score-dips-to-714",
-    "pattern: big number hook"
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "https://www.myfico.com/credit-education/credit-scores/payment-history",
+    "pattern: The math nobody says out loud"
   ],
   "instagram": {
-    "first_comment": "Know your range? Tell us where you sit. Follow @creditscoretruths for daily credit truths."
+    "first_comment": "Which bill sneaks up on you most? @creditscoretruths 👇"
   },
   "card": {
-    "big": "714",
+    "big": "30",
     "kicker": "SCORE TRUTH",
-    "headline": "The average <em>FICO score</em> in America",
-    "sub": "'Good' starts at 670",
-    "theme": "blue",
-    "source": "Source: FICO"
+    "headline": "Days late before it <em>hits</em> your credit report",
+    "sub": "A late fee can come sooner",
+    "theme": "red"
   },
   "video": "2026-11-27-01.mp4",
   "publish_at": "2026-11-27T15:00:00+00:00"

@@ -1,18 +1,18 @@
 {
-  "caption": "Your salary isn't in your credit score. At all. 🤯\nScores look at payment history, balances, history length, new credit and mix.\nSomeone earning $40k can have a higher score than someone earning $400k.\nDid anyone ever tell you income mattered here?",
-  "first_comment": "What's the weirdest credit myth you've heard? 👇",
+  "caption": "Checking your own credit score does not lower it.\n\nThat's a soft inquiry. Only a hard inquiry, when a lender checks because you applied for credit, can ding your score, and usually only a little.\n\nSo look as often as you like. Knowing is the first step.\n\nWhat stopped you from checking before?",
+  "first_comment": "What was the myth you believed longest about credit? 👇",
   "sources": [
-    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
-    "pattern: myth-buster"
+    "https://www.myfico.com/credit-education/credit-checks",
+    "pattern: Two-column sort (true/false verdict)"
   ],
   "instagram": {
-    "first_comment": "Weirdest credit myth you've heard? Follow @creditscoretruths."
+    "first_comment": "Longest-held credit myth? @creditscoretruths 👇"
   },
   "card": {
     "kicker": "CREDIT MYTH",
-    "headline": "Your <em>income</em> isn't in your credit score",
-    "sub": "It tracks how you borrow, not earn",
-    "theme": "red"
+    "headline": "Checking your own score <em>won't</em> lower it",
+    "sub": "Soft check = no impact. Hard check = small dip.",
+    "theme": "green"
   },
   "video": "2026-11-27-03.mp4",
   "publish_at": "2026-11-27T18:00:00+00:00"

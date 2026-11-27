@@ -1,20 +1,19 @@
 {
-  "caption": "Payment history is the biggest piece of a FICO score: about 35%. ✅\nOne missed due date can hurt more than people expect.\nSetting autopay for at least the minimum is a simple safety net.\nCheck your own situation, and keep enough in the account.\nWhat's your system for never missing a due date?",
-  "first_comment": "Autopay, calendar alert or sticky note? 👇",
+  "caption": "You can check your credit reports for free, every week. ✅\n\nEquifax, Experian and TransUnion all offer free weekly reports through the official free report site. Looking at your report does not hurt your score.\n\nSpot a wrong account or an address you don't recognize? That's worth disputing, and disputing is free.\n\nWhat's the strangest thing you've ever found on a report?",
+  "first_comment": "Found anything odd on your report? Tell us what it was. 👇",
   "sources": [
-    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
-    "pattern: simple formula"
+    "https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-a-copy-of-my-credit-reports-en-6/",
+    "https://www.ftc.gov/"
   ],
   "instagram": {
-    "first_comment": "Autopay or reminder? Follow @creditscoretruths."
+    "first_comment": "Strangest thing on your report? @creditscoretruths 👇"
   },
   "card": {
-    "big": "35%",
+    "big": "3",
     "kicker": "CREDIT HABIT",
-    "headline": "Payment history is the <em>biggest</em> piece of your score",
-    "sub": "Autopay the minimum as a safety net",
-    "theme": "green",
-    "source": "Source: myFICO"
+    "headline": "Check all <em>3 reports</em> free, every week",
+    "sub": "Checking your own report doesn't hurt your score",
+    "theme": "green"
   },
   "image": "2026-11-27-06.jpg",
   "publish_at": "2026-11-27T16:00:00+00:00"

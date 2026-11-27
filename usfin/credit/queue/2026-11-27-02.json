@@ -1,20 +1,20 @@
 {
-  "caption": "5.0% of all US household debt is in some stage of delinquency. 📰\nThat's up 0.3 points in a quarter and the highest since 2016, per the New York Fed.\nTotal household debt is now about $19.1 trillion.\nIs your own debt feeling heavier or lighter than a year ago?",
-  "first_comment": "What's the one bill that grew most for you this year? 👇",
+  "caption": "Federal student loan collections: paused, for now. ⏸️\n\nThe Education Department delayed wage garnishment and tax-refund offsets for defaulted loans on Jan 16, 2026, and no restart date has been announced. Reports say Treasury could take over collections, possibly in 2027, though nothing is confirmed.\n\nDefault can stay on a credit report for up to 7 years. Check studentaid.gov for your own status.\n\nIf you have federal loans, do you know whether yours are current?",
+  "first_comment": "Have you checked your student loan status this year? 👇",
   "sources": [
-    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
-    "https://pro.thestreet.com/market-commentary/household-debt-jumps-the-most-since-2022-delinquencies-climb-to-highest-since-2016"
+    "https://www.cnbc.com/2026/01/16/student-loan-collections-paused.html",
+    "https://www.creditandcollectionnews.com/treasury-prepares-private-student-loan-collection-push-affecting-nearly-10-million-borrowers/"
   ],
   "instagram": {
-    "first_comment": "Which bill grew most for you? Follow @creditscoretruths."
+    "first_comment": "Know your student loan status? @creditscoretruths 👇"
   },
   "card": {
-    "big": "5.0%",
+    "big": "2027",
     "kicker": "NEWS",
-    "headline": "Of household debt is <em>behind</em> on payments",
-    "sub": "Highest since 2016",
+    "headline": "Student loan collections <em>may restart</em>",
+    "sub": "Paused since Jan 16, 2026. No date set.",
     "theme": "blue",
-    "source": "Source: New York Fed, Q3 2026"
+    "source": "Source: CNBC, Education Dept."
   },
   "image": "2026-11-27-02.jpg",
   "publish_at": "2026-11-27T12:00:00+00:00"

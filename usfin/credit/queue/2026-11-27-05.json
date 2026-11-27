@@ -1,18 +1,18 @@
 {
-  "caption": "$4,000 on a card at 21% APR, paying $100 a month? 💸\nThat takes about 6 years and roughly $2,900 in interest, assuming no new charges.\nSame payment, but a lower rate or a bigger payment changes it a lot.\nWould you send this to someone who only pays the minimum?",
-  "first_comment": "Do you know your card's APR off the top of your head? 👇",
+  "caption": "$2,000 on a card at 24% APR = about $40 a month in interest. 💳\n\nThat's 2% a month (24 ÷ 12). If the balance doesn't move, that's roughly $480 a year paying for the past.\n\nThis is a simple estimate, since real cards calculate interest daily and rates vary. Check your own statement.\n\nDo you know your card's APR off the top of your head?",
+  "first_comment": "Do you know your APR without looking? 👇",
   "sources": [
-    "pattern: the math nobody says out loud",
-    "Calculated: standard amortization, 21% APR, $100/mo"
+    "pattern: Paycheck relatability / the math nobody says out loud",
+    "simple APR/12 arithmetic"
   ],
   "instagram": {
-    "first_comment": "Know your APR? Follow @creditscoretruths."
+    "first_comment": "Know your APR without looking? @creditscoretruths 👇"
   },
   "card": {
-    "big": "$2,900",
+    "big": "$40",
     "kicker": "DEBT REALITY",
-    "headline": "$4,000 at 21%, paying $100 a month, costs <em>interest</em>",
-    "sub": "About 6 years. Estimate, no new charges",
+    "headline": "A month in interest on <em>$2,000</em> at 24%",
+    "sub": "About $480 a year if it never moves",
     "theme": "red"
   },
   "video": "2026-11-27-05.mp4",

@@ -1,21 +1,20 @@
 {
-  "caption": "Americans now owe a record $1.285 trillion on credit cards. 😳\nThat's up $52 billion in a year, per the New York Fed's Q3 report.\nBehind that number are regular people and regular bills.\nIs your card balance bigger or smaller than last Christmas?",
-  "first_comment": "Are you paying for the holidays on a card this year? 👇",
+  "caption": "$807 million. 🛍️\n\nThat's how much Adobe forecasts Americans will finance with buy now, pay later on Black Friday alone, out of about $12.9 billion in online sales.\n\nIt's a forecast, not a final count. Each plan is a loan you have to pay on time, so check your own budget first.\n\nHave you ever used BNPL for something you could have waited on?",
+  "first_comment": "Did you buy anything on a payment plan today? 👇",
   "sources": [
-    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
-    "https://stockanalysis.com/news/credit-card-debt-record-third-quarter-2026/",
-    "pattern: story in one number"
+    "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record",
+    "pattern: Today's story in one number"
   ],
   "instagram": {
-    "first_comment": "Card balance bigger or smaller than last year? Follow @creditscoretruths."
+    "first_comment": "BNPL today, yes or no? @creditscoretruths 👇"
   },
   "card": {
-    "big": "$1.285T",
+    "big": "$807M",
     "kicker": "NEWS",
-    "headline": "Credit card debt just hit a <em>new record</em>",
-    "sub": "Up $52 billion in a year",
-    "theme": "gold",
-    "source": "Source: New York Fed"
+    "headline": "Forecast to go on <em>pay-later</em> plans today",
+    "sub": "Adobe's Black Friday forecast",
+    "theme": "blue",
+    "source": "Source: Adobe"
   },
   "video": "2026-11-27-07.mp4",
   "publish_at": "2026-11-28T01:00:00+00:00"
