@@ -64,3 +64,8 @@ Applies to The Sleepy Biographer AND Lamplight Scripture, from the next video ma
 - Livelier picture sections (free): add very subtle drifting dust, candle glow and film grain over the slow-zoom images.
 - **Thumbnails**: design with the `poster-canvas-design` method (bold modern type, one focal image, strong contrast, 3 to 5 words max), still public-domain art. Make 2 variants and use YouTube "Test & compare" when available.
 - Paid AI video (moving realistic scenes like Scripture Rebuilt) is on hold until there is a budget; later idea: a 30 to 45 min non-sleep story documentary on Lamplight with an animated hook.
+
+### How the 27 Nov upgrade was done on video 8 (Marie Antoinette, 27 Nov 2026)
+- Animations rendered without HyperFrames, with a small free Python renderer (sleepy/tools/marie/anim.py + maps.py, Pillow + numpy piped to ffmpeg): 24 s animated title over a blurred portrait, 7 s chapter cards (CHAPTER N / title, gold rule drawing out), 12 s quote cards (only the subject's own public-domain words, translated, or a clearly labelled myth), 20 s journey maps (route drawn slowly, "route simplified"), drifting dust motes and light grain on every card. About 3 min of animation, about 20 min of compute.
+- assemble_ma.py = Lamplight assemble2 (full-frame pictures) + anim_events.json: animations are placed at chapter starts and at the matching paragraph (time estimated from text length), picture slots fill the gaps.
+- Fonts: Gloock, Crimson Pro (Google Fonts, from github.com/google/fonts). Thumbnails: thumb.py, two variants (A name + portrait, B myth question), for Test & compare.

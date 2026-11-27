@@ -1,0 +1,87 @@
+[
+ {
+  "t": 0.0,
+  "secs": 24.0,
+  "path": "/home/claude/marie/anim/title.mp4"
+ },
+ {
+  "t": 198.05278818152834,
+  "secs": 12.0,
+  "path": "/home/claude/marie/anim/q1.mp4"
+ },
+ {
+  "t": 694.388,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch02.mp4"
+ },
+ {
+  "t": 1370.0933333333332,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch03.mp4"
+ },
+ {
+  "t": 1532.0070343752213,
+  "secs": 22.0,
+  "path": "/home/claude/marie/anim/map1.mp4"
+ },
+ {
+  "t": 2061.5906666666665,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch04.mp4"
+ },
+ {
+  "t": 2242.115305842672,
+  "secs": 12.0,
+  "path": "/home/claude/marie/anim/q4.mp4"
+ },
+ {
+  "t": 2727.6693333333333,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch05.mp4"
+ },
+ {
+  "t": 3323.372,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch06.mp4"
+ },
+ {
+  "t": 3963.557333333333,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch07.mp4"
+ },
+ {
+  "t": 4637.428,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch08.mp4"
+ },
+ {
+  "t": 5271.664,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch09.mp4"
+ },
+ {
+  "t": 5970.030666666667,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch10.mp4"
+ },
+ {
+  "t": 6616.461333333333,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch11.mp4"
+ },
+ {
+  "t": 6938.435790846966,
+  "secs": 20.0,
+  "path": "/home/claude/marie/anim/map2.mp4"
+ },
+ {
+  "t": 7313.843999999999,
+  "secs": 7.0,
+  "path": "/home/claude/marie/anim/ch12.mp4"
+ },
+ {
+  "t": 7705.369053070625,
+  "secs": 12.0,
+  "path": "/home/claude/marie/anim/q12.mp4"
+ }
+]
