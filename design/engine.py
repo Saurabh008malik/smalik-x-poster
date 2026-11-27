@@ -9,7 +9,7 @@ problem here can never stop a post.
 
   render_card(brand, data, out_jpg)          -> headline font size (int)
   render_reel(brand, data, out_mp4, music)   -> duration seconds
-brand: paycheck | credit | closing | fineprint | adda | ckb
+brand: paycheck | credit | closing | fineprint | adda | ckb | x (X cards: Saurabh Malik @Smalik_wc)
 """
 import base64
 import json
@@ -35,6 +35,8 @@ BRANDS = {
     "fineprint": {"name": "Fine Print Facts", "handle": "@fineprintfacts", "cta": "Follow so you never miss the fine print"},
     "adda": {"name": "Creator Adda", "handle": "@real_creator_adda", "cta": "Follow karo, roz ek creator tip"},
     "ckb": {"name": "Cricket Ki Baat", "handle": "@realcricketkibaat", "cta": "Follow karo, roz ki cricket"},
+    # X cards: Saurabh's own account (same stadium look as ckb, but his own name + handle, never Cricket Ki Baat)
+    "x": {"name": "Saurabh Malik", "handle": "@Smalik_wc", "cta": "Follow for daily cricket updates"},
     "wsp": {"name": "Wall St Pulse", "handle": "@WallStPulseHQ", "cta": "Follow for the market in 30 seconds"},
     "inf": {"name": "The Inference", "handle": "@TheInferenceHQ", "cta": "Follow for AI news without the hype"},
 }

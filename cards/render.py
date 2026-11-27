@@ -24,15 +24,15 @@ except Exception as e:  # noqa: BLE001
     print("new design unavailable, using old templates:", e)
 
 jobs = [
-    ("template.html", 1600, 900, base + ".png", "png"),
-    ("template-portrait.html", 1080, 1350, base + "-fb.jpg", "jpeg"),
+    ("template.html", 1600, 900, base + ".png", "png", "x"),            # X card: Saurabh Malik @Smalik_wc
+    ("template-portrait.html", 1080, 1350, base + "-fb.jpg", "jpeg", "ckb"),  # Facebook/Instagram: Cricket Ki Baat
 ]
 with sync_playwright() as p:
     b = p.chromium.launch()
-    for tpl, w, h, out, kind in jobs:
+    for tpl, w, h, out, kind, brand in jobs:
         if design is not None:
             try:
-                design.render_card("ckb", data, out, browser=b)
+                design.render_card(brand, data, out, browser=b)
                 print("saved", out, "(new design)")
                 continue
             except Exception as e:  # noqa: BLE001

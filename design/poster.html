@@ -82,6 +82,7 @@ body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:a
 .stadium #src{position:relative;z-index:1;font-family:"Mono";font-size:22px;color:#8FA197;margin:14px 0}
 .stadium .foot{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;border-top:2px solid rgba(255,255,255,.12);padding-top:24px;font-family:"Outfit";font-size:31px}
 .stadium .foot b{font-weight:400;display:flex;align-items:center;gap:14px}
+.stadium .foot b small{font-family:"OutfitR";font-size:24px;color:#A8B7AE}
 .stadium .foot span{font-family:"OutfitR";color:#A8B7AE;font-size:24px}
 .stadium .meta{font-family:"Mono";font-size:22px;letter-spacing:.08em;color:#A8B7AE;text-transform:uppercase}
 .stadium.sc #h{font-size:176px;margin-top:10px}
@@ -110,7 +111,7 @@ body{font-family:"Outfit","Noto Color Emoji",sans-serif;-webkit-font-smoothing:a
 /*DATA*/
 (function(){
 const D=window.DATA, B=window.BRAND, key=B.key;
-const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium',wsp:'night',inf:'night'}[key]||'night';
+const SKIN={paycheck:'paper',fineprint:'paper',credit:'night',closing:'night',adda:'sticker',ckb:'stadium',x:'stadium',wsp:'night',inf:'night'}[key]||'night';
 document.body.className=SKIN;
 const card=document.getElementById('card');
 const esc=s=>String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
@@ -163,11 +164,11 @@ if(SKIN==='paper'){
  const chips=(D.stats||[]).slice(0,3).map(x=>`<div class="chip"><b>${esc(x.big)}</b><span>${esc(x.small)}</span></div>`).join('');
  card.innerHTML=`<div class="top"><div id="kick">${esc(D.tag||D.kicker||'Cricket')}</div><span class="meta">${esc(D.pill)}</span></div>
  <div id="main">${H2}<div class="rows2">${rows}</div><div class="res">${esc(D.result||D.sub)}</div></div>
- <div class="chips">${chips}</div><div class="foot"><b>🏏 ${esc(B.name)}</b><span>${esc(D.source)}</span></div>`;
+ <div class="chips">${chips}</div><div class="foot"><b>🏏 ${esc(B.name)}<small>${esc(B.handle)}</small></b><span>${esc(D.source)}</span></div>`;
 }else{
  card.innerHTML=`<div class="top"><div id="kick">${esc(D.kicker||'Cricket')}</div></div>
  <div id="main">${BIG}${H}${SUB}</div><div id="src">${esc(D.source)}</div>
- <div class="foot"><b>🏏 ${esc(B.name)}</b><span>${cta}</span></div>`;
+ <div class="foot"><b>🏏 ${esc(B.name)}<small>${esc(B.handle)}</small></b><span>${cta}</span></div>`;
 }
 document.fonts.ready.then(()=>{
 const m=document.getElementById('main'),h=document.getElementById('h');
