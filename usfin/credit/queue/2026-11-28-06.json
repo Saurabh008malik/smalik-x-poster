@@ -1,0 +1,19 @@
+{
+  "caption": "A habit worth keeping. 🗓️\nYour card's statement date and due date are different days.\nUtilization is typically reported around the statement date, so paying before it closes can show a lower balance.\nCheck your own card's dates.",
+  "first_comment": "Do you know your statement closing date? 👇",
+  "sources": [
+    "https://www.consumerfinance.gov/ask-cfpb/",
+    "pattern: simple steps / save-worthy"
+  ],
+  "instagram": {
+    "first_comment": "Save this for later. @creditscoretruths"
+  },
+  "card": {
+    "kicker": "CREDIT HABIT",
+    "headline": "Know your <em>statement date</em>, not just the due date",
+    "sub": "Balance is often reported when it closes",
+    "theme": "green"
+  },
+  "image": "2026-11-28-06.jpg",
+  "publish_at": "2026-11-28T16:00:00+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "caption": "19.71%. That's the average credit card APR right now.\nStill below the 20.79% record from August 2024, but not exactly cheap.\nIt's the number your balance quietly grows by.\nWhat APR is on your main card?",
+  "first_comment": "Do you know your card's exact APR without looking? 👇",
+  "sources": [
+    "https://www.wsmv.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "pattern: big number / dollar amount hook"
+  ],
+  "instagram": {
+    "first_comment": "Check your statement today, it's listed. Follow @creditscoretruths for more."
+  },
+  "card": {
+    "big": "19.71%",
+    "kicker": "CARD TRAP",
+    "headline": "The average card <em>APR</em> today",
+    "sub": "Record was 20.79% in Aug 2024",
+    "theme": "red",
+    "source": "Source: Bankrate, Nov 4"
+  },
+  "video": "2026-11-28-01.mp4",
+  "publish_at": "2026-11-28T15:00:00+00:00"
+}

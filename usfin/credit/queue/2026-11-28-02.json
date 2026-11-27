@@ -1,0 +1,21 @@
+{
+  "caption": "Household debt hit $19.1 trillion.\nThe New York Fed says 5.0% of it is in some stage of delinquency, up from 4.7% three months earlier.\nCredit cards were a bright spot: serious delinquency flow eased to 6.87%.\nAre you seeing it in your own budget?",
+  "first_comment": "What's the one bill that's grown most for you this year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Which bill grew most for you this year? @creditscoretruths"
+  },
+  "card": {
+    "big": "5.0%",
+    "kicker": "NEWS",
+    "headline": "Of all household debt is now <em>delinquent</em>",
+    "sub": "Up from 4.7% a quarter earlier",
+    "theme": "blue",
+    "source": "Source: NY Fed, Q3 2026"
+  },
+  "image": "2026-11-28-02.jpg",
+  "publish_at": "2026-11-28T12:00:00+00:00"
+}

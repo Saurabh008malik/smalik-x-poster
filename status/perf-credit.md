@@ -5,20 +5,20 @@ Views/reach not available yet (token lacks insights permission) — ranking uses
 
 ## Top performers — repeat these patterns (hook style, topic, format)
 
-- [reel] score 0.0 | Pay a collection and it's gone? Not quite. 🔍 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-09
-- [card] score 0.0 | Then vs now, card edition. 💳 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-08
-- [card] score 0.0 | Good sign in the latest data. 📉 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-07
-- [text] score 0.0 | Confession time. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-06
-- [card] score 0.0 | True or False? 🤔 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-26-05
+- [card] score 0.0 | Credit mix is only about 10% of a FICO Score. 🟡 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-08
+- [card] score 0.0 | You can check your credit reports for free, every week. ✅ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-06
+- [text] score 0.0 | Honest question. 💬 | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-04
+- [reel] score 0.0 | Checking your own credit score does not lower it. | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-03
+- [card] score 0.0 | Federal student loan collections: paused, for now. ⏸️ | likes 0, comments 0, shares 0, saves 0, views - | 2026-11-27-02
 
 ## Weakest — avoid repeating these patterns
 
-- [card] score 0.0 | Mortgage trouble is creeping up. 🏠 | 2026-11-13-01
-- [card] score 0.0 | Unpopular opinion: you shouldn't need a 'strategy' just to use a credit card without getting burned. 😤 | 2026-11-13-02
-- [card] score 0.0 | You don't need a perfect score today. 🟡 | 2026-11-13-03
+- [card] score 0.0 | True or False? 🤔 | 2026-11-13-05
+- [text] score 0.0 | Real question. 💬 | 2026-11-13-06
+- [card] score 0.0 | The average FICO score is about 714. 📊 | 2026-11-13-07
 
 ## Average score by format
 
-- reel: 0.0 over 12 posts
-- card: 0.0 over 91 posts
-- text: 0.0 over 13 posts
+- card: 0.0 over 90 posts
+- text: 0.0 over 14 posts
+- reel: 0.0 over 13 posts

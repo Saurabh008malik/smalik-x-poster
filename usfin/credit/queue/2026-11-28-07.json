@@ -1,0 +1,22 @@
+{
+  "caption": "$1.29 trillion.\nThat's how much Americans owe on credit cards, a record, per the New York Fed's Q3 report.\nUp about $22 billion in one quarter.\nHas your own card balance gone up or down this year?",
+  "first_comment": "Up, down or flat this year? 👇",
+  "sources": [
+    "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
+    "https://stockanalysis.com/news/credit-card-debt-record-third-quarter-2026/",
+    "pattern: big number"
+  ],
+  "instagram": {
+    "first_comment": "Source is the NY Fed Q3 2026. @creditscoretruths"
+  },
+  "card": {
+    "big": "$1.29T",
+    "kicker": "NEWS",
+    "headline": "Card debt hit a <em>new record</em>",
+    "sub": "Up about $22B in one quarter",
+    "theme": "blue",
+    "source": "Source: NY Fed"
+  },
+  "video": "2026-11-28-07.mp4",
+  "publish_at": "2026-11-29T01:00:00+00:00"
+}
