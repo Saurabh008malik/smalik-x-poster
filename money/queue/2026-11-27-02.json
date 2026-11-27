@@ -1,12 +1,13 @@
 {
-  "caption": "Can someone explain this? 😅\nEverything is \"20% off,\" and somehow my total is still higher than last year.\nIs it the sale, or is it me?\nWhat did you buy this week that cost more than you expected?",
-  "first_comment": "What's one thing that cost way more than you expected this week? 👇",
+  "caption": "Inflation is 3.8% and your raise has to beat it. 📈\nThe Fed's favorite gauge (PCE) rose 3.8% over the past year through October, per the BEA.\nIf your last raise was smaller than that, your paycheck buys a bit less than before.\nDid your raise beat 3.8% this year?",
+  "first_comment": "Be honest: did your raise beat 3.8%? 👇",
   "sources": [
-    "pattern: relatable frustration (Josh-Rincon style)"
+    "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+    "pattern: the math nobody says out loud"
   ],
   "instagram": {
-    "first_comment": "Tell us the receipt shock of the week 👇 @paychecktruths"
+    "first_comment": "Raise vs inflation: where do you land? @paychecktruths"
   },
   "image": "2026-11-27-02.jpg",
-  "publish_at": "2026-11-27T14:00:00+00:00"
+  "publish_at": "2026-11-27T12:00:00+00:00"
 }

@@ -1,13 +1,13 @@
 {
-  "caption": "True or False? 🤔\n\"If I got a 3% raise, I'm ahead.\"\nThink about it: if prices rise faster than 3%, your paycheck buys less than before.\nTrue or False? Tell us why 👇",
-  "first_comment": "True or False? Drop your answer 👇",
+  "caption": "One point on your mortgage rate = $232 a month. 🏠\nOn a $350,000 30-year loan, 7.21% (this week's Freddie Mac average) costs about $2,378 a month in principal and interest. At 6.21% it's about $2,146.\nThat's roughly $2,787 a year.\nWould a lower rate change your plans?",
+  "first_comment": "Are you waiting on rates, or buying anyway? 👇",
   "sources": [
-    "https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html",
-    "pattern: myth question"
+    "https://www.freddiemac.com/pmms",
+    "pattern: the math nobody says out loud / then vs now"
   ],
   "instagram": {
-    "first_comment": "True or false? Comment below 👇 @paychecktruths"
+    "first_comment": "What rate would make you buy? @paychecktruths"
   },
-  "image": "2026-11-27-05.jpg",
-  "publish_at": "2026-11-27T20:00:00+00:00"
+  "video": "2026-11-27-05.mp4",
+  "publish_at": "2026-11-27T22:00:00+00:00"
 }

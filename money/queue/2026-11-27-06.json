@@ -1,8 +1,13 @@
 {
-  "caption": "Be honest. 👀\nWhat's one thing you almost bought this Black Friday and then talked yourself out of?\nI'll go first: I always \"need\" a new gadget until I sleep on it.\nWhat saved you?",
-  "first_comment": null,
+  "caption": "Before the next sale: set a cap first. 💵\n1. Write a number you can pay in cash.\n2. Put it in your notes app before you open any store.\n3. Wait 24 hours on anything not on your list.\nIn one survey, 22% of shoppers expected to still be paying for this year's purchases after January.\nWhat's your cap this year?",
+  "first_comment": "What's your holiday spending cap? 👇",
   "sources": [
-    "pattern: relatable confession (text)"
+    "https://www.omnicalculator.com/reports/black-friday-survey-2026",
+    "pattern: simple formula in steps"
   ],
-  "publish_at": "2026-11-27T22:00:00+00:00"
+  "instagram": {
+    "first_comment": "Your holiday cap: what is it? @paychecktruths"
+  },
+  "image": "2026-11-27-06.jpg",
+  "publish_at": "2026-11-27T16:00:00+00:00"
 }

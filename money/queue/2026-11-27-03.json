@@ -1,12 +1,13 @@
 {
-  "caption": "Quiet truth. 💛\nYour income is the starting line.\nYour habits decide where you finish.\nWhat's one habit you're proud of?",
-  "first_comment": "Share one money habit you're proud of 👇",
+  "caption": "58% of shoppers think most Black Friday deals aren't real. 🛍️\nIn one 2026 survey, 58% said 4 in 10 advertised deals or fewer are genuine savings, and 59% believe stores raise prices before the sale.\nA big red tag isn't proof of a low price.\nWhat's the best real deal you ever found?",
+  "first_comment": "Do you check price history before you buy? 👇",
   "sources": [
-    "pattern: short punchy truth"
+    "https://www.omnicalculator.com/reports/black-friday-survey-2026",
+    "pattern: myth-buster / big number hook"
   ],
   "instagram": {
-    "first_comment": "One habit that changed your money? 👇 @paychecktruths"
+    "first_comment": "Real deal or fake sale? Tell us your best find. @paychecktruths"
   },
-  "image": "2026-11-27-03.jpg",
-  "publish_at": "2026-11-27T16:00:00+00:00"
+  "video": "2026-11-27-03.mp4",
+  "publish_at": "2026-11-27T18:00:00+00:00"
 }

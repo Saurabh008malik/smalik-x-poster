@@ -1,13 +1,13 @@
 {
-  "caption": "Inflation just ticked up again. 📈\nThe Fed's favorite gauge (PCE) rose 3.8% in October from a year ago. Core, without food and energy, was 3.3%.\nSo if your last raise was under 3.8%, your paycheck may be buying a little less than before.\nDid your raise beat inflation this year?",
-  "first_comment": "Be honest: did your raise beat 3.8%? 👇",
+  "caption": "Gas fell 17% in a month. 🚗\nThe national average is $3.56 a gallon, down from $4.29 four weeks ago (AAA).\nBut it's still about 17% above this time last year.\nHas your gas bill actually dropped yet?",
+  "first_comment": "What do you pay per gallon where you live right now? 👇",
   "sources": [
-    "https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html",
+    "https://gasprices.aaa.com/",
     "pattern: paycheck relatability / big number hook"
   ],
   "instagram": {
-    "first_comment": "Raise vs inflation: who came out ahead? Tell us 👇 @paychecktruths"
+    "first_comment": "Gas prices where you are: up or down? @paychecktruths"
   },
-  "image": "2026-11-27-01.jpg",
-  "publish_at": "2026-11-27T12:00:00+00:00"
+  "video": "2026-11-27-01.mp4",
+  "publish_at": "2026-11-27T15:00:00+00:00"
 }

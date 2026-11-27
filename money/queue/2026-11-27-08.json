@@ -1,12 +1,13 @@
 {
-  "caption": "Week 2 of the biweekly paycheck. 😅\nPayday feels great. By day 10 it's \"how is it already gone?\"\nYou're not alone.\nWhat day does your money run out?",
-  "first_comment": "What day of the pay cycle does your money run out? 👇",
+  "caption": "Cheap isn't the same as needed. 💛\nIn one 2026 survey, 34% of shoppers said they'd bought something they didn't need just because it was cheap.\nA discount only saves money if you were already going to buy it.\nWhat's your rule for sale-day purchases?",
+  "first_comment": "What's the last thing you bought just because it was cheap? 👇",
   "sources": [
-    "pattern: paycheck relatability"
+    "https://www.omnicalculator.com/reports/black-friday-survey-2026",
+    "pattern: reassurance / mindset test"
   ],
   "instagram": {
-    "first_comment": "Day 3? Day 10? Tell us 👇 @paychecktruths"
+    "first_comment": "Sale-day rule: what's yours? @paychecktruths"
   },
   "image": "2026-11-27-08.jpg",
-  "publish_at": "2026-11-28T02:00:00+00:00"
+  "publish_at": "2026-11-27T18:00:00+00:00"
 }
