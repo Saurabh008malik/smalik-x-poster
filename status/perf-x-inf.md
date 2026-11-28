@@ -1,4 +1,4 @@
-<!-- generated_at: 2026-11-27T21:39:58.891859+00:00 -->
+<!-- generated_at: 2026-11-28T08:27:17.635934+00:00 -->
 # X performance - inf (last 10 days, 37 posts read)
 
 Average per post: 2 impressions, 0.0 interactions (likes + replies + reposts + quotes + bookmarks).
