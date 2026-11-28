@@ -1,8 +1,11 @@
 {
-  "caption": "Be honest.\nIf your card statement showed the APR in giant letters, would you change how you use it?\nMost of us only look at the minimum due.\nWhat's the first number you look at?",
-  "first_comment": "Minimum due, balance or APR: what do you look at first? 👇",
+  "caption": "Be honest.\nWhen did you last look at the APR on your main card?\nNot the limit, not the balance, the rate.\nMost of us only find out when the interest line gets painful.",
+  "first_comment": "What's your main card's APR? Ballpark is fine. 👇",
   "sources": [
-    "pattern: relatable question"
+    "pattern: relatable confession"
   ],
+  "instagram": {
+    "first_comment": "Ballpark APR on your main card? Follow @creditscoretruths."
+  },
   "publish_at": "2026-11-28T14:00:00+00:00"
 }

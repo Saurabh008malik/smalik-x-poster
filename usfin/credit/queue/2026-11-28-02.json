@@ -1,20 +1,20 @@
 {
-  "caption": "Household debt hit $19.1 trillion.\nThe New York Fed says 5.0% of it is in some stage of delinquency, up from 4.7% three months earlier.\nCredit cards were a bright spot: serious delinquency flow eased to 6.87%.\nAre you seeing it in your own budget?",
-  "first_comment": "What's the one bill that's grown most for you this year? 👇",
+  "caption": "Student loans just moved the other way.\nThe share of balances newly turning seriously delinquent fell to 7.72% in Q3, from 14.26% a year earlier.\nCard and mortgage trends look very different, though.\nHas your own loan situation gotten easier or harder this year?",
+  "first_comment": "Which debt is hardest to pay down for you right now? 👇",
   "sources": [
     "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
-    "pattern: big number"
+    "pattern: news story explained simply"
   ],
   "instagram": {
-    "first_comment": "Which bill grew most for you this year? @creditscoretruths"
+    "first_comment": "Which one feels heaviest: cards, car, student loans? Follow @creditscoretruths."
   },
   "card": {
-    "big": "5.0%",
+    "big": "7.72%",
     "kicker": "NEWS",
-    "headline": "Of all household debt is now <em>delinquent</em>",
-    "sub": "Up from 4.7% a quarter earlier",
+    "headline": "Student loans newly <em>seriously delinquent</em> nearly halved",
+    "sub": "Down from 14.26% a year ago",
     "theme": "blue",
-    "source": "Source: NY Fed, Q3 2026"
+    "source": "Source: New York Fed, Nov 10"
   },
   "image": "2026-11-28-02.jpg",
   "publish_at": "2026-11-28T12:00:00+00:00"

@@ -1,20 +1,20 @@
 {
-  "caption": "19.71%. That's the average credit card APR right now.\nStill below the 20.79% record from August 2024, but not exactly cheap.\nIt's the number your balance quietly grows by.\nWhat APR is on your main card?",
-  "first_comment": "Do you know your card's exact APR without looking? 👇",
+  "caption": "24.00%. That's the average APR on NEW credit card offers this month.\nIt has risen four months in a row, per LendingTree.\nOn your existing cards, the Fed's Q3 average is 21.19%.\nDo you know the exact APR on your main card?",
+  "first_comment": "Go check your statement: what APR are you paying? 👇",
   "sources": [
-    "https://www.wsmv.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
+    "https://www.lendingtree.com/credit-cards/study/average-credit-card-interest-rate-in-america/",
     "pattern: big number / dollar amount hook"
   ],
   "instagram": {
-    "first_comment": "Check your statement today, it's listed. Follow @creditscoretruths for more."
+    "first_comment": "Your APR is printed on your statement. Follow @creditscoretruths for daily credit truths."
   },
   "card": {
-    "big": "19.71%",
+    "big": "24.00%",
     "kicker": "CARD TRAP",
-    "headline": "The average card <em>APR</em> today",
-    "sub": "Record was 20.79% in Aug 2024",
+    "headline": "New card offers now average <em>24%</em> APR",
+    "sub": "Up 4 months in a row",
     "theme": "red",
-    "source": "Source: Bankrate, Nov 4"
+    "source": "Source: LendingTree, Nov 2026"
   },
   "video": "2026-11-28-01.mp4",
   "publish_at": "2026-11-28T15:00:00+00:00"

@@ -1,19 +1,20 @@
 {
-  "caption": "What a balance really costs. 💸\nA $5,000 balance at 19.71% APR adds roughly $82 in interest in one month.\nThat's before any payment toward the actual balance.\nSend this to someone who only pays the minimum.",
-  "first_comment": "What would you do with an extra $82 a month? 👇",
+  "caption": "$5,000 on a card at 24% APR.\nThat's about $100 a month in interest if the balance just sits there.\nIt's $1,200 a year, before you pay down a dollar of the original.\nWho in your life needs to see this math?",
+  "first_comment": "If $100 a month vanished, what would you do with it instead? 👇",
   "sources": [
-    "https://www.wsmv.com/bankrate-article/2026/10/22/current-credit-card-interest-rates/",
-    "pattern: math nobody says out loud"
+    "https://www.lendingtree.com/credit-cards/study/average-credit-card-interest-rate-in-america/",
+    "pattern: the math nobody says out loud"
   ],
   "instagram": {
-    "first_comment": "Roughly $82 a month, simple math. @creditscoretruths"
+    "first_comment": "Send this to someone with a balance. Follow @creditscoretruths. Rough math, check your own APR."
   },
   "card": {
-    "big": "$82",
+    "big": "$100",
     "kicker": "DEBT REALITY",
-    "headline": "A month of interest on <em>$5,000</em> at 19.71%",
-    "sub": "Simple math: 5,000 x 19.71% / 12",
-    "theme": "red"
+    "headline": "A month of interest on <em>$5,000</em> at 24%",
+    "sub": "About $1,200 a year, rough math",
+    "theme": "red",
+    "source": "Simple interest estimate"
   },
   "video": "2026-11-28-05.mp4",
   "publish_at": "2026-11-28T22:00:00+00:00"

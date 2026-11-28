@@ -1,18 +1,19 @@
 {
-  "caption": "Carrying a balance does NOT help your score.\nPaying in full each month builds the same history and costs you zero interest.\nA lot of people still believe the myth.\nWho told you otherwise?",
-  "first_comment": "Who first told you to 'keep a small balance'? 👇",
+  "caption": "You don't need to carry a balance to build credit.\nPaying the statement balance in full each month reports the same good history, and you pay no interest.\nCarrying a balance only costs you money.\nWho told you otherwise?",
+  "first_comment": "What credit myth did you believe the longest? 👇",
   "sources": [
-    "https://www.myfico.com/credit-education/credit-scores",
-    "pattern: nobody tells you / myth"
+    "https://www.myfico.com/credit-education/credit-scores/how-to-build-credit",
+    "pattern: myth-buster"
   ],
   "instagram": {
-    "first_comment": "Myth heard a lot. Follow @creditscoretruths for more truths."
+    "first_comment": "Which credit myth fooled you? Follow @creditscoretruths to bust one every day."
   },
   "card": {
     "kicker": "CREDIT MYTH",
-    "headline": "Carrying a balance <em>won't</em> boost your score",
-    "sub": "Pay in full. Same history, no interest",
-    "theme": "gold"
+    "headline": "Carrying a balance <em>won't</em> raise your score",
+    "sub": "Pay in full. Same history, $0 interest.",
+    "theme": "green",
+    "source": "Source: myFICO"
   },
   "video": "2026-11-28-03.mp4",
   "publish_at": "2026-11-28T18:00:00+00:00"

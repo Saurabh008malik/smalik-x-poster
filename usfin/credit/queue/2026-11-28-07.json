@@ -1,21 +1,21 @@
 {
-  "caption": "$1.29 trillion.\nThat's how much Americans owe on credit cards, a record, per the New York Fed's Q3 report.\nUp about $22 billion in one quarter.\nHas your own card balance gone up or down this year?",
-  "first_comment": "Up, down or flat this year? 👇",
+  "caption": "$334 billion.\nThat's how much total US household debt rose in one quarter, to $19.1 trillion.\nThe New York Fed says 5% of it is now in some stage of delinquency.\nWhat part of that number feels most real to you?",
+  "first_comment": "Is your household debt going up or down this year? 👇",
   "sources": [
     "https://www.newyorkfed.org/newsevents/news/research/2026/20261110",
-    "https://stockanalysis.com/news/credit-card-debt-record-third-quarter-2026/",
-    "pattern: big number"
+    "https://bankingjournal.aba.com/2026/11/new-york-fed-total-household-debt-reached-19-1t-in-q3/",
+    "pattern: story in one number"
   ],
   "instagram": {
-    "first_comment": "Source is the NY Fed Q3 2026. @creditscoretruths"
+    "first_comment": "One quarter, one number. Follow @creditscoretruths."
   },
   "card": {
-    "big": "$1.29T",
+    "big": "$334B",
     "kicker": "NEWS",
-    "headline": "Card debt hit a <em>new record</em>",
-    "sub": "Up about $22B in one quarter",
+    "headline": "US household debt rose by this much in <em>one quarter</em>",
+    "sub": "Total now $19.1 trillion",
     "theme": "blue",
-    "source": "Source: NY Fed"
+    "source": "Source: New York Fed, Nov 10"
   },
   "video": "2026-11-28-07.mp4",
   "publish_at": "2026-11-29T01:00:00+00:00"

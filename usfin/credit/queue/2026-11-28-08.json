@@ -1,17 +1,20 @@
 {
-  "caption": "A score is not a personality. 🌱\nIt moves with on-time payments and lower balances.\nA rough month can be fixed over time.\nWhat's one small credit habit you're proud of?",
-  "first_comment": "What's one credit habit you're proud of? 👇",
+  "caption": "Payment history is the biggest piece of a FICO Score, about 35%.\nThat means one boring habit beats most tricks: pay on time, every time.\nAutopay for the minimum is a safety net, not a plan to stop there.\nWhat's one bill you've automated that saved you stress?",
+  "first_comment": "Which bill did you automate first? 👇",
   "sources": [
-    "pattern: reassurance"
+    "https://www.myfico.com/credit-education/whats-in-your-credit-score",
+    "pattern: reassurance / simple habit"
   ],
   "instagram": {
-    "first_comment": "Small habits count. @creditscoretruths"
+    "first_comment": "Boring habits win. Follow @creditscoretruths."
   },
   "card": {
+    "big": "35%",
     "kicker": "SCORE TRUTH",
-    "headline": "A low score is a <em>starting point</em>, not a label.",
+    "headline": "On-time payments are the <em>biggest</em> piece of your score",
+    "sub": "Automate the minimum as a safety net",
     "theme": "gold",
-    "score": 540
+    "source": "Source: myFICO"
   },
   "image": "2026-11-28-08.jpg",
   "publish_at": "2026-11-28T18:00:00+00:00"
