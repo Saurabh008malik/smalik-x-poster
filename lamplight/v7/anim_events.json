@@ -1,0 +1,92 @@
+[
+ {
+  "t": 0.0,
+  "secs": 24.0,
+  "path": "/home/claude/lamp7/anim/title.mp4"
+ },
+ {
+  "t": 722.3543081378042,
+  "secs": 12.0,
+  "path": "/home/claude/lamp7/anim/q1.mp4"
+ },
+ {
+  "t": 865.8066666666666,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch02.mp4"
+ },
+ {
+  "t": 1432.3386666666665,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch03.mp4"
+ },
+ {
+  "t": 2196.2386666666666,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch04.mp4"
+ },
+ {
+  "t": 2884.832,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch05.mp4"
+ },
+ {
+  "t": 3656.576,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch06.mp4"
+ },
+ {
+  "t": 4377.0813333333335,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch07.mp4"
+ },
+ {
+  "t": 4836.412790259009,
+  "secs": 22.0,
+  "path": "/home/claude/lamp7/anim/map1.mp4"
+ },
+ {
+  "t": 5054.141333333333,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch08.mp4"
+ },
+ {
+  "t": 5650.446666666667,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch09.mp4"
+ },
+ {
+  "t": 6059.4391293347635,
+  "secs": 12.0,
+  "path": "/home/claude/lamp7/anim/q9.mp4"
+ },
+ {
+  "t": 6303.164457278002,
+  "secs": 12.0,
+  "path": "/home/claude/lamp7/anim/q9b.mp4"
+ },
+ {
+  "t": 6435.093333333333,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch10.mp4"
+ },
+ {
+  "t": 6936.48884168252,
+  "secs": 12.0,
+  "path": "/home/claude/lamp7/anim/q10.mp4"
+ },
+ {
+  "t": 7301.614666666666,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch11.mp4"
+ },
+ {
+  "t": 8110.48,
+  "secs": 7.0,
+  "path": "/home/claude/lamp7/anim/ch12.mp4"
+ },
+ {
+  "t": 8239.805436564571,
+  "secs": 20.0,
+  "path": "/home/claude/lamp7/anim/map2.mp4"
+ }
+]
